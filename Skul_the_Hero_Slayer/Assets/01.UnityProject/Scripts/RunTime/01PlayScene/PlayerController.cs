@@ -26,6 +26,9 @@ public class PlayerController : MonoBehaviour
     private float maxHp = 100;
     private bool isWalk = false;
     private bool isJump = false;
+    private float posY = default;
+    private bool isFall = false;
+    private uint fallCount = default;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +48,24 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //{낙하모션 체크
+        if (fallCount == 0)
+        {
+            posY = transform.position.y;
+        }
+        fallCount++;
+        if (fallCount >= 5)
+        {
+            fallCount = 0;
+            if (posY - transform.position.y >= 0.05f)
+            {
+                isFall = true;
+            }
+        }
+        playerAni.SetBool("isFall", isFall);
+        //}낙하모션 체크
+
+
         //{대쉬 처리
         if (isDash)
         {
@@ -140,8 +161,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            isJump = false;
+            fallCount = 0;
+            isFall = false;
             jumpCount = 0;
+            isJump = false;
         }
     } //OnCollisionEnter2D
 
