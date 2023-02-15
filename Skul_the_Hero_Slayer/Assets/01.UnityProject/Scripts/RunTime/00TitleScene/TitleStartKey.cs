@@ -9,7 +9,7 @@ public class TitleStartKey : MonoBehaviour
     {
         if(Input.anyKeyDown)
         {
-            GFunc.LoadScene(GData.PLAY_SCENE_NAME);
+            UIManager.Instance.ShowLoading(GData.CASTLELOBBY_SCENE_NAME);
         }
     }
 }

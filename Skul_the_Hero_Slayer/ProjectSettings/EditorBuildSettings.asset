@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/01.UnityProject/Scenes/00.TitleScene.unity
     guid: ce06085f97ad91b42b5dae583bac02a3
   - enabled: 1
-    path: Assets/01.UnityProject/Scenes/01.PlayScene.unity
+    path: Assets/01.UnityProject/Scenes/01.CastleLobby.unity
     guid: e5b816ef94ff01146b8ade33d2158936
+  - enabled: 1
+    path: Assets/01.UnityProject/Scenes/02.DungeonLobby.unity
+    guid: a58210a67a50a26499b26942861f8551
   m_configObjects: {}
