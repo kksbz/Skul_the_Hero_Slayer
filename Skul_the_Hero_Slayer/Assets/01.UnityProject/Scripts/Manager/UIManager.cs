@@ -58,18 +58,8 @@ public class UIManager : MonoBehaviour
     } //InitUIManager
 
     //로딩창 출력 후 해당씬으로 이동
-    public void ShowLoading(string sceneName)
+    public void ShowLoading(bool activeImage)
     {
-        StartCoroutine(GetLoading(sceneName));
+        loadingObj.SetActive(activeImage);
     } //ShowLoading
-
-    //로딩창 출력 후 해당씬으로 이동 코루틴
-    private IEnumerator GetLoading(string sceneName)
-    {
-        loadingObj.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
-        GFunc.LoadScene(sceneName);
-        yield return new WaitForSeconds(0.5f);
-        loadingObj.SetActive(false);
-    } //GetLoading
 }

@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
     private AudioSource playerAudio = default;
     private Animator playerAni = default;
     #region //대쉬변수
-    private bool isGround = true;
 
     private float dashForce = 10f;
     private bool canDash = true;
@@ -74,6 +73,7 @@ public class PlayerController : MonoBehaviour
         playerRig.velocity = new Vector2(horizontal * speed, playerRig.velocity.y);
         //}대쉬 처리
     } //FixedUpdate
+    
     private void MoveControl()
     {
         if (isDash)
@@ -170,9 +170,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-        }
+        
     } //OnCollisionExit2D
 
 } //PlayerController

@@ -8,7 +8,7 @@ public class ExitThisScene : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
-            UIManager.Instance.ShowLoading(GData.DUNGEONLOBBY_SCENE_NAME);
+            SceneMgr.Instance.LoadAsyncScene(GData.DUNGEONLOBBY_SCENE_NAME);
         }
-    }
+    } //OnTriggerEnter2D
 }
