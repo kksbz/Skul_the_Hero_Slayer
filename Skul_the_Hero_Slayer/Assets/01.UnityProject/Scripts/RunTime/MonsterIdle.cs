@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterIdle : MonoBehaviour
+public class MonsterIdle : IMonsterState
 {
-    // Start is called before the first frame update
-    void Start()
+    public void StateEnter(Monster monster)
+    {
+        //요기서 들어가고
+    }
+    public void StateFixedUpdate(Monster monster)
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
+    public void StateUpdate(Monster monster)
     {
-        
+
+    }
+    public void StateExit(Monster monster)
+    {
+        //요기서 나가는거
     }
 }

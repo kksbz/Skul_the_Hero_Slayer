@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterMove : MonsterState
+public class MonsterMove : IMonsterState
 {
-    void  statsEnter()
-    {
-       
-    }
-    void StateFixedUpdate()
+    public void StateEnter(Monster monster)
     {
 
     }
-
-    void StateUpdate()
+    public void StateFixedUpdate(Monster monster)
+    {
+        
+    }
+    public void StateUpdate(Monster monster)
     {
 
     }
-
-    void StateExit()
+    public void StateExit(Monster monster)
     {
 
     }
-
 }
