@@ -5,3 +5,4 @@
 2023-02-13 / v0.0.3 FallAni setup, camara setup<br/>
 2023-02-15 / v0.0.5 Loading, DungeonLobby setup<br/>
 2023-02-16 / v0.0.6 Work on Asset preparation<br/>
+2023-02-16 / v0.0.7 Work on MonsterAsset preparation<br/>
