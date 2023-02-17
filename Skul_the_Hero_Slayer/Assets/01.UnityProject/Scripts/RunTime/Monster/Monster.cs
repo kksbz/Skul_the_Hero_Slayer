@@ -25,5 +25,8 @@ public class Monster : MonoBehaviour
         this.maxDamage      = data.MaxDamage;
         this.moveSpeed      = data.MoveSpeed;
         this.sightRange     = data.SightRange;
+        this.monsterRb      = gameObject.GetComponentMust<Rigidbody2D>();
+        this.monsterAudio   = gameObject.GetComponentMust<AudioSource>();
+        this.monsterAni     = gameObject.GetComponentMust<Animator>();
     } //InitMonsterData
 }

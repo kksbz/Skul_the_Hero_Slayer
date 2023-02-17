@@ -22,7 +22,6 @@ public class StateMachine
     {
         if (currentState == state)
         {
-            Debug.Log("현재 이미 해당 상태입니다");
             return;
         }
 

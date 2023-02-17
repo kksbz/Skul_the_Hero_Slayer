@@ -17,5 +17,5 @@ MonoBehaviour:
   monsterMaxHp: 50
   minDamage: 6
   maxDamage: 8
-  moveSpeed: 3
+  moveSpeed: 2
   sightRange: 5
