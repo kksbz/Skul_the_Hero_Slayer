@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    
     public string   _name;
     public int      hp;
     public int      maxHp;
@@ -15,7 +14,7 @@ public class Monster : MonoBehaviour
     public Rigidbody2D monsterRb;
     public AudioSource monsterAudio;
     public Animator monsterAni;
-
+    public GroundCheckRay groundCheckRay;
     public void InitMonsterData(MonsterData data)
     {
         this._name          = data.name;
@@ -28,5 +27,6 @@ public class Monster : MonoBehaviour
         this.monsterRb      = gameObject.GetComponentMust<Rigidbody2D>();
         this.monsterAudio   = gameObject.GetComponentMust<AudioSource>();
         this.monsterAni     = gameObject.GetComponentMust<Animator>();
+        this.groundCheckRay = gameObject.GetComponentMust<GroundCheckRay>();
     } //InitMonsterData
 }

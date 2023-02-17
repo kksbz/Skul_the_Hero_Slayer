@@ -22,7 +22,6 @@ public class MonsterController : MonoBehaviour
     {
         IMonsterState idle = new MonsterIdle();
         IMonsterState move = new MonsterMove();
-        Debug.Log(monster._name);
         dicState.Add(MonsterState.IDLE, idle);
         dicState.Add(MonsterState.MOVE, move);
 
@@ -45,4 +44,16 @@ public class MonsterController : MonoBehaviour
     {
         stateMachine.DoFixedUpdate();
     } //FixedUpdate
+
+    //interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
+    public void CoroutineDeligate(IEnumerator func)
+    {
+        StartCoroutine(func);
+    } //CoroutineDeligate
+
+    //코루틴을 대신 종료시켜줄 함수
+    public void StopCoroutineDeligate(IEnumerator func)
+    {
+        StopCoroutine(func);
+    } //StopCoroutineDeligate
 }

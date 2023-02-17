@@ -6,7 +6,7 @@ public class NomalWooden : Monster
 {
     private MonsterController monsterController;
     public MonsterData monsterData;
-    
+
     void Awake()
     {
         monsterController = gameObject.GetComponentMust<MonsterController>();

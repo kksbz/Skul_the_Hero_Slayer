@@ -27,3 +27,4 @@
                         자식클래스가 부모클래스타입으로 캐스팅이 가능한것을 알게됨<br/>
                         (Monster)(this as Monster)로 예외처리까지 완료<br/>
 2023-02-17 / v0.1.1 MonsterMove 상태class 몬스터가 이동방향을 바라보는 방향전환 구현
+2023-02-18 / v0.1.2 MonsterMove의 offset값에 따라 MonsterAni변경, GroundCheck하는 Raycast 구현
