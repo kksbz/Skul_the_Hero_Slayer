@@ -4,8 +4,8 @@ using UnityEngine;
 
 public interface IMonsterState
 {
-    void StateEnter(Monster monster);
-    void StateFixedUpdate(Monster monster);
-    void StateUpdate(Monster monster);
-    void StateExit(Monster monster);
+    void StateEnter(MonsterController mController);
+    void StateFixedUpdate();
+    void StateUpdate();
+    void StateExit();
 }

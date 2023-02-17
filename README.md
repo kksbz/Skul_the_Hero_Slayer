@@ -8,3 +8,21 @@
 2023-02-16 / v0.0.7 Work on MonsterAsset preparation<br/>
 2023-02-16 / v0.0.8 Work on MonsterFrefab<br/>
 2023-02-17 / v0.0.9 work on MonsterFSM_AI<br/>
+            Summary :   v0.0.9 몬스터AI 구현시도<br/>
+            detail  :   몬스터AI를 상태패턴으로 구현하고자 시도함<br/>
+                        몬스터class(최상위) 상속 -> 타입별 몬스터 class 작성<br/>
+                        몬스터가 행할 행동의 상태를 상태패턴으로 구현하고자 스크립트를 나눠서 작성함<br/>
+                        각상태가 수행해야할 로직을 interface로 강제시키고 각 상태별로 class를 나눔<br/>
+                        몬스터class는 데이터만 갖고있는 껍데기로 설정<br/>
+                        몬스터의 상태를 컨트롤할 몬스터컨트롤러 작성<br/>
+                        몬스터컨트롤러에서 입력받은 상태를 처리할 StateMachine class작성<br/>
+                        각 상태로직을 수행할 interface를 상속받은 상태class에서<br/>
+                        몬스터의 데이터를 참조하는 방식을 찾지못해 진행이 막힘<br/>
+2023-02-17 / v0.1.0 work on MonsterAI by StatePattern<br/>
+            Summary :   v0.0.9 이슈 해결
+            detail  :   각 상태class에서 몬스터의 데이터에 접근할 수 있는 방식을 찾음
+                        몬스터컨트롤러에서 몬스터클래스를 변수로 가지고있고
+                        몬스터를 상속받은 각타입별클래스 안에서 몬스터컨트롤러의 몬스터변수에
+                        자신을 직접 Monster로 캐스팅해서 대입하는 방식으로 해결함
+                        자식클래스가 부모클래스타입으로 캐스팅이 가능한것을 알게됨
+                        (Monster)(this as Monster)로 예외처리까지 완료

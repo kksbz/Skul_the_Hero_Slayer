@@ -5,7 +5,6 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     
-    MonsterController monsterController;
     public string   _name;
     public int      hp;
     public int      maxHp;
@@ -13,6 +12,9 @@ public class Monster : MonoBehaviour
     public int      maxDamage;
     public float    moveSpeed;
     public float    sightRange;
+    public Rigidbody2D monsterRb;
+    public AudioSource monsterAudio;
+    public Animator monsterAni;
 
     public void InitMonsterData(MonsterData data)
     {
@@ -24,16 +26,4 @@ public class Monster : MonoBehaviour
         this.moveSpeed      = data.MoveSpeed;
         this.sightRange     = data.SightRange;
     } //InitMonsterData
-
-    public virtual void Attack()
-    {
-
-    }
-}
-public class NamuMonster : Monster
-{
-    public override void Attack()
-    {
-        //몬스터타입별로 공격 오버라이드해서 구현하자
-    }
 }

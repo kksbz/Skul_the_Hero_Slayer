@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 169582644}
   - component: {fileID: 169582643}
   m_Layer: 0
-  m_Name: LayerGround
+  m_Name: CameraArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6814,7 +6814,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6859,7 +6859,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6220677442326765755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6951,8 +6951,8 @@ GameObject:
   - component: {fileID: 6220677442326765754}
   - component: {fileID: 3649548421461484302}
   - component: {fileID: 4576733139076603454}
-  - component: {fileID: 6220677442326765757}
   - component: {fileID: 6220677442326765756}
+  - component: {fileID: 6220677442326765758}
   m_Layer: 0
   m_Name: NomalWooden
   m_TagString: Untagged
@@ -6972,7 +6972,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e119db5cd880564eb61904cbcd65836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6220677442326765757
+  monster: {fileID: 0}
+--- !u!114 &6220677442326765758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6981,7 +6982,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6220677442326765755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5642c1ce3b03694abfb2efd078e10ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 2236ac54612a18044aa99eb6251ccfff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _name: 
@@ -6991,3 +6992,7 @@ MonoBehaviour:
   maxDamage: 0
   moveSpeed: 0
   sightRange: 0
+  monsterRb: {fileID: 0}
+  monsterAudio: {fileID: 0}
+  monsterAni: {fileID: 0}
+  monsterData: {fileID: 11400000, guid: b35ef1df316f1234a8a07ca7a7125230, type: 2}

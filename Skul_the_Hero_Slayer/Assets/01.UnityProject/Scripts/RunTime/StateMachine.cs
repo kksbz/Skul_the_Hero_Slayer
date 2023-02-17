@@ -1,47 +1,44 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using MonsterLove.StateMachine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-// public class SM : MonoBehaviour
-// {
+public class StateMachine
+{
+    MonsterController mController;
+    public IMonsterState currentState
+    {
+        get;
+        private set;
+    }
 
-    
-//     /*
-//     Monster monster;
-//     public IMonsterState currentState
-//     {
-//         get;
-//         private set;
-//     }
+    public StateMachine(IMonsterState defaultState, MonsterController _mController)
+    {
+        currentState = defaultState;
+        mController = _mController;
+        SetState(currentState);
+    } //StateMachine
 
-//     public StateMachine(IMonsterState defaultState, Monster _monster)
-//     {
-//         currentState = defaultState;
-//         monster = _monster;
-//     } //StateMachine
+    public void SetState(IMonsterState state)
+    {
+        if (currentState == state)
+        {
+            Debug.Log("현재 이미 해당 상태입니다");
+            return;
+        }
 
-//     public void SetState(IMonsterState state)
-//     {
-//         if(currentState == state)
-//         {
-//             Debug.Log("현재 이미 해당 상태입니다");
-//             return;
-//         }
+        currentState.StateExit();
+        currentState = state;
+        currentState.StateEnter(mController);
+    } //SetState
 
-//         // currentState.StateExit(monster);
-//         currentState = state;
-//         // currentState.StateEnter(monster);
-//     } //SetState
+    public void DoFixedUpdate()
+    {
+        currentState.StateFixedUpdate();
+    } //DoFixedUpdate
 
-//     public void DoFixedUpdate()
-//     {
-//         // currentState.StateFixedUpdate(monster);
-//     } //DoFixedUpdate
+    public void DoUpdate()
+    {
+        currentState.StateUpdate();
+    } //DoUpdate
 
-//     public void DoUpdate()
-//     {
-//         // currentState.StateUpdate(monster);
-//     } //DoUpdate
-//     /**/
-// }
+}
