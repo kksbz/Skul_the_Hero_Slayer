@@ -6,15 +6,16 @@ public class MonsterMove : IMonsterState
 {
     private int offsetX; //이동방향 변수
     private bool exitState; //코루틴 while문 탈출조건
-    private bool isRight = true; //바라보는 방향 변수
-    private Vector3 localScale;
+    private Vector3 localScale; //바라보는방향 전환 변수
     private MonsterController mController;
     public void StateEnter(MonsterController _mController)
     {
         mController = _mController;
+        mController.enumState = MonsterController.MonsterState.MOVE;
+        Debug.Log($"{mController.monster.name}이동시작");
         mController.monster.monsterAni.SetBool("isWalk", true);
         exitState = false;
-        localScale = mController.transform.localScale;
+        localScale = mController.monster.transform.localScale;
         mController.CoroutineDeligate(randomPosX());
     } //StateEnter
     public void StateFixedUpdate()
@@ -49,7 +50,7 @@ public class MonsterMove : IMonsterState
     //offsetX값이 0일때 idle애니로 전환하는 함수
     private void ChangeIdleAni()
     {
-        if(offsetX == 0)
+        if (offsetX == 0)
         {
             mController.monster.monsterAni.SetBool("isWalk", false);
             mController.monster.monsterAni.SetBool("isIdle", true);
@@ -65,26 +66,45 @@ public class MonsterMove : IMonsterState
     private void ChangLookDirection()
     {
         //offsetX값에 따라 바라보는 방향처리
-        if (isRight && offsetX < 0 || !isRight && offsetX > 0)
+        if (offsetX != 0)
         {
-            isRight = !isRight;
+            //offsetX값이 0보다 작으면 왼쪽, 0보다 크면 오른쪽
+            if (offsetX < 0)
+            {
+                mController.monster.groundCheckRay._isRight = false;
+                localScale = new Vector3(-1, localScale.y, localScale.z);
+                mController.monster.transform.localScale = localScale;
+            }
+            else if (offsetX > 0)
+            {
+                mController.monster.groundCheckRay._isRight = true;
+                localScale = new Vector3(1, localScale.y, localScale.z);
+                mController.monster.transform.localScale = localScale;
+            }
             //raycast방향도 같이 전환
-            mController.monster.groundCheckRay._isRight = !mController.monster.groundCheckRay._isRight;
-            localScale.x *= -1;
-            mController.transform.localScale = localScale;
         }
     } //ChangLookDirection
 
     //타일맵 끝에 닿았을 때 반대방향으로 전환하는 함수
     private void GroundCheck()
     {
+        //그라운드체크레이어가 땅을 감지하지 못할 경우 반대방향으로 전환
         if (mController.monster.groundCheckRay.hit.collider == null)
         {
-            offsetX *= -1;
-            isRight = !isRight;
-            mController.monster.groundCheckRay._isRight = !mController.monster.groundCheckRay._isRight;
-            localScale.x *= -1;
-            mController.transform.localScale = localScale;
+            if (localScale.x < 0)
+            {
+                mController.monster.groundCheckRay._isRight = true;
+                localScale = new Vector3(1, localScale.y, localScale.z);
+                mController.monster.transform.localScale = localScale;
+                offsetX *= -1;
+            }
+            else if (localScale.x > 0)
+            {
+                mController.monster.groundCheckRay._isRight = false;
+                localScale = new Vector3(-1, localScale.y, localScale.z);
+                mController.monster.transform.localScale = localScale;
+                offsetX *= -1;
+            }
         }
     } //GroundCheck
 

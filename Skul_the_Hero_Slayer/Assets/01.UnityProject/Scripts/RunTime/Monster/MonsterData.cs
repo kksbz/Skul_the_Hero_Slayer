@@ -24,6 +24,18 @@ public class MonsterData : ScriptableObject
     private float moveSpeed;
     public float MoveSpeed { get { return moveSpeed; } }
     [SerializeField]
-    private float sightRange;
-    public float SightRange { get { return sightRange; } }
+    private float sightRangeX;
+    public float SightRangeX { get { return sightRangeX; } }
+    [SerializeField]
+    private float sightRangeY;
+    public float SightRangeY { get { return sightRangeY; } }
+    [SerializeField]
+    private float attackRange;
+    public float AttackRange { get { return attackRange; } }
+    [SerializeField]
+    private float meleeAttackRange;
+    public float MeleeAttackRange { get { return meleeAttackRange; } }
+    [SerializeField]
+    private bool hasAdditionalAttack;
+    public bool HasAdditionalAttack { get { return hasAdditionalAttack; } }
 }

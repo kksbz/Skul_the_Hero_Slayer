@@ -26,6 +26,11 @@
                         자신을 직접 Monster로 캐스팅해서 대입하는 방식으로 해결함<br/>
                         자식클래스가 부모클래스타입으로 캐스팅이 가능한것을 알게됨<br/>
                         (Monster)(this as Monster)로 예외처리까지 완료<br/>
-2023-02-17 / v0.1.1 MonsterMove 상태class 몬스터가 이동방향을 바라보는 방향전환 구현
-2023-02-18 / v0.1.2 MonsterMove의 offset값에 따라 MonsterAni변경, GroundCheck하는 Raycast 구현
-2023-02-18 / v0.1.2 Monster의 플레이어 탐색상태class 구현
+2023-02-17 / v0.1.1 MonsterMove 상태class 몬스터가 이동방향을 바라보는 방향전환 구현<br/>
+2023-02-18 / v0.1.2 MonsterMove의 offset값에 따라 MonsterAni변경, GroundCheck하는 Raycast 구현<br/>
+2023-02-18 / v0.1.3 Monster의 플레이어 탐색상태class 구현<br/>
+2023-02-19 / v0.1.4 Monster의 공격상태class 및 Monster공격 구현<br/>
+            Summary :   Monster의 이동, 탐색, 공격 상태에서의 방향전환 체크문제<br/>
+            detail  :   Monster의 이동, 탐색, 공격 상태가 서로 다른 class로 구현되어있어<br/>
+                        상태전환시 Monster의 방향전환이 꼬이는 문제 발생<br/>
+                        각 상태에서 방향전환체크하는 변수를 통일하는 것으로 문제 해결<br/>

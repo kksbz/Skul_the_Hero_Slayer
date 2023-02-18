@@ -14,4 +14,12 @@ public class NomalWooden : Monster
         InitMonsterData(monsterData);
         monsterController.monster = (Monster)(this as Monster);
     }
+    public override void AttackA()
+    {
+        Punch();
+    }
+    void Punch()
+    {
+
+    }
 }

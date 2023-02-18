@@ -18,4 +18,8 @@ MonoBehaviour:
   minDamage: 10
   maxDamage: 13
   moveSpeed: 0
-  sightRange: 10
+  sightRangeX: 20
+  sightRangeY: 15
+  attackRange: 20
+  meleeAttackRange: 2
+  hasAdditionalAttack: 1

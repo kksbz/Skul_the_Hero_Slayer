@@ -8,6 +8,7 @@ public class MonsterIdle : IMonsterState
     public void StateEnter(MonsterController _mController)
     {
         this.mController = _mController;
+        mController.enumState = MonsterController.MonsterState.IDLE;
     }
     public void StateFixedUpdate()
     {

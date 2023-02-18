@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 9034294882284979065}
   m_Layer: 7
   m_Name: NomalWooden
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,11 +175,14 @@ MonoBehaviour:
   minDamage: 0
   maxDamage: 0
   moveSpeed: 0
-  sightRange: 0
+  sightRangeX: 0
+  sightRangeY: 0
+  attackRange: 0
   monsterRb: {fileID: 0}
   monsterAudio: {fileID: 0}
   monsterAni: {fileID: 0}
   groundCheckRay: {fileID: 0}
+  tagetSearchRay: {fileID: 0}
   monsterData: {fileID: 0}
 --- !u!114 &1842472030278598858
 MonoBehaviour:
@@ -194,6 +197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monster: {fileID: 0}
+  enumState: 0
 --- !u!114 &9034294882284979065
 MonoBehaviour:
   m_ObjectHideFlags: 0

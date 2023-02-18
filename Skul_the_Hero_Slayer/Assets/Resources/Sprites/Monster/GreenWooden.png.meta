@@ -333,7 +333,7 @@ TextureImporter:
         x: 121
         y: 310
         width: 52
-        height: 62
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,7 +354,7 @@ TextureImporter:
         x: 244
         y: 306
         width: 52
-        height: 63
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -396,7 +396,7 @@ TextureImporter:
         x: 479
         y: 313
         width: 78
-        height: 49
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -417,7 +417,7 @@ TextureImporter:
         x: 629
         y: 314
         width: 66
-        height: 46
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -438,7 +438,7 @@ TextureImporter:
         x: 774
         y: 311
         width: 65
-        height: 41
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -459,7 +459,7 @@ TextureImporter:
         x: 901
         y: 309
         width: 65
-        height: 39
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -480,7 +480,7 @@ TextureImporter:
         x: 1032
         y: 305
         width: 65
-        height: 39
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -744,6 +744,7 @@ TextureImporter:
       GreenWooden_19: -384465304
       GreenWooden_21: 161198404
       GreenWooden_Attack_Effect_3: 1639130609
+      GreenWooden_0: -898340752
       GreenWooden_Attack_Effect_7: 1181599907
       GreenWooden_18: 945257986
       GreenWooden_46: -878545641

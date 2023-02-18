@@ -5,7 +5,8 @@ using UnityEngine;
 public class GroundCheckRay : MonoBehaviour
 {
     public RaycastHit2D hit;
-    public bool _isRight = true; //방향전환 변수
+    [HideInInspector]
+    public bool _isRight = true; //방향전환 체크하는 변수
     // Start is called before the first frame update
     void Start()
     {

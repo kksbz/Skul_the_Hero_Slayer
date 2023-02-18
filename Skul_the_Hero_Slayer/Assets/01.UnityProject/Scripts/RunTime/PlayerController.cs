@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private bool isRight = true;
     private float horizontal = default;
     private float speed = 5f;
-    private float hp = default;
+    public float hp = default;
     private float maxHp = 100;
     private bool isWalk = false;
     private bool isJump = false;
