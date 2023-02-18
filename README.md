@@ -28,3 +28,4 @@
                         (Monster)(this as Monster)로 예외처리까지 완료<br/>
 2023-02-17 / v0.1.1 MonsterMove 상태class 몬스터가 이동방향을 바라보는 방향전환 구현
 2023-02-18 / v0.1.2 MonsterMove의 offset값에 따라 MonsterAni변경, GroundCheck하는 Raycast 구현
+2023-02-18 / v0.1.2 Monster의 플레이어 탐색상태class 구현

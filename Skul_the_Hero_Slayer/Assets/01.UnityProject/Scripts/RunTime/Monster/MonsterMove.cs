@@ -39,8 +39,8 @@ public class MonsterMove : IMonsterState
         {
             return;
         }
-
         ChangeIdleAni();
+        ChangLookDirection();
         GroundCheck();
 
         mController.monster.transform.Translate(new Vector2(offsetX, 0f) * mController.monster.moveSpeed * Time.deltaTime);
@@ -60,6 +60,20 @@ public class MonsterMove : IMonsterState
             mController.monster.monsterAni.SetBool("isWalk", true);
         }
     } //ChangeIdleAni
+
+    //이동할 방향으로 바라보는 방향 전환하는 함수
+    private void ChangLookDirection()
+    {
+        //offsetX값에 따라 바라보는 방향처리
+        if (isRight && offsetX < 0 || !isRight && offsetX > 0)
+        {
+            isRight = !isRight;
+            //raycast방향도 같이 전환
+            mController.monster.groundCheckRay._isRight = !mController.monster.groundCheckRay._isRight;
+            localScale.x *= -1;
+            mController.transform.localScale = localScale;
+        }
+    } //ChangLookDirection
 
     //타일맵 끝에 닿았을 때 반대방향으로 전환하는 함수
     private void GroundCheck()
@@ -84,16 +98,6 @@ public class MonsterMove : IMonsterState
                 yield break;
             }
             offsetX = Random.RandomRange(-1, 2);
-
-            //offsetX값에 따라 바라보는 방향처리
-            if (isRight && offsetX < 0 || !isRight && offsetX > 0)
-            {
-                isRight = !isRight;
-                //raycast방향도 같이 전환
-                mController.monster.groundCheckRay._isRight = !mController.monster.groundCheckRay._isRight;
-                localScale.x *= -1;
-                mController.transform.localScale = localScale;
-            }
             yield return new WaitForSeconds(3f);
         }
     } //randomPosX

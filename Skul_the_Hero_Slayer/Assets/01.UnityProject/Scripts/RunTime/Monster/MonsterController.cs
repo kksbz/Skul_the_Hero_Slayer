@@ -38,12 +38,27 @@ public class MonsterController : MonoBehaviour
             stateMachine.SetState(dicState[MonsterState.MOVE]);
         }
         stateMachine.DoUpdate();
+        TagetCheckRay();
     } //Update
 
     void FixedUpdate()
     {
         stateMachine.DoFixedUpdate();
     } //FixedUpdate
+
+    public void TagetCheckRay()
+    {
+        Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(monster.sightRange, 3), 0, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
+        if(hit != null)
+        {
+            Debug.Log($"{monster._name},{hit.name}찾음");
+        }
+    }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        // Gizmos.DrawWireCube(transform.position, new Vector2(monster.sightRange, 3));
+    }
 
     //interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
     public void CoroutineDeligate(IEnumerator func)
