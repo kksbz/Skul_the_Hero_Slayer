@@ -43,6 +43,11 @@ public class Monster : MonoBehaviour
     //공격하는 함수, 몬스터를 상속받는 각 몬스터의 공격방식이 다르기 때문에 override 시킴
     public virtual void AttackA()
     {
-        Debug.Log("베이스몬스터택");
-    }
+        /*Do Nothing*/
+    } //AttackA
+
+    public virtual void AttackB()
+    {
+        /*Do Nothing*/
+    } //AttackB
 }

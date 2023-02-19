@@ -20,7 +20,7 @@ public class MonsterMove : IMonsterState
     } //StateEnter
     public void StateFixedUpdate()
     {
-
+        /*Do Nothing*/
     } //StateFixedUpdate
 
     public void StateUpdate()

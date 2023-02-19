@@ -12,14 +12,14 @@ public class MonsterIdle : IMonsterState
     }
     public void StateFixedUpdate()
     {
-
+        /*Do Nothing*/
     }
     public void StateUpdate()
     {
-
+        /*Do Nothing*/
     }
     public void StateExit()
     {
-        
+        /*Do Nothing*/
     }
 }

@@ -8,32 +8,33 @@ public class MonsterAttack : IMonsterState
     public void StateEnter(MonsterController _mController)
     {
         this.mController = _mController;
-        Debug.Log($"{mController.monster._name}공격시작");
         mController.enumState = MonsterController.MonsterState.ATTACK;
 
         //공격타입에 따른 시작공격 지정
         if (mController.monster.hasAdditionalAttack == true)
         {
+            Debug.Log($"{mController.monster._name}공격시작B");
             mController.monster.monsterAni.SetBool("isAttackB", true);
         }
         else
         {
+            Debug.Log($"{mController.monster._name}공격시작A");
             mController.monster.monsterAni.SetBool("isAttackA", true);
         }
     }
     public void StateFixedUpdate()
     {
-
+        /*Do Nothing*/
     }
     public void StateUpdate()
     {
-        //공격타입이 1개면 리턴
-        if (mController.monster.hasAdditionalAttack == false)
+        //현재 진행중인 애니메이션이 끝나지 않으면 리턴
+        if (mController.monster.monsterAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
         {
             return;
         }
-        //현재 진행중인 애니메이션이 끝나지 않으면 리턴
-        if (mController.monster.monsterAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        //공격타입이 1개면 리턴
+        if (mController.monster.hasAdditionalAttack == false)
         {
             return;
         }

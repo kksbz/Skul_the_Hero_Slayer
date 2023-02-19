@@ -34,3 +34,4 @@
             detail  :   Monster의 이동, 탐색, 공격 상태가 서로 다른 class로 구현되어있어<br/>
                         상태전환시 Monster의 방향전환이 꼬이는 문제 발생<br/>
                         각 상태에서 방향전환체크하는 변수를 통일하는 것으로 문제 해결<br/>
+2023-02-19 / v0.1.5 work on NomalMonster AttackState<br/>

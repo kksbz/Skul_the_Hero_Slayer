@@ -15,7 +15,7 @@ public class TagetSearch : IMonsterState
     }
     public void StateFixedUpdate()
     {
-
+        /*Do Nothing*/
     }
     public void StateUpdate()
     {
