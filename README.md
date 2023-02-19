@@ -35,3 +35,7 @@
                         상태전환시 Monster의 방향전환이 꼬이는 문제 발생<br/>
                         각 상태에서 방향전환체크하는 변수를 통일하는 것으로 문제 해결<br/>
 2023-02-19 / v0.1.5 work on NomalMonster AttackState<br/>
+2023-02-20 / v0.1.6 work on BigWooden AttackState<br/>
+             Summary :  BigWooden 공격A,B 구현 공격B issue 발생<br/>
+             detail  :  공격B 구현중 Bullet 오브젝트가 타겟과 충돌하거나 일정거리 이상 벗어나<br>
+                        비활성화되어야 하는 상태의 애니메이션이 실행되지 않음<br/>

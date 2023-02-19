@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class ThornAttack : MonoBehaviour
 {
-    GreenWooden parentWooden;
+    private GreenWooden parentWooden;
+    private int minDamage;
+    private int maxDamage;
 
     //부모를 정하는 함수
     public void Init(GreenWooden parent)
     {
         parentWooden = parent;
+        gameObject.transform.parent = parentWooden.transform;
+        minDamage = parentWooden.gameObject.GetComponentMust<MonsterController>().monster.minDamage;
+        maxDamage = parentWooden.gameObject.GetComponentMust<MonsterController>().monster.maxDamage;
     } //Init
 
     //공격판정 시작하는 함수
@@ -26,13 +31,16 @@ public class ThornAttack : MonoBehaviour
         Destroy(gameObject);
     } //ExitAttack
 
+    //가시 트리거발동 안됨
+    //가시의 Collider에 타겟이 충돌할 때
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log($"트리거발동? {collider.tag}");
         if(collider.tag == GData.PLAYER_LAYER_MASK)
         {
-            PlayerController taget = collider.gameObject?.GetComponentMust<PlayerController>();
-            taget.hp -= 15;
-            Debug.Log($"플레이어 hp = {taget.hp}");
+            PlayerController target = collider.gameObject?.GetComponentMust<PlayerController>();
+            target.hp -= Random.RandomRange(minDamage, maxDamage);
+            Debug.Log($"가시 공격 플레이어 hp = {target.hp}");
         }
     } //OnTriggerEnter2D
 }

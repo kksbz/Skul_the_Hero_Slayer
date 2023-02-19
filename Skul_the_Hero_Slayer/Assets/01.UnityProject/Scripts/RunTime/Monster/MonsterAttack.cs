@@ -42,7 +42,12 @@ public class MonsterAttack : IMonsterState
     }
     public void StateExit()
     {
+        if(mController.monster.hasAdditionalAttack == false)
+        {
+            mController.monster.monsterAni.SetBool("isAttackA", false);
+        }
         mController.monster.monsterAni.SetBool("isAttackA", false);
+        mController.monster.monsterAni.SetBool("isAttackB", false);
     }
 
     //타겟의 거리를 측정하여 공격타입을 바꾸는 함수
@@ -50,13 +55,15 @@ public class MonsterAttack : IMonsterState
     {
         Vector3 targetPos = mController.monster.tagetSearchRay.hit.transform.position;
         float distance = Vector2.Distance(targetPos, mController.monster.transform.position);
-        //타겟과 자신의 거리에 따른 공격타입 전환
+        //타겟과 자신의 거리가 근접공격거리 보다 작거나같으면 AttackA, 크면 AttackB 실행
         if (distance <= mController.monster.meleeAttackRange)
         {
+            mController.monster.monsterAni.SetBool("isAttackB", false);
             mController.monster.monsterAni.SetBool("isAttackA", true);
         }
         else
         {
+            mController.monster.monsterAni.SetBool("isAttackA", false);
             mController.monster.monsterAni.SetBool("isAttackB", true);
         }
     } //ChageAttackType

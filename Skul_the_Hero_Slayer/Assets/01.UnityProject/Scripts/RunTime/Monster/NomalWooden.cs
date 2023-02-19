@@ -32,9 +32,11 @@ public class NomalWooden : Monster
         hit = Physics2D.BoxCast(transform.position, attackArea, 0f, attackdirection, 1f, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
         if(hit.collider != null)
         {
-            PlayerController player = hit.collider.gameObject.GetComponentMust<PlayerController>();
-            player.hp -= 5;
-            Debug.Log($"노말우든 공격! 플레이어 hp = {player.hp}");
+            PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
+            int minDamage = monsterController.monster.minDamage;
+            int maxDamage = monsterController.monster.maxDamage;
+            target.hp -= Random.RandomRange(minDamage, maxDamage);
+            Debug.Log($"노말우든 공격! 플레이어 hp = {target.hp}");
         }
     } //AttackA
     
