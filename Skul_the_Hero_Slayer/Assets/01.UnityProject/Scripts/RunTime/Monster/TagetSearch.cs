@@ -27,6 +27,7 @@ public class TagetSearch : IMonsterState
     {
         targetPos = mController.monster.tagetSearchRay.hit.transform.position;
         Vector3 targetDirection = (targetPos - mController.monster.transform.position).normalized;
+        var localScale = mController.monster.transform.localScale;
         //타겟과 자신의 거리의 x값 위치를 비교해 바라보는방향 및 그라운드체크레이어 방향 전환
         if (targetDirection.x != 0)
         {
@@ -34,14 +35,13 @@ public class TagetSearch : IMonsterState
             if (targetDirection.x < 0)
             {
                 mController.monster.groundCheckRay._isRight = false;
-                var localScale = mController.monster.transform.localScale;
                 localScale = new Vector3(-1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
             }
             else if (targetDirection.x > 0)
             {
                 mController.monster.groundCheckRay._isRight = true;
-                var localScale = mController.monster.transform.localScale;
+                // var localScale = mController.monster.transform.localScale;
                 localScale = new Vector3(1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
             }

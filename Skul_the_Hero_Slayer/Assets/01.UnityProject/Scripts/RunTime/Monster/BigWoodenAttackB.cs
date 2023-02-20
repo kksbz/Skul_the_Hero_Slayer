@@ -49,10 +49,10 @@ public class BigWoodenAttackB : MonoBehaviour
     {
         for (int i = 0; i < objPool.Count; i++)
         {
-            objPool[i].transform.position = transform.parent.position;
             if (!objPool[i].gameObject.activeInHierarchy)
             {
-                objPool[i].gameObject.SetActive(true);
+                objPool[i].transform.position = transform.parent.position - new Vector3(0, 1, 0);
+                objPool[i].SetActive(true);
             }
         }
     } //ShootBullet

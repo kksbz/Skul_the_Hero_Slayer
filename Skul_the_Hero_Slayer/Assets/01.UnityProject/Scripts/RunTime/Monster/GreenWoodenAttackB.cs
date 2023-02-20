@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThornAttack : MonoBehaviour
+public class GreenWoodenAttackB : MonoBehaviour
 {
     private GreenWooden parentWooden;
     private int minDamage;
@@ -35,10 +35,9 @@ public class ThornAttack : MonoBehaviour
     //가시의 Collider에 타겟이 충돌할 때
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Debug.Log($"트리거발동? {collider.tag}");
         if(collider.tag == GData.PLAYER_LAYER_MASK)
         {
-            PlayerController target = collider.gameObject?.GetComponentMust<PlayerController>();
+            PlayController target = collider.gameObject?.GetComponentMust<PlayController>();
             target.hp -= Random.RandomRange(minDamage, maxDamage);
             Debug.Log($"가시 공격 플레이어 hp = {target.hp}");
         }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4715160718270386991}
   - component: {fileID: 4715160718270386990}
   - component: {fileID: 3961297245060194795}
+  - component: {fileID: 672324565846002398}
   m_Layer: 0
   m_Name: BigWoodenBullet
   m_TagString: Untagged
@@ -118,3 +119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e549601f016914ca962c7923a1699b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &672324565846002398
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4715160718270386989}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.40625

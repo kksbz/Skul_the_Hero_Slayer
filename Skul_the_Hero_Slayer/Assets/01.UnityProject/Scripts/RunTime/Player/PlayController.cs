@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayController : MonoBehaviour
 {
     private Rigidbody2D playerRig = default;
     private AudioSource playerAudio = default;

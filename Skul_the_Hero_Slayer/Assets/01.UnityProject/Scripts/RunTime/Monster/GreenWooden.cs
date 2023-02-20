@@ -7,6 +7,7 @@ public class GreenWooden : Monster
     private MonsterController monsterController;
     public MonsterData monsterData;
     private Animator greenWoodenAni;
+    private Vector3 localScale;
 
     void Awake()
     {
@@ -30,9 +31,31 @@ public class GreenWooden : Monster
             //투사체의 위치를 타겟위치로 설정
             thornAttack.gameObject.transform.position = monsterController.monster.tagetSearchRay.hit.transform.position;
             //투사체의 부모가 자신임을 알려주기위한 처리
-            thornAttack.GetComponent<ThornAttack>().Init(this);
+            thornAttack.GetComponent<GreenWoodenAttackB>().Init(this);
         }
     } //AttackA
+
+    //타겟을 바라보는 방향전환 함수
+    private void lookTarget()
+    {
+        Vector3 targetPos = monsterController.monster.tagetSearchRay.hit.transform.position;
+        //타겟과 나의 거리를 노멀라이즈하여 타겟의 방향구함
+        Vector3 targetDirection = (targetPos - monsterController.monster.transform.position).normalized;
+        localScale = monsterController.monster.transform.localScale;
+        //targetDirection.x의 값이 0보다 작으면 왼쪽, 크면 오른쪽
+        if (targetDirection.x > 0)
+        {
+            localScale = new Vector3(1, localScale.y, localScale.z);
+            monsterController.monster.groundCheckRay._isRight = true;
+            monsterController.monster.transform.localScale = localScale;
+        }
+        else if (targetDirection.x < 0)
+        {
+            localScale = new Vector3(-1, localScale.y, localScale.z);
+            monsterController.monster.groundCheckRay._isRight = false;
+            monsterController.monster.transform.localScale = localScale;
+        }
+    } //lookTarget
 
     //공격시 투사체가 사라질 때 까지 특정모션에서 대기하는 함수
     public void PauseAni()
@@ -56,11 +79,12 @@ public class GreenWooden : Monster
         yield return new WaitForSeconds(2f);
         //2초후 현재 상태가 공격이 아니라면 코루틴 종료 => 코루틴들어오고 상태가 변했을 경우 밑에 공격모션을 취소하기 위한 예외처리
         greenWoodenAni.SetBool("isIdle", false);
-        if(monsterController.enumState != MonsterController.MonsterState.ATTACK)
+        if (monsterController.enumState != MonsterController.MonsterState.ATTACK)
         {
             Debug.Log($"2초후 상태{monsterController.enumState}");
             yield break;
         }
+        lookTarget();
         greenWoodenAni.SetBool("isAttackA", true);
     } //AttackDelay
 }

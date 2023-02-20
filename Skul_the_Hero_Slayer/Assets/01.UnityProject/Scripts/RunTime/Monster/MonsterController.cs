@@ -27,11 +27,13 @@ public class MonsterController : MonoBehaviour
         IMonsterState move = new MonsterMove();
         IMonsterState search = new TagetSearch();
         IMonsterState attack = new MonsterAttack();
+        IMonsterState dead = new MonsterDead();
         //각 상태를 딕셔너리로 저장
         dicState.Add(MonsterState.IDLE, idle);
         dicState.Add(MonsterState.MOVE, move);
         dicState.Add(MonsterState.SEARCH, search);
         dicState.Add(MonsterState.ATTACK, attack);
+        dicState.Add(MonsterState.DEAD, dead);
 
         //입력받은 상태를 처리해 줄 StateMachine 초기화
         stateMachine = new StateMachine(idle, this);
@@ -40,6 +42,11 @@ public class MonsterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //몬스터의 hp가 0보다 작거나 같으면 Dead상태
+        if(monster.hp <= 0)
+        {
+            stateMachine.SetState(dicState[MonsterState.DEAD]);
+        }
         //몬스터의 탐색범위에 타겟이 없고 Move상태가 아닐경우
         if (monster.tagetSearchRay.hit == null && enumState != MonsterState.MOVE)
         {
@@ -76,10 +83,4 @@ public class MonsterController : MonoBehaviour
     {
         StartCoroutine(func);
     } //CoroutineDeligate
-
-    //코루틴을 대신 종료시켜줄 함수
-    public void StopCoroutineDeligate(IEnumerator func)
-    {
-        StopCoroutine(func);
-    } //StopCoroutineDeligate
 }

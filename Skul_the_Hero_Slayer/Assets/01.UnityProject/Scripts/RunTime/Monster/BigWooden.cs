@@ -9,7 +9,7 @@ public class BigWooden : Monster
     private Animator bigWoodenAni;
     private RaycastHit2D hit; //AttackA 공격 처리 변수
     private GameObject meleeEffectObj; //AttackA 공격이펙트 처리 변수
-    
+
     void Awake()
     {
         monsterController = gameObject.GetComponentMust<MonsterController>();
@@ -31,9 +31,9 @@ public class BigWooden : Monster
         Vector2 attackArea = new Vector2(3f, 2f);
         //Boxcast로 피격처리
         hit = Physics2D.BoxCast(transform.position, attackArea, 0f, Vector3.down, 0.5f, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
-            PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
+            PlayController target = hit.collider.gameObject.GetComponentMust<PlayController>();
             int minDamage = monsterController.monster.minDamage;
             int maxDamage = monsterController.monster.maxDamage;
             target.hp -= Random.RandomRange(minDamage, maxDamage);
@@ -70,35 +70,65 @@ public class BigWooden : Monster
     //공격애니메이션이 종료되면 코루틴 실행
     public void ExitAttack()
     {
-        StartCoroutine(AttackDelay());
+        //현재 진행중인 애니메이션의 이름이 AttackA면 AttackADelay 코루틴 실행 아니면 AttackBDelay실행
+        if (bigWoodenAni.GetCurrentAnimatorStateInfo(0).IsName("AttackA"))
+        {
+            StartCoroutine(AttackADelay());
+        }
+        else
+        {
+            StartCoroutine(AttackBDelay());
+        }
     } //ExitAttack
 
-    //공격딜레이 정하는 코루틴 함수
-    private IEnumerator AttackDelay()
+    //타겟과의 거리로 공격타입을 변경하는 함수
+    private void ChageAttackType()
     {
-        //공격딜레이 중에는 idel모션 처리
-        bigWoodenAni.SetBool("isAttackA", false);
-        bigWoodenAni.SetBool("isAttackB", false);
-        bigWoodenAni.SetBool("isIdle", true);
-        yield return new WaitForSeconds(3f);
-        bigWoodenAni.SetBool("isIdle", false);
-        //2초후 현재 상태가 공격이 아니라면 코루틴 종료 => 코루틴들어오고 상태가 변했을 경우 밑에 공격모션을 취소하기 위한 예외처리
-        if(monsterController.enumState != MonsterController.MonsterState.ATTACK)
-        {
-            Debug.Log($"2초후 상태{monsterController.enumState}");
-            yield break;
-        }
-
         Vector3 targetPos = monsterController.monster.tagetSearchRay.hit.transform.position;
         float distance = Vector2.Distance(targetPos, monsterController.monster.transform.position);
         //타겟과 자신의 거리가 근접공격거리 보다 작거나같으면 AttackA, 크면 AttackB 실행
         if (distance <= monsterController.monster.meleeAttackRange)
         {
-            monsterController.monster.monsterAni.SetBool("isAttackA", true);
+            bigWoodenAni.SetBool("isAttackA", true);
         }
-        else
+        else if (distance > monsterController.monster.meleeAttackRange)
         {
-            monsterController.monster.monsterAni.SetBool("isAttackB", true);
+            bigWoodenAni.SetBool("isAttackB", true);
         }
+    } //ChageAttackType
+
+    //AttackA 공격딜레이 정하는 코루틴 함수
+    private IEnumerator AttackADelay()
+    {
+        //공격딜레이 중에는 idel모션 처리
+        bigWoodenAni.SetBool("isAttackA", false);
+        bigWoodenAni.SetBool("isIdle", true);
+        yield return new WaitForSeconds(2.5f);
+        bigWoodenAni.SetBool("isIdle", false);
+        //2.5초후 현재 상태가 공격이 아니라면 코루틴 종료
+        //=> 코루틴들어오고 상태가 변했을 경우 밑에 공격모션을 취소하기 위한 예외처리
+        if (monsterController.enumState != MonsterController.MonsterState.ATTACK)
+        {
+            yield break;
+        }
+        ChageAttackType();
     } //AttackDelay
+
+    //AttackB 공격딜레이 정하는 코루틴 함수
+    private IEnumerator AttackBDelay()
+    {
+        Debug.Log("코루틴B들옴?");
+        bigWoodenAni.SetBool("isAttackB", false);
+        bigWoodenAni.SetBool("isIdle", true);
+        yield return new WaitForSeconds(4f);
+        Debug.Log("코루틴B 5초후 들옴?");
+        bigWoodenAni.SetBool("isIdle", false);
+        //4초후 현재 상태가 공격이 아니라면 코루틴 종료
+        //=> 코루틴들어오고 상태가 변했을 경우 밑에 공격모션을 취소하기 위한 예외처리
+        if (monsterController.enumState != MonsterController.MonsterState.ATTACK)
+        {
+            yield break;
+        }
+        ChageAttackType();
+    } //AttackBDelay
 }

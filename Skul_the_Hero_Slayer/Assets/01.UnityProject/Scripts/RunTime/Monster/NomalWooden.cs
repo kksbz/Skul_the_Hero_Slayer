@@ -32,7 +32,7 @@ public class NomalWooden : Monster
         hit = Physics2D.BoxCast(transform.position, attackArea, 0f, attackdirection, 1f, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
         if(hit.collider != null)
         {
-            PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
+            PlayController target = hit.collider.gameObject.GetComponentMust<PlayController>();
             int minDamage = monsterController.monster.minDamage;
             int maxDamage = monsterController.monster.maxDamage;
             target.hp -= Random.RandomRange(minDamage, maxDamage);
