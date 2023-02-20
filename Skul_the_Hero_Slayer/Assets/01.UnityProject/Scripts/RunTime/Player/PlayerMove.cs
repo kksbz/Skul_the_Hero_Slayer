@@ -6,6 +6,7 @@ public class PlayerMove : IPlayerState
 {
     private PlayerController pController;
     private Vector3 localScale; //바라보는방향 전환 변수
+    private Vector3 direction;
     public void StateEnter(PlayerController _pController)
     {
         this.pController = _pController;
@@ -27,19 +28,23 @@ public class PlayerMove : IPlayerState
         pController.player.playerAni.SetBool("isWalk", false);
     }
 
+    //입력하는 키 방향으로 이동 및 방향 바꾸는 함수
     private void MoveAndDirection()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
         {
-            pController.player.transform.Translate(Vector3.right * pController.player.moveSpeed * Time.deltaTime);
-            localScale = new Vector3(1, localScale.y, localScale.z);
+            if (Input.GetKey(KeyCode.RightArrow))
+            {
+                localScale = new Vector3(1, localScale.y, localScale.z);
+                direction = Vector3.right;
+            }
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                localScale = new Vector3(-1, localScale.y, localScale.z);
+                direction = Vector3.left;
+            }
             pController.player.transform.localScale = localScale;
+            pController.player.transform.Translate(direction * pController.player.moveSpeed * Time.deltaTime);
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            pController.player.transform.Translate(Vector3.left * pController.player.moveSpeed * Time.deltaTime);
-            localScale = new Vector3(-1, localScale.y, localScale.z);
-            pController.player.transform.localScale = localScale;
-        }
-    } //Move
+    } //MoveAndDirection
 }

@@ -31,7 +31,7 @@ public class GreenWooden : Monster
             //투사체의 위치를 타겟위치로 설정
             thornAttack.gameObject.transform.position = monsterController.monster.tagetSearchRay.hit.transform.position;
             //투사체의 부모가 자신임을 알려주기위한 처리
-            thornAttack.GetComponent<GreenWoodenAttackB>().Init(this);
+            thornAttack.GetComponent<GreenWoodenAttackA>().Init(this);
         }
     } //AttackA
 

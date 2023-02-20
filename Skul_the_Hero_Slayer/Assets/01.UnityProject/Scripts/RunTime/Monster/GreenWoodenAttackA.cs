@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GreenWoodenAttackB : MonoBehaviour
+public class GreenWoodenAttackA : MonoBehaviour
 {
     private GreenWooden parentWooden;
     private int minDamage;
@@ -12,7 +12,6 @@ public class GreenWoodenAttackB : MonoBehaviour
     public void Init(GreenWooden parent)
     {
         parentWooden = parent;
-        gameObject.transform.parent = parentWooden.transform;
         minDamage = parentWooden.gameObject.GetComponentMust<MonsterController>().monster.minDamage;
         maxDamage = parentWooden.gameObject.GetComponentMust<MonsterController>().monster.maxDamage;
     } //Init

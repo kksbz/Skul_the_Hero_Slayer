@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerController : MonoBehaviour
 {
     public enum PlayerState
@@ -33,14 +32,15 @@ public class PlayerController : MonoBehaviour
         IPlayerState move = new PlayerMove();
         IPlayerState jump = new PlayerJump();
         IPlayerState dash = new PlayerDash();
+        IPlayerState attack = new PlayerAttack();
 
         dicState.Add(PlayerState.IDLE, idle);
         dicState.Add(PlayerState.MOVE, move);
         dicState.Add(PlayerState.JUMP, jump);
         dicState.Add(PlayerState.DASH, dash);
+        dicState.Add(PlayerState.ATTACK, attack);
         pStateMachine = new PStateMachine(idle, this);
     } //Start
-
     void FixedUpdate()
     {
         pStateMachine.DoFixedUpdate();
@@ -48,13 +48,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && enumState != PlayerState.MOVE)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGround == true)
         {
             pStateMachine.SetState(dicState[PlayerState.MOVE]);
-        }
-        else if (Input.anyKey == false)
-        {
-            pStateMachine.SetState(dicState[PlayerState.IDLE]);
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -64,6 +60,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z) && canDash == true)
         {
             pStateMachine.SetState(dicState[PlayerState.DASH]);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            pStateMachine.SetState(dicState[PlayerState.ATTACK]);
+        }
+        if (Input.anyKey == false&&isGround == true)
+        {
+            pStateMachine.SetState(dicState[PlayerState.IDLE]);
         }
         pStateMachine.DoUpdate();
     } //Update

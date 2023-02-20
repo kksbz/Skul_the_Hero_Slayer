@@ -28,9 +28,9 @@ public class BigWooden : Monster
     public override void AttackA()
     {
         StartCoroutine(MeleeEffectOnOff());
-        Vector2 attackArea = new Vector2(3f, 2f);
+        Vector2 attackArea = new Vector2(8f, 1.5f);
         //Boxcast로 피격처리
-        hit = Physics2D.BoxCast(transform.position, attackArea, 0f, Vector3.down, 0.5f, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
+        hit = Physics2D.BoxCast(transform.position, attackArea, 0f, Vector3.down, 1f, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
         if (hit.collider != null)
         {
             PlayController target = hit.collider.gameObject.GetComponentMust<PlayController>();
@@ -63,7 +63,7 @@ public class BigWooden : Monster
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position + (Vector3.down * 0.5f), new Vector2(3f, 2f));
+        Gizmos.DrawWireCube(transform.position + (Vector3.down * 1f), new Vector2(8f, 1.5f));
     } //OnDrawGizmos
 
 

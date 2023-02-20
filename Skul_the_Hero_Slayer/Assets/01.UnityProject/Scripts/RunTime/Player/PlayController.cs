@@ -80,7 +80,10 @@ public class PlayController : MonoBehaviour
         {
             return;
         }
-
+        if(canDash == false)
+        {
+            return;
+        }
         //애니메이터 연결을 위한 bool값 처리
         if (Input.GetAxisRaw("Horizontal") == default)
         {
@@ -140,6 +143,7 @@ public class PlayController : MonoBehaviour
         playerRig.velocity = new Vector2(transform.localScale.x * dashForce, 0f);
         yield return new WaitForSeconds(dashTime);
         playerRig.gravityScale = originalGravity;
+        playerRig.velocity = Vector2.zero;
         isDash = false;
         playerAni.SetBool("isDash", isDash);
         //2단 대쉬

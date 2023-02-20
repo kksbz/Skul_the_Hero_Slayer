@@ -24,6 +24,18 @@ public class Player : MonoBehaviour
         this.playerAni      = gameObject.GetComponentMust<Animator>();
     } //InitMonsterData
 
+    //플레이어 AttackA
+    public virtual void AttackA()
+    {
+        /*Do Nothing*/
+    } //AttackA
+
+    //플레이어 AttackB
+    public virtual void AttackB()
+    {
+        /*Do Nothing*/
+    } //AttackB
+
     //플레이어 SkillA
     public virtual void SkillA()
     {
