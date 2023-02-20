@@ -10,7 +10,6 @@ public class PlayerIdle : IPlayerState
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.IDLE;
         Debug.Log($"아이들 들옴? {pController.enumState}");
-        pController.player.playerAni.SetBool("isIdle", true);
     }
     public void StateFixedUpdate()
     {

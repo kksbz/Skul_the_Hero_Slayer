@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Player player;
     public int playerHp;
     public int playerMaxHp = 100;
+    public bool isGround = true;
     public PlayerState enumState = PlayerState.IDLE;
     private PStateMachine _pStateMachine;
     public PStateMachine pStateMachine { get; private set; }
@@ -43,18 +44,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGround == true)
         {
-            pStateMachine.SetState(dicState[PlayerState.MOVE]);
+            
+                pStateMachine.SetState(dicState[PlayerState.MOVE]);
+            
         }
-        else
+        else if(isGround == true)
         {
             pStateMachine.SetState(dicState[PlayerState.IDLE]);
         }
-        if(Input.GetKey(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             pStateMachine.SetState(dicState[PlayerState.JUMP]);
         }
         pStateMachine.DoUpdate();
     } //Update
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGround = true;
+        }
+    } //OnCollisionEnter2D
 }
