@@ -53,7 +53,7 @@ public class PlayerJump : IPlayerState
             }
         }
     } //JumpAndMove
-    
+
     //점프하는 함수
     private void Jump()
     {

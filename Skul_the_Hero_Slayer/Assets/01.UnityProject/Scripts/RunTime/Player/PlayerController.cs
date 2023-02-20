@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public int playerHp;
     public int playerMaxHp = 100;
     public bool isGround = true;
+    public bool canDash = true;
     public PlayerState enumState = PlayerState.IDLE;
     private PStateMachine _pStateMachine;
     public PStateMachine pStateMachine { get; private set; }
@@ -31,9 +32,12 @@ public class PlayerController : MonoBehaviour
         IPlayerState idle = new PlayerIdle();
         IPlayerState move = new PlayerMove();
         IPlayerState jump = new PlayerJump();
+        IPlayerState dash = new PlayerDash();
+
         dicState.Add(PlayerState.IDLE, idle);
         dicState.Add(PlayerState.MOVE, move);
         dicState.Add(PlayerState.JUMP, jump);
+        dicState.Add(PlayerState.DASH, dash);
         pStateMachine = new PStateMachine(idle, this);
     } //Start
 
@@ -44,13 +48,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGround == true)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && enumState != PlayerState.MOVE)
         {
-            
-                pStateMachine.SetState(dicState[PlayerState.MOVE]);
-            
+            pStateMachine.SetState(dicState[PlayerState.MOVE]);
         }
-        else if(isGround == true)
+        else if (Input.anyKey == false)
         {
             pStateMachine.SetState(dicState[PlayerState.IDLE]);
         }
@@ -58,8 +60,19 @@ public class PlayerController : MonoBehaviour
         {
             pStateMachine.SetState(dicState[PlayerState.JUMP]);
         }
+
+        if (Input.GetKeyDown(KeyCode.Z) && canDash == true)
+        {
+            pStateMachine.SetState(dicState[PlayerState.DASH]);
+        }
         pStateMachine.DoUpdate();
     } //Update
+
+    //interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
+    public void CoroutineDeligate(IEnumerator func)
+    {
+        StartCoroutine(func);
+    } //CoroutineDeligate
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
