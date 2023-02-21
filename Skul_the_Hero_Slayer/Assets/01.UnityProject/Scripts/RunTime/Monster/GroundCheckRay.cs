@@ -7,11 +7,6 @@ public class GroundCheckRay : MonoBehaviour
     public RaycastHit2D hit;
     [HideInInspector]
     public bool _isRight = true; //방향전환 체크하는 변수
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

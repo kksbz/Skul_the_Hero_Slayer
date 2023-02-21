@@ -9,6 +9,7 @@ public static partial class GData
     public const string MAIN_UI_OBJ_NAME = "MainUI";
     public const string GROUND_LAYER_MASK = "Ground";
     public const string PLAYER_LAYER_MASK = "Player";
+    public const string ENEMY_LAYER_MASK = "Enemy";
     public const string CASTLELOBBY_SCENE_NAME = "01.CastleLobby";
     public const string DUNGEONLOBBY_SCENE_NAME = "02.DungeonLobby";
 }

@@ -9,18 +9,18 @@ public class PlayerIdle : IPlayerState
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.IDLE;
-        Debug.Log($"아이들 들옴? {pController.enumState}");
-    }
+        // Debug.Log($"아이들 들옴? {pController.enumState}");
+    } //StateEnter
     public void StateFixedUpdate()
     {
         /*Do Nothing*/
-    }
+    } //StateFixedUpdate
     public void StateUpdate()
     {
         /*Do Nothing*/
-    }
+    } //StateUpdate
     public void StateExit()
     {
         /*Do Nothing*/
-    }
+    } //StateExit
 }

@@ -22,7 +22,7 @@ public class GreenWoodenAttackA : MonoBehaviour
         //BoxCollider2D를 꺼둔상태에서 애니메이션 트리거가 발동하면 BoxCollider2D를 켜서 트리거엔터발동판정
         gameObject.GetComponentMust<BoxCollider2D>().enabled = true;
     } //OnAttack
-    
+
     //공격이 끝나면 부모에게 공격이 끝났다고 알려주는 함수
     public void ExitAttack()
     {
@@ -34,11 +34,11 @@ public class GreenWoodenAttackA : MonoBehaviour
     //가시의 Collider에 타겟이 충돌할 때
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.tag == GData.PLAYER_LAYER_MASK)
+        if (collider.tag == GData.PLAYER_LAYER_MASK)
         {
-            PlayController target = collider.gameObject?.GetComponentMust<PlayController>();
-            target.hp -= Random.RandomRange(minDamage, maxDamage);
-            Debug.Log($"가시 공격 플레이어 hp = {target.hp}");
+            PlayerController target = collider.gameObject?.GetComponentMust<PlayerController>();
+            target.playerHp -= Random.RandomRange(minDamage, maxDamage);
+            Debug.Log($"가시 공격 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
         }
     } //OnTriggerEnter2D
 }

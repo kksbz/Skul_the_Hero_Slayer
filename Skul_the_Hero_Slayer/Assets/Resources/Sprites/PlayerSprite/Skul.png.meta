@@ -809,6 +809,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Skul_SkillA_2
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 740
+        width: 66
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b262732999c6e409242e2e5d055bfc
+      internalID: -1000863198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul_SkillA_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 741
+        width: 62
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba928397fa29cf142af9978d4aee6d2e
+      internalID: 1897423646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul_SkillA_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 750
+        width: 61
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114e9ce4b238c3b458aaea5b9a1edde1
+      internalID: -1970999786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skul_SkillA_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 746
+        width: 64
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd1621868bd19a43b098d3e349f5f09
+      internalID: -1501448152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -830,13 +914,17 @@ TextureImporter:
       JumpAttack2: 1040337437
       Jump2: 341543169
       AttackA_3: -1436266428
+      Skul_SkillA_3: 1897423646
       Walk3: 182982643
       Walk7: -741354758
       AttackB_4: 1717255983
+      Skul_SkillA_2: -1000863198
       AttackB_1: -1062718641
       Walk6: 1686796582
       JumpAttack3: -795999471
       FallRepict2: 2032601459
+      Skul_SkillA_4: -1501448152
+      Skul_SkillA_1: -1970999786
       FallRepict3: -891269224
       Idle3: 2137370776
       Walk4: 501607966

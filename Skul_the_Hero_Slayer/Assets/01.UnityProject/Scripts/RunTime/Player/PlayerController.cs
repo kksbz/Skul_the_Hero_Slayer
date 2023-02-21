@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public int playerMaxHp = 100;
     public bool isGround = true;
     public bool canDash = true;
+    public PlayerGroundCheck isGroundRay;
     public PlayerState enumState = PlayerState.IDLE;
     private PStateMachine _pStateMachine;
     public PStateMachine pStateMachine { get; private set; }
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerHp = playerMaxHp;
+        isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
         IPlayerState idle = new PlayerIdle();
         IPlayerState move = new PlayerMove();
         IPlayerState jump = new PlayerJump();
@@ -48,9 +50,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGround == true)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGroundRay.hit.collider != null)
         {
-            pStateMachine.SetState(dicState[PlayerState.MOVE]);
+            if (enumState != PlayerState.DASH)
+            {
+                // if (player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+                {
+                    pStateMachine.SetState(dicState[PlayerState.MOVE]);
+                }
+            }
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -65,9 +73,13 @@ public class PlayerController : MonoBehaviour
         {
             pStateMachine.SetState(dicState[PlayerState.ATTACK]);
         }
-        if (Input.anyKey == false&&isGround == true)
+        if (Input.anyKey == false && isGroundRay.hit.collider != null && enumState != PlayerState.DASH)
         {
             pStateMachine.SetState(dicState[PlayerState.IDLE]);
+        }
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            player.SkillA();
         }
         pStateMachine.DoUpdate();
     } //Update
@@ -80,9 +92,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            isGround = true;
-        }
+
     } //OnCollisionEnter2D
 }

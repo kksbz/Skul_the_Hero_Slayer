@@ -21,7 +21,7 @@ public class NomalWooden : Monster
         monsterController.monster = (Monster)(this as Monster);
         nomalWoodenAni = gameObject.GetComponent<Animator>();
     } //Awake
-    
+
     //공격하는 함수(공격을 애니메이션 이벤트로 처리함)
     public override void AttackA()
     {
@@ -30,16 +30,14 @@ public class NomalWooden : Monster
         attackdirection = new Vector3(direction, 0f).normalized;
         //Boxcast로 피격처리
         hit = Physics2D.BoxCast(transform.position, attackArea, 0f, attackdirection, 1f, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
-        if(hit.collider != null)
+        if (hit.collider != null)
         {
-            PlayController target = hit.collider.gameObject.GetComponentMust<PlayController>();
-            int minDamage = monsterController.monster.minDamage;
-            int maxDamage = monsterController.monster.maxDamage;
-            target.hp -= Random.RandomRange(minDamage, maxDamage);
-            Debug.Log($"노말우든 공격! 플레이어 hp = {target.hp}");
+            PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
+            target.playerHp -= Random.RandomRange(monsterData.MinDamage, monsterData.MaxDamage);
+            Debug.Log($"노말우든 공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
         }
     } //AttackA
-    
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
@@ -61,7 +59,7 @@ public class NomalWooden : Monster
         yield return new WaitForSeconds(2f);
         nomalWoodenAni.SetBool("isIdle", false);
         //2초후 현재 상태가 공격이 아니라면 코루틴 종료 => 코루틴들어오고 상태가 변했을 경우 밑에 공격모션을 취소하기 위한 예외처리
-        if(monsterController.enumState != MonsterController.MonsterState.ATTACK)
+        if (monsterController.enumState != MonsterController.MonsterState.ATTACK)
         {
             Debug.Log($"2초후 상태{monsterController.enumState}");
             yield break;

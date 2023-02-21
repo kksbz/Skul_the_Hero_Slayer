@@ -48,4 +48,5 @@
                     Move,Jump,Idle상태 구현완료<br/>
 2023-02-20 / v0.1.9 PlayerController Dash구현<br/>
             Summary :   Dash와 점프 이동 상태 전환 조건 설정해야됨<br/>
-2023-02-20 / v0.2.0 work on Asset
+2023-02-20 / v0.2.0 work on Asset<br/>
+2023-02-21 / v0.2.1 work on Player Attack and SkillA<br/>

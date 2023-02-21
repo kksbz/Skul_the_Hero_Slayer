@@ -33,11 +33,9 @@ public class BigWooden : Monster
         hit = Physics2D.BoxCast(transform.position, attackArea, 0f, Vector3.down, 1f, LayerMask.GetMask(GData.PLAYER_LAYER_MASK));
         if (hit.collider != null)
         {
-            PlayController target = hit.collider.gameObject.GetComponentMust<PlayController>();
-            int minDamage = monsterController.monster.minDamage;
-            int maxDamage = monsterController.monster.maxDamage;
-            target.hp -= Random.RandomRange(minDamage, maxDamage);
-            Debug.Log($"빅우든 근접공격! 플레이어 hp = {target.hp}");
+            PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
+            target.playerHp -= Random.RandomRange(monsterData.MinDamage, monsterData.MaxDamage);
+            Debug.Log($"빅우든 근접공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
         }
     } //AttackA
 

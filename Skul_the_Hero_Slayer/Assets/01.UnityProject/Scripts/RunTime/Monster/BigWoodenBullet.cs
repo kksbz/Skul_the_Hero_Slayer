@@ -27,7 +27,7 @@ public class BigWoodenBullet : MonoBehaviour
     void Update()
     {
         //타겟에 맞았으면 속도를 1로 변경해서 자연스럽게 사라지게하는 처리
-        if(isHitTarget == true)
+        if (isHitTarget == true)
         {
             speed = 1f;
         }
@@ -53,7 +53,7 @@ public class BigWoodenBullet : MonoBehaviour
             }
         }
     } //SetupDirection
-    
+
     //일정거리 날아가면 bullet의 상태를 isHit 상태로 전환하는 함수
     private void IsHitbullet()
     {
@@ -74,11 +74,11 @@ public class BigWoodenBullet : MonoBehaviour
     {
         if (collider.tag == GData.PLAYER_LAYER_MASK)
         {
-            PlayController target = collider.gameObject?.GetComponentMust<PlayController>();
-            target.hp -= Random.RandomRange(minDamage, maxDamage);
+            PlayerController target = collider.gameObject?.GetComponentMust<PlayerController>();
+            target.playerHp -= Random.RandomRange(minDamage, maxDamage);
             bulletAni.SetBool("isHit", true);
             isHitTarget = true;
-            Debug.Log($"빅우든 원거리공격! 플레이어 hp = {target.hp}");
+            Debug.Log($"빅우든 원거리공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
         }
     } //OnTriggerEnter2D
 }
