@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         // playerSprite = basicSkulObj.GetComponentMust<SpriteRenderer>();
         // playerAni.runtimeAnimatorController = player.playerAni.runtimeAnimatorController;
         //기본 스컬의 런타임애니컨트롤러를 저장 => 스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
+        gameObject.AddComponent<Skul>();
         BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
         // InitPlayer();
         isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
@@ -104,6 +105,10 @@ public class PlayerController : MonoBehaviour
         {
             player.SkillB();
         }
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            ChangePlayer();
+        }
         pStateMachine.DoUpdate();
     } //Update
 
@@ -114,9 +119,16 @@ public class PlayerController : MonoBehaviour
         playerHp = playerMaxHp;
     } //InitPlayer
 
+    //플레이어 스컬교체하는 함수
     private void ChangePlayer()
     {
-
+        GetComponent<Skul>().enabled        = !(GetComponent<Skul>().enabled);
+        if(GetComponent<MageSkul>() == null) 
+        {
+            gameObject.AddComponent<MageSkul>();
+            return;
+        }
+        GetComponent<MageSkul>().enabled    = !(GetComponent<Skul>().enabled);
     } //ChangePlayer
 
     //interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수

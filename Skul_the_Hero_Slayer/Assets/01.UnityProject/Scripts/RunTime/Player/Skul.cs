@@ -11,7 +11,7 @@ public class Skul : Player
     private GameObject skillAObj;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         //Action에 SkillA를 써서 런타임컨트롤러가 SkulHeadless로 바뀌고 해골을 줍지 못했을 경우 처리하기 위한 내용 저장
         onHeadBack += () => { playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC; };
@@ -21,6 +21,11 @@ public class Skul : Player
         playerData = Resources.Load("SkulData") as PlayerData;
         InitPlayerData(playerData);
         playerController.player = (Player)(this as Player);
+        Debug.Log("Skul");
+    }
+    void Start()
+    {
+
     }
 
     public override void AttackA()
