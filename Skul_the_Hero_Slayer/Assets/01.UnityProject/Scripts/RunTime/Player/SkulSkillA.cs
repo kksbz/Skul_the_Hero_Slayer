@@ -46,12 +46,22 @@ public class SkulSkillA : MonoBehaviour
             tagetObj = GData.ENEMY_LAYER_MASK;
         }
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, Vector2.zero, 0f, LayerMask.GetMask(tagetObj));
-        if (hit.collider != null && isHit == false)
+        if (hit.collider != null)
         {
-            MonsterController target = hit.collider.gameObject?.GetComponentMust<MonsterController>();
-            target.monster.hp -= Random.RandomRange(20, 25);
-            Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
-            isHit = true;
+            if (tagetObj == GData.ENEMY_LAYER_MASK)
+            {
+                MonsterController target = hit.collider.gameObject?.GetComponentMust<MonsterController>();
+                target.monster.hp -= Random.RandomRange(20, 25);
+                Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
+                isHit = true;
+            }
+            if (tagetObj == GData.PLAYER_LAYER_MASK)
+            {
+                PlayerController playerController = hit.collider.gameObject?.GetComponentMust<PlayerController>();
+                playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+                Destroy(gameObject);
+                return;
+            }
             StartCoroutine(DestroySkul());
         }
     } //DetectTaget
@@ -79,11 +89,16 @@ public class SkulSkillA : MonoBehaviour
     //Hit되거나 최대 사거리에 도달했을 경우 4초뒤에 파괴하는 코루틴 함수
     private IEnumerator DestroySkul()
     {
+        if (gameObject == null)
+        {
+            yield break;
+        }
         speed = 0;
         skillA_Rb.gravityScale = originalGravity;
         skillA_Ani.StartPlayback();
-        Destroy(gameObject, 4f);
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
+        parentObj.onHeadBack?.Invoke();
+        Destroy(gameObject);
         Debug.Log("해골 파괴됨");
     } //DestroySkul
 }

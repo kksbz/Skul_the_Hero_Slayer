@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: SkulData
   m_EditorClassIdentifier: 
   playerName: Player
-  playerHp: 100
-  playerMaxHp: 100
   minDamage: 10
   maxDamage: 15
   moveSpeed: 5
+  controller: {fileID: 9100000, guid: 9bb02f0be213d6949b537cc1109a7086, type: 2}

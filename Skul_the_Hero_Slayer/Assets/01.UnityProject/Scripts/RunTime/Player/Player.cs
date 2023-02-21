@@ -15,13 +15,14 @@ public class Player : MonoBehaviour
     //플레이어데이터 초기화하는 함수
     public void InitPlayerData(PlayerData data)
     {
-        this._name          = data.name;
-        this.minDamage      = data.MinDamage;
-        this.maxDamage      = data.MaxDamage;
-        this.moveSpeed      = data.MoveSpeed;
-        this.playerRb       = gameObject.GetComponentMust<Rigidbody2D>();
-        this.playerAudio    = gameObject.GetComponentMust<AudioSource>();
-        this.playerAni      = gameObject.GetComponentMust<Animator>();
+        this._name = data.name;
+        this.minDamage = data.MinDamage;
+        this.maxDamage = data.MaxDamage;
+        this.moveSpeed = data.MoveSpeed;
+        this.playerRb = gameObject.GetComponentMust<Rigidbody2D>();
+        this.playerAudio = gameObject.GetComponentMust<AudioSource>();
+        this.playerAni = gameObject.GetComponentMust<Animator>();
+        this.playerAni.runtimeAnimatorController = data.Controller;
     } //InitMonsterData
 
     //플레이어 AttackA
