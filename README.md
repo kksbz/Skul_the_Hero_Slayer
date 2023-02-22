@@ -52,3 +52,4 @@
 2023-02-21 / v0.2.1 work on Player Attack and SkillA<br/>
 2023-02-21 / v0.2.2 Player Skul SkillA,B setup<br/>
 2023-02-22 / v0.2.3 Player Swap Skul prototype<br/>
+2023-02-22 / v0.2.4 EntSkul Ani,monsterPool setup<br/>

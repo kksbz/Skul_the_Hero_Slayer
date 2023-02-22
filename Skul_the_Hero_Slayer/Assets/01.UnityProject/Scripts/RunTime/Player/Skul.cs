@@ -10,7 +10,6 @@ public class Skul : Player
     public System.Action onHeadBack;
     private GameObject skillAObj;
 
-    // Start is called before the first frame update
     void OnEnable()
     {
         //Action에 SkillA를 써서 런타임컨트롤러가 SkulHeadless로 바뀌고 해골을 줍지 못했을 경우 처리하기 위한 내용 저장
@@ -23,12 +22,19 @@ public class Skul : Player
         playerController.player = (Player)(this as Player);
         Debug.Log("Skul");
     }
-    void Start()
-    {
-
-    }
 
     public override void AttackA()
+    {
+        AttackAandB();
+    } //AttackA
+
+    public override void AttackB()
+    {
+        AttackAandB();
+    } //AttackB
+
+    //공격A,B의 히트 판정 처리하는 함수
+    private void AttackAandB()
     {
         Vector2 attackArea = new Vector2(1.5f, 1.5f);
         //BoxcastAll로 Hit처리
@@ -42,12 +48,7 @@ public class Skul : Player
                 Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
             }
         }
-    } //AttackA
-
-    public override void AttackB()
-    {
-
-    } //AttackB
+    } //AttackAandB
 
     public override void SkillA()
     {

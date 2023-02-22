@@ -27,7 +27,7 @@ public class GreenWooden : Monster
         if (monsterController.monster.tagetSearchRay.hit != null)
         {
             //원거리 공격 => 투사체오브젝트를 생성
-            GameObject thornAttack = Instantiate(Resources.Load("Prefabs/GreenWooden_Thorn") as GameObject);
+            GameObject thornAttack = Instantiate(Resources.Load("Prefabs/Monster/GreenWooden_Thorn") as GameObject);
             //투사체의 위치를 타겟위치로 설정
             thornAttack.gameObject.transform.position = monsterController.monster.tagetSearchRay.hit.transform.position;
             //투사체의 부모가 자신임을 알려주기위한 처리
@@ -73,6 +73,10 @@ public class GreenWooden : Monster
     //공격딜레이 정하는 코루틴 함수
     private IEnumerator AttackDelay()
     {
+        if (gameObject == null)
+        {
+            yield break;
+        }
         //공격딜레이 중에는 idel모션 처리
         greenWoodenAni.SetBool("isAttackA", false);
         greenWoodenAni.SetBool("isIdle", true);

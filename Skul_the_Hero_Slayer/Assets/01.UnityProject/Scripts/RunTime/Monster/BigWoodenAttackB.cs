@@ -35,7 +35,7 @@ public class BigWoodenAttackB : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
-            GameObject bullet = Instantiate(Resources.Load("Prefabs/BigWoodenBullet") as GameObject);
+            GameObject bullet = Instantiate(Resources.Load("Prefabs/Monster/BigWoodenBullet") as GameObject);
             bullet.transform.parent = gameObject.transform;
             bullet.name = $"Bullet{i}";
             bullet.SetActive(false);

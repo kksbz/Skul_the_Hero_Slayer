@@ -18,7 +18,6 @@ public class PlayerJump : IPlayerState
         {
             jumpCount = 0;
         }
-        // pController.isGround = false;
         localScale = pController.player.transform.localScale;
     } //StateEnter
     public void StateFixedUpdate()
@@ -39,7 +38,7 @@ public class PlayerJump : IPlayerState
         //     jumpCount = 0;
         // }
         pController.player.playerAni.SetBool("isJump", false);
-        pController.player.playerAni.SetBool("isFallRepict", false);
+        pController.player.playerAni.SetBool("isFall", false);
     } //StateExit
 
     //JumpState 유지한채 입력 키 방향으로 이동하면서 바라보는 함수
@@ -70,7 +69,7 @@ public class PlayerJump : IPlayerState
         if (pController.player.playerRb.velocity.y < -1)
         {
             // Debug.Log(pController.player.playerRb.velocity.y);
-            pController.player.playerAni.SetBool("isFallRepict", true);
+            pController.player.playerAni.SetBool("isFall", true);
         }
     } //PlayerFall
 

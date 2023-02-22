@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [HideInInspector] public Rigidbody2D playerRb;
     [HideInInspector] public AudioSource playerAudio;
     [HideInInspector] public Animator playerAni;
+    [HideInInspector] private CapsuleCollider2D playerCollider;
+    [HideInInspector] public float groundCheckLength;
 
     //플레이어데이터 초기화하는 함수
     public void InitPlayerData(PlayerData data)
@@ -19,10 +21,13 @@ public class Player : MonoBehaviour
         this.minDamage = data.MinDamage;
         this.maxDamage = data.MaxDamage;
         this.moveSpeed = data.MoveSpeed;
+        this.groundCheckLength = data.GroundRayLength;
         this.playerRb = gameObject.GetComponentMust<Rigidbody2D>();
         this.playerAudio = gameObject.GetComponentMust<AudioSource>();
         this.playerAni = gameObject.GetComponentMust<Animator>();
         this.playerAni.runtimeAnimatorController = data.Controller;
+        this.playerCollider = gameObject.GetComponentMust<CapsuleCollider2D>();
+        this.playerCollider.size = new Vector2(data.ColliderSizeX, data.ColliderSizeY);
     } //InitMonsterData
 
     //플레이어 AttackA

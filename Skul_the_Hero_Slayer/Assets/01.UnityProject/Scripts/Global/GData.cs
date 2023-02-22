@@ -12,4 +12,6 @@ public static partial class GData
     public const string ENEMY_LAYER_MASK = "Enemy";
     public const string CASTLELOBBY_SCENE_NAME = "01.CastleLobby";
     public const string DUNGEONLOBBY_SCENE_NAME = "02.DungeonLobby";
+    public const string STAGE_1_SCENE_NAME = "03.Stage1";
+    public const string STAGE_2_SCENE_NAME = "04.Stage2";
 }

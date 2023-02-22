@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int monsterRemainingNumber = 0; //남은 몬스터 수
     private static GameManager instance = null;
     public static GameManager Instance
     {
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     } //Update
 
 }

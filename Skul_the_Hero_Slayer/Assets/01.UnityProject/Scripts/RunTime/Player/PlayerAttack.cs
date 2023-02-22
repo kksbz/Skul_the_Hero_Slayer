@@ -13,7 +13,7 @@ public class PlayerAttack : IPlayerState
         if (pController.isGroundRay.hit.collider != null)
         {
             Debug.Log("기본공격");
-            pController.player.playerAni.SetBool("isAttack", true);
+            pController.player.playerAni.SetBool("isAttackA", true);
         }
         else
         {
@@ -33,7 +33,8 @@ public class PlayerAttack : IPlayerState
     public void StateExit()
     {
         Debug.Log("공격종료");
-        pController.player.playerAni.SetBool("isAttack", false);
+        pController.player.playerAni.SetBool("isAttackA", false);
+        pController.player.playerAni.SetBool("isAttackB", false);
         pController.player.playerAni.SetBool("isJumpAttack", false);
         /*Do Nothing*/
     } //StateExit

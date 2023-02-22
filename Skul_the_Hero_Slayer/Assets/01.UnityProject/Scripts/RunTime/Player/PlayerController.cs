@@ -13,12 +13,6 @@ public class PlayerController : MonoBehaviour
         DEAD
     }; //PlayerState
 
-    public enum PlayerSkul
-    {
-        SKUL,
-        MAGE
-    }
-    public PlayerSkul currentSkul = PlayerSkul.SKUL;
     public Player player;
     public int playerHp;
     public int playerMaxHp = 100;
@@ -123,12 +117,12 @@ public class PlayerController : MonoBehaviour
     private void ChangePlayer()
     {
         GetComponent<Skul>().enabled        = !(GetComponent<Skul>().enabled);
-        if(GetComponent<MageSkul>() == null) 
+        if(GetComponent<EntSkul>() == null) 
         {
-            gameObject.AddComponent<MageSkul>();
+            gameObject.AddComponent<EntSkul>();
             return;
         }
-        GetComponent<MageSkul>().enabled    = !(GetComponent<Skul>().enabled);
+        GetComponent<EntSkul>().enabled    = !(GetComponent<Skul>().enabled);
     } //ChangePlayer
 
     //interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
