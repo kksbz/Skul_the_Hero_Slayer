@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SkulSkillA : MonoBehaviour
 {
-    public Skul parentObj;
-    private float speed = 7f;
-    private float range = 15f;
-    public float direction;
-    private float originalGravity;
-    private bool isHit = false;
+    public Skul parentObj; //부모오브젝트를 찾기 위한 변수
+    private float speed = 8f; //날아가는 속도
+    private float range = 15f; //최대 사거리
+    public float direction; //날아가는 방향 정할 변수
+    private float originalGravity; //날아가는 도중에는 중력 영향X하기 위한 변수
+    private bool isHit = false; //적에게 맞았는지 체크하는 변수
     private Vector3 startVector;
     private Rigidbody2D skillA_Rb;
     private Animator skillA_Ani;
@@ -29,7 +29,6 @@ public class SkulSkillA : MonoBehaviour
         OverRange();
         DetectTaget();
         gameObject.transform.Translate(new Vector2(direction, 0).normalized * speed * Time.deltaTime);
-
     } //Update
 
     //날아가는 도중 타겟을 감지하면 Hit처리 하는 함수
@@ -45,6 +44,14 @@ public class SkulSkillA : MonoBehaviour
         {
             tagetObj = GData.ENEMY_LAYER_MASK;
         }
+        //해골이 땅에 닿았을경우 처리
+        RaycastHit2D hitGround = Physics2D.CircleCast(transform.position, 0.1f, Vector2.zero, 0f, LayerMask.GetMask(GData.GROUND_LAYER_MASK));
+        if (hitGround.collider != null)
+        {
+            isHit = true;
+            StartCoroutine(DestroySkul());
+        }
+
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, 0.1f, Vector2.zero, 0f, LayerMask.GetMask(tagetObj));
         if (hit.collider != null)
         {

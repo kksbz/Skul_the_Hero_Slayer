@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GateEnter : MonoBehaviour
 {
-    private GameObject enterKeyIcon;
-    public string nextStageName;
-    private bool isPushKey;
+    private GameObject enterKeyIcon; //자식오브젝트 변수
+    public string nextStageName; //이동할 Scene 변수
+    private bool isPushKey; //플레이어 키입력 받는 조건 변수
     // Start is called before the first frame update
     void Start()
     {

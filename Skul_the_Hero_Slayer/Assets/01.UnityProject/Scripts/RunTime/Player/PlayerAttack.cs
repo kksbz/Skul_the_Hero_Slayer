@@ -27,7 +27,7 @@ public class PlayerAttack : IPlayerState
     } //StateFixedUpdate
     public void StateUpdate()
     {
-        // ExitAttack();
+        ExitAttack();
         /*Do Nothing*/
     } //StateUpdate
     public void StateExit()

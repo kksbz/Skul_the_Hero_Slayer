@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
         ATTACK,
         DEAD
     }; //PlayerState
-
     public Player player;
     public int playerHp;
     public int playerMaxHp = 100;
@@ -26,19 +25,20 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer playerSprite;
     public RuntimeAnimatorController BeforeChangeRuntimeC;
     public Animator playerAni;
-
+    public List<Player> playerSkulList; //플레이어가 사용할 수 있는 Skul의 List
+    private Player possibleSkul;
+    private float swapCoolDown = 0f;
     // Start is called before the first frame update
     void Start()
     {
-        // var basicSkulObj = transform.GetChild((int)currentSkul).gameObject;
-        // player = gameObject.AddComponent<Skul>()
-        // playerSprite = basicSkulObj.GetComponentMust<SpriteRenderer>();
-        // playerAni.runtimeAnimatorController = player.playerAni.runtimeAnimatorController;
         //기본 스컬의 런타임애니컨트롤러를 저장 => 스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
-        gameObject.AddComponent<Skul>();
+        possibleSkul = gameObject.AddComponent<Skul>();
+        playerSkulList = new List<Player>();
+        playerSkulList.Add(possibleSkul);
+
         BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
-        // InitPlayer();
         isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
+        playerHp = playerMaxHp;
         IPlayerState idle = new PlayerIdle();
         IPlayerState move = new PlayerMove();
         IPlayerState jump = new PlayerJump();
@@ -56,25 +56,20 @@ public class PlayerController : MonoBehaviour
     {
         pStateMachine.DoFixedUpdate();
     } //FixedUpdate
+
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && isGroundRay.hit.collider != null && enumState != PlayerState.DASH)
+        if ((Input.GetKey(KeyCode.RightArrow)
+            || Input.GetKey(KeyCode.LeftArrow))
+            && isGroundRay.hit.collider != null
+            && enumState != PlayerState.DASH
+            && enumState != PlayerState.ATTACK
+            && enumState != PlayerState.JUMP)
         {
-            //현재 상태가 Attack상태라면 애니메이션이 끝나고 Move시작
-            // if (enumState == PlayerState.ATTACK)
-            // {
-            //     if (player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
-            //     {
-            //         return;
-            //     }
-            // }
-            // else
-            {
-                pStateMachine.SetState(dicState[PlayerState.MOVE]);
-            }
+            pStateMachine.SetState(dicState[PlayerState.MOVE]);
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.DownArrow))
         {
             pStateMachine.SetState(dicState[PlayerState.JUMP]);
         }
@@ -87,7 +82,7 @@ public class PlayerController : MonoBehaviour
         {
             pStateMachine.SetState(dicState[PlayerState.ATTACK]);
         }
-        if (Input.anyKey == false && isGroundRay.hit.collider != null && enumState != PlayerState.DASH)
+        if (Input.anyKey == false && isGroundRay.hit.collider != null && enumState != PlayerState.DASH && enumState != PlayerState.ATTACK)
         {
             pStateMachine.SetState(dicState[PlayerState.IDLE]);
         }
@@ -99,31 +94,41 @@ public class PlayerController : MonoBehaviour
         {
             player.SkillB();
         }
-        if(Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space) && swapCoolDown == 0f)
         {
             ChangePlayer();
         }
         pStateMachine.DoUpdate();
     } //Update
 
-    private void InitPlayer()
-    {
-        GameObject childObj = Resources.Load("Prefabs/Skul") as GameObject;
-        playerSprite.sprite = childObj.GetComponentMust<SpriteRenderer>().sprite;
-        playerHp = playerMaxHp;
-    } //InitPlayer
-
     //플레이어 스컬교체하는 함수
     private void ChangePlayer()
     {
-        GetComponent<Skul>().enabled        = !(GetComponent<Skul>().enabled);
-        if(GetComponent<EntSkul>() == null) 
+        //스컬을 1개만 가지고있으면 리턴
+        if (playerSkulList.Count < 2)
         {
-            gameObject.AddComponent<EntSkul>();
             return;
         }
-        GetComponent<EntSkul>().enabled    = !(GetComponent<Skul>().enabled);
+        //스컬리스트의 활성화 상태를 반전시킴
+        for (int i = 0; i < playerSkulList.Count; i++)
+        {
+            playerSkulList[i].enabled = !playerSkulList[i].enabled;
+        }
+        StartCoroutine(SwapCoolDown());
     } //ChangePlayer
+
+    //캐릭터 Swap쿨다운 적용 코루틴 함수
+    private IEnumerator SwapCoolDown()
+    {
+        //스왑쿨다운 6초 설정
+        for (int i = 0; i < 60; i++)
+        {
+            var tick = 0.1f;
+            swapCoolDown += tick;
+            yield return new WaitForSeconds(tick);
+        }
+        swapCoolDown = 0f;
+    } //SwapCoolDown
 
     //interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
     public void CoroutineDeligate(IEnumerator func)

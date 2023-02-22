@@ -17,7 +17,6 @@ public class PlayerGroundCheck : MonoBehaviour
     {
         rayerLength = playerController.player.groundCheckLength;
         //플레이어의 위치가 Ground에 있는지 공중에 있는지 확인하는 BoxCast
-        Debug.Log($"체크레이어길이 {rayerLength}");
         hit = Physics2D.BoxCast(transform.position, new Vector2(1f, 0.2f),
          0f, Vector2.down, rayerLength, LayerMask.GetMask(GData.GROUND_LAYER_MASK));
     } //Update

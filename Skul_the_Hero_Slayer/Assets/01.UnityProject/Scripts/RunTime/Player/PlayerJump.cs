@@ -9,10 +9,12 @@ public class PlayerJump : IPlayerState
     private float jumpForce = 7f;
     private Vector3 direction; //이동할 방향 변수
     private Vector3 localScale; //방향전환 변수
+    private GameObject jumpEffect; //점프이펙트 변수
     public void StateEnter(PlayerController _pController)
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.JUMP;
+        jumpEffect = pController.gameObject.FindChildObj("JumpEffect");
         // Debug.Log($"점프 들옴? {pController.enumState}");
         if (pController.isGroundRay.hit.collider != null)
         {
@@ -26,6 +28,7 @@ public class PlayerJump : IPlayerState
     } //StateFixedUpdate
     public void StateUpdate()
     {
+        JumpEffectOff();
         JumpAndMove();
         Jump();
     } //StateUpdate
@@ -83,8 +86,8 @@ public class PlayerJump : IPlayerState
                 Vector3 playerVelocity = pController.player.playerRb.velocity;
                 pController.player.playerRb.velocity = new Vector3(playerVelocity.x, 0, playerVelocity.z);
                 Debug.Log($"{jumpCount} = {pController.player.playerRb.velocity}");
-                GameObject jumpEffect = pController.gameObject.FindChildObj("JumpEffect");
-                jumpEffect.transform.position = pController.player.transform.position;
+
+                // jumpEffect.transform.position = pController.player.transform.position;
                 jumpEffect.SetActive(true);
             }
             pController.player.playerAni.SetBool("isJump", true);
@@ -92,4 +95,12 @@ public class PlayerJump : IPlayerState
             jumpCount += 1;
         }
     } //Jump
+
+    private void JumpEffectOff()
+    {
+        if (jumpEffect.GetComponentMust<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        {
+            jumpEffect.SetActive(false);
+        }
+    } //JumpEffectOff
 }

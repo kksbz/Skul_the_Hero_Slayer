@@ -18,5 +18,5 @@ MonoBehaviour:
   moveSpeed: 4
   controller: {fileID: 9100000, guid: dc7ad6264d9b88d4cb91db394cfa860d, type: 2}
   colliderSizeX: 1.5
-  colliderSizeY: 2
+  colliderSizeY: 1.8
   groundRayLength: 1
