@@ -54,3 +54,4 @@
 2023-02-22 / v0.2.3 Player Swap Skul prototype<br/>
 2023-02-22 / v0.2.4 EntSkul Ani,monsterPool setup<br/>
 2023-02-23 / v0.2.5 Platform Effector2D를 사용하여 통과가능한 벽 구현, Player 또다른 캐릭터 GetEntSkul item 구현<br/>
+2023-02-23 / v0.2.6 BossMonster AttackA,B prototype setup<br/>

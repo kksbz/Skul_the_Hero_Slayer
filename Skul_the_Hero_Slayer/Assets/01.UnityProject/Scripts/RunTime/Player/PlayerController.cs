@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
             && isGroundRay.hit.collider != null
             && enumState != PlayerState.DASH
             && enumState != PlayerState.ATTACK
-            && enumState != PlayerState.JUMP)
+            /*&& enumState != PlayerState.JUMP*/)
         {
             pStateMachine.SetState(dicState[PlayerState.MOVE]);
         }

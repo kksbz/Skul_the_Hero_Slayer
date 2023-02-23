@@ -35,11 +35,6 @@ public class PlayerJump : IPlayerState
 
     public void StateExit()
     {
-        //점프상태를 나갈 때 플레이어가 Ground 위에 있으면 jumpCount 초기화
-        // if (pController.isGround == true)
-        // {
-        //     jumpCount = 0;
-        // }
         pController.player.playerAni.SetBool("isJump", false);
         pController.player.playerAni.SetBool("isFall", false);
     } //StateExit
