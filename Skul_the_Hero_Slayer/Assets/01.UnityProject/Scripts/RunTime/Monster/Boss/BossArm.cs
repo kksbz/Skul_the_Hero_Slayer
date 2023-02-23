@@ -13,13 +13,7 @@ public class BossArm : BossMonster
         armCollider = gameObject.GetComponentMust<BoxCollider2D>();
         armAni = gameObject.GetComponentMust<Animator>();
         armCollider.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    } //Start
 
     //Attack 애니메이션 진행 중 공격판정 시작위치에서 실행되는 함수
     public void Attack()
@@ -33,6 +27,7 @@ public class BossArm : BossMonster
     {
         armAni.SetBool("isAttackA", false);
         armAni.SetBool("isAttackB", false);
+        armAni.SetBool("isAttackC", false);
         armAni.SetBool("isWaitAttack", false);
         armCollider.enabled = false;
     } //ExitAttack

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5cd3ea2af323c7a4095f5e7c829b818d
+guid: 154eca4724460d14bbc6934676c62674
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,1156 +117,946 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AttackC_0
+      name: EnergyCorpEffrect_0
       rect:
         serializedVersion: 2
-        x: 353
-        y: 2603
-        width: 85
-        height: 82
+        x: 246
+        y: 3152
+        width: 133
+        height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c1345f018d91b046b387c31a93409ea
-      internalID: 1200446757
+      spriteID: 492eb77ce91e24442ae2a486a1de5c0e
+      internalID: -808371926
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_1
+      name: EnergyCorpEffrect_1
       rect:
         serializedVersion: 2
-        x: 694
-        y: 2600
-        width: 85
-        height: 81
+        x: 551
+        y: 3127
+        width: 193
+        height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9d773590d528984883252b29a7e866c
-      internalID: 356274115
+      spriteID: 1a5e4894b4d56d646b82c6b5625c1b93
+      internalID: -1974610658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_2
+      name: EnergyCorpEffrect_2
       rect:
         serializedVersion: 2
-        x: 1009
-        y: 2587
-        width: 87
-        height: 80
+        x: 932
+        y: 3084
+        width: 240
+        height: 236
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2fd145514ddb7641bb8f845b26b3949
-      internalID: -260126812
+      spriteID: d8eff44d39c4f374a87a11547873ed5c
+      internalID: -338799713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_3
-      rect:
-        serializedVersion: 2
-        x: 1352
-        y: 2587
-        width: 86
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 246744ec795686a4786485a02bc7fcaa
-      internalID: 278510116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_4
-      rect:
-        serializedVersion: 2
-        x: 1655
-        y: 2588
-        width: 95
-        height: 81
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98813224cfc7866458b80a8ebec2bdbf
-      internalID: 213949403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_5
-      rect:
-        serializedVersion: 2
-        x: 1746
-        y: 2628
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2288e6e0c29a8e544a44a89187b7be3e
-      internalID: 603482506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_6
-      rect:
-        serializedVersion: 2
-        x: 1983
-        y: 2581
-        width: 100
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2fc87adc26ac86429b3ccd1c320bdc8
-      internalID: -1082028442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_7
-      rect:
-        serializedVersion: 2
-        x: 2347
-        y: 2569
-        width: 98
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 68d4b86995fa9dc459a46ed2d8ee51c2
-      internalID: 1474991915
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_8
-      rect:
-        serializedVersion: 2
-        x: 2663
-        y: 2569
-        width: 100
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 78c980f05893f0d458c57857f3875436
-      internalID: -286243240
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_9
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 2262
-        width: 97
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6e7fa157402862428db843a5fe20f58
-      internalID: -265501338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_10
-      rect:
-        serializedVersion: 2
-        x: 705
-        y: 2257
-        width: 96
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf58f84511cbd9f4f82b47a48d665552
-      internalID: -1915017114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_11
-      rect:
-        serializedVersion: 2
-        x: 1027
-        y: 2237
-        width: 98
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 341c3248bb4d6434582ed144c248a4bd
-      internalID: 1793580985
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_12
-      rect:
-        serializedVersion: 2
-        x: 1374
-        y: 2254
-        width: 95
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a77357da6301824391440921086b0a5
-      internalID: 600173161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_13
-      rect:
-        serializedVersion: 2
-        x: 1682
-        y: 2246
-        width: 86
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9de68dc693ab6a848a1e3d4fb88f66a6
-      internalID: 554335
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_14
-      rect:
-        serializedVersion: 2
-        x: 1998
-        y: 2246
-        width: 85
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7fac31b950847c0429f585627bc1f1fe
-      internalID: 978556003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_15
-      rect:
-        serializedVersion: 2
-        x: 2354
-        y: 2238
-        width: 86
-        height: 84
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa100c12249cf4748af5d663c8aa85f6
-      internalID: 1989494733
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_16
-      rect:
-        serializedVersion: 2
-        x: 2665
-        y: 2225
-        width: 87
-        height: 87
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ab5b11fc381fc544a9011f97a5f1f24
-      internalID: -1528240894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_17
-      rect:
-        serializedVersion: 2
-        x: 356
-        y: 1931
-        width: 94
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd6091d4e1cadd54097611bf416acaee
-      internalID: 367236422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_18
-      rect:
-        serializedVersion: 2
-        x: 708
-        y: 1932
-        width: 96
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60fe0ea35227afb47872e7c98a5a8fa0
-      internalID: 289036512
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_19
-      rect:
-        serializedVersion: 2
-        x: 1039
-        y: 1931
-        width: 98
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d781e5db22b93844a3b57a624463104
-      internalID: -511248553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AttackC_20
+      name: EnergyCorpEffrect_3
       rect:
         serializedVersion: 2
         x: 1377
-        y: 1919
-        width: 101
-        height: 89
+        y: 3070
+        width: 266
+        height: 268
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6b6ded8fda54df479bdf5aca38d16ca
-      internalID: 158699279
+      spriteID: 9630165765c3d164bace4725d8f54d38
+      internalID: 1062745745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_21
+      name: EnergyCorpEffrect_4
       rect:
         serializedVersion: 2
-        x: 1696
-        y: 1910
-        width: 101
-        height: 90
+        x: 1895
+        y: 3055
+        width: 300
+        height: 299
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b39fe6d6b16e4e40b86c1ecb26d1f3f
-      internalID: 343612356
+      spriteID: 8d4d9f9c9085ffd46bedfce8caaee605
+      internalID: 135695523
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_22
+      name: EnergyCorpEffrect_5
       rect:
         serializedVersion: 2
-        x: 2020
-        y: 1913
-        width: 97
-        height: 87
+        x: 2447
+        y: 3079
+        width: 285
+        height: 276
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f430f22c1312b8b4a8c41e6c310287dd
-      internalID: -165273965
+      spriteID: 549845e459ed75e48ae523b92237f8cb
+      internalID: -1360173538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_23
+      name: EnergyCorpStart_1
       rect:
         serializedVersion: 2
-        x: 2360
-        y: 1898
-        width: 98
-        height: 90
+        x: 295
+        y: 1580
+        width: 168
+        height: 170
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b11897c8fd7fba4b9cbaa4cc360feec
-      internalID: 1024053860
+      spriteID: 1374d9be30b4a574b8073b767f02f1ac
+      internalID: -26000386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_24
+      name: EnergyCorpStart_2
       rect:
         serializedVersion: 2
-        x: 2669
-        y: 1894
-        width: 95
-        height: 91
+        x: 689
+        y: 1580
+        width: 163
+        height: 166
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94533dc907a5e69458ada7dd508fdad1
-      internalID: -1242388047
+      spriteID: f3c93837affa2d64084250944c2a8e87
+      internalID: -1146963595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_25
+      name: EnergyCorpStart_3
       rect:
         serializedVersion: 2
-        x: 2667
-        y: 1922
-        width: 6
-        height: 6
+        x: 1104
+        y: 1580
+        width: 169
+        height: 166
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79be1a7595e0f904882225e2ee72e917
-      internalID: -1469092684
+      spriteID: 2820db83695869644b83472daf2262bb
+      internalID: -1621592846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_26
+      name: EnergyCorpStart_4
       rect:
         serializedVersion: 2
-        x: 350
-        y: 1588
-        width: 94
-        height: 88
+        x: 1604
+        y: 1572
+        width: 173
+        height: 176
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afae5b61cc7f8a949987deffb6eeae7e
-      internalID: 918598168
+      spriteID: 7ddf1fce3ca9d0246898c4b29a73f387
+      internalID: -1746572001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_27
+      name: EnergyCorpStart_5
       rect:
         serializedVersion: 2
-        x: 718
-        y: 1585
-        width: 92
-        height: 86
+        x: 2096
+        y: 1574
+        width: 170
+        height: 178
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f098153cdc636d48ab428f037c66267
-      internalID: -1795586791
+      spriteID: c2dc07e3a67ca2b4382b18ef0f95c6f2
+      internalID: 1694367305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_28
+      name: EnergyCorpStart_6
       rect:
         serializedVersion: 2
-        x: 1047
-        y: 1583
-        width: 91
-        height: 83
+        x: 2541
+        y: 1568
+        width: 170
+        height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fddd53a888595f49a8af70fca501ac9
-      internalID: 338854153
+      spriteID: cbc3c102b9a74824a8060a67d2cc5d36
+      internalID: 1790933760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_29
+      name: EnergyCorpStart_7
       rect:
         serializedVersion: 2
-        x: 1383
-        y: 1573
-        width: 92
-        height: 85
+        x: 289
+        y: 1215
+        width: 170
+        height: 181
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26158d77b97022d45b86683189fbe97f
-      internalID: 811429984
+      spriteID: fa88a4cd613ad02468015dcefb760cb7
+      internalID: -758271052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_30
+      name: EnergyCorpStart_8
       rect:
         serializedVersion: 2
-        x: 1702
-        y: 1576
-        width: 92
-        height: 88
+        x: 693
+        y: 1217
+        width: 168
+        height: 170
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1fd239cf01d41b449caa825ac7949bf
-      internalID: 823933629
+      spriteID: dc54d8ea22440a8488025b08e4f85ffb
+      internalID: 1199424853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_31
+      name: EnergyCorpStart_9
       rect:
         serializedVersion: 2
-        x: 2036
-        y: 1547
-        width: 97
-        height: 89
+        x: 1109
+        y: 1201
+        width: 182
+        height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c307649a99f620449509aec1772a057
-      internalID: -1732989544
+      spriteID: 608b486059df0604ca49ffc7fca9ebc6
+      internalID: -1200429864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_32
+      name: EnergyCorpStart_10
       rect:
         serializedVersion: 2
-        x: 2377
-        y: 1544
-        width: 94
-        height: 89
+        x: 1613
+        y: 1205
+        width: 174
+        height: 172
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efad1114e1e74f843a5c575d3c91038c
-      internalID: -1747683652
+      spriteID: 2f5b55205a111c747b50620a5615010a
+      internalID: 527341665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_33
+      name: EnergyCorpStart_11
       rect:
         serializedVersion: 2
-        x: 2679
-        y: 1531
-        width: 90
-        height: 91
+        x: 2104
+        y: 1184
+        width: 177
+        height: 171
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8c473a2c9b4041408b487814ba3be20
-      internalID: -106080646
+      spriteID: 255f79300c0db97489c0b868c232b78c
+      internalID: -1166170082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_34
+      name: EnergyCorpStart_12
       rect:
         serializedVersion: 2
-        x: 350
-        y: 1245
-        width: 91
-        height: 88
+        x: 2539
+        y: 1168
+        width: 176
+        height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f7a7b098755c3a47a4a9b1cf968f286
-      internalID: -385492144
+      spriteID: ee27b77c420b8d84c9b8fdf8c8722063
+      internalID: 1956391570
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_35
+      name: EnergyCorpStart_13
       rect:
         serializedVersion: 2
-        x: 724
-        y: 1239
-        width: 96
-        height: 91
+        x: 277
+        y: 854
+        width: 186
+        height: 169
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b43c0a0497c91243b2485681f0cf06b
-      internalID: -83348982
+      spriteID: e18c859c7a3a58e44a86e2559ce148c7
+      internalID: -910971204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_36
+      name: EnergyCorpStart_14
       rect:
         serializedVersion: 2
-        x: 1065
-        y: 1247
-        width: 95
-        height: 86
+        x: 676
+        y: 865
+        width: 185
+        height: 176
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bdfc763c6757cd4d95eea00a7b693d7
-      internalID: 890122929
+      spriteID: 4476a7882f747ba4dad3a78088b3cdc3
+      internalID: 833598223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_37
+      name: EnergyCorpStart_15
       rect:
         serializedVersion: 2
-        x: 1405
-        y: 1248
-        width: 95
-        height: 88
+        x: 1119
+        y: 863
+        width: 176
+        height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60d2c733029a58f4b85a4ea20b478fc1
-      internalID: -1974469559
+      spriteID: 97f0727711e825e4dbf80d9808197f06
+      internalID: 635503813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_38
+      name: EnergyCorpStart_16
       rect:
         serializedVersion: 2
-        x: 1711
-        y: 1235
-        width: 97
-        height: 83
+        x: 1611
+        y: 850
+        width: 182
+        height: 177
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8618fac85e4f0f4abdb628e3264a1b6
-      internalID: -874360747
+      spriteID: d0e2d7a878b9c5f4187a427aa5f4584c
+      internalID: -1261256527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_39
+      name: EnergyCorpEffrect_138
       rect:
         serializedVersion: 2
-        x: 2048
-        y: 1210
-        width: 98
-        height: 83
+        x: 2113
+        y: 877
+        width: 12
+        height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49f04245cb622134c8f0af93beefe285
-      internalID: -646064209
+      spriteID: f1c7c218848265349943fa7de13faaea
+      internalID: -1755839536
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_40
+      name: EnergyCorpStart_17
       rect:
         serializedVersion: 2
-        x: 2388
-        y: 1203
-        width: 96
-        height: 82
+        x: 2115
+        y: 828
+        width: 180
+        height: 182
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28e70eb5cd19fbe4ca0212bc1fdd1902
-      internalID: 2027512651
+      spriteID: af2ca2ccdadf7434aabc58a4fcabd1d5
+      internalID: 1002620714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_41
+      name: EnergyCorpStart_18
       rect:
         serializedVersion: 2
-        x: 2691
-        y: 1210
-        width: 97
-        height: 83
+        x: 2544
+        y: 822
+        width: 180
+        height: 180
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d30eaae8288a8834ebfef232c583e8af
-      internalID: -1759566287
+      spriteID: bbf553efb5e8fcd4cb3ffa4d5db3a668
+      internalID: -501975779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_42
+      name: EnergyCorpStart_19
       rect:
         serializedVersion: 2
-        x: 357
-        y: 907
-        width: 94
-        height: 83
+        x: 281
+        y: 480
+        width: 174
+        height: 174
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e28e6dc89d4a0614b9024d03cbf9e1e6
-      internalID: -174171196
+      spriteID: dc116523748f1ba40b5a94f98f6a2106
+      internalID: 1005682390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_43
+      name: EnergyCorpStart_20
       rect:
         serializedVersion: 2
-        x: 744
-        y: 888
-        width: 89
-        height: 82
+        x: 693
+        y: 471
+        width: 188
+        height: 175
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8981a2dfd5ab1624e81a7ce0fff37bc2
-      internalID: 187972508
+      spriteID: c053eef9a88ca374cb21beea2b6dc6c1
+      internalID: 1018369160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_44
+      name: EnergyCorpStart_21
       rect:
         serializedVersion: 2
-        x: 1099
-        y: 898
-        width: 90
-        height: 83
+        x: 1143
+        y: 461
+        width: 189
+        height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a845151a3f6a95c47b8d679545b65e93
-      internalID: 1127874518
+      spriteID: a3688213a18f4f1428d3102dab0a1b3a
+      internalID: 1780018552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_45
+      name: EnergyCorpStart_22
       rect:
         serializedVersion: 2
-        x: 1437
-        y: 889
-        width: 86
-        height: 85
+        x: 1635
+        y: 457
+        width: 187
+        height: 182
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6f1308bb16cd804ab80da7486da667f
-      internalID: 1219864037
+      spriteID: 2055b5bde6a82ba47b5f9e9913d8899f
+      internalID: -403697274
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_46
+      name: EnergyCorpStart_23
       rect:
         serializedVersion: 2
-        x: 1765
-        y: 876
-        width: 85
-        height: 81
+        x: 2121
+        y: 428
+        width: 190
+        height: 189
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d92cd19c479e32d40af0d686f416813a
-      internalID: 979398202
+      spriteID: 840a95faac6d95a42b90da5711bb1d44
+      internalID: -1947255879
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_47
+      name: EnergyCorpStart_24
       rect:
         serializedVersion: 2
-        x: 2084
-        y: 882
-        width: 88
-        height: 80
+        x: 2543
+        y: 432
+        width: 186
+        height: 168
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b73b7438de80c5141bc1cb03eba38c63
-      internalID: 950566625
+      spriteID: 210291904308f7d4f935fec939d0e469
+      internalID: -1598420714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_48
+      name: EnergyCorpEffrect_6
       rect:
         serializedVersion: 2
-        x: 2396
-        y: 873
-        width: 88
-        height: 85
+        x: 199
+        y: 2617
+        width: 206
+        height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab41b46571b280d4d8e02e3b600c241e
-      internalID: -1175019206
+      spriteID: 27b7f0f589016ca4cbea98bf135ede35
+      internalID: -366218833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_49
+      name: EnergyCorpEffrect_7
       rect:
         serializedVersion: 2
-        x: 2728
-        y: 880
-        width: 90
-        height: 87
+        x: 604
+        y: 2617
+        width: 193
+        height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802a5f1e20ca0134393bf2c8f59e0656
-      internalID: 1995132898
+      spriteID: 7d878c5219f61364d8e2b0cd3eda54a2
+      internalID: -1653162672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_50
+      name: EnergyCorpEffrect_8
       rect:
         serializedVersion: 2
-        x: 362
-        y: 523
-        width: 92
-        height: 85
+        x: 960
+        y: 2647
+        width: 201
+        height: 179
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5de68851c30bfb45a887f5fb73dcb1b
-      internalID: -1680597380
+      spriteID: b8a1d0e011223c849811135a0e705679
+      internalID: -1140692701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_51
+      name: EnergyCorpEffrect_9
       rect:
         serializedVersion: 2
-        x: 749
-        y: 514
-        width: 93
-        height: 85
+        x: 1418
+        y: 2644
+        width: 216
+        height: 189
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85c67aaa865e1024c965505d160819e4
-      internalID: 310029501
+      spriteID: cf7a763e16d75864fbb99a561849e55d
+      internalID: -559419137
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_52
+      name: EnergyCorpEffrect_10
       rect:
         serializedVersion: 2
-        x: 1112
-        y: 516
-        width: 95
-        height: 83
+        x: 1905
+        y: 2665
+        width: 217
+        height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0d1d55be3b229848b4fc7bb2676fd68
-      internalID: 1853676815
+      spriteID: 6d5cdc4ee658d0f409ec1465b5e046e8
+      internalID: 848375227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_53
+      name: EnergyCorpEffrect_11
       rect:
         serializedVersion: 2
-        x: 1474
-        y: 513
-        width: 90
-        height: 86
+        x: 2422
+        y: 2664
+        width: 255
+        height: 227
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33b42d16897232458001f5c8552977c
-      internalID: -1382882874
+      spriteID: 3f9cce6ac622f5949ae4528e16a3d56c
+      internalID: -1781949121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AttackC_54
+      name: EnergyCorpEffrect_12
       rect:
         serializedVersion: 2
-        x: 2396
-        y: 271
-        width: 96
-        height: 91
+        x: 197
+        y: 2161
+        width: 250
+        height: 230
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 387485d9577bbae46ab8042b100c8a22
-      internalID: -1991326691
+      spriteID: 57ceeca379e3bb447a6b13fee5b4ad29
+      internalID: 1281204651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyCorpEffrect_13
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 2225
+        width: 236
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f480b78b91c7044a17f862c86fb3b4
+      internalID: -1668206759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyCorpEffrect_14
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 2232
+        width: 241
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e112b4419b4b64ba3cfbbcda615b2d
+      internalID: -908152858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyCorpEffrect_15
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 2235
+        width: 271
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e7df73ec7d9a1941a5bf88180951978
+      internalID: -1061610866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyCorpEffrect_16
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 2233
+        width: 280
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aea31203a0c8c4f48a660929693eeeac
+      internalID: -63794570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyCorpEffrect_17
+      rect:
+        serializedVersion: 2
+        x: 2370
+        y: 2217
+        width: 288
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555750377b68a234c98dabe0cd24e100
+      internalID: 1481852630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyCorpEffrect_18
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1832
+        width: 258
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78156501cd9c544d854c7a1a75b9a93
+      internalID: -627082776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyCorpEffrect_19
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1843
+        width: 262
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a28c1f59660966a4e9b3579f4989c458
+      internalID: -393968778
       vertices: []
       indices: 
       edges: []
@@ -1282,61 +1072,150 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AttackC_2: -260126812
-      AttackC_52: 1853676815
-      AttackC_7: 1474991915
-      AttackC_18: 289036512
-      AttackC_28: 338854153
-      AttackC_15: 1989494733
-      AttackC_17: 367236422
-      AttackC_24: -1242388047
-      AttackC_25: -1469092684
-      AttackC_40: 2027512651
-      AttackC_5: 603482506
-      AttackC_12: 600173161
-      AttackC_43: 187972508
-      AttackC_50: -1680597380
-      AttackC_42: -174171196
-      AttackC_21: 343612356
-      AttackC_26: 918598168
-      AttackC_46: 979398202
-      AttackC_30: 823933629
-      AttackC_41: -1759566287
-      AttackC_9: -265501338
-      AttackC_16: -1528240894
-      AttackC_19: -511248553
-      AttackC_36: 890122929
-      AttackC_53: -1382882874
-      AttackC_20: 158699279
-      AttackC_10: -1915017114
-      AttackC_22: -165273965
-      AttackC_23: 1024053860
-      AttackC_27: -1795586791
-      AttackC_48: -1175019206
-      AttackC_14: 978556003
-      AttackC_1: 356274115
-      AttackC_35: -83348982
-      AttackC_4: 213949403
-      AttackC_51: 310029501
-      AttackC_3: 278510116
-      AttackC_31: -1732989544
-      AttackC_38: -874360747
-      AttackC_54: -1991326691
-      AttackC_44: 1127874518
-      AttackC_0: 1200446757
-      AttackC_8: -286243240
-      AttackC_13: 554335
-      AttackC_45: 1219864037
-      AttackC_11: 1793580985
-      AttackC_34: -385492144
-      AttackC_49: 1995132898
-      AttackC_47: 950566625
-      AttackC_37: -1974469559
-      AttackC_39: -646064209
-      AttackC_6: -1082028442
-      AttackC_33: -106080646
-      AttackC_29: 811429984
-      AttackC_32: -1747683652
+      EnergyCorpStart_15: 635503813
+      EnergyCorpEffrect_26: 166705714
+      EnergyCorpEffrect_105: 1819980563
+      EnergyCorpEffrect_88: 636054709
+      EnergyCorpEffrect_3: 1062745745
+      EnergyCorpEffrect_118: -436725805
+      EnergyCorpEffrect_20: -132704760
+      EnergyCorpEffrect_93: 766621422
+      EnergyCorpEffrect_112: -1007520927
+      EnergyCorpStart_9: -1200429864
+      EnergyCorpEffrect_35: -1494319728
+      EnergyCorpStart_10: 527341665
+      EnergyCorpEffrect_70: -757629149
+      EnergyCorpEffrect_0: -808371926
+      EnergyCorpEffrect_75: -159777692
+      EnergyCorpEffrect_109: -1022149927
+      EnergyCorpEffrect_55: 930419040
+      EnergyCorpEffrect_108: -1972837218
+      EnergyCorpStart_4: -1746572001
+      EnergyCorpEffrect_36: -1799132170
+      EnergyCorpEffrect_6: -366218833
+      EnergyCorpEffrect_57: -1340513597
+      EnergyCorpEffrect_5: -1360173538
+      EnergyCorpEffrect_45: 35223100
+      EnergyCorpEffrect_97: 852782478
+      EnergyCorpEffrect_116: 1092613647
+      EnergyCorpEffrect_103: -1434143449
+      EnergyCorpEffrect_10: 848375227
+      EnergyCorpEffrect_95: 1479498817
+      EnergyCorpEffrect_32: -1142345030
+      EnergyCorpEffrect_72: 428793931
+      EnergyCorpEffrect_7: -1653162672
+      EnergyCorpEffrect_89: -941874853
+      EnergyCorpEffrect_99: -1693293449
+      EnergyCorpStart_17: 1002620714
+      EnergyCorpEffrect_86: 1369208924
+      EnergyCorpStart_24: -1598420714
+      EnergyCorpStart_11: -1166170082
+      EnergyCorpStart_2: -1146963595
+      EnergyCorpEffrect_84: -641070452
+      EnergyCorpEffrect_50: -49127017
+      EnergyCorpEffrect_60: -1938900578
+      EnergyCorpEffrect_78: -1394650706
+      EnergyCorpEffrect_73: -430287930
+      EnergyCorpEffrect_94: 213906825
+      EnergyCorpEffrect_11: -1781949121
+      EnergyCorpEffrect_90: 2110520514
+      EnergyCorpStart_18: -501975779
+      EnergyCorpEffrect_27: 1291978944
+      EnergyCorpEffrect_31: -1795182786
+      EnergyCorpEffrect_64: -1911124183
+      EnergyCorpStart_19: 1005682390
+      EnergyCorpEffrect_40: -770920203
+      EnergyCorpEffrect_61: -1098337889
+      EnergyCorpEffrect_17: 1481852630
+      EnergyCorpEffrect_38: -1495723989
+      EnergyCorpEffrect_39: -715513835
+      EnergyCorpEffrect_107: -417509424
+      EnergyCorpEffrect_74: 1719719426
+      EnergyCorpStart_7: -758271052
+      EnergyCorpEffrect_91: -1428428857
+      EnergyCorpStart_8: 1199424853
+      EnergyCorpStart_3: -1621592846
+      EnergyCorpEffrect_48: 89894055
+      EnergyCorpEffrect_82: 1807428952
+      EnergyCorpStart_21: 1780018552
+      EnergyCorpStart_13: -910971204
+      EnergyCorpStart_23: -1947255879
+      EnergyCorpEffrect_18: -627082776
+      EnergyCorpEffrect_41: 591127207
+      EnergyCorpEffrect_42: -826802070
+      EnergyCorpEffrect_71: -613196591
+      EnergyCorpEffrect_15: -1061610866
+      EnergyCorpEffrect_4: 135695523
+      EnergyCorpEffrect_115: -1852861543
+      EnergyCorpEffrect_33: 972749780
+      EnergyCorpEffrect_67: -1608758287
+      EnergyCorpEffrect_14: -908152858
+      EnergyCorpEffrect_37: -197381376
+      EnergyCorpEffrect_87: 1616419582
+      EnergyCorpEffrect_81: -1187453367
+      EnergyCorpEffrect_98: 655360533
+      EnergyCorpEffrect_30: 228214856
+      EnergyCorpEffrect_100: 1842317546
+      EnergyCorpEffrect_52: 1821093307
+      EnergyCorpEffrect_23: -968770445
+      EnergyCorpEffrect_49: 725711935
+      EnergyCorpEffrect_12: 1281204651
+      EnergyCorpEffrect_85: 2141162956
+      EnergyCorpEffrect_102: -525378137
+      EnergyCorpEffrect_19: -393968778
+      EnergyCorpEffrect_63: -674587840
+      EnergyCorpStart_14: 833598223
+      EnergyCorpEffrect_77: -2062979353
+      EnergyCorpEffrect_8: -1140692701
+      EnergyCorpEffrect_24: 1542154449
+      EnergyCorpStart_1: -26000386
+      EnergyCorpEffrect_66: -1849517740
+      EnergyCorpEffrect_65: 585219741
+      EnergyCorpStart_16: -1261256527
+      EnergyCorpEffrect_119: -389747336
+      EnergyCorpEffrect_62: 237011270
+      EnergyCorpEffrect_9: -559419137
+      EnergyCorpEffrect_1: -1974610658
+      EnergyCorpEffrect_51: -1770359318
+      EnergyCorpEffrect_34: -1390108828
+      EnergyCorpEffrect_28: -1717248093
+      EnergyCorpEffrect_43: -808472661
+      EnergyCorpEffrect_44: -1444928238
+      EnergyCorpEffrect_114: 1423156770
+      EnergyCorpEffrect_29: -1770305452
+      EnergyCorpStart_6: 1790933760
+      EnergyCorpStart_20: 1018369160
+      EnergyCorpEffrect_54: 321706988
+      EnergyCorpStart_22: -403697274
+      EnergyCorpEffrect_106: 54132872
+      EnergyCorpEffrect_76: 1956621259
+      EnergyCorpEffrect_101: -585428206
+      EnergyCorpEffrect_53: 403464878
+      EnergyCorpEffrect_96: 1054916284
+      EnergyCorpEffrect_120: 1356920319
+      EnergyCorpEffrect_16: -63794570
+      EnergyCorpEffrect_80: -2042259336
+      EnergyCorpEffrect_83: -205191760
+      EnergyCorpEffrect_104: -817631262
+      EnergyCorpEffrect_59: 1524501059
+      EnergyCorpEffrect_110: -39430
+      EnergyCorpEffrect_47: 900273015
+      EnergyCorpEffrect_117: 1823836880
+      EnergyCorpEffrect_13: -1668206759
+      EnergyCorpStart_12: 1956391570
+      EnergyCorpEffrect_2: -338799713
+      EnergyCorpEffrect_113: 48453219
+      EnergyCorpEffrect_68: -133762207
+      EnergyCorpEffrect_22: -912495396
+      EnergyCorpEffrect_69: 640417912
+      EnergyCorpEffrect_79: -1381556465
+      EnergyCorpEffrect_46: 249905538
+      EnergyCorpEffrect_121: -1415132368
+      EnergyCorpStart_5: 1694367305
+      EnergyCorpEffrect_111: 1020616450
+      EnergyCorpEffrect_58: 16845479
+      EnergyCorpEffrect_92: 27457428
+      EnergyCorpEffrect_138: -1755839536
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

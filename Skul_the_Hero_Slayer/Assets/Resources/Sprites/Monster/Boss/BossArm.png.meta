@@ -390,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossArm_14
+      name: AttackC_1
       rect:
         serializedVersion: 2
         x: 511
@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossArm_1P_Attak2_2
+      name: AttackC_2
       rect:
         serializedVersion: 2
         x: 949
@@ -432,7 +432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BossArm_1P_Attak2_3
+      name: AttackC_3
       rect:
         serializedVersion: 2
         x: 2070
@@ -864,12 +864,13 @@ TextureImporter:
     nameFileIdTable:
       BossArm_35: 61461107
       BossArm_17: 984457476
+      AttackC_2: -85143259
       BossArm_26: 1883574035
       BossArm_37: -364593663
       BossArm_32: -2049245333
       BossArm_1: -1919024286
-      BossArm_1P_Attak2_3: 970669188
       BossArm_1P_Attak_5: 1226205388
+      AttackC_1: 1077937121
       BossArm_25: -1266016228
       BossArm_16: 136552903
       BossArm_29: -924047073
@@ -883,6 +884,7 @@ TextureImporter:
       BossArm_23: 1559665742
       BossArm_28: 79810173
       BossArm_30: -1712760531
+      AttackC_3: 970669188
       BossArm_1P_Attak_6: -1507088487
       BossArm_0: 1146698656
       BossArm_1P_Attak_4: -1295786498
@@ -890,7 +892,6 @@ TextureImporter:
       BossArm_1P_Idle_2: 679635969
       BossArm_1P_Attak_8: -289949252
       BossArm_21: 120110501
-      BossArm_1P_Attak2_2: -85143259
       BossArm_1P_Attak_1: 502921600
       BossArm_1P_Attak_7: -1422391045
       BossArm_1P_Idle_3: -1074052332
@@ -899,7 +900,6 @@ TextureImporter:
       BossArm_33: -1426410292
       BossArm_27: -239793839
       BossArm_36: 1217252865
-      BossArm_14: 1077937121
       BossArm_34: -1656781892
   spritePackingTag: 
   pSDRemoveMatte: 0
