@@ -193,12 +193,12 @@ GameObject:
   - component: {fileID: 76199319}
   - component: {fileID: 76199318}
   m_Layer: 0
-  m_Name: Groggy
+  m_Name: GroggyEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &76199318
 Animator:
   serializedVersion: 5
@@ -209,7 +209,7 @@ Animator:
   m_GameObject: {fileID: 76199317}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5fcaa05a90c91b146bca6d91561f5c2c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1066997615e00214181f1b17eb2da413, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -260,15 +260,15 @@ SpriteRenderer:
   m_SortingLayerID: -1246190729
   m_SortingLayer: 7
   m_SortingOrder: 0
-  m_Sprite: {fileID: -666403867, guid: 20f6da8d501ba4c40be075b8bb315575, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 5.5, y: 2.0625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &76199320
@@ -278,13 +278,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76199317}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 775638191}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &221969590
 GameObject:
@@ -1006,6 +1006,7 @@ Transform:
   - {fileID: 349658033}
   - {fileID: 1328290549}
   - {fileID: 1697489436}
+  - {fileID: 76199320}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

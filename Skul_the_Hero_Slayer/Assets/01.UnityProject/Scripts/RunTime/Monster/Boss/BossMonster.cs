@@ -8,6 +8,7 @@ public class BossMonster : MonoBehaviour
     private GameObject Head;
     private GameObject leftArm;
     private GameObject rightArm;
+    private GameObject groggyEffect;
     public Animator bodyAni;
     public Animator headAni;
     public Animator leftArmAni;
@@ -16,6 +17,7 @@ public class BossMonster : MonoBehaviour
     private float meleeRange = 3.5f;
     private bool isCorpAttack = false;
     private float corpAttackCoolDown = 0f;
+    private bool isGroggy = false;
     public Collider2D hit;
     public float distance;
     public int minDamage = 9;
@@ -36,6 +38,8 @@ public class BossMonster : MonoBehaviour
         headAni = Head.GetComponentMust<Animator>();
         leftArmAni = leftArm.GetComponentMust<Animator>();
         rightArmAni = rightArm.GetComponentMust<Animator>();
+        groggyEffect = gameObject.FindChildObj("GroggyEffect");
+        groggyEffect.SetActive(false);
 
         corpPool = gameObject.FindChildObj("CorpPool").GetComponentMust<CorpPool>();
     } //Start
@@ -52,6 +56,7 @@ public class BossMonster : MonoBehaviour
     private void TargetCheck()
     {
         corpAttackCoolDown += Time.deltaTime;
+        //corp공격 쿨타임
         if (corpAttackCoolDown >= 15f)
         {
             isCorpAttack = true;
@@ -67,7 +72,8 @@ public class BossMonster : MonoBehaviour
         //왼쪽팔과 오른쪽팔의 진행중인 애니메이션이 끝났을 때 공격가능
         if (leftArmAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
         && rightArmAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
-        && isCorpAttack == false)
+        && headAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
+        && bodyAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             isAttack = false;
         }
@@ -86,16 +92,21 @@ public class BossMonster : MonoBehaviour
     //조건에 따라 공격타입을 정하는 함수
     private void SelectAttackType()
     {
-        if (isCorpAttack == true)
-        {
-            OnAttackC();
-            corpPool.ShootBullet();
-            isCorpAttack = false;
-            return;
-        }
         //공격이 가능할 때 실행
-        if (isAttack == false && isCorpAttack == false)
+        if (isAttack == false)
         {
+            //corp 조건이 달성되면 AttackC corp공격 실행
+            if (isCorpAttack == true)
+            {
+                OnAttackC();
+                return;
+            }
+            //그로기 조건이 달성되면 그로기상태 실행
+            if (isGroggy == true)
+            {
+                OnGroggy();
+                return;
+            }
             //타겟이 근접사거리 안에 있으면 AttackA 실행, 멀면 AttackB 실행
             if (meleeRange >= distance)
             {
@@ -127,9 +138,37 @@ public class BossMonster : MonoBehaviour
         }
     } //ChangePhase
 
+    //crop공격이후에 그로기하는 함수
+    private void OnGroggy()
+    {
+        isGroggy = false;
+        isAttack = true;
+        if (isChangePhase == false)
+        {
+            headAni.SetBool("isGroggy", true);
+            bodyAni.SetBool("isGroggy", true);
+            rightArmAni.SetBool("isAttackC", true);
+            leftArmAni.SetBool("isAttackC", true);
+        }
+        else if (isChangePhase == true)
+        {
+            //2페이즈인 경우 실행
+            headAni.SetBool("isP2Idle", false);
+            bodyAni.SetBool("isP2Idle", false);
+            rightArmAni.SetBool("isP2Idle", false);
+            leftArmAni.SetBool("isP2Idle", false);
+
+            headAni.SetBool("isP2Groggy", true);
+            bodyAni.SetBool("isP2Groggy", true);
+            rightArmAni.SetBool("isP2AttackC", true);
+            leftArmAni.SetBool("isP2AttackC", true);
+        }
+    } //OnGroggy
+
     //AttackA 함수
     private void OnAttackA()
     {
+        isAttack = true;
         if (isChangePhase == false)
         {
             //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
@@ -145,7 +184,6 @@ public class BossMonster : MonoBehaviour
             }
             headAni.SetBool("isAttackA", true);
             bodyAni.SetBool("isAttackA", true);
-            isAttack = true;
         }
         else if (isChangePhase == true)
         {
@@ -170,13 +208,13 @@ public class BossMonster : MonoBehaviour
             //     leftArmAni.SetBool("isP2AttackA", true);
             //     rightArmAni.SetBool("isWaitAttack", true);
             // }
-            isAttack = true;
         }
     } //AttackA
 
     //AttackB 함수
     private void OnAttackB()
     {
+        isAttack = true;
         //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
         if (isChangePhase == false)
         {
@@ -195,7 +233,6 @@ public class BossMonster : MonoBehaviour
                 leftArmAni.SetBool("isAttackB", true);
                 rightArmAni.SetBool("isWaitAttack", true);
             }
-            isAttack = true;
         }
         else if (isChangePhase == true)
         {
@@ -219,13 +256,16 @@ public class BossMonster : MonoBehaviour
                 leftArmAni.SetBool("isP2AttackB", true);
                 rightArmAni.SetBool("isP2WaitAttack", true);
             }
-            isAttack = true;
         }
     } //AttackB
 
     //AttackC 함수
     private void OnAttackC()
     {
+        isCorpAttack = false;
+        isGroggy = true;
+        isAttack = true;
+        StartCoroutine(ShootCorp());
         if (isChangePhase == false)
         {
             //1페이즈인 경우 실행
@@ -233,7 +273,6 @@ public class BossMonster : MonoBehaviour
             bodyAni.SetBool("isAttackC", true);
             leftArmAni.SetBool("isAttackC", true);
             rightArmAni.SetBool("isAttackC", true);
-            isAttack = true;
         }
         else if (isChangePhase == true)
         {
@@ -247,7 +286,24 @@ public class BossMonster : MonoBehaviour
             bodyAni.SetBool("isP2AttackC", true);
             leftArmAni.SetBool("isP2AttackC", true);
             rightArmAni.SetBool("isP2AttackC", true);
-            isAttack = true;
         }
     } //AttackC
+    private IEnumerator ShootCorp()
+    {
+        yield return new WaitForSeconds(1f);
+        corpPool.ShootBullet();
+    } //ShootCorp
+
+    public void OnOffGroggyEffect()
+    {
+        Debug.Log($"{groggyEffect}/{groggyEffect.activeInHierarchy}");
+        if (!groggyEffect.activeInHierarchy)
+        {
+            groggyEffect.SetActive(true);
+        }
+        else
+        {
+            groggyEffect.SetActive(false);
+        }
+    } //OnOffGroggyEffect
 }

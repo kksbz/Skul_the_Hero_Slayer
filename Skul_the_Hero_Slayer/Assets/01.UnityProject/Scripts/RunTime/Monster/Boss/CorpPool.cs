@@ -29,14 +29,14 @@ public class CorpPool : MonoBehaviour
     //탄환 발사하는 함수
     public void ShootBullet()
     {
-        Debug.Log($"ShootBullet 실행 보스페이지 2페?{parentObj.isChangePhase}");
         if (parentObj.isChangePhase == false)
         {
+            //1페이즈 Corp공격 실행
             foreach (var corp in corpPool)
             {
                 if (!corp.activeInHierarchy)
                 {
-                    corp.transform.position = parentObj.transform.position + new Vector3(0f, 2f, 0f);
+                    corp.transform.position = new Vector3(0f, 5f, 0f);
                     corp.SetActive(true);
                     return;
                 }
@@ -44,17 +44,23 @@ public class CorpPool : MonoBehaviour
         }
         else if (parentObj.isChangePhase == true)
         {
-            //2페이즈 AttackC 로직
-            float offsetX = -10f;
-            foreach (var corp in corpPool)
-            {
-                if (!corp.activeInHierarchy)
-                {
-                    corp.transform.position = new Vector3(offsetX, 5f, 0f);
-                    corp.SetActive(true);
-                    offsetX += 5f;
-                }
-            }
+            StartCoroutine(ShootCorp2Phase());
         }
     } //ShootBullet
+
+    private IEnumerator ShootCorp2Phase()
+    {
+        //2페이즈 Corp공격 실행
+        float offsetX = -10f;
+        foreach (var corp in corpPool)
+        {
+            if (!corp.activeInHierarchy)
+            {
+                corp.transform.position = new Vector3(offsetX, 5f, 0f);
+                corp.SetActive(true);
+                offsetX += 5f;
+                yield return new WaitForSeconds(0.3f);
+            }
+        }
+    }
 }

@@ -41,6 +41,7 @@ public class BossArm : BossMonster
         armAni.SetBool("isP2WaitAttack", false);
         armAni.SetBool("isP2Idle", true);
         armCollider.enabled = false;
+        armCollider.enabled = false;
     } //P2ExitAttack
 
     private void OnTriggerEnter2D(Collider2D collider)
