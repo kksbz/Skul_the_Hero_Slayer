@@ -143,14 +143,20 @@ public class BossMonster : MonoBehaviour
                 leftArmAni.SetBool("isAttackA", true);
                 rightArmAni.SetBool("isWaitAttack", true);
             }
+            headAni.SetBool("isAttackA", true);
+            bodyAni.SetBool("isAttackA", true);
             isAttack = true;
         }
         else if (isChangePhase == true)
         {
+            //2페이즈인 경우 실행
             headAni.SetBool("isP2Idle", false);
-
+            bodyAni.SetBool("isP2Idle", false);
             rightArmAni.SetBool("isP2Idle", false);
             leftArmAni.SetBool("isP2Idle", false);
+
+            headAni.SetBool("isP2AttackA", true);
+            bodyAni.SetBool("isP2AttackA", true);
             rightArmAni.SetBool("isP2AttackA", true);
             leftArmAni.SetBool("isP2AttackA", true);
             //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
@@ -171,9 +177,10 @@ public class BossMonster : MonoBehaviour
     //AttackB 함수
     private void OnAttackB()
     {
+        //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
         if (isChangePhase == false)
         {
-            //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
+            //1페이즈인 경우 실행
             if (hit.transform.localPosition.x > 0)
             {
                 headAni.SetBool("isRightAttack", true);
@@ -192,23 +199,25 @@ public class BossMonster : MonoBehaviour
         }
         else if (isChangePhase == true)
         {
+            //2페이즈인 경우 실행
             headAni.SetBool("isP2Idle", false);
+            bodyAni.SetBool("isP2Idle", false);
             rightArmAni.SetBool("isP2Idle", false);
             leftArmAni.SetBool("isP2Idle", false);
             //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
             if (hit.transform.localPosition.x > 0)
             {
                 headAni.SetBool("isP2RightAttack", true);
-                bodyAni.SetBool("isRightAttack", true);
+                bodyAni.SetBool("isP2RightAttack", true);
                 rightArmAni.SetBool("isP2AttackB", true);
-                leftArmAni.SetBool("isWaitAttack", true);
+                leftArmAni.SetBool("isP2WaitAttack", true);
             }
             else if (hit.transform.localPosition.x < 0)
             {
                 headAni.SetBool("isP2LeftAttack", true);
-                bodyAni.SetBool("isLeftAttack", true);
+                bodyAni.SetBool("isP2LeftAttack", true);
                 leftArmAni.SetBool("isP2AttackB", true);
-                rightArmAni.SetBool("isWaitAttack", true);
+                rightArmAni.SetBool("isP2WaitAttack", true);
             }
             isAttack = true;
         }
@@ -219,6 +228,7 @@ public class BossMonster : MonoBehaviour
     {
         if (isChangePhase == false)
         {
+            //1페이즈인 경우 실행
             headAni.SetBool("isAttackC", true);
             bodyAni.SetBool("isAttackC", true);
             leftArmAni.SetBool("isAttackC", true);
@@ -227,11 +237,14 @@ public class BossMonster : MonoBehaviour
         }
         else if (isChangePhase == true)
         {
+            //2페이즈인 경우 실행
+            headAni.SetBool("isP2Idle", false);
+            bodyAni.SetBool("isP2Idle", false);
             rightArmAni.SetBool("isP2Idle", false);
             leftArmAni.SetBool("isP2Idle", false);
 
-            headAni.SetBool("isAttackC", true);
-            bodyAni.SetBool("isAttackC", true);
+            headAni.SetBool("isP2AttackC", true);
+            bodyAni.SetBool("isP2AttackC", true);
             leftArmAni.SetBool("isP2AttackC", true);
             rightArmAni.SetBool("isP2AttackC", true);
             isAttack = true;

@@ -29,19 +29,25 @@ public class BossHead : BossMonster
     {
         base.ChangePhase(ChangePhase);
     }
+
+    //1페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
     public void P1ExitAttack()
     {
+        bossHeadAni.SetBool("isAttackA", false);
         bossHeadAni.SetBool("isRightAttack", false);
         bossHeadAni.SetBool("isLeftAttack", false);
         bossHeadAni.SetBool("isAttackC", false);
-        bossHeadAni.SetBool("isChangeP", false);
+        bossHeadAni.SetBool("isGroggy", false);
     } //P1ExitAttack
 
+    //2페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
     public void P2ExitAttack()
     {
+        bossHeadAni.SetBool("isP2AttackA", false);
         bossHeadAni.SetBool("isP2RightAttack", false);
         bossHeadAni.SetBool("isP2LeftAttack", false);
         bossHeadAni.SetBool("isP2AttackC", false);
+        bossHeadAni.SetBool("isP2Groggy", false);
         bossHeadAni.SetBool("isP2Idle", true);
     } //P2ExitAttack
 }

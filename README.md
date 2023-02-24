@@ -57,3 +57,4 @@
 2023-02-23 / v0.2.6 BossMonster AttackA,B prototype setup<br/>
 2023-02-24 / v0.2.7 BossMonster AttackC prototype setup<br/>
 2023-02-24 / v0.2.8 Work on BossMonster 2Phase<br/>
+2020-02-24 / v0.2.9 BossMonster 2Phase Setup<br/>
