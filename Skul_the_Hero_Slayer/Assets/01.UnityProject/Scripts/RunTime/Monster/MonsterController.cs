@@ -42,8 +42,20 @@ public class MonsterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        InputState();
+        stateMachine.DoUpdate();
+    } //Update
+
+    void FixedUpdate()
+    {
+        stateMachine.DoFixedUpdate();
+    } //FixedUpdate
+
+    //상황에 맞는 State를 입력해주는 함수
+    private void InputState()
+    {
         //몬스터의 hp가 0보다 작거나 같으면 Dead상태
-        if(monster.hp <= 0)
+        if (monster.hp <= 0)
         {
             stateMachine.SetState(dicState[MonsterState.DEAD]);
         }
@@ -70,13 +82,7 @@ public class MonsterController : MonoBehaviour
                 stateMachine.SetState(dicState[MonsterState.ATTACK]);
             }
         }
-        stateMachine.DoUpdate();
-    } //Update
-
-    void FixedUpdate()
-    {
-        stateMachine.DoFixedUpdate();
-    } //FixedUpdate
+    } //InputState
 
     //interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
     public void CoroutineDeligate(IEnumerator func)

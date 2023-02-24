@@ -115,7 +115,700 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_0
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 2602
+        width: 236
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45f373601a37cb7428ee148867d916d8
+      internalID: 1218548401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_1
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 2602
+        width: 291
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a61dcaf273b744691bb280eae00ef8
+      internalID: -1122672457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_2
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 2598
+        width: 350
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4dc38d7be92d0439a8aed63bb0fea9
+      internalID: 1903521367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_3
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 2600
+        width: 412
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dad4ccfdc605bd4cae8415abcee7ebe
+      internalID: -131250099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_4
+      rect:
+        serializedVersion: 2
+        x: 2328
+        y: 2590
+        width: 416
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b72a2aa38a92b94486d6ea5e5af5072
+      internalID: -419239004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 2204
+        width: 422
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82c49c69a90b124f9c7325a4007a08a
+      internalID: -1269320391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_6
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 2209
+        width: 418
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d3d25e9ce579e4880abf67d41dee5c
+      internalID: 750111018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_7
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 2209
+        width: 411
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e735381b4ccb1144981e9f5cd830361d
+      internalID: -794042854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_8
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 2211
+        width: 403
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 174bd02ddfb0a0245a89f43c154b1e33
+      internalID: 1958295024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_9
+      rect:
+        serializedVersion: 2
+        x: 2348
+        y: 2199
+        width: 396
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c66737acbb3b94fad72d9278c56253
+      internalID: -1610847282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_10
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 1815
+        width: 373
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa6b8d089294d14b89db0c06bf4e9c2
+      internalID: -1174118366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_11
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 1810
+        width: 286
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65499e473c1f8240b210bf5f09294b3
+      internalID: -311024650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_12
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 1795
+        width: 281
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afaf36c55c315d242aafef9bc9c34c5f
+      internalID: 493934345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_13
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 1808
+        width: 285
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47beaed55e921a47a9f0d1ea6d671ae
+      internalID: 1745808502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_14
+      rect:
+        serializedVersion: 2
+        x: 2412
+        y: 1824
+        width: 291
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1360352cea50a3a4bbd3659722c49844
+      internalID: 72278974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_15
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 1433
+        width: 289
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5a4499882c6294e8d2f306b2967f31
+      internalID: 1631464161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_16
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1436
+        width: 288
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34d1f8a1f6a0417458e55481a20a678a
+      internalID: 1653058339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_17
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 1433
+        width: 291
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1863ad5530273ac49ade30f97f3c8c3b
+      internalID: 1890940900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_18
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 1438
+        width: 291
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9648d5a3b5566ee468d51cc05fff6213
+      internalID: 1652693253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_19
+      rect:
+        serializedVersion: 2
+        x: 2413
+        y: 1424
+        width: 293
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 720822ae875c4784aad5fb384bb81523
+      internalID: 1355543453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_20
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 994
+        width: 291
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1efcc81524a4e654a9d164527f18dcc4
+      internalID: 1197218514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_21
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 1005
+        width: 291
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637e2adbd5e24c149b0e0d96201e2e59
+      internalID: 1504569252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_22
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1032
+        width: 291
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ac8ec65a8ec21341a21245bdbe88411
+      internalID: 1785615904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_23
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 989
+        width: 291
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3020096038d90354b96fa0b6121ac3c2
+      internalID: -767450206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_24
+      rect:
+        serializedVersion: 2
+        x: 2422
+        y: 996
+        width: 293
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940ff512689d5ea4eb8855eedbced79e
+      internalID: -1109537752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_25
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 540
+        width: 291
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f38d3cf7c2f4c4e9c7d1ea84bf0a4c
+      internalID: 1676237069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_26
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 535
+        width: 292
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3791f9a6de5577a41bdcc3a2a12f2081
+      internalID: 1457269629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_27
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 538
+        width: 284
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5206765b6d1a0cc47ad06c68a40ff909
+      internalID: -925631178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_28
+      rect:
+        serializedVersion: 2
+        x: 1925
+        y: 574
+        width: 283
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf3e109f905cc24993972d5411ce23e
+      internalID: -1773554273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_29
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 588
+        width: 284
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa36bad8b7083914b891cd934f340e63
+      internalID: -164305821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_30
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 187
+        width: 283
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684e819f52d88a04297195d1040d915a
+      internalID: -439334631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_31
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 195
+        width: 285
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8b1a6e6e692ae41b714733db17f6fe
+      internalID: -1248442087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ElderEntP2_EnergyCorps_Explosion_32
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 214
+        width: 284
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4cc41f1b20fe748a2cb80bc9dc4bed
+      internalID: -943748209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +819,292 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ElderEntP2_EnergyCorps_Explosion_60: 1762407655
+      ElderEntP2_EnergyCorps_Explosion_185: 170197167
+      ElderEntP2_EnergyCorps_Explosion_203: 1016105514
+      ElderEntP2_EnergyCorps_Explosion_254: -1001426064
+      ElderEntP2_EnergyCorps_Explosion_227: 1403705189
+      ElderEntP2_EnergyCorps_Explosion_224: 1094113948
+      ElderEntP2_EnergyCorps_Explosion_118: -1003349109
+      ElderEntP2_EnergyCorps_Explosion_149: -1309087365
+      ElderEntP2_EnergyCorps_Explosion_67: 1403955138
+      ElderEntP2_EnergyCorps_Explosion_252: 1516211331
+      ElderEntP2_EnergyCorps_Explosion_156: 120669526
+      ElderEntP2_EnergyCorps_Explosion_49: -1902545612
+      ElderEntP2_EnergyCorps_Explosion_51: -1051214729
+      ElderEntP2_EnergyCorps_Explosion_233: -1814922385
+      ElderEntP2_EnergyCorps_Explosion_116: -1604982965
+      ElderEntP2_EnergyCorps_Explosion_99: 432683565
+      ElderEntP2_EnergyCorps_Explosion_82: 1208970664
+      ElderEntP2_EnergyCorps_Explosion_69: 329478132
+      ElderEntP2_EnergyCorps_Explosion_276: -1370642109
+      ElderEntP2_EnergyCorps_Explosion_1: -1122672457
+      ElderEntP2_EnergyCorps_Explosion_199: 414273128
+      ElderEntP2_EnergyCorps_Explosion_14: 72278974
+      ElderEntP2_EnergyCorps_Explosion_237: 511911494
+      ElderEntP2_EnergyCorps_Explosion_251: -497157490
+      ElderEntP2_EnergyCorps_Explosion_33: 465975673
+      ElderEntP2_EnergyCorps_Explosion_219: 1331843884
+      ElderEntP2_EnergyCorps_Explosion_75: -356715863
+      ElderEntP2_EnergyCorps_Explosion_6: 750111018
+      ElderEntP2_EnergyCorps_Explosion_269: 637660956
+      ElderEntP2_EnergyCorps_Explosion_40: -1788002452
+      ElderEntP2_EnergyCorps_Explosion_239: 1676410830
+      ElderEntP2_EnergyCorps_Explosion_45: 1830949844
+      ElderEntP2_EnergyCorps_Explosion_57: 669343174
+      ElderEntP2_EnergyCorps_Explosion_95: -1497412540
+      ElderEntP2_EnergyCorps_Explosion_30: -439334631
+      ElderEntP2_EnergyCorps_Explosion_138: -539886171
+      ElderEntP2_EnergyCorps_Explosion_123: 1489709421
+      ElderEntP2_EnergyCorps_Explosion_7: -794042854
+      ElderEntP2_EnergyCorps_Explosion_102: -698985355
+      ElderEntP2_EnergyCorps_Explosion_92: -1635313627
+      ElderEntP2_EnergyCorps_Explosion_152: -1896590294
+      ElderEntP2_EnergyCorps_Explosion_147: -1030481722
+      ElderEntP2_EnergyCorps_Explosion_46: 1498044768
+      ElderEntP2_EnergyCorps_Explosion_5: -1269320391
+      ElderEntP2_EnergyCorps_Explosion_91: 1883450708
+      ElderEntP2_EnergyCorps_Explosion_105: -1781416211
+      ElderEntP2_EnergyCorps_Explosion_150: -1615602628
+      ElderEntP2_EnergyCorps_Explosion_195: -495517071
+      ElderEntP2_EnergyCorps_Explosion_85: -1891182492
+      ElderEntP2_EnergyCorps_Explosion_44: -877602289
+      ElderEntP2_EnergyCorps_Explosion_148: 1975147023
+      ElderEntP2_EnergyCorps_Explosion_270: 1442899846
+      ElderEntP2_EnergyCorps_Explosion_217: -1766561003
+      ElderEntP2_EnergyCorps_Explosion_223: -1454825088
+      ElderEntP2_EnergyCorps_Explosion_24: -1109537752
+      ElderEntP2_EnergyCorps_Explosion_146: -717732430
+      ElderEntP2_EnergyCorps_Explosion_18: 1652693253
+      ElderEntP2_EnergyCorps_Explosion_162: -2005842320
+      ElderEntP2_EnergyCorps_Explosion_213: 828860836
+      ElderEntP2_EnergyCorps_Explosion_111: -1986023202
+      ElderEntP2_EnergyCorps_Explosion_215: 287743820
+      ElderEntP2_EnergyCorps_Explosion_172: -1915339090
+      ElderEntP2_EnergyCorps_Explosion_277: -797530582
+      ElderEntP2_EnergyCorps_Explosion_12: 493934345
+      ElderEntP2_EnergyCorps_Explosion_230: -83318483
+      ElderEntP2_EnergyCorps_Explosion_235: 2049681385
+      ElderEntP2_EnergyCorps_Explosion_66: -1515789697
+      ElderEntP2_EnergyCorps_Explosion_77: -1324258974
+      ElderEntP2_EnergyCorps_Explosion_71: -1342192712
+      ElderEntP2_EnergyCorps_Explosion_89: -1320913560
+      ElderEntP2_EnergyCorps_Explosion_15: 1631464161
+      ElderEntP2_EnergyCorps_Explosion_262: 510184836
+      ElderEntP2_EnergyCorps_Explosion_155: 470342227
+      ElderEntP2_EnergyCorps_Explosion_167: 1666895719
+      ElderEntP2_EnergyCorps_Explosion_47: -1994202717
+      ElderEntP2_EnergyCorps_Explosion_58: 392969903
+      ElderEntP2_EnergyCorps_Explosion_140: 1704467253
+      ElderEntP2_EnergyCorps_Explosion_83: 490630855
+      ElderEntP2_EnergyCorps_Explosion_240: -132206218
+      ElderEntP2_EnergyCorps_Explosion_39: -1395184187
+      ElderEntP2_EnergyCorps_Explosion_97: 896639380
+      ElderEntP2_EnergyCorps_Explosion_73: -365452744
+      ElderEntP2_EnergyCorps_Explosion_136: -1415545239
+      ElderEntP2_EnergyCorps_Explosion_287: -1676755784
+      ElderEntP2_EnergyCorps_Explosion_87: -154984818
+      ElderEntP2_EnergyCorps_Explosion_193: 233109598
+      ElderEntP2_EnergyCorps_Explosion_35: -1291140574
+      ElderEntP2_EnergyCorps_Explosion_197: 460726325
+      ElderEntP2_EnergyCorps_Explosion_2: 1903521367
+      ElderEntP2_EnergyCorps_Explosion_157: 1474836377
+      ElderEntP2_EnergyCorps_Explosion_272: 1509069879
+      ElderEntP2_EnergyCorps_Explosion_132: 655359036
+      ElderEntP2_EnergyCorps_Explosion_171: 1843734171
+      ElderEntP2_EnergyCorps_Explosion_175: -1275883830
+      ElderEntP2_EnergyCorps_Explosion_181: -252333626
+      ElderEntP2_EnergyCorps_Explosion_126: 801282250
+      ElderEntP2_EnergyCorps_Explosion_34: -1142636436
+      ElderEntP2_EnergyCorps_Explosion_120: -1595773858
+      ElderEntP2_EnergyCorps_Explosion_194: -1170702901
+      ElderEntP2_EnergyCorps_Explosion_106: 2005620120
+      ElderEntP2_EnergyCorps_Explosion_143: 1223843696
+      ElderEntP2_EnergyCorps_Explosion_142: 1882026336
+      ElderEntP2_EnergyCorps_Explosion_122: 841325035
+      ElderEntP2_EnergyCorps_Explosion_201: -935515965
+      ElderEntP2_EnergyCorps_Explosion_242: 260106922
+      ElderEntP2_EnergyCorps_Explosion_159: -1398688012
+      ElderEntP2_EnergyCorps_Explosion_127: -557407046
+      ElderEntP2_EnergyCorps_Explosion_3: -131250099
+      ElderEntP2_EnergyCorps_Explosion_130: 186590498
+      ElderEntP2_EnergyCorps_Explosion_212: -253272821
+      ElderEntP2_EnergyCorps_Explosion_198: 1328333157
+      ElderEntP2_EnergyCorps_Explosion_207: -884159247
+      ElderEntP2_EnergyCorps_Explosion_165: -1816004760
+      ElderEntP2_EnergyCorps_Explosion_113: -1047165366
+      ElderEntP2_EnergyCorps_Explosion_192: 1648680337
+      ElderEntP2_EnergyCorps_Explosion_247: 961426254
+      ElderEntP2_EnergyCorps_Explosion_28: -1773554273
+      ElderEntP2_EnergyCorps_Explosion_27: -925631178
+      ElderEntP2_EnergyCorps_Explosion_80: 1491001311
+      ElderEntP2_EnergyCorps_Explosion_279: -715530747
+      ElderEntP2_EnergyCorps_Explosion_55: -1938177090
+      ElderEntP2_EnergyCorps_Explosion_128: 1126650207
+      ElderEntP2_EnergyCorps_Explosion_65: -1357989614
+      ElderEntP2_EnergyCorps_Explosion_119: 898543479
+      ElderEntP2_EnergyCorps_Explosion_68: 636707203
+      ElderEntP2_EnergyCorps_Explosion_205: 2120610835
+      ElderEntP2_EnergyCorps_Explosion_278: -978492061
+      ElderEntP2_EnergyCorps_Explosion_100: -878320095
+      ElderEntP2_EnergyCorps_Explosion_112: 142437743
+      ElderEntP2_EnergyCorps_Explosion_259: -1138343322
+      ElderEntP2_EnergyCorps_Explosion_179: -1553433676
+      ElderEntP2_EnergyCorps_Explosion_177: 1599852109
+      ElderEntP2_EnergyCorps_Explosion_31: -1248442087
+      ElderEntP2_EnergyCorps_Explosion_267: -1046845182
+      ElderEntP2_EnergyCorps_Explosion_114: -246753453
+      ElderEntP2_EnergyCorps_Explosion_163: 987679237
+      ElderEntP2_EnergyCorps_Explosion_282: -378175930
+      ElderEntP2_EnergyCorps_Explosion_258: 1196277068
+      ElderEntP2_EnergyCorps_Explosion_74: -779962515
+      ElderEntP2_EnergyCorps_Explosion_115: 2056699762
+      ElderEntP2_EnergyCorps_Explosion_48: -1726016334
+      ElderEntP2_EnergyCorps_Explosion_160: 1632677937
+      ElderEntP2_EnergyCorps_Explosion_204: -1796166659
+      ElderEntP2_EnergyCorps_Explosion_228: -1313304122
+      ElderEntP2_EnergyCorps_Explosion_125: 563484704
+      ElderEntP2_EnergyCorps_Explosion_268: 506694002
+      ElderEntP2_EnergyCorps_Explosion_180: -1326812403
+      ElderEntP2_EnergyCorps_Explosion_188: 847117784
+      ElderEntP2_EnergyCorps_Explosion_260: -1448837527
+      ElderEntP2_EnergyCorps_Explosion_206: 476216043
+      ElderEntP2_EnergyCorps_Explosion_78: -940356386
+      ElderEntP2_EnergyCorps_Explosion_284: 1855250721
+      ElderEntP2_EnergyCorps_Explosion_288: -1434955306
+      ElderEntP2_EnergyCorps_Explosion_144: -606946120
+      ElderEntP2_EnergyCorps_Explosion_221: -1818535785
+      ElderEntP2_EnergyCorps_Explosion_170: 1076010727
+      ElderEntP2_EnergyCorps_Explosion_256: 1237381849
+      ElderEntP2_EnergyCorps_Explosion_131: -450189397
+      ElderEntP2_EnergyCorps_Explosion_265: -1138185955
+      ElderEntP2_EnergyCorps_Explosion_186: -1493801755
+      ElderEntP2_EnergyCorps_Explosion_62: -1145828231
+      ElderEntP2_EnergyCorps_Explosion_38: 362484223
+      ElderEntP2_EnergyCorps_Explosion_129: 1630881034
+      ElderEntP2_EnergyCorps_Explosion_250: -825315027
+      ElderEntP2_EnergyCorps_Explosion_70: -1058157468
+      ElderEntP2_EnergyCorps_Explosion_103: 493934345
+      ElderEntP2_EnergyCorps_Explosion_13: 1745808502
+      ElderEntP2_EnergyCorps_Explosion_176: -1807783659
+      ElderEntP2_EnergyCorps_Explosion_139: -1333923411
+      ElderEntP2_EnergyCorps_Explosion_200: -1759867601
+      ElderEntP2_EnergyCorps_Explosion_174: 378197026
+      ElderEntP2_EnergyCorps_Explosion_134: -648009403
+      ElderEntP2_EnergyCorps_Explosion_236: -849832772
+      ElderEntP2_EnergyCorps_Explosion_231: 1844481463
+      ElderEntP2_EnergyCorps_Explosion_273: 1652693253
+      ElderEntP2_EnergyCorps_Explosion_124: 674972371
+      ElderEntP2_EnergyCorps_Explosion_248: -1743631982
+      ElderEntP2_EnergyCorps_Explosion_238: 1821416531
+      ElderEntP2_EnergyCorps_Explosion_26: 1457269629
+      ElderEntP2_EnergyCorps_Explosion_84: -1249897095
+      ElderEntP2_EnergyCorps_Explosion_117: 1870035727
+      ElderEntP2_EnergyCorps_Explosion_178: -1174118366
+      ElderEntP2_EnergyCorps_Explosion_10: -1174118366
+      ElderEntP2_EnergyCorps_Explosion_52: 366651656
+      ElderEntP2_EnergyCorps_Explosion_11: -311024650
+      ElderEntP2_EnergyCorps_Explosion_25: 1676237069
+      ElderEntP2_EnergyCorps_Explosion_281: 707254864
+      ElderEntP2_EnergyCorps_Explosion_109: -105358233
+      ElderEntP2_EnergyCorps_Explosion_257: -1428401035
+      ElderEntP2_EnergyCorps_Explosion_42: 1336809367
+      ElderEntP2_EnergyCorps_Explosion_61: 634564042
+      ElderEntP2_EnergyCorps_Explosion_274: -625453255
+      ElderEntP2_EnergyCorps_Explosion_104: -116977559
+      ElderEntP2_EnergyCorps_Explosion_108: 1834576736
+      ElderEntP2_EnergyCorps_Explosion_76: -749504478
+      ElderEntP2_EnergyCorps_Explosion_54: 52128680
+      ElderEntP2_EnergyCorps_Explosion_101: -877044906
+      ElderEntP2_EnergyCorps_Explosion_216: -1283236835
+      ElderEntP2_EnergyCorps_Explosion_110: -1323755621
+      ElderEntP2_EnergyCorps_Explosion_184: 277828768
+      ElderEntP2_EnergyCorps_Explosion_232: -531216311
+      ElderEntP2_EnergyCorps_Explosion_93: 1134338693
+      ElderEntP2_EnergyCorps_Explosion_161: 832532518
+      ElderEntP2_EnergyCorps_Explosion_245: 753101505
+      ElderEntP2_EnergyCorps_Explosion_190: 182546565
+      ElderEntP2_EnergyCorps_Explosion_244: 1140107306
+      ElderEntP2_EnergyCorps_Explosion_32: -943748209
+      ElderEntP2_EnergyCorps_Explosion_220: 183074702
+      ElderEntP2_EnergyCorps_Explosion_218: 151671527
+      ElderEntP2_EnergyCorps_Explosion_226: -1959557903
+      ElderEntP2_EnergyCorps_Explosion_246: -414533602
+      ElderEntP2_EnergyCorps_Explosion_168: 472714088
+      ElderEntP2_EnergyCorps_Explosion_283: -508349930
+      ElderEntP2_EnergyCorps_Explosion_141: -171996169
+      ElderEntP2_EnergyCorps_Explosion_17: 1890940900
+      ElderEntP2_EnergyCorps_Explosion_286: 1091125306
+      ElderEntP2_EnergyCorps_Explosion_229: 1677842635
+      ElderEntP2_EnergyCorps_Explosion_137: -1610847282
+      ElderEntP2_EnergyCorps_Explosion_9: -1740741166
+      ElderEntP2_EnergyCorps_Explosion_88: 1981933391
+      ElderEntP2_EnergyCorps_Explosion_133: -419239004
+      ElderEntP2_EnergyCorps_Explosion_4: 318480838
+      ElderEntP2_EnergyCorps_Explosion_280: 998614855
+      ElderEntP2_EnergyCorps_Explosion_264: 1958295024
+      ElderEntP2_EnergyCorps_Explosion_8: 781247106
+      ElderEntP2_EnergyCorps_Explosion_59: -72365019
+      ElderEntP2_EnergyCorps_Explosion_183: 707787965
+      ElderEntP2_EnergyCorps_Explosion_64: 1754045768
+      ElderEntP2_EnergyCorps_Explosion_94: 232022516
+      ElderEntP2_EnergyCorps_Explosion_263: -1111953152
+      ElderEntP2_EnergyCorps_Explosion_98: -1216037035
+      ElderEntP2_EnergyCorps_Explosion_214: 397926215
+      ElderEntP2_EnergyCorps_Explosion_151: -1961355115
+      ElderEntP2_EnergyCorps_Explosion_189: 1796255406
+      ElderEntP2_EnergyCorps_Explosion_121: -1955449490
+      ElderEntP2_EnergyCorps_Explosion_182: 486026951
+      ElderEntP2_EnergyCorps_Explosion_241: -1342793293
+      ElderEntP2_EnergyCorps_Explosion_81: -969340688
+      ElderEntP2_EnergyCorps_Explosion_173: 138348566
+      ElderEntP2_EnergyCorps_Explosion_253: -722431394
+      ElderEntP2_EnergyCorps_Explosion_243: 1624981989
+      ElderEntP2_EnergyCorps_Explosion_21: 1504569252
+      ElderEntP2_EnergyCorps_Explosion_19: 1355543453
+      ElderEntP2_EnergyCorps_Explosion_29: -164305821
+      ElderEntP2_EnergyCorps_Explosion_72: 349755559
+      ElderEntP2_EnergyCorps_Explosion_255: -1601569505
+      ElderEntP2_EnergyCorps_Explosion_96: 1810357204
+      ElderEntP2_EnergyCorps_Explosion_222: 1868682169
+      ElderEntP2_EnergyCorps_Explosion_191: 1117755067
+      ElderEntP2_EnergyCorps_Explosion_53: -488643291
+      ElderEntP2_EnergyCorps_Explosion_285: 207512564
+      ElderEntP2_EnergyCorps_Explosion_234: -111049010
+      ElderEntP2_EnergyCorps_Explosion_166: -471310699
+      ElderEntP2_EnergyCorps_Explosion_202: 2129750271
+      ElderEntP2_EnergyCorps_Explosion_271: 1723987018
+      ElderEntP2_EnergyCorps_Explosion_107: -500598338
+      ElderEntP2_EnergyCorps_Explosion_164: 72278974
+      ElderEntP2_EnergyCorps_Explosion_153: -192199971
+      ElderEntP2_EnergyCorps_Explosion_135: 1357546160
+      ElderEntP2_EnergyCorps_Explosion_16: 1653058339
+      ElderEntP2_EnergyCorps_Explosion_208: 424565542
+      ElderEntP2_EnergyCorps_Explosion_261: 1180112261
+      ElderEntP2_EnergyCorps_Explosion_249: -641329696
+      ElderEntP2_EnergyCorps_Explosion_90: -1759564926
+      ElderEntP2_EnergyCorps_Explosion_275: 1653058339
+      ElderEntP2_EnergyCorps_Explosion_22: 1785615904
+      ElderEntP2_EnergyCorps_Explosion_210: 1631464161
+      ElderEntP2_EnergyCorps_Explosion_20: 1197218514
+      ElderEntP2_EnergyCorps_Explosion_0: 220174666
+      ElderEntP2_EnergyCorps_Explosion_196: -55777513
+      ElderEntP2_EnergyCorps_Explosion_266: 1476983140
+      ElderEntP2_EnergyCorps_Explosion_158: -1845314525
+      ElderEntP2_EnergyCorps_Explosion_154: 1336780498
+      ElderEntP2_EnergyCorps_Explosion_169: 1917785249
+      ElderEntP2_EnergyCorps_Explosion_225: -1105073728
+      ElderEntP2_EnergyCorps_Explosion_145: 2010673897
+      ElderEntP2_EnergyCorps_Explosion_86: -504524860
+      ElderEntP2_EnergyCorps_Explosion_209: 1938452165
+      ElderEntP2_EnergyCorps_Explosion_63: 1785615904
+      ElderEntP2_EnergyCorps_Explosion_43: 491867269
+      ElderEntP2_EnergyCorps_Explosion_187: 1769546363
+      ElderEntP2_EnergyCorps_Explosion_211: 292243524
+      ElderEntP2_EnergyCorps_Explosion_79: -1107255394
+      ElderEntP2_EnergyCorps_Explosion_50: -1109537752
+      ElderEntP2_EnergyCorps_Explosion_23: -767450206
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

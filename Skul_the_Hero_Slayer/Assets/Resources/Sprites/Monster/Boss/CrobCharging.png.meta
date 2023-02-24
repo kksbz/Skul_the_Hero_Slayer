@@ -1,0 +1,1145 @@
+fileFormatVersion: 2
+guid: 204e9ea27f382bb45bd80918f6b08b31
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CrobCharging_4
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 3908
+        width: 262
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f817be6f5080b4f9792172401e2d24
+      internalID: -1926901061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_5
+      rect:
+        serializedVersion: 2
+        x: 1972
+        y: 3914
+        width: 275
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84b402a5ce8ede47a88592f295a1a26
+      internalID: 390574632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_6
+      rect:
+        serializedVersion: 2
+        x: 2458
+        y: 3932
+        width: 284
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fee8d3e6e4e1b84aa6e26c4b138bc97
+      internalID: -1724709883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_20
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 3466
+        width: 255
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93e9f8e7c43f7f428738caf88e146c3
+      internalID: -1293996666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_21
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 3463
+        width: 252
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba4b7aee167f554eb2e80442cfa5a55
+      internalID: 1253785673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_22
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 3437
+        width: 241
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1411f433f627d24cbd6657cf125fa40
+      internalID: 2029546050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_23
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 3445
+        width: 258
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9a45c639ffaae428b91694c34a2dac
+      internalID: 511213786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_24
+      rect:
+        serializedVersion: 2
+        x: 2484
+        y: 3425
+        width: 267
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888475e6d3c70924fb0a38add854a7fb
+      internalID: -913306469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_27
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 2974
+        width: 249
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5c62fb2d70d0d459b96d171687b651
+      internalID: -1088125593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_28
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 2982
+        width: 243
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202378419f697b74b8592c0084ae262e
+      internalID: -1145663148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_29
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 2971
+        width: 226
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82dcb877f7473a8448b626166ab27f65
+      internalID: 1652580581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_30
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 3003
+        width: 255
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda91d27d372ce64c90baa0a40df9d6d
+      internalID: 1573265258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_31
+      rect:
+        serializedVersion: 2
+        x: 2505
+        y: 2971
+        width: 237
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4645d9367642f554f812035edccec333
+      internalID: 1722036789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_32
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 2499
+        width: 216
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cce1853f679ece74f99ca572a4f9add0
+      internalID: -940436141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_33
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 2481
+        width: 249
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199fdd391607df64f8c6566e0c0a9378
+      internalID: -1114162073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_34
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 2479
+        width: 267
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627e9899f57838c44af5559d66b2842c
+      internalID: -407970589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_35
+      rect:
+        serializedVersion: 2
+        x: 2013
+        y: 2461
+        width: 278
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6379ef7604bb942b83402c9123928e
+      internalID: -1060296542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_36
+      rect:
+        serializedVersion: 2
+        x: 2505
+        y: 2473
+        width: 255
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a17776f8c06f344288f4c37012ac635
+      internalID: 1207442781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_38
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 2013
+        width: 243
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86a90a61dfa46a44a532518a9a08a91
+      internalID: 1956776457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_39
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 2019
+        width: 261
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e9e97aa98e6b64ab2347c6a5754537
+      internalID: 948681604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_40
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 1966
+        width: 243
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2166d547b7c4a34a94ed79c712cfe8a
+      internalID: 1657921414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_41
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 1951
+        width: 234
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50cc4b3ff9f427f4d82ab0238b414c6e
+      internalID: 382305271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_42
+      rect:
+        serializedVersion: 2
+        x: 2514
+        y: 1957
+        width: 252
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7190b744d8243244b45432f6468780e
+      internalID: -1915792551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_43
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 1544
+        width: 266
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4b08846a999ed4cbc0609ef0bcd463
+      internalID: 902462278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_44
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 1553
+        width: 260
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1c0e00bce19a1498a1363ba0ebbc30
+      internalID: -664027057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_45
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1521
+        width: 252
+        height: 269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279dee56c8202184fbea91ad8c05480e
+      internalID: -276938699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_47
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 1491
+        width: 262
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8c2fdff4ed5754f9640bf1e1365985
+      internalID: -9463592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_48
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 1500
+        width: 263
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bad3d94b45da9c34ba84037586e49ddc
+      internalID: -1381295508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_50
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 1075
+        width: 252
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b177b5944a210454d8f34c8c227bcd5b
+      internalID: 716075944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_51
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 1081
+        width: 234
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624f612d0498d864d940f7cc420f68c3
+      internalID: -35590037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_52
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 1069
+        width: 193
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85d1d694e56cac4ab007a23961e23b5
+      internalID: -1242997980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_53
+      rect:
+        serializedVersion: 2
+        x: 2083
+        y: 1052
+        width: 188
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ea0bc165cb56149950dc420307e346
+      internalID: 1944818225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_54
+      rect:
+        serializedVersion: 2
+        x: 2552
+        y: 1046
+        width: 225
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28d3f9c9d229e554f9a54382a81e1420
+      internalID: -392544562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_55
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 662
+        width: 225
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45de3ecd0682384b98a222ec338f621
+      internalID: -1017214734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_56
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 656
+        width: 241
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4caff611f4c2812408b6f277bbe4fa9c
+      internalID: 931102536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_57
+      rect:
+        serializedVersion: 2
+        x: 1453
+        y: 621
+        width: 252
+        height: 237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f4287b0cb197b47b1912a149895b77
+      internalID: -1813475721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_58
+      rect:
+        serializedVersion: 2
+        x: 2057
+        y: 592
+        width: 296
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a69f48a55674543a7c6fb96cf88abd
+      internalID: 1399352469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_59
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 586
+        width: 240
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdeee560e6205d4c9ccf026f52a0fb2
+      internalID: -2113324009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_60
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 208
+        width: 307
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5e1bda5a2a3b74492a20b29b3c4fc6
+      internalID: -1114697535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_61
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 217
+        width: 310
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea17cfb430b13d34bb5925e364e7fa6c
+      internalID: 1525041828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_62
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 217
+        width: 296
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff651efb1acc32428abbabeb4f504e7
+      internalID: -2002925653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_63
+      rect:
+        serializedVersion: 2
+        x: 2068
+        y: 190
+        width: 279
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caddaca9ff319e94f88f13b0fd3fe55b
+      internalID: 924850071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_64
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 199
+        width: 267
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7386f819cfcf24893648da17741351
+      internalID: 1138988878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_0
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 3956
+        width: 262
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd2d7e651f4ea44988f1d8e1b4e5cb8
+      internalID: -855323335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CrobCharging_1
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 3957
+        width: 262
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 310d9dfcb3d87194f847c87520c662b2
+      internalID: -559251019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CrobCharging_47: -9463592
+      CrobCharging_37: 232605210
+      CrobCharging_53: 1944818225
+      CrobCharging_14: 408494287
+      CrobCharging_64: 1138988878
+      CrobCharging_55: -1017214734
+      CrobCharging_60: -1114697535
+      CrobCharging_54: -392544562
+      CrobCharging_62: -2002925653
+      CrobCharging_13: 1964304086
+      CrobCharging_30: 1573265258
+      CrobCharging_61: 1525041828
+      CrobCharging_56: 931102536
+      CrobCharging_63: 924850071
+      CrobCharging_50: 716075944
+      CrobCharging_18: 692543153
+      CrobCharging_21: 1253785673
+      CrobCharging_17: -543315805
+      CrobCharging_42: -1915792551
+      CrobCharging_11: 704116397
+      CrobCharging_33: -1114162073
+      CrobCharging_20: -1293996666
+      CrobCharging_35: -1060296542
+      CrobCharging_26: -1103709625
+      CrobCharging_15: 580942014
+      CrobCharging_3: -383905355
+      CrobCharging_6: -1724709883
+      CrobCharging_19: 314576390
+      CrobCharging_16: 2103472333
+      CrobCharging_23: 511213786
+      CrobCharging_5: 390574632
+      CrobCharging_34: -407970589
+      CrobCharging_25: -554705093
+      CrobCharging_22: 2029546050
+      CrobCharging_9: 1654548503
+      CrobCharging_24: -913306469
+      CrobCharging_10: 592167657
+      CrobCharging_46: -489685589
+      CrobCharging_27: -1088125593
+      CrobCharging_2: -469420839
+      CrobCharging_28: -1145663148
+      CrobCharging_31: 1722036789
+      CrobCharging_45: -276938699
+      CrobCharging_38: 1956776457
+      CrobCharging_0: -855323335
+      CrobCharging_41: 382305271
+      CrobCharging_43: 902462278
+      CrobCharging_40: 1657921414
+      CrobCharging_52: -1242997980
+      CrobCharging_48: -1381295508
+      CrobCharging_49: -278539221
+      CrobCharging_4: -1926901061
+      CrobCharging_7: -1927431037
+      CrobCharging_8: 1687526527
+      CrobCharging_29: 1652580581
+      CrobCharging_39: 948681604
+      CrobCharging_36: 1207442781
+      CrobCharging_44: -664027057
+      CrobCharging_51: -35590037
+      CrobCharging_12: 1207630599
+      CrobCharging_32: -940436141
+      CrobCharging_1: -559251019
+      CrobCharging_59: -2113324009
+      CrobCharging_58: 1399352469
+      CrobCharging_57: -1813475721
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

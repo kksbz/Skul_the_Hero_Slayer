@@ -115,7 +115,826 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Groggy_Impact_5
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 3076
+        width: 145
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab85d875572a87e43b0548c9e33963f9
+      internalID: 229166710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_6
+      rect:
+        serializedVersion: 2
+        x: 1941
+        y: 3078
+        width: 149
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db13fb311c6ef1479274570cb6fc9c1
+      internalID: -1717946933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_7
+      rect:
+        serializedVersion: 2
+        x: 2402
+        y: 3066
+        width: 159
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b02fceb542025142aae8bacea5b3dac
+      internalID: 1465641091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_9
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 2695
+        width: 162
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7faae6622d4f1d8419a1287983849b9b
+      internalID: -1775217092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_10
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 2703
+        width: 164
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ecd394080c1e5438195ae89c653c4c
+      internalID: 1792295381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_11
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 2693
+        width: 164
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96bc1dd5dc08445439529be301188c34
+      internalID: -647682753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_12
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 2686
+        width: 166
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7ea6e464b0ab248b6f3c71d231f67c
+      internalID: 739180192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_13
+      rect:
+        serializedVersion: 2
+        x: 2027
+        y: 2680
+        width: 164
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488c68c9bdeaad242a74f4919b9151c1
+      internalID: -2111802188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_14
+      rect:
+        serializedVersion: 2
+        x: 2434
+        y: 2676
+        width: 166
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05954dec170c46447a3bc9aaebca9e34
+      internalID: 248210940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_15
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 2176
+        width: 164
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a33c0247a5849f44b9e1841ed72239a
+      internalID: -1806941315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_16
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 2166
+        width: 164
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5ecb86ca9837c4b9cd84d99f396155
+      internalID: 1326113579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_17
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 2166
+        width: 166
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b01ecf6ae010649891985c2f8ae0e7
+      internalID: -1492646043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_18
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 2174
+        width: 166
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d5098352549a944d94ec64188d855c2
+      internalID: -2014858107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_19
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 2168
+        width: 166
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13684bd27dcd77d4a99e3f444b402b68
+      internalID: 549505260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_20
+      rect:
+        serializedVersion: 2
+        x: 2471
+        y: 2166
+        width: 166
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1eb6aa78725094a9fadeb76166835e
+      internalID: -1510967238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_21
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1664
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985b7e68a7ac807478ebc8ce0bc2a70a
+      internalID: 413216580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_22
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1674
+        width: 166
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af1e913413b29134a8424350db7be8b6
+      internalID: -419351052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_23
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 1658
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c3b8cd0a82d3d4fae4f3fa6319d5be
+      internalID: 750253210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_24
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 1656
+        width: 166
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf77d7a5e1a95a148887450ff1302b54
+      internalID: -24482818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_25
+      rect:
+        serializedVersion: 2
+        x: 2098
+        y: 1664
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d82278543d4b647b9390ba50877403
+      internalID: 1577222075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_26
+      rect:
+        serializedVersion: 2
+        x: 2516
+        y: 1643
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c605e343d263c2741b9ecaa04c1917d6
+      internalID: 1504860920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_27
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 1268
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30630f467a77ca2468b94eec6dffb142
+      internalID: 357502488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_28
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1258
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894e7285bcedbd0419823eca946efa77
+      internalID: -2092476345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_29
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 1262
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd64a992d8a70b3408bc198b162a2da4
+      internalID: -1010099217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_30
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 1258
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1eef5a46b511f4baa19ac873a5968c
+      internalID: -1475352347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_31
+      rect:
+        serializedVersion: 2
+        x: 2129
+        y: 1256
+        width: 166
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cff727f0f9ce646a6679cc5f23a7bb
+      internalID: 232848819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_32
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 1246
+        width: 168
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f3314649cc59b429b10302256034a8
+      internalID: 1716586715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_33
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 871
+        width: 168
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9bfe2af5d25ae439a306e395cb661f
+      internalID: -1255706851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_34
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 848
+        width: 168
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 394c2129e774fa54882a9b359b2eddd3
+      internalID: 1661252832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_35
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 848
+        width: 168
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e252829bb2f07634fbe185e697e97bb9
+      internalID: -475576745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_36
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 850
+        width: 168
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0124235803878047b02b6b24dbee57a
+      internalID: 491013733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_37
+      rect:
+        serializedVersion: 2
+        x: 2139
+        y: 838
+        width: 168
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8c965b44d8bc154dbd829f57ce3e7d2
+      internalID: 2036299517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_38
+      rect:
+        serializedVersion: 2
+        x: 2578
+        y: 838
+        width: 168
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8501a5deb9ffd24d8287f464330171a
+      internalID: -59846950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_39
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 494
+        width: 168
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8dc9f044a907e94d9b610a7eec96d27
+      internalID: 1346244719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_40
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 463
+        width: 168
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657522c4a87dd044d8ef7b0e2b507ca3
+      internalID: -1177055353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_41
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 457
+        width: 168
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea8aaf2997232f469645b06a0638d92
+      internalID: -1172243006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_0
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 3071
+        width: 176
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ccf219b27ddef4ca7aa962e3482814
+      internalID: -666403867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_1
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 3066
+        width: 200
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d967390a793c2a943af526f8bb509d05
+      internalID: 1732143370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Groggy_Impact_2
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 3076
+        width: 158
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba694065445fce4fa0d6eda2d8b78d4
+      internalID: -797651605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +945,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Groggy_Impact_0: -666403867
+      Groggy_Impact_9: -1775217092
+      Groggy_Impact_17: -1492646043
+      Groggy_Impact_12: 739180192
+      Groggy_Impact_24: -24482818
+      Groggy_Impact_6: -1717946933
+      Groggy_Impact_25: 1577222075
+      Groggy_Impact_29: -1010099217
+      Groggy_Impact_27: 357502488
+      Groggy_Impact_28: -2092476345
+      Groggy_Impact_11: -647682753
+      Groggy_Impact_34: 1661252832
+      Groggy_Impact_13: -2111802188
+      Groggy_Impact_8: -1142268883
+      Groggy_Impact_5: 229166710
+      Groggy_Impact_7: 1465641091
+      Groggy_Impact_20: -1510967238
+      Groggy_Impact_31: 232848819
+      Groggy_Impact_10: 1792295381
+      Groggy_Impact_30: -1475352347
+      Groggy_Impact_37: 2036299517
+      Groggy_Impact_32: 1716586715
+      Groggy_Impact_19: 549505260
+      Groggy_Impact_35: -475576745
+      Groggy_Impact_33: -1255706851
+      Groggy_Impact_22: -419351052
+      Groggy_Impact_40: -1177055353
+      Groggy_Impact_36: 491013733
+      Groggy_Impact_14: 248210940
+      Groggy_Impact_26: 1504860920
+      Groggy_Impact_38: -59846950
+      Groggy_Impact_41: -1172243006
+      Groggy_Impact_39: 1346244719
+      Groggy_Impact_2: -797651605
+      Groggy_Impact_16: 1326113579
+      Groggy_Impact_18: -2014858107
+      Groggy_Impact_1: 1732143370
+      Groggy_Impact_3: 1779194068
+      Groggy_Impact_23: 750253210
+      Groggy_Impact_21: 413216580
+      Groggy_Impact_4: 856108954
+      Groggy_Impact_15: -1806941315
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

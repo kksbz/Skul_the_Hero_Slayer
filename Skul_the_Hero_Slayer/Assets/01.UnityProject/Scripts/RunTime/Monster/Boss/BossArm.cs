@@ -23,7 +23,7 @@ public class BossArm : BossMonster
     } //Attack
 
     //Attack 애니메이션이 종료되면 실행되는 함수
-    public void ExitAttack()
+    public void P1ExitAttack()
     {
         armAni.SetBool("isAttackA", false);
         armAni.SetBool("isAttackB", false);
@@ -31,6 +31,16 @@ public class BossArm : BossMonster
         armAni.SetBool("isWaitAttack", false);
         armCollider.enabled = false;
     } //ExitAttack
+
+    public void P2ExitAttack()
+    {
+        armAni.SetBool("isP2AttackA", false);
+        armAni.SetBool("isP2AttackB", false);
+        armAni.SetBool("isP2AttackC", false);
+        armAni.SetBool("isWaitAttack", false);
+        armAni.SetBool("isP2Idle", true);
+        armCollider.enabled = false;
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {

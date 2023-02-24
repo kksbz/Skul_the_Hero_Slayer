@@ -28,10 +28,10 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 1.0833334
-        value: {x: -6, y: 3, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        time: 1
+        value: {x: -5.884016, y: 2.5940552, z: 0}
+        inSlope: {x: -0.3092906, y: 1.0825194, z: 0}
+        outSlope: {x: -0.3092906, y: 1.0825194, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -167,10 +167,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.0833334
-        value: -6
-        inSlope: 0
-        outSlope: 0
+        time: 1
+        value: -5.884016
+        inSlope: -0.3092906
+        outSlope: -0.3092906
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -231,10 +231,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.0833334
-        value: 3
-        inSlope: 0
-        outSlope: 0
+        time: 1
+        value: 2.5940552
+        inSlope: 1.0825194
+        outSlope: 1.0825194
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -295,7 +295,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.0833334
+        time: 1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -340,7 +340,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 3
-    functionName: ExitAttack
+    functionName: P1ExitAttack
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

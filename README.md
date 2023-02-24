@@ -56,3 +56,4 @@
 2023-02-23 / v0.2.5 Platform Effector2D를 사용하여 통과가능한 벽 구현, Player 또다른 캐릭터 GetEntSkul item 구현<br/>
 2023-02-23 / v0.2.6 BossMonster AttackA,B prototype setup<br/>
 2023-02-24 / v0.2.7 BossMonster AttackC prototype setup<br/>
+2023-02-24 / v0.2.8 Work on BossMonster 2Phase<br/>

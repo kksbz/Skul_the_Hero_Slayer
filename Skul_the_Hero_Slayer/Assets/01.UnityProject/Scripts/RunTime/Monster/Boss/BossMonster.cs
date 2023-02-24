@@ -22,17 +22,16 @@ public class BossMonster : MonoBehaviour
     public int maxDamage = 15;
     public bool isChangePhase = false;
     public int hp;
-    public int maxHp = 500;
+    public int maxHp;
     public bool isAttack = false;
     // Start is called before the first frame update
     void Start()
     {
-        hp = maxHp;
         body = gameObject.FindChildObj("Body");
         Head = gameObject.FindChildObj("Head");
         leftArm = gameObject.FindChildObj("LeftArm");
         rightArm = gameObject.FindChildObj("RightArm");
-
+        isChangePhase = true;
         bodyAni = body.GetComponentMust<Animator>();
         headAni = Head.GetComponentMust<Animator>();
         leftArmAni = leftArm.GetComponentMust<Animator>();
@@ -44,6 +43,7 @@ public class BossMonster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // ChangePhase();
         TargetCheck();
         SelectAttackType();
     } //Update
@@ -52,7 +52,7 @@ public class BossMonster : MonoBehaviour
     private void TargetCheck()
     {
         corpAttackCoolDown += Time.deltaTime;
-        if (corpAttackCoolDown >= 10f)
+        if (corpAttackCoolDown >= 15f)
         {
             isCorpAttack = true;
             corpAttackCoolDown = 0;
@@ -71,7 +71,6 @@ public class BossMonster : MonoBehaviour
         {
             isAttack = false;
         }
-        Debug.Log(isCorpAttack);
     } //TargetCheck
 
     void OnDrawGizmos()
@@ -109,45 +108,133 @@ public class BossMonster : MonoBehaviour
         }
     } //SelectAttackType
 
+    //2페이즈로 전환하는 함수
+    public virtual void ChangePhase(bool ChangePhase)
+    {
+        Debug.Log($"부모오브젝트의 불값 체크 보스{isChangePhase}/ 머리{ChangePhase}");
+        isChangePhase = ChangePhase;
+        Debug.Log($"부모오브젝트의 불값 체크 보스{isChangePhase}/ 머리{ChangePhase}");
+        //hp가 0보다 작거나 같고 현재 상태가 1페이즈일 때 2페이즈로 전환
+        if (isChangePhase == true)
+        {
+            Debug.Log("부모 페이즈변환 들어옴?");
+            bodyAni.SetBool("isChangePhase", true);
+            headAni.SetBool("isChangePhase", true);
+            rightArmAni.SetBool("isChangePhase", true);
+            leftArmAni.SetBool("isChangePhase", true);
+            Debug.Log("애니 실행됨?");
+            hp = maxHp;
+        }
+    } //ChangePhase
+
     //AttackA 함수
     private void OnAttackA()
     {
-        //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
-        if (hit.transform.localPosition.x > 0)
+        if (isChangePhase == false)
         {
-            rightArmAni.SetBool("isAttackA", true);
-            leftArmAni.SetBool("isWaitAttack", true);
+            //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
+            if (hit.transform.localPosition.x > 0)
+            {
+                rightArmAni.SetBool("isAttackA", true);
+                leftArmAni.SetBool("isWaitAttack", true);
+            }
+            else if (hit.transform.localPosition.x < 0)
+            {
+                leftArmAni.SetBool("isAttackA", true);
+                rightArmAni.SetBool("isWaitAttack", true);
+            }
+            isAttack = true;
         }
-        else if (hit.transform.localPosition.x < 0)
+        else if (isChangePhase == true)
         {
-            leftArmAni.SetBool("isAttackA", true);
-            rightArmAni.SetBool("isWaitAttack", true);
+            headAni.SetBool("isP2Idle", false);
+
+            rightArmAni.SetBool("isP2Idle", false);
+            leftArmAni.SetBool("isP2Idle", false);
+            rightArmAni.SetBool("isP2AttackA", true);
+            leftArmAni.SetBool("isP2AttackA", true);
+            //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
+            // if (hit.transform.localPosition.x > 0)
+            // {
+            //     rightArmAni.SetBool("isP2AttackA", true);
+            //     leftArmAni.SetBool("isWaitAttack", true);
+            // }
+            // else if (hit.transform.localPosition.x < 0)
+            // {
+            //     leftArmAni.SetBool("isP2AttackA", true);
+            //     rightArmAni.SetBool("isWaitAttack", true);
+            // }
+            isAttack = true;
         }
-        isAttack = true;
     } //AttackA
 
     //AttackB 함수
     private void OnAttackB()
     {
-        //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
-        if (hit.transform.localPosition.x > 0)
+        if (isChangePhase == false)
         {
-            rightArmAni.SetBool("isAttackB", true);
-            leftArmAni.SetBool("isWaitAttack", true);
+            //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
+            if (hit.transform.localPosition.x > 0)
+            {
+                headAni.SetBool("isRightAttack", true);
+                bodyAni.SetBool("isRightAttack", true);
+                rightArmAni.SetBool("isAttackB", true);
+                leftArmAni.SetBool("isWaitAttack", true);
+            }
+            else if (hit.transform.localPosition.x < 0)
+            {
+                headAni.SetBool("isLeftAttack", true);
+                bodyAni.SetBool("isLeftAttack", true);
+                leftArmAni.SetBool("isAttackB", true);
+                rightArmAni.SetBool("isWaitAttack", true);
+            }
+            isAttack = true;
         }
-        else if (hit.transform.localPosition.x < 0)
+        else if (isChangePhase == true)
         {
-            leftArmAni.SetBool("isAttackB", true);
-            rightArmAni.SetBool("isWaitAttack", true);
+            headAni.SetBool("isP2Idle", false);
+            rightArmAni.SetBool("isP2Idle", false);
+            leftArmAni.SetBool("isP2Idle", false);
+            //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
+            if (hit.transform.localPosition.x > 0)
+            {
+                headAni.SetBool("isP2RightAttack", true);
+                bodyAni.SetBool("isRightAttack", true);
+                rightArmAni.SetBool("isP2AttackB", true);
+                leftArmAni.SetBool("isWaitAttack", true);
+            }
+            else if (hit.transform.localPosition.x < 0)
+            {
+                headAni.SetBool("isP2LeftAttack", true);
+                bodyAni.SetBool("isLeftAttack", true);
+                leftArmAni.SetBool("isP2AttackB", true);
+                rightArmAni.SetBool("isWaitAttack", true);
+            }
+            isAttack = true;
         }
-        isAttack = true;
     } //AttackB
 
     //AttackC 함수
     private void OnAttackC()
     {
-        leftArmAni.SetBool("isAttackC", true);
-        rightArmAni.SetBool("isAttackC", true);
-        isAttack = true;
+        if (isChangePhase == false)
+        {
+            headAni.SetBool("isAttackC", true);
+            bodyAni.SetBool("isAttackC", true);
+            leftArmAni.SetBool("isAttackC", true);
+            rightArmAni.SetBool("isAttackC", true);
+            isAttack = true;
+        }
+        else if (isChangePhase == true)
+        {
+            rightArmAni.SetBool("isP2Idle", false);
+            leftArmAni.SetBool("isP2Idle", false);
+
+            headAni.SetBool("isAttackC", true);
+            bodyAni.SetBool("isAttackC", true);
+            leftArmAni.SetBool("isP2AttackC", true);
+            rightArmAni.SetBool("isP2AttackC", true);
+            isAttack = true;
+        }
     } //AttackC
 }

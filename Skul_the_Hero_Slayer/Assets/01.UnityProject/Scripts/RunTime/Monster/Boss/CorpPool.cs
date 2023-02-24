@@ -29,6 +29,7 @@ public class CorpPool : MonoBehaviour
     //탄환 발사하는 함수
     public void ShootBullet()
     {
+        Debug.Log($"ShootBullet 실행 보스페이지 2페?{parentObj.isChangePhase}");
         if (parentObj.isChangePhase == false)
         {
             foreach (var corp in corpPool)
