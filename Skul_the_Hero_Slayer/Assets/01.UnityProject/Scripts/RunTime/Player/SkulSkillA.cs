@@ -57,7 +57,7 @@ public class SkulSkillA : MonoBehaviour
         {
             if (tagetObj == GData.ENEMY_LAYER_MASK)
             {
-                BossMonster boss = hit.collider.gameObject?.GetComponentMust<BossMonster>();
+                BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
                 if (boss != null)
                 {
                     boss.hp -= Random.RandomRange(20, 25);

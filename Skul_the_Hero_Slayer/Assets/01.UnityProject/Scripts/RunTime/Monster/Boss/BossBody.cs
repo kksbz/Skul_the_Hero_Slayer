@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossBody : BossMonster
+public class BossBody : MonoBehaviour
 {
     private Animator bossBodyAni;
     // Start is called before the first frame update
@@ -18,6 +18,7 @@ public class BossBody : BossMonster
         bossBodyAni.SetBool("isRightAttack", false);
         bossBodyAni.SetBool("isLeftAttack", false);
         bossBodyAni.SetBool("isAttackC", false);
+        bossBodyAni.SetBool("isFistSlam", false);
         bossBodyAni.SetBool("isGroggy", false);
     } //P1ExitAttack
 
@@ -28,7 +29,24 @@ public class BossBody : BossMonster
         bossBodyAni.SetBool("isP2RightAttack", false);
         bossBodyAni.SetBool("isP2LeftAttack", false);
         bossBodyAni.SetBool("isP2AttackC", false);
+        bossBodyAni.SetBool("isP2FistSlam", false);
         bossBodyAni.SetBool("isP2Groggy", false);
         bossBodyAni.SetBool("isP2Idle", true);
     } //P2ExitAttack
+
+    public void ChangePhase()
+    {
+        bossBodyAni.SetBool("isChangePhase", false);
+        bossBodyAni.SetBool("isP2Idle", true);
+    } //ExitChangePhase
+
+    public void Dead()
+    {
+        bossBodyAni.SetBool("isP2AttackA", false);
+        bossBodyAni.SetBool("isP2RightAttack", false);
+        bossBodyAni.SetBool("isP2LeftAttack", false);
+        bossBodyAni.SetBool("isP2AttackC", false);
+        bossBodyAni.SetBool("isP2FistSlam", false);
+        bossBodyAni.SetBool("isP2Groggy", false);
+    } //Dead
 }
