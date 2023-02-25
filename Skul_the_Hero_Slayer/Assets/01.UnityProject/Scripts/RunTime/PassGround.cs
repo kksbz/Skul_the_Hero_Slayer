@@ -17,13 +17,11 @@ public class PassGround : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.DownArrow) && Input.GetKeyDown(KeyCode.C) && checkPlayer == true)
         {
-            Debug.Log("들어옴?");
             passGroundObj.rotationalOffset = 180f;
         }
 
         if (Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.DownArrow))
         {
-            Debug.Log($"C키입력{checkPlayer}");
             passGroundObj.rotationalOffset = 0f;
         }
     }
@@ -33,7 +31,6 @@ public class PassGround : MonoBehaviour
         if (collision.collider.tag == GData.PLAYER_LAYER_MASK)
         {
             checkPlayer = true;
-            Debug.Log(checkPlayer);
         }
     }
 
@@ -42,7 +39,6 @@ public class PassGround : MonoBehaviour
         if (collision.collider.tag == GData.PLAYER_LAYER_MASK)
         {
             checkPlayer = false;
-            Debug.Log($"나갈때{checkPlayer}");
         }
     }
 }

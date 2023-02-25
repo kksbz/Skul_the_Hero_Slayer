@@ -14,7 +14,6 @@ public class EntSkul : Player
         playerData = Resources.Load("EntSkulData") as PlayerData;
         InitPlayerData(playerData);
         playerController.player = (Player)(this as Player);
-        Debug.Log("EntSkul");
     }
 
     public override void AttackA()
@@ -48,6 +47,22 @@ public class EntSkul : Player
     {
 
     } //SkillA
+
+    public void EntSkillA()
+    {
+        Vector2 direction = new Vector2(transform.localScale.x, 0f).normalized;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, 10f, LayerMask.GetMask(GData.ENEMY_LAYER_MASK));
+        int number = 0;
+        for (int i = 0; i < hits.Length; i++)
+        {
+            if (hits[i].collider != null && number < 3)
+            {
+                GameObject fist = Instantiate(Resources.Load("Prefabs/EntSkillA") as GameObject);
+                fist.transform.position = hits[i].collider.transform.position;
+                number += 1;
+            }
+        }
+    } //EntSkillA
 
     public override void SkillB()
     {

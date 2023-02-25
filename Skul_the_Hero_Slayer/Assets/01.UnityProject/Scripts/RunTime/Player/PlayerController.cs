@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
         JUMP,
         DASH,
         ATTACK,
+        SKILL,
         DEAD
     }; //PlayerState
     public Player player;
@@ -24,17 +25,29 @@ public class PlayerController : MonoBehaviour
     private Dictionary<PlayerState, IPlayerState> dicState = new Dictionary<PlayerState, IPlayerState>();
     private SpriteRenderer playerSprite;
     public RuntimeAnimatorController BeforeChangeRuntimeC;
-    public Animator playerAni;
     public List<Player> playerSkulList; //플레이어가 사용할 수 있는 Skul의 List
-    private Player possibleSkul;
     private float swapCoolDown = 0f;
     // Start is called before the first frame update
+
     void Start()
     {
-        //기본 스컬의 런타임애니컨트롤러를 저장 => 스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
-        possibleSkul = gameObject.AddComponent<Skul>();
         playerSkulList = new List<Player>();
-        playerSkulList.Add(possibleSkul);
+        Player possibleSkul = default;
+#if !DEBUG_ENABLED
+        //기본 스컬의 런타임애니컨트롤러를 저장 => 스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == GData.CASTLELOBBY_SCENE_NAME)
+        {
+            possibleSkul = gameObject.AddComponent<Skul>();
+            playerSkulList.Add(possibleSkul);
+        }
+        else
+        {
+            SaveManager.Instance.LoadData(this);
+        }
+#else
+            possibleSkul = gameObject.AddComponent<Skul>();
+            playerSkulList.Add(possibleSkul);
+#endif
 
         BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
         isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
@@ -44,12 +57,14 @@ public class PlayerController : MonoBehaviour
         IPlayerState jump = new PlayerJump();
         IPlayerState dash = new PlayerDash();
         IPlayerState attack = new PlayerAttack();
+        IPlayerState skill = new PlayerSkill();
 
         dicState.Add(PlayerState.IDLE, idle);
         dicState.Add(PlayerState.MOVE, move);
         dicState.Add(PlayerState.JUMP, jump);
         dicState.Add(PlayerState.DASH, dash);
         dicState.Add(PlayerState.ATTACK, attack);
+        dicState.Add(PlayerState.SKILL, skill);
         pStateMachine = new PStateMachine(idle, this);
     } //Start
     void FixedUpdate()
@@ -86,17 +101,23 @@ public class PlayerController : MonoBehaviour
         {
             pStateMachine.SetState(dicState[PlayerState.IDLE]);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S))
         {
-            player.playerAni.SetBool("isSkillA", true);
+            pStateMachine.SetState(dicState[PlayerState.SKILL]);
         }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            player.SkillB();
-        }
+
         if (Input.GetKeyDown(KeyCode.Space) && swapCoolDown == 0f)
         {
             ChangePlayer();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SaveManager.Instance.SaveData(this);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            SaveManager.Instance.LoadData(this);
         }
         pStateMachine.DoUpdate();
     } //Update

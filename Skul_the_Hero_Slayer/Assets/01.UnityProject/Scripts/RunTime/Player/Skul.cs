@@ -43,17 +43,25 @@ public class Skul : Player
         {
             if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
             {
+                BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
+                if (boss != null)
+                {
+                    boss.hp -= Random.RandomRange(20, 25);
+                    Debug.Log($"스킬A공격 = {boss.hp}/{boss.maxHp}");
+                }
+
                 Monster monster = hit.collider.gameObject.GetComponentMust<Monster>();
-                monster.hp -= Random.Range(playerData.MinDamage, playerData.MaxDamage);
-                Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
+                if (monster != null)
+                {
+                    monster.hp -= Random.Range(playerData.MinDamage, playerData.MaxDamage);
+                    Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
+                }
             }
         }
     } //AttackAandB
 
     public override void SkillA()
     {
-        Debug.Log("스컬 스킬A사용?");
-        playerAni.SetBool("isSkillA", true);
         skillAObj = Instantiate(Resources.Load("Prefabs/SkulSkillAEffect") as GameObject);
         skillAObj.GetComponentMust<SkulSkillA>().Init(this);
         playerAni.runtimeAnimatorController = SkulHeadless;

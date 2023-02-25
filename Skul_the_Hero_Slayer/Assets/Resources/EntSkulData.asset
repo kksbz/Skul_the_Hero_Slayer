@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EntSkulData
   m_EditorClassIdentifier: 
   playerName: Player
+  skulIndex: 1
   minDamage: 13
   maxDamage: 20
   moveSpeed: 4

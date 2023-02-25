@@ -9,6 +9,9 @@ public class PlayerData : ScriptableObject
     private string playerName; //플레이어 스컬 이름
     public string PlayerName { get { return playerName; } }
     [SerializeField]
+    private int skulIndex; //플레이어 스컬 번호
+    public int SkulIndex { get { return skulIndex; } }
+    [SerializeField]
     private int minDamage; //플레이어 최소 데미지
     public int MinDamage { get { return minDamage; } }
     [SerializeField]

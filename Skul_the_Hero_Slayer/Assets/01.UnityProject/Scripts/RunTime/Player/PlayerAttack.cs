@@ -27,8 +27,8 @@ public class PlayerAttack : IPlayerState
     } //StateFixedUpdate
     public void StateUpdate()
     {
+        ComboAttack();
         ExitAttack();
-        /*Do Nothing*/
     } //StateUpdate
     public void StateExit()
     {
@@ -38,6 +38,19 @@ public class PlayerAttack : IPlayerState
         pController.player.playerAni.SetBool("isJumpAttack", false);
         /*Do Nothing*/
     } //StateExit
+
+    private void ComboAttack()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("들어옴?");
+            if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 6f
+            && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+            {
+                pController.player.playerAni.SetBool("isAttackB", true);
+            }
+        }
+    } //ComboAttack
 
     //공중공격을 한 경우 다음 행동 정하는 함수
     private void ExitAttack()

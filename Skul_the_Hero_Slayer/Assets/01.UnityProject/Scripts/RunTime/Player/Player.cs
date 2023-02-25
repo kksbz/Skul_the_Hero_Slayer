@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [HideInInspector] public string _name;
+    [HideInInspector] public int skulIndex;
     [HideInInspector] public int minDamage;
     [HideInInspector] public int maxDamage;
     [HideInInspector] public float moveSpeed;
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
     //플레이어데이터 초기화하는 함수
     public void InitPlayerData(PlayerData data)
     {
-        this._name = data.name;
+        this._name = data.PlayerName;
         this.minDamage = data.MinDamage;
         this.maxDamage = data.MaxDamage;
         this.moveSpeed = data.MoveSpeed;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         this.playerAni.runtimeAnimatorController = data.Controller;
         this.playerCollider = gameObject.GetComponentMust<CapsuleCollider2D>();
         this.playerCollider.size = new Vector2(data.ColliderSizeX, data.ColliderSizeY);
+        this.skulIndex = data.SkulIndex;
     } //InitMonsterData
 
     //플레이어 AttackA

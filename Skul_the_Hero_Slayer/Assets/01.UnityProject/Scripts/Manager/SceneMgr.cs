@@ -34,7 +34,7 @@ public class SceneMgr : MonoBehaviour
             }
         }
     } //Awake
-    
+
     public void LoadAsyncScene(string sceneName)
     {
         StartCoroutine(GetLoading(sceneName));
@@ -46,11 +46,10 @@ public class SceneMgr : MonoBehaviour
         UIManager.Instance.ShowLoading(true);
         yield return new WaitForSeconds(1.5f);
         var asyncLoad = SceneManager.LoadSceneAsync(sceneName);
-        while(!asyncLoad.isDone)
+        while (!asyncLoad.isDone)
         {
             yield return null;
         }
-        Debug.Log(asyncLoad.isDone);
         UIManager.Instance.ShowLoading(false);
     } //GetLoading
 }

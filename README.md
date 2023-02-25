@@ -59,4 +59,5 @@
 2023-02-24 / v0.2.8 Work on BossMonster 2Phase<br/>
 2023-02-24 / v0.2.9 BossMonster 2Phase Setup<br/>
 2023-02-25 / v0.3.0 BossMonster Groggy and CropAttack Logic change<br/>
-2023-02-25 / v0.3.1 Work on BOssMonster Dead, Groggy, FistSlam state<br/>
+2023-02-25 / v0.3.1 Work on BossMonster Dead, Groggy, FistSlam state<br/>
+2023-02-26 / v0.3.2 Player SaveData setup<br/>
