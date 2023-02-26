@@ -36,10 +36,21 @@ public class EntSkul : Player
         {
             if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
             {
-                Monster monster = hit.collider.gameObject.GetComponentMust<Monster>();
-                monster.hp -= Random.Range(playerData.MinDamage, playerData.MaxDamage);
-                Debug.Log($"엔트스컬 민뎀={playerData.MinDamage},맥뎀={playerData.MaxDamage}");
-                Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
+                BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
+                if (boss != null)
+                {
+                    boss.hp -= Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
+                    Debug.Log($"엔트스컬 민뎀={playerData.MinDamage},맥뎀={playerData.MaxDamage}");
+                    Debug.Log($"{boss.name}={boss.hp}/{boss.maxHp}");
+                }
+
+                Monster monster = hit.collider.gameObject?.GetComponentMust<Monster>();
+                if (monster != null)
+                {
+                    monster.hp -= Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
+                    Debug.Log($"엔트스컬 민뎀={playerData.MinDamage},맥뎀={playerData.MaxDamage}");
+                    Debug.Log($"{monster._name}={monster.hp}/{monster.maxHp}");
+                }
             }
         }
     } //AttackAandB
@@ -47,12 +58,18 @@ public class EntSkul : Player
     {
 
     } //SkillA
+    public override void SkillB()
+    {
 
+    } //SkillB
+
+    //EntSkillA 함수
     public void EntSkillA()
     {
         Vector2 direction = new Vector2(transform.localScale.x, 0f).normalized;
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, 10f, LayerMask.GetMask(GData.ENEMY_LAYER_MASK));
         int number = 0;
+        //사거리 안에 있는 적 최대 3명에게 공격
         for (int i = 0; i < hits.Length; i++)
         {
             if (hits[i].collider != null && number < 3)
@@ -64,8 +81,13 @@ public class EntSkul : Player
         }
     } //EntSkillA
 
-    public override void SkillB()
+    //EntSkillB 함수
+    public void EntSkillB()
     {
-
-    } //SkillB
+        GameObject entSkillB = Instantiate(Resources.Load("Prefabs/EntSkillB") as GameObject);
+        float directionX = playerController.player.transform.localScale.x;
+        //SkillB 오브젝트의 위치와 방향 설정
+        entSkillB.transform.position = playerController.player.transform.position;
+        entSkillB.transform.localScale = new Vector3(directionX, 1, 1);
+    } //EntSkillB
 }

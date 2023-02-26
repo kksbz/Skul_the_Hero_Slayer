@@ -2,19 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSkill : IPlayerState
+public class PlayerSkillB : IPlayerState
 {
     private PlayerController pController;
     public void StateEnter(PlayerController _pController)
     {
         this.pController = _pController;
-        pController.enumState = PlayerController.PlayerState.SKILL;
+        pController.enumState = PlayerController.PlayerState.SKILLB;
+        pController.player.playerAni.SetBool("isSkillB", true);
     } //StateEnter
     public void StateFixedUpdate()
     {
         /*Do Nothing*/
     } //StateFixedUpdate
     public void StateUpdate()
+    {
+        ExitSkillB();
+    } //StateUpdate
+    public void StateExit()
+    {
+        pController.player.playerAni.SetBool("isSkillB", false);
+        /*Do Nothing*/
+    } //StateExit
+
+    //SkillA 애니메이션 종료후 다음상태로 전환하는 함수
+    private void ExitSkillB()
     {
         if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
@@ -28,24 +40,9 @@ public class PlayerSkill : IPlayerState
             {
                 nextState = new PlayerJump();
             }
-            Debug.Log($"공격 후 들어갈 다음 상태{nextState}");
+            Debug.Log($"스킬B후 들어갈 다음 상태{nextState}");
             pController.pStateMachine.onChangeState?.Invoke(nextState);
             return;
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            pController.player.playerAni.SetBool("isSkillA", true);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            pController.player.playerAni.SetBool("isSkillB", true);
-        }
-        /*Do Nothing*/
-    } //StateUpdate
-    public void StateExit()
-    {
-        pController.player.playerAni.SetBool("isSkillA", false);
-        pController.player.playerAni.SetBool("isSkillB", false);
-        /*Do Nothing*/
-    } //StateExit
+    } //ExitSkillA
 }

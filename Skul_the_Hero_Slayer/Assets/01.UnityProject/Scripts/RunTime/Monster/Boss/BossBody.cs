@@ -25,9 +25,10 @@ public class BossBody : MonoBehaviour
     //2페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
     public void P2ExitAttack()
     {
-        bossBodyAni.SetBool("isP2AttackA", false);
-        bossBodyAni.SetBool("isP2RightAttack", false);
-        bossBodyAni.SetBool("isP2LeftAttack", false);
+        bossBodyAni.SetBool("isP2RightAttackA", false);
+        bossBodyAni.SetBool("isP2LeftAttackA", false);
+        bossBodyAni.SetBool("isP2RightAttackB", false);
+        bossBodyAni.SetBool("isP2LeftAttackB", false);
         bossBodyAni.SetBool("isP2AttackC", false);
         bossBodyAni.SetBool("isP2FistSlam", false);
         bossBodyAni.SetBool("isP2Groggy", false);
@@ -42,9 +43,11 @@ public class BossBody : MonoBehaviour
 
     public void Dead()
     {
-        bossBodyAni.SetBool("isP2AttackA", false);
-        bossBodyAni.SetBool("isP2RightAttack", false);
-        bossBodyAni.SetBool("isP2LeftAttack", false);
+        bossBodyAni.SetBool("isP2Idle", false);
+        bossBodyAni.SetBool("isP2RightAttackA", false);
+        bossBodyAni.SetBool("isP2LeftAttackA", false);
+        bossBodyAni.SetBool("isP2RightAttackB", false);
+        bossBodyAni.SetBool("isP2LeftAttackB", false);
         bossBodyAni.SetBool("isP2AttackC", false);
         bossBodyAni.SetBool("isP2FistSlam", false);
         bossBodyAni.SetBool("isP2Groggy", false);

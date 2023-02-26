@@ -62,18 +62,29 @@ public class Skul : Player
 
     public override void SkillA()
     {
-        skillAObj = Instantiate(Resources.Load("Prefabs/SkulSkillAEffect") as GameObject);
-        skillAObj.GetComponentMust<SkulSkillA>().Init(this);
-        playerAni.runtimeAnimatorController = SkulHeadless;
+
     } //SkillA
 
     public override void SkillB()
     {
+
+    } //SkillB
+
+    public void SkulSkillA()
+    {
+        skillAObj = Instantiate(Resources.Load("Prefabs/SkulSkillAEffect") as GameObject);
+        skillAObj.GetComponentMust<SkulSkillA>().Init(this);
+        playerAni.runtimeAnimatorController = SkulHeadless;
+    } //SkulSkillA
+
+    public void SkulSkillB()
+    {
+        Debug.Log("스킬B 들어옴?");
         playerController.player.transform.position = skillAObj.transform.position;
         playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
         if (skillAObj != null)
         {
             Destroy(skillAObj);
         }
-    } //SkillB
+    } //SkulSkillB
 }

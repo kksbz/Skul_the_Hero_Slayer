@@ -9,15 +9,14 @@ public class PlayerAttack : IPlayerState
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.ATTACK;
-        Debug.Log("공격 들옴?");
         if (pController.isGroundRay.hit.collider != null)
         {
-            Debug.Log("기본공격");
+            //땅에 있으면 기본공격
             pController.player.playerAni.SetBool("isAttackA", true);
         }
         else
         {
-            Debug.Log("공중공격");
+            //공중에 있으면 공중공격
             pController.player.playerAni.SetBool("isJumpAttack", true);
         }
     } //StateEnter
@@ -32,21 +31,19 @@ public class PlayerAttack : IPlayerState
     } //StateUpdate
     public void StateExit()
     {
-        Debug.Log("공격종료");
         pController.player.playerAni.SetBool("isAttackA", false);
         pController.player.playerAni.SetBool("isAttackB", false);
         pController.player.playerAni.SetBool("isJumpAttack", false);
-        /*Do Nothing*/
     } //StateExit
 
     private void ComboAttack()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 5f
+        && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
         {
-            Debug.Log("들어옴?");
-            if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 6f
-            && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+            if (Input.GetKeyDown(KeyCode.X))
             {
+                Debug.Log("콤보어택 들어옴?");
                 pController.player.playerAni.SetBool("isAttackB", true);
             }
         }

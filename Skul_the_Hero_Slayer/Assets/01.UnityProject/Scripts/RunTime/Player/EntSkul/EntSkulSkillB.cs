@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntSkulSkillA : MonoBehaviour
+public class EntSkulSkillB : MonoBehaviour
 {
     private Animator entSkillAni;
-    private bool isHit = false;
+    private int minDamage = 27;
+    private int maxDamage = 35;
     // Start is called before the first frame update
     void Start()
     {
         entSkillAni = gameObject.GetComponentMust<Animator>();
-    } //Start
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (isHit == true)
+        if (entSkillAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.6f)
         {
             gameObject.GetComponentMust<BoxCollider2D>().enabled = false;
         }
@@ -23,25 +24,25 @@ public class EntSkulSkillA : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    } //Update
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag == GData.ENEMY_LAYER_MASK)
         {
             BossHead boss = collider.gameObject?.GetComponentMust<BossHead>();
+            //보스몬스터 데미지 판정처리
             if (boss != null)
             {
-                boss.hp -= Random.RandomRange(25, 30);
-                Debug.Log($"Ent스킬A공격 = {boss.hp}/{boss.maxHp}");
-                isHit = true;
+                boss.hp -= Random.RandomRange(minDamage, maxDamage);
+                Debug.Log($"Ent스킬B공격 = {boss.hp}/{boss.maxHp}");
             }
             MonsterController target = collider.gameObject?.GetComponentMust<MonsterController>();
+            //몬스터 데미지 판정처리
             if (target != null)
             {
-                target.monster.hp -= Random.RandomRange(25, 30);
-                Debug.Log($"Ent스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
-                isHit = true;
+                target.monster.hp -= Random.RandomRange(minDamage, maxDamage);
+                Debug.Log($"Ent스킬B공격 = {target.monster.hp}/{target.monster.maxHp}");
             }
         }
     } //OnTriggerEnter2D

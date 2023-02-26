@@ -48,8 +48,9 @@ public class BossArm : MonoBehaviour
         armAni.SetBool("isP2AttackA", false);
         armAni.SetBool("isP2AttackB", false);
         armAni.SetBool("isP2AttackC", false);
+        armAni.SetBool("isP2WaitAttackA", false);
+        armAni.SetBool("isP2WaitAttackB", false);
         armAni.SetBool("isP2FistSlam", false);
-        armAni.SetBool("isP2WaitAttack", false);
         armAni.SetBool("isP2Groggy", false);
         armAni.SetBool("isP2Idle", true);
         armCollider.enabled = false;
@@ -63,10 +64,12 @@ public class BossArm : MonoBehaviour
 
     public void Dead()
     {
+        armAni.SetBool("isP2Idle", false);
         armAni.SetBool("isP2AttackA", false);
-        armAni.SetBool("isP2RightAttack", false);
-        armAni.SetBool("isP2LeftAttack", false);
+        armAni.SetBool("isP2AttackB", false);
         armAni.SetBool("isP2AttackC", false);
+        armAni.SetBool("isP2WaitAttackA", false);
+        armAni.SetBool("isP2WaitAttackB", false);
         armAni.SetBool("isP2FistSlam", false);
         armAni.SetBool("isP2Groggy", false);
     } //Dead

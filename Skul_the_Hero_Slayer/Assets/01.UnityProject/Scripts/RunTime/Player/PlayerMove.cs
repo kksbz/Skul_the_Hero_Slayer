@@ -11,7 +11,6 @@ public class PlayerMove : IPlayerState
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.MOVE;
-        Debug.Log($"무브들옴?,{pController.enumState}");
         pController.player.playerAni.SetBool("isWalk", true);
         localScale = pController.player.transform.localScale;
     }
@@ -21,6 +20,7 @@ public class PlayerMove : IPlayerState
     }
     public void StateUpdate()
     {
+        ExitMove();
         MoveAndDirection();
     }
     public void StateExit()
@@ -47,4 +47,14 @@ public class PlayerMove : IPlayerState
             pController.player.transform.Translate(direction * pController.player.moveSpeed * Time.deltaTime);
         }
     } //MoveAndDirection
+
+    private void ExitMove()
+    {
+        if (Input.anyKey == false)
+        {
+            IPlayerState nextState;
+            nextState = new PlayerIdle();
+            pController.pStateMachine.onChangeState?.Invoke(nextState);
+        }
+    } //ExitMove
 }

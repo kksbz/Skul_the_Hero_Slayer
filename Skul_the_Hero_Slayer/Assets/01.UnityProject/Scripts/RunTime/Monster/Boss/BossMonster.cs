@@ -231,29 +231,23 @@ public class BossMonster : MonoBehaviour
         {
             //2페이즈인 경우 실행
             OffP2Idle();
-            headAni.SetBool("isP2AttackA", true);
-            bodyAni.SetBool("isP2AttackA", true);
-            rightArmAni.SetBool("isP2AttackA", true);
-            leftArmAni.SetBool("isP2AttackA", true);
-            //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
-            // if (hit.transform.localPosition.x > 0)
-            // {
-            //     rightArmAni.SetBool("isP2AttackA", true);
-            //     leftArmAni.SetBool("isWaitAttack", true);
-            // }
-            // else if (hit.transform.localPosition.x < 0)
-            // {
-            //     leftArmAni.SetBool("isP2AttackA", true);
-            //     rightArmAni.SetBool("isWaitAttack", true);
-            // }
+            // 타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
+            if (hit.transform.localPosition.x > 0)
+            {
+                headAni.SetBool("isP2RightAttackA", true);
+                bodyAni.SetBool("isP2RightAttackA", true);
+                rightArmAni.SetBool("isP2AttackA", true);
+                leftArmAni.SetBool("isP2WaitAttackA", true);
+            }
+            else if (hit.transform.localPosition.x < 0)
+            {
+                headAni.SetBool("isP2LeftAttackA", true);
+                bodyAni.SetBool("isP2LeftAttackA", true);
+                leftArmAni.SetBool("isP2AttackA", true);
+                rightArmAni.SetBool("isP2WaitAttackA", true);
+            }
         }
     } //AttackA
-
-    private void P2AttackA()
-    {
-
-    }
-
 
     //AttackB 함수
     private void OnAttackB()
@@ -285,17 +279,17 @@ public class BossMonster : MonoBehaviour
             //타겟이 오른쪽에 있으면 오른팔로 왼쪽이면 왼쪽팔로 공격
             if (hit.transform.localPosition.x > 0)
             {
-                headAni.SetBool("isP2RightAttack", true);
-                bodyAni.SetBool("isP2RightAttack", true);
+                headAni.SetBool("isP2RightAttackB", true);
+                bodyAni.SetBool("isP2RightAttackB", true);
                 rightArmAni.SetBool("isP2AttackB", true);
-                leftArmAni.SetBool("isP2WaitAttack", true);
+                leftArmAni.SetBool("isP2WaitAttackB", true);
             }
             else if (hit.transform.localPosition.x < 0)
             {
-                headAni.SetBool("isP2LeftAttack", true);
-                bodyAni.SetBool("isP2LeftAttack", true);
+                headAni.SetBool("isP2LeftAttackB", true);
+                bodyAni.SetBool("isP2LeftAttackB", true);
                 leftArmAni.SetBool("isP2AttackB", true);
-                rightArmAni.SetBool("isP2WaitAttack", true);
+                rightArmAni.SetBool("isP2WaitAttackB", true);
             }
         }
     } //AttackB

@@ -9,11 +9,12 @@ public class PlayerDash : IPlayerState
     private float dashTime = 0.3f; //대쉬 지속 시간
     private int dashCount = 0; //2단 대쉬 변수
     private float dashCooldown = 1f; //대쉬 쿨다운
+    private GameObject dashEffect; //대쉬 이펙트
     public void StateEnter(PlayerController _pController)
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.DASH;
-        // Debug.Log($"대쉬 들옴? {pController.enumState}");
+        dashEffect = pController.gameObject.FindChildObj("DashEffect");
     } //StateEnter
     public void StateFixedUpdate()
     {
@@ -42,6 +43,7 @@ public class PlayerDash : IPlayerState
     //대쉬하는 코루틴
     private IEnumerator Dash()
     {
+        dashEffect.SetActive(true);
         IPlayerState lastState;
         //대쉬전 상태를 Action에 저장
         if (pController.isGroundRay.hit.collider != null)
@@ -74,6 +76,6 @@ public class PlayerDash : IPlayerState
             dashCount = 0;
         }
         pController.canDash = true;
+        dashEffect.SetActive(false);
     } //Dash
-
 }

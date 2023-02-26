@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
         JUMP,
         DASH,
         ATTACK,
-        SKILL,
+        SKILLA,
+        SKILLB,
         DEAD
     }; //PlayerState
     public Player player;
@@ -45,8 +46,8 @@ public class PlayerController : MonoBehaviour
             SaveManager.Instance.LoadData(this);
         }
 #else
-            possibleSkul = gameObject.AddComponent<Skul>();
-            playerSkulList.Add(possibleSkul);
+        possibleSkul = gameObject.AddComponent<Skul>();
+        playerSkulList.Add(possibleSkul);
 #endif
 
         BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
@@ -57,14 +58,16 @@ public class PlayerController : MonoBehaviour
         IPlayerState jump = new PlayerJump();
         IPlayerState dash = new PlayerDash();
         IPlayerState attack = new PlayerAttack();
-        IPlayerState skill = new PlayerSkill();
+        IPlayerState skillA = new PlayerSkillA();
+        IPlayerState skillB = new PlayerSkillB();
 
         dicState.Add(PlayerState.IDLE, idle);
         dicState.Add(PlayerState.MOVE, move);
         dicState.Add(PlayerState.JUMP, jump);
         dicState.Add(PlayerState.DASH, dash);
         dicState.Add(PlayerState.ATTACK, attack);
-        dicState.Add(PlayerState.SKILL, skill);
+        dicState.Add(PlayerState.SKILLA, skillA);
+        dicState.Add(PlayerState.SKILLB, skillB);
         pStateMachine = new PStateMachine(idle, this);
     } //Start
     void FixedUpdate()
@@ -78,12 +81,27 @@ public class PlayerController : MonoBehaviour
         if ((Input.GetKey(KeyCode.RightArrow)
             || Input.GetKey(KeyCode.LeftArrow))
             && isGroundRay.hit.collider != null
+            && enumState != PlayerState.JUMP
             && enumState != PlayerState.DASH
             && enumState != PlayerState.ATTACK
-            /*&& enumState != PlayerState.JUMP*/)
+            && enumState != PlayerState.SKILLA
+            && enumState != PlayerState.SKILLB)
         {
             pStateMachine.SetState(dicState[PlayerState.MOVE]);
         }
+
+        if (isGroundRay.hit.collider != null
+        && Input.anyKeyDown == false
+        && enumState != PlayerState.MOVE
+        /*&& enumState != PlayerState.JUMP*/
+        && enumState != PlayerState.DASH
+        && enumState != PlayerState.ATTACK
+        && enumState != PlayerState.SKILLA
+        && enumState != PlayerState.SKILLB)
+        {
+            pStateMachine.SetState(dicState[PlayerState.IDLE]);
+        }
+
         if (Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.DownArrow))
         {
             pStateMachine.SetState(dicState[PlayerState.JUMP]);
@@ -97,13 +115,14 @@ public class PlayerController : MonoBehaviour
         {
             pStateMachine.SetState(dicState[PlayerState.ATTACK]);
         }
-        if (Input.anyKey == false && isGroundRay.hit.collider != null && enumState != PlayerState.DASH && enumState != PlayerState.ATTACK)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            pStateMachine.SetState(dicState[PlayerState.IDLE]);
+            pStateMachine.SetState(dicState[PlayerState.SKILLA]);
         }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S))
+
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            pStateMachine.SetState(dicState[PlayerState.SKILL]);
+            pStateMachine.SetState(dicState[PlayerState.SKILLB]);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && swapCoolDown == 0f)
@@ -119,6 +138,18 @@ public class PlayerController : MonoBehaviour
         {
             SaveManager.Instance.LoadData(this);
         }
+
+        // if (enumState != PlayerState.JUMP && enumState != PlayerState.ATTACK)
+        // {
+        //     if (player.playerRb.velocity.y < -1)
+        //     {
+        //         player.playerAni.SetBool("isFall", true);
+        //     }
+        //     else
+        //     {
+        //         player.playerAni.SetBool("isFall", false);
+        //     }
+        // }
         pStateMachine.DoUpdate();
     } //Update
 

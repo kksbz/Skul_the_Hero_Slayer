@@ -15,7 +15,6 @@ public class PlayerJump : IPlayerState
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.JUMP;
         jumpEffect = pController.gameObject.FindChildObj("JumpEffect");
-        // Debug.Log($"점프 들옴? {pController.enumState}");
         if (pController.isGroundRay.hit.collider != null)
         {
             jumpCount = 0;
@@ -66,9 +65,14 @@ public class PlayerJump : IPlayerState
     {
         if (pController.player.playerRb.velocity.y < -1)
         {
-            // Debug.Log(pController.player.playerRb.velocity.y);
             pController.player.playerAni.SetBool("isFall", true);
         }
+        // if (pController.isGroundRay.hit.collider != null)
+        // {
+        //     IPlayerState nextState;
+        //     nextState = new PlayerIdle();
+        //     pController.pStateMachine.onChangeState?.Invoke(nextState);
+        // }
     } //PlayerFall
 
     //점프하는 함수
@@ -80,17 +84,17 @@ public class PlayerJump : IPlayerState
             {
                 Vector3 playerVelocity = pController.player.playerRb.velocity;
                 pController.player.playerRb.velocity = new Vector3(playerVelocity.x, 0, playerVelocity.z);
-                Debug.Log($"{jumpCount} = {pController.player.playerRb.velocity}");
 
-                // jumpEffect.transform.position = pController.player.transform.position;
                 jumpEffect.SetActive(true);
             }
+            pController.player.playerAni.SetBool("isFall", false);
             pController.player.playerAni.SetBool("isJump", true);
             pController.player.playerRb.velocity = pController.player.transform.up * jumpForce;
             jumpCount += 1;
         }
     } //Jump
 
+    //점프이펙트 비활성화 하는 함수
     private void JumpEffectOff()
     {
         if (jumpEffect.GetComponentMust<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
