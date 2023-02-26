@@ -19,6 +19,17 @@ public class UIManager : MonoBehaviour
 
     private GameObject loadingObj = default;
     private GameObject mainUiObj = default;
+    public Sprite mainSkul;
+    public Sprite subSkul;
+    public Sprite mainSkillA;
+    public Sprite mainSkillB;
+    public Sprite subSkillA;
+    public Sprite subSkillB;
+    public int playerHp;
+    public int playerMaxHp;
+    public float swapCoolDown;
+    public float skillACoolDown;
+    public float skillBCoolDown;
 
     //싱글톤 패턴 적용
     private void Awake()
@@ -41,13 +52,13 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //UIManager 초기화

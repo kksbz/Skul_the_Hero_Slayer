@@ -62,3 +62,4 @@
 2023-02-25 / v0.3.1 Work on BossMonster Dead, Groggy, FistSlam state<br/>
 2023-02-26 / v0.3.2 Player SaveData setup<br/>
 2023-02-26 / v0.3.3 Player EntSkul Skill A and B, BossMonster setup<br/>
+2023-02-27 / v0.3.4 Work on Ui<br/>

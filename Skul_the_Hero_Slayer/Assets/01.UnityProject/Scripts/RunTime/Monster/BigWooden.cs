@@ -115,11 +115,9 @@ public class BigWooden : Monster
     //AttackB 공격딜레이 정하는 코루틴 함수
     private IEnumerator AttackBDelay()
     {
-        Debug.Log("코루틴B들옴?");
         bigWoodenAni.SetBool("isAttackB", false);
         bigWoodenAni.SetBool("isIdle", true);
         yield return new WaitForSeconds(4f);
-        Debug.Log("코루틴B 5초후 들옴?");
         bigWoodenAni.SetBool("isIdle", false);
         //4초후 현재 상태가 공격이 아니라면 코루틴 종료
         //=> 코루틴들어오고 상태가 변했을 경우 밑에 공격모션을 취소하기 위한 예외처리

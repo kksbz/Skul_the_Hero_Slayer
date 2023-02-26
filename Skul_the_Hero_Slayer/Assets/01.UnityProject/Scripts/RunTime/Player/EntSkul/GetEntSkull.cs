@@ -41,14 +41,19 @@ public class GetEntSkull : MonoBehaviour
             //플레이어가 EntSkul을 획득하는 로직(컴포넌트로 스크립트를 붙임)
             //현재 활성화되어있는 Skul스크립트를 비활성화시킴
             _player.gameObject.GetComponent<Skul>().enabled = !(_player.gameObject.GetComponent<Skul>().enabled);
+            UIManager.Instance.subSkul = _player.player.skulSprite;
+            UIManager.Instance.subSkillA = _player.player.skillASprite;
+            UIManager.Instance.subSkillB = _player.player.skillBSprite;
             if (GetComponent<EntSkul>() == null)
             {
                 //EntSkul을 가지고 있지 않으면 AddComponent
                 _player.gameObject.GetComponentMust<PlayerController>().playerSkulList.Add(_player.gameObject.AddComponent<EntSkul>());
-                return;
             }
             //EntSkul스크립트를 활성화시킴
             _player.gameObject.GetComponent<EntSkul>().enabled = !(_player.gameObject.GetComponent<Skul>().enabled);
+            UIManager.Instance.mainSkul = _player.player.skulSprite;
+            UIManager.Instance.mainSkillA = _player.player.skillASprite;
+            UIManager.Instance.mainSkillB = _player.player.skillBSprite;
         }
     } //GetEntSkul
 

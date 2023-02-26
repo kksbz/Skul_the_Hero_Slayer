@@ -40,7 +40,6 @@ public class PlayerSkillA : IPlayerState
             {
                 nextState = new PlayerJump();
             }
-            Debug.Log($"스킬A후 들어갈 다음 상태{nextState}");
             pController.pStateMachine.onChangeState?.Invoke(nextState);
             return;
         }

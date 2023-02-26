@@ -27,7 +27,48 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer playerSprite;
     public RuntimeAnimatorController BeforeChangeRuntimeC;
     public List<Player> playerSkulList; //플레이어가 사용할 수 있는 Skul의 List
-    private float swapCoolDown = 0f;
+
+    private float swapCoolDown = 6f;
+    public float SwapCoolDown
+    {
+        get
+        {
+            return swapCoolDown;
+        }
+        set
+        {
+            UIManager.Instance.swapCoolDown = value;
+            swapCoolDown = value;
+        }
+    }
+
+    private float skillACoolDown;
+    public float SkillACoolDown
+    {
+        get
+        {
+            return skillACoolDown;
+        }
+        set
+        {
+            UIManager.Instance.skillACoolDown = value;
+            skillACoolDown = value;
+        }
+    }
+
+    private float skillBCoolDown;
+    public float SkillBCoolDown
+    {
+        get
+        {
+            return skillBCoolDown;
+        }
+        set
+        {
+            UIManager.Instance.skillBCoolDown = value;
+            skillBCoolDown = value;
+        }
+    }
     // Start is called before the first frame update
 
     void Start()
@@ -53,6 +94,8 @@ public class PlayerController : MonoBehaviour
         BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
         isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
         playerHp = playerMaxHp;
+        skillACoolDown = player.skillACool;
+        skillBCoolDown = player.skillBCool;
         IPlayerState idle = new PlayerIdle();
         IPlayerState move = new PlayerMove();
         IPlayerState jump = new PlayerJump();
@@ -69,6 +112,10 @@ public class PlayerController : MonoBehaviour
         dicState.Add(PlayerState.SKILLA, skillA);
         dicState.Add(PlayerState.SKILLB, skillB);
         pStateMachine = new PStateMachine(idle, this);
+        UIManager.Instance.playerMaxHp = playerMaxHp;
+        UIManager.Instance.mainSkul = player.skulSprite;
+        UIManager.Instance.mainSkillA = player.skillASprite;
+        UIManager.Instance.mainSkillB = player.skillBSprite;
     } //Start
     void FixedUpdate()
     {
@@ -115,17 +162,19 @@ public class PlayerController : MonoBehaviour
         {
             pStateMachine.SetState(dicState[PlayerState.ATTACK]);
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && skillACoolDown == player.skillACool)
         {
             pStateMachine.SetState(dicState[PlayerState.SKILLA]);
+            StartCoroutine(Co_SkillACoolDown());
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && skillBCoolDown == player.skillBCool)
         {
             pStateMachine.SetState(dicState[PlayerState.SKILLB]);
+            StartCoroutine(Co_SkillBCoolDown());
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && swapCoolDown == 0f)
+        if (Input.GetKeyDown(KeyCode.Space) && swapCoolDown == 6f)
         {
             ChangePlayer();
         }
@@ -150,6 +199,9 @@ public class PlayerController : MonoBehaviour
         //         player.playerAni.SetBool("isFall", false);
         //     }
         // }
+
+        UIManager.Instance.playerHp = playerHp;
+
         pStateMachine.DoUpdate();
     } //Update
 
@@ -164,32 +216,66 @@ public class PlayerController : MonoBehaviour
         //스컬리스트의 활성화 상태를 반전시킴
         for (int i = 0; i < playerSkulList.Count; i++)
         {
+            if (playerSkulList[i].enabled == false)
+            {
+                UIManager.Instance.mainSkul = playerSkulList[i].skulSprite;
+                UIManager.Instance.mainSkillA = playerSkulList[i].skillASprite;
+                UIManager.Instance.mainSkillB = playerSkulList[i].skillBSprite;
+                skillACoolDown = playerSkulList[i].skillACool;
+                skillBCoolDown = playerSkulList[i].skillBCool;
+            }
+            else
+            {
+                UIManager.Instance.subSkul = playerSkulList[i].skulSprite;
+                UIManager.Instance.subSkillA = playerSkulList[i].skillASprite;
+                UIManager.Instance.subSkillB = playerSkulList[i].skillBSprite;
+            }
             playerSkulList[i].enabled = !playerSkulList[i].enabled;
         }
-        StartCoroutine(SwapCoolDown());
+        StartCoroutine(Co_SwapCoolDown());
     } //ChangePlayer
 
     //캐릭터 Swap쿨다운 적용 코루틴 함수
-    private IEnumerator SwapCoolDown()
+    private IEnumerator Co_SwapCoolDown()
     {
         //스왑쿨다운 6초 설정
         for (int i = 0; i < 60; i++)
         {
             var tick = 0.1f;
-            swapCoolDown += tick;
+            SwapCoolDown -= tick;
+            UIManager.Instance.swapCoolDown = SwapCoolDown;
             yield return new WaitForSeconds(tick);
         }
-        swapCoolDown = 0f;
+        SwapCoolDown = 6f;
     } //SwapCoolDown
+
+    private IEnumerator Co_SkillACoolDown()
+    {
+        for (int i = 0; i < player.skillACool * 10; i++)
+        {
+            var tick = 0.1f;
+            skillACoolDown -= tick;
+            UIManager.Instance.skillACoolDown = skillACoolDown;
+            yield return new WaitForSeconds(tick);
+        }
+        skillACoolDown = player.skillACool;
+    } //Co_SkillACoolDown
+
+    private IEnumerator Co_SkillBCoolDown()
+    {
+        for (int i = 0; i < player.skillBCool * 10; i++)
+        {
+            var tick = 0.1f;
+            skillBCoolDown -= tick;
+            UIManager.Instance.skillBCoolDown = skillBCoolDown;
+            yield return new WaitForSeconds(tick);
+        }
+        skillBCoolDown = player.skillBCool;
+    } //Co_SkillBCoolDown
 
     //interface를 상속받은 클래스는 MonoBehaviour를 상속 받지 못해서 코루틴을 대신 실행시켜줄 함수
     public void CoroutineDeligate(IEnumerator func)
     {
         StartCoroutine(func);
     } //CoroutineDeligate
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
-    } //OnCollisionEnter2D
 }

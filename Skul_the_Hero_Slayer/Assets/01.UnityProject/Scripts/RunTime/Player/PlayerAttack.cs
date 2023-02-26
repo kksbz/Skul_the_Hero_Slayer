@@ -38,12 +38,12 @@ public class PlayerAttack : IPlayerState
 
     private void ComboAttack()
     {
-        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 5f
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f
         && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                Debug.Log("콤보어택 들어옴?");
+                pController.player.playerAni.SetBool("isAttackA", false);
                 pController.player.playerAni.SetBool("isAttackB", true);
             }
         }

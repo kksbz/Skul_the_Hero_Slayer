@@ -9,6 +9,15 @@ public class PlayerData : ScriptableObject
     private string playerName; //플레이어 스컬 이름
     public string PlayerName { get { return playerName; } }
     [SerializeField]
+    private Sprite skulSprite; //플레이어 스컬 이미지
+    public Sprite SkulSprite { get { return skulSprite; } }
+    [SerializeField]
+    private Sprite skillASprite; //스킬A이미지
+    public Sprite SkillASprite { get { return skillASprite; } }
+    [SerializeField]
+    private Sprite skillBSprite; //스킬B이미지
+    public Sprite SkillBSprite { get { return skillBSprite; } }
+    [SerializeField]
     private int skulIndex; //플레이어 스컬 번호
     public int SkulIndex { get { return skulIndex; } }
     [SerializeField]
@@ -32,4 +41,10 @@ public class PlayerData : ScriptableObject
     [SerializeField]
     private float groundRayLength; //플레이어 스컬 그라운드체크레이어 길이
     public float GroundRayLength { get { return groundRayLength; } }
+    [SerializeField]
+    private float skillACool; //스킬A 쿨다운
+    public float SkillACool { get { return skillACool; } }
+    [SerializeField]
+    private float skillBCool; //스킬B 쿨다운
+    public float SkillBCool { get { return skillBCool; } }
 }

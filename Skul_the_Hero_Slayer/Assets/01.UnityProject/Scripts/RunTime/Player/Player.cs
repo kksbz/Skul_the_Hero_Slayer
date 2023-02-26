@@ -9,11 +9,16 @@ public class Player : MonoBehaviour
     [HideInInspector] public int minDamage;
     [HideInInspector] public int maxDamage;
     [HideInInspector] public float moveSpeed;
+    [HideInInspector] public float groundCheckLength;
+    [HideInInspector] public float skillACool;
+    [HideInInspector] public float skillBCool;
+    [HideInInspector] public Sprite skulSprite;
+    [HideInInspector] public Sprite skillASprite;
+    [HideInInspector] public Sprite skillBSprite;
     [HideInInspector] public Rigidbody2D playerRb;
     [HideInInspector] public AudioSource playerAudio;
     [HideInInspector] public Animator playerAni;
     [HideInInspector] private CapsuleCollider2D playerCollider;
-    [HideInInspector] public float groundCheckLength;
 
     //플레이어데이터 초기화하는 함수
     public void InitPlayerData(PlayerData data)
@@ -23,6 +28,11 @@ public class Player : MonoBehaviour
         this.maxDamage = data.MaxDamage;
         this.moveSpeed = data.MoveSpeed;
         this.groundCheckLength = data.GroundRayLength;
+        this.skulSprite = data.SkulSprite;
+        this.skillASprite = data.SkillASprite;
+        this.skillBSprite = data.SkillBSprite;
+        this.skillACool = data.SkillACool;
+        this.skillBCool = data.SkillBCool;
         this.playerRb = gameObject.GetComponentMust<Rigidbody2D>();
         this.playerAudio = gameObject.GetComponentMust<AudioSource>();
         this.playerAni = gameObject.GetComponentMust<Animator>();

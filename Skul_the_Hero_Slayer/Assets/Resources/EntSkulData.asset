@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: EntSkulData
   m_EditorClassIdentifier: 
   playerName: Player
+  skulSprite: {fileID: 21300000, guid: cf74275b2e24d78419ff1a38fb7834ee, type: 3}
+  skillASprite: {fileID: 21300000, guid: 000c2c6f645b1314eb961eef74921376, type: 3}
+  skillBSprite: {fileID: 21300000, guid: 8272fa0faea93bc44a8daeb765c54a06, type: 3}
   skulIndex: 1
   minDamage: 13
   maxDamage: 20
@@ -21,3 +24,5 @@ MonoBehaviour:
   colliderSizeX: 1.5
   colliderSizeY: 1.8
   groundRayLength: 1
+  skillACool: 8
+  skillBCool: 10
