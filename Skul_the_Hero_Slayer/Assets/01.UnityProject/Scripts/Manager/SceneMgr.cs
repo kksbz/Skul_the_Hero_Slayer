@@ -35,13 +35,13 @@ public class SceneMgr : MonoBehaviour
         }
     } //Awake
 
-    public void LoadAsyncScene(string sceneName)
+    public void LoadAsyncScene(string sceneName, string subName)
     {
-        StartCoroutine(GetLoading(sceneName));
+        StartCoroutine(GetLoading(sceneName, subName));
     } //LoadYourAsyncScene
 
     //로딩창 출력 후 해당씬으로 이동 코루틴
-    private IEnumerator GetLoading(string sceneName)
+    private IEnumerator GetLoading(string sceneName, string subName)
     {
         UIManager.Instance.ShowLoading(true);
         yield return new WaitForSeconds(1.5f);
@@ -51,5 +51,10 @@ public class SceneMgr : MonoBehaviour
             yield return null;
         }
         UIManager.Instance.ShowLoading(false);
+        if (!UIManager.Instance.mainUiObj.activeInHierarchy)
+        {
+            UIManager.Instance.mainUiObj.SetActive(true);
+        }
+        UIManager.Instance.ShowStageName(sceneName, subName);
     } //GetLoading
 }

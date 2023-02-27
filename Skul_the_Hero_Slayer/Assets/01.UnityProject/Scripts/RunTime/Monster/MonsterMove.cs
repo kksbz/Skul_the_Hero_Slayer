@@ -36,7 +36,7 @@ public class MonsterMove : IMonsterState
     //몬스터 이동시키는 함수
     private void Move()
     {
-        if (mController.monster._name == "BigWooden")
+        if (mController.monster.moveSpeed == 0)
         {
             return;
         }

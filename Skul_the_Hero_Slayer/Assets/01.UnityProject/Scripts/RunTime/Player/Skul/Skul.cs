@@ -57,6 +57,10 @@ public class Skul : Player
                     Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
                 }
             }
+            GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);
+            hitEffect.transform.position = hit.transform.position - new Vector3(0f, 0.5f, 0f);
+            hitEffect.transform.localScale = new Vector2(playerController.player.transform.localScale.x,
+             hitEffect.transform.localScale.y);
         }
     } //AttackAandB
 

@@ -31,6 +31,7 @@ public class ShowSkulInfo : MonoBehaviour
         mainSkillBFrame = gameObject.FindChildObj("SkillB");
         subSkillAFrame = gameObject.FindChildObj("SubSkillA");
         subSkillBFrame = gameObject.FindChildObj("SubSkillB");
+
         mainSkul = mainSkulFrame.FindChildObj("MainSkul").GetComponentMust<Image>();
         subSkul = subSkulFrame.FindChildObj("SubSkul").GetComponentMust<Image>();
         mainSkillA = mainSkillAFrame.FindChildObj("MainSkillA").GetComponentMust<Image>();
@@ -75,7 +76,7 @@ public class ShowSkulInfo : MonoBehaviour
         }
         swapCoolDown.fillAmount = UIManager.Instance.swapCoolDown / 6f;
 
-        //스킬A쿨다운
+        //메인스킬A 쿨다운
         if (mainSkillACoolDown.fillAmount == 1)
         {
             mainSkillACoolDown.gameObject.SetActive(false);
@@ -85,9 +86,9 @@ public class ShowSkulInfo : MonoBehaviour
             mainSkillACoolDown.gameObject.SetActive(true);
         }
 
-        mainSkillACoolDown.fillAmount = UIManager.Instance.skillACoolDown / 10f;
+        mainSkillACoolDown.fillAmount = UIManager.Instance.skillACoolDown / UIManager.Instance.maxSkillACool;
 
-        //스킬B쿨다운
+        //메인스킬B 쿨다운
         if (mainSkillBCoolDown.fillAmount == 1)
         {
             mainSkillBCoolDown.gameObject.SetActive(false);
@@ -96,6 +97,28 @@ public class ShowSkulInfo : MonoBehaviour
         {
             mainSkillBCoolDown.gameObject.SetActive(true);
         }
-        mainSkillBCoolDown.fillAmount = UIManager.Instance.skillBCoolDown / 3f;
+        mainSkillBCoolDown.fillAmount = UIManager.Instance.skillBCoolDown / UIManager.Instance.maxSkillBCool;
+
+        //서브스킬A 쿨다운
+        if (subSkillACoolDown.fillAmount == 1)
+        {
+            subSkillACoolDown.gameObject.SetActive(false);
+        }
+        else
+        {
+            subSkillACoolDown.gameObject.SetActive(true);
+        }
+        subSkillACoolDown.fillAmount = UIManager.Instance.subSkillACool / UIManager.Instance.maxSubSkillACool;
+
+        //서브스킬B 쿨다운
+        if (subSkillBCoolDown.fillAmount == 1)
+        {
+            subSkillBCoolDown.gameObject.SetActive(false);
+        }
+        else
+        {
+            subSkillBCoolDown.gameObject.SetActive(true);
+        }
+        subSkillBCoolDown.fillAmount = UIManager.Instance.subSkillBCool / UIManager.Instance.maxSubSkillBCool;
     } //ShowCoolDown
 }

@@ -10,7 +10,7 @@ public class ExitThisScene : MonoBehaviour
         {
             PlayerController player = collider.gameObject.GetComponentMust<PlayerController>();
             SaveManager.Instance.SaveData(player);
-            SceneMgr.Instance.LoadAsyncScene(GData.DUNGEONLOBBY_SCENE_NAME);
+            SceneMgr.Instance.LoadAsyncScene(GData.DUNGEONLOBBY_SCENE_NAME, GData.DUNGEONLOBBY_SCENE_SUB_NAME);
         }
     } //OnTriggerEnter2D
 }

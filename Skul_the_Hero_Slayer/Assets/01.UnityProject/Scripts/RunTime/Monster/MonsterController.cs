@@ -11,6 +11,7 @@ public class MonsterController : MonoBehaviour
         MOVE,
         SEARCH,
         ATTACK,
+        HIT,
         DEAD
     }; //MonsterState
 
@@ -19,20 +20,23 @@ public class MonsterController : MonoBehaviour
     private StateMachine _stateMachine; //입력받은 상태를 처리하기 위한 StateManchine
     public StateMachine stateMachine { get; private set; }
     private Dictionary<MonsterState, IMonsterState> dicState = new Dictionary<MonsterState, IMonsterState>(); //각 상태를 갖고 있을 딕셔너리
-
+    public int currentHp; //현재 Hp의 정보를 담을 변수
     // Start is called before the first frame update
     void Start()
     {
+        currentHp = monster.hp;
         IMonsterState idle = new MonsterIdle();
         IMonsterState move = new MonsterMove();
         IMonsterState search = new TagetSearch();
         IMonsterState attack = new MonsterAttack();
+        IMonsterState hit = new MonsterHit();
         IMonsterState dead = new MonsterDead();
         //각 상태를 딕셔너리로 저장
         dicState.Add(MonsterState.IDLE, idle);
         dicState.Add(MonsterState.MOVE, move);
         dicState.Add(MonsterState.SEARCH, search);
         dicState.Add(MonsterState.ATTACK, attack);
+        dicState.Add(MonsterState.HIT, hit);
         dicState.Add(MonsterState.DEAD, dead);
 
         //입력받은 상태를 처리해 줄 StateMachine 초기화
@@ -59,27 +63,38 @@ public class MonsterController : MonoBehaviour
         {
             stateMachine.SetState(dicState[MonsterState.DEAD]);
         }
-        //몬스터의 탐색범위에 타겟이 없고 Move상태가 아닐경우
-        if (monster.tagetSearchRay.hit == null && enumState != MonsterState.MOVE)
+        if (monster.hp < currentHp)
         {
-            stateMachine.SetState(dicState[MonsterState.MOVE]);
-        }
-        //몬스터의 탐색범위에 타겟이 있을 경우
-        if (monster.tagetSearchRay.hit != null)
-        {
-            float distance = Vector2.Distance(monster.transform.position, monster.tagetSearchRay.hit.transform.position);
-            //타겟과 자신의 거리가 공격사거리보다 크면 Search상태, 작으면 Attack상태로 전환
-            if (monster.attackRange < distance)
+            if (monster.moveSpeed == 0)
             {
-                //공격애니메이션이 끝날경우 Search상태로 전환
-                if (monster.monsterAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-                {
-                    stateMachine.SetState(dicState[MonsterState.SEARCH]);
-                }
+                return;
             }
-            else
+            stateMachine.SetState(dicState[MonsterState.HIT]);
+        }
+        if (enumState != MonsterState.HIT)
+        {
+            //몬스터의 탐색범위에 타겟이 없고 Move상태가 아닐경우
+            if (monster.tagetSearchRay.hit == null && enumState != MonsterState.MOVE)
             {
-                stateMachine.SetState(dicState[MonsterState.ATTACK]);
+                stateMachine.SetState(dicState[MonsterState.MOVE]);
+            }
+            //몬스터의 탐색범위에 타겟이 있을 경우
+            if (monster.tagetSearchRay.hit != null)
+            {
+                float distance = Vector2.Distance(monster.transform.position, monster.tagetSearchRay.hit.transform.position);
+                //타겟과 자신의 거리가 공격사거리보다 크면 Search상태, 작으면 Attack상태로 전환
+                if (monster.attackRange < distance)
+                {
+                    //공격애니메이션이 끝날경우 Search상태로 전환
+                    if (monster.monsterAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+                    {
+                        stateMachine.SetState(dicState[MonsterState.SEARCH]);
+                    }
+                }
+                else
+                {
+                    stateMachine.SetState(dicState[MonsterState.ATTACK]);
+                }
             }
         }
     } //InputState

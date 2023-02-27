@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00b976acdfcc7914dad0aa80dcf1a9bd, type: 3}
   m_Name: Stage1Data
   m_EditorClassIdentifier: 
-  stageName: 03.Stage1
+  stageName: STAGE-1
   maxSpawnNumber: 12
   spawnPrefab1_Number: 7
   spawnPrefab2_Number: 3

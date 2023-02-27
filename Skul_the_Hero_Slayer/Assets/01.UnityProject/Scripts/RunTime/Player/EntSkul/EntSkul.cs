@@ -40,7 +40,6 @@ public class EntSkul : Player
                 if (boss != null)
                 {
                     boss.hp -= Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
-                    Debug.Log($"엔트스컬 민뎀={playerData.MinDamage},맥뎀={playerData.MaxDamage}");
                     Debug.Log($"{boss.name}={boss.hp}/{boss.maxHp}");
                 }
 
@@ -48,9 +47,12 @@ public class EntSkul : Player
                 if (monster != null)
                 {
                     monster.hp -= Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
-                    Debug.Log($"엔트스컬 민뎀={playerData.MinDamage},맥뎀={playerData.MaxDamage}");
                     Debug.Log($"{monster._name}={monster.hp}/{monster.maxHp}");
                 }
+                GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);
+                hitEffect.transform.position = hit.transform.position - new Vector3(0f, 0.5f, 0f);
+                hitEffect.transform.localScale = new Vector2(playerController.player.transform.localScale.x,
+                hitEffect.transform.localScale.y);
             }
         }
     } //AttackAandB

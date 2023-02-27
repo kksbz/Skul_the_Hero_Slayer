@@ -63,3 +63,4 @@
 2023-02-26 / v0.3.2 Player SaveData setup<br/>
 2023-02-26 / v0.3.3 Player EntSkul Skill A and B, BossMonster setup<br/>
 2023-02-27 / v0.3.4 Work on Ui<br/>
+2023-02-27 / v0.3.5 Work on Ui<br/>
