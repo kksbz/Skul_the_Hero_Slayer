@@ -166,6 +166,7 @@ public class BossMonster : MonoBehaviour
         //hp가 0보다 작거나 같고 현재 상태가 1페이즈일 때 2페이즈로 전환
         if (isChangePhase == true && phaseCheck == 0)
         {
+            Head.tag = GData.PLAYER_LAYER_MASK;
             bodyAni.SetBool("isChangePhase", true);
             headAni.SetBool("isChangePhase", true);
             rightArmAni.SetBool("isChangePhase", true);

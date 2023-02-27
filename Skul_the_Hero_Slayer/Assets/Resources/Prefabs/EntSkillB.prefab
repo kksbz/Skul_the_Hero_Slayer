@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6345197483039676403}
   - component: {fileID: 8099825499033493917}
   - component: {fileID: 166711601891339585}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: EntSkillB
   m_TagString: Untagged
   m_Icon: {fileID: 0}

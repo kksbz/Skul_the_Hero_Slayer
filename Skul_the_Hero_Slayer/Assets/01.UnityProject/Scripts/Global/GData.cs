@@ -20,5 +20,5 @@ public static partial class GData
     public const string STAGE_2_SCENE_NAME = "STAGE-2";
     public const string STAGE_2_SCENE_SUB_NAME = "깊은숲 중턱";
     public const string BOSS_SCENE_NAME = "BOSS-STAGE";
-    public const string BOSS_SCENE_SUB_NAME = "깊은숲 꼭대기";
+    public const string BOSS_SCENE_SUB_NAME = "깊은숲 정상";
 }

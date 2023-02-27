@@ -14,21 +14,20 @@ public class PlayerController : MonoBehaviour
         SKILLB,
         DEAD
     }; //PlayerState
-    public Player player;
+    public Player player; //컨트롤러에 가져올 플레이어
     public int playerHp;
     public int playerMaxHp = 100;
-    public bool isGround = true;
-    public bool canDash = true;
-    public PlayerGroundCheck isGroundRay;
-    public PlayerState enumState = PlayerState.IDLE;
-    private PStateMachine _pStateMachine;
+    public bool isGround = true; //땅 체크
+    public bool canDash = true; //대쉬 사용가능 체크
+    public PlayerGroundCheck isGroundRay; //땅 체크 레이어
+    public PlayerState enumState = PlayerState.IDLE; //기본상태 Idle
+    private PStateMachine _pStateMachine; //상태처리 머신
     public PStateMachine pStateMachine { get; private set; }
-    private Dictionary<PlayerState, IPlayerState> dicState = new Dictionary<PlayerState, IPlayerState>();
-    private SpriteRenderer playerSprite;
-    public RuntimeAnimatorController BeforeChangeRuntimeC;
+    private Dictionary<PlayerState, IPlayerState> dicState = new Dictionary<PlayerState, IPlayerState>(); //각상태를 담을 딕셔너리
+    public RuntimeAnimatorController BeforeChangeRuntimeC; //Skul SkillA사용시 머리사라진 모습 런타임애니메이션컨트롤러
     public List<Player> playerSkulList; //플레이어가 사용할 수 있는 Skul의 List
-    private bool isChangeSkul = false;
-    private float swapCoolDown = 6f;
+    public bool isGetSkulSkillA = false;
+    private float swapCoolDown = 6f; //스왑스킬 쿨다운
     public float SwapCoolDown
     {
         get
@@ -42,6 +41,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //SkillA 쿨다운
     private float skillACoolDown;
     public float SkillACoolDown
     {
@@ -56,20 +56,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private float subSkillACoolDown;
-    public float SubSkillACoolDown
-    {
-        get
-        {
-            return subSkillACoolDown;
-        }
-        set
-        {
-            UIManager.Instance.subSkillACool = value;
-            subSkillACoolDown = value;
-        }
-    }
-
+    //SkillB 쿨다운
     private float skillBCoolDown;
     public float SkillBCoolDown
     {
@@ -81,20 +68,6 @@ public class PlayerController : MonoBehaviour
         {
             UIManager.Instance.skillBCoolDown = value;
             skillBCoolDown = value;
-        }
-    }
-
-    private float subSkillBCoolDown;
-    public float SubSkillBCoolDown
-    {
-        get
-        {
-            return subSkillBCoolDown;
-        }
-        set
-        {
-            UIManager.Instance.subSkillBCool = value;
-            subSkillBCoolDown = value;
         }
     }
     // Start is called before the first frame update
@@ -196,13 +169,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && skillACoolDown == player.skillACool)
         {
             pStateMachine.SetState(dicState[PlayerState.SKILLA]);
-            StartCoroutine(Co_SkillACoolDown());
+            if (enumState == PlayerState.SKILLA)
+            {
+                StartCoroutine(Co_SkillACoolDown());
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.S) && skillBCoolDown == player.skillBCool)
         {
             pStateMachine.SetState(dicState[PlayerState.SKILLB]);
-            StartCoroutine(Co_SkillBCoolDown());
+            if (enumState == PlayerState.SKILLB)
+            {
+                StartCoroutine(Co_SkillBCoolDown());
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && swapCoolDown == 6f)
@@ -262,14 +241,9 @@ public class PlayerController : MonoBehaviour
                 UIManager.Instance.subSkul = playerSkulList[i].skulSprite;
                 UIManager.Instance.subSkillA = playerSkulList[i].skillASprite;
                 UIManager.Instance.subSkillB = playerSkulList[i].skillBSprite;
-                UIManager.Instance.maxSubSkillACool = playerSkulList[i].skillACool;
-                UIManager.Instance.maxSubSkillBCool = playerSkulList[i].skillBCool;
-                subSkillACoolDown = playerSkulList[i].skillACool;
-                subSkillBCoolDown = playerSkulList[i].skillBCool;
             }
             playerSkulList[i].enabled = !playerSkulList[i].enabled;
         }
-        isChangeSkul = !isChangeSkul;
         StartCoroutine(Co_SwapCoolDown());
     } //ChangePlayer
 
@@ -289,36 +263,43 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Co_SkillACoolDown()
     {
-        for (int i = 0; i < player.skillACool * 10; i++)
+        float skillACool = player.skillACool;
+        for (int i = 0; i < skillACool * 10; i++)
         {
             var tick = 0.1f;
-            if (isChangeSkul == false)
+            if (isGetSkulSkillA == true)
             {
-                skillACoolDown -= tick;
+                //Skull의 SkillA사용후 스컬헤드를 습득했을시 쿨초기화
+                skillACoolDown = player.skillACool;
+                isGetSkulSkillA = false;
                 UIManager.Instance.skillACoolDown = skillACoolDown;
+                yield break;
             }
-            else
+            if (skillACool != player.skillACool)
             {
-                subSkillACoolDown -= tick;
-                UIManager.Instance.subSkillACool = subSkillACoolDown;
+                skillACoolDown = player.skillACool;
+                UIManager.Instance.skillACoolDown = skillACoolDown;
+                yield break;
             }
+            skillACoolDown -= tick;
+            UIManager.Instance.skillACoolDown = skillACoolDown;
             yield return new WaitForSeconds(tick);
         }
-        if (isChangeSkul == false)
-        {
-            skillACoolDown = player.skillACool;
-        }
-        else
-        {
-            subSkillACoolDown = UIManager.Instance.maxSubSkillACool;
-        }
+        skillACoolDown = player.skillACool;
     } //Co_SkillACoolDown
 
     private IEnumerator Co_SkillBCoolDown()
     {
-        for (int i = 0; i < player.skillBCool * 10; i++)
+        float skillBCool = player.skillBCool;
+        for (int i = 0; i < skillBCool * 10; i++)
         {
             var tick = 0.1f;
+            if (skillBCool != player.skillBCool)
+            {
+                skillBCoolDown = player.skillBCool;
+                UIManager.Instance.skillBCoolDown = skillBCoolDown;
+                yield break;
+            }
             skillBCoolDown -= tick;
             UIManager.Instance.skillBCoolDown = skillBCoolDown;
             yield return new WaitForSeconds(tick);

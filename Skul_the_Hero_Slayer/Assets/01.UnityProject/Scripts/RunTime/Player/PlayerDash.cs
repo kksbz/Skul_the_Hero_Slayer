@@ -29,6 +29,7 @@ public class PlayerDash : IPlayerState
         //대쉬를 점프로 캔슬했을 때 velocity가 zero가되면 바로 낙하 하는걸 방지
         //대쉬 상태를 나갈 때 플레이어의 velocity 초기화
         pController.player.playerRb.velocity = Vector2.zero;
+        pController.player.playerAni.SetBool("isDash", false);
         pController.player.playerAni.SetBool("isFallRepict", false);
     } //StateExit
 
@@ -55,6 +56,7 @@ public class PlayerDash : IPlayerState
             lastState = new PlayerJump();
         }
         Debug.Log($"대쉬시작");
+        pController.player.tag = GData.ENEMY_LAYER_MASK;
         pController.canDash = false;
         pController.player.playerAni.SetBool("isDash", true);
         dashCount += 1;
@@ -64,11 +66,15 @@ public class PlayerDash : IPlayerState
         pController.player.playerRb.velocity = new Vector2(pController.player.transform.localScale.x * dashForce, 0f);
         yield return new WaitForSeconds(dashTime);
         //대쉬가 끝나면 Gravity 원래 값으로 되돌림
+        pController.player.tag = GData.PLAYER_LAYER_MASK;
         pController.player.playerRb.gravityScale = originalGravity;
         pController.player.playerAni.SetBool("isDash", false);
 
         //대쉬가 끝나면 강제로 이전 상태로 전환하는 ActionEvent =>대쉬 상태 탈출
-        pController.pStateMachine.onChangeState?.Invoke(lastState);
+        if (pController.enumState == PlayerController.PlayerState.DASH)
+        {
+            pController.pStateMachine.onChangeState?.Invoke(lastState);
+        }
         //2단 대쉬
         if (dashCount >= 2)
         {

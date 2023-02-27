@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1405162007652340675}
   - component: {fileID: 2804710924954768815}
   - component: {fileID: 772242981224751938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnergyCorp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1246190729
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1200446757, guid: 5cd3ea2af323c7a4095f5e7c829b818d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

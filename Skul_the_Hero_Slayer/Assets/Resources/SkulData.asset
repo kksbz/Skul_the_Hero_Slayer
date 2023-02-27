@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104e884e33eb9ad4e90bcde1295d2c3f, type: 3}
   m_Name: SkulData
   m_EditorClassIdentifier: 
-  playerName: Player
+  playerName: Skul
   skulSprite: {fileID: 21300000, guid: f6a108a478fed2f44b44154ed9addfc0, type: 3}
   skillASprite: {fileID: 21300000, guid: d3b4dadb3fc90f44e8fe5e6fb9679c6c, type: 3}
   skillBSprite: {fileID: 21300000, guid: 0a559a8a3ae54654ab868448637da9da, type: 3}

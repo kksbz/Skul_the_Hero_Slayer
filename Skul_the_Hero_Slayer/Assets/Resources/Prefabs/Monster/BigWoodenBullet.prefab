@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4715160718270386990}
   - component: {fileID: 3961297245060194795}
   - component: {fileID: 672324565846002398}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BigWoodenBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1246190729
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: -1471609238, guid: 3eb7051a450a5364592c1b43fe5aaad5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

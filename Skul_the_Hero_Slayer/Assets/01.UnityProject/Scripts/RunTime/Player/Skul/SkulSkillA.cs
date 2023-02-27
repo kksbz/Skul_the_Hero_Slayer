@@ -34,7 +34,7 @@ public class SkulSkillA : MonoBehaviour
     //날아가는 도중 타겟을 감지하면 Hit처리 하는 함수
     private void DetectTaget()
     {
-        //Hit상태가되면 CircleCast 발동 못하게 리턴
+        //Hit상태가되면 LayerMask대상을 플레이어로 전환해 플레이어가 스컬헤드를 습득할 수 있도록 처리함
         string tagetObj;
         if (isHit == true)
         {
@@ -71,11 +71,18 @@ public class SkulSkillA : MonoBehaviour
                     Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
                     isHit = true;
                 }
+                GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);
+                hitEffect.transform.position = hit.collider.transform.position;
             }
             if (tagetObj == GData.PLAYER_LAYER_MASK)
             {
                 PlayerController playerController = hit.collider.gameObject?.GetComponentMust<PlayerController>();
-                playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+                if (playerController.player._name == "Skul")
+                {
+                    playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+                    //머리 습득시 SkillA 쿨 초기화
+                    playerController.isGetSkulSkillA = true;
+                }
                 Destroy(gameObject);
                 return;
             }
@@ -116,6 +123,5 @@ public class SkulSkillA : MonoBehaviour
         yield return new WaitForSeconds(4f);
         parentObj.onHeadBack?.Invoke();
         Destroy(gameObject);
-        Debug.Log("해골 파괴됨");
     } //DestroySkul
 }

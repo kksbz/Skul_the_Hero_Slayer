@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 811524960501310441}
   - component: {fileID: 811524960501310442}
   - component: {fileID: 811524960501310443}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: MeleeEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}

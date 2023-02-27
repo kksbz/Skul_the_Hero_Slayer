@@ -29,4 +29,4 @@ MonoBehaviour:
   spawnCoordinate_Range3: {x: 0, y: -9, z: 0}
   spawnCoordinate_turret1: {x: 15, y: 1.5, z: 0}
   spawnCoordinate_turret2: {x: 23, y: -12, z: 0}
-  spawnCoordinate_turret3: {x: 8, y: -7, z: 0}
+  spawnCoordinate_turret3: {x: 0, y: -9, z: 0}

@@ -13,7 +13,15 @@ public class Skul : Player
     void OnEnable()
     {
         //Action에 SkillA를 써서 런타임컨트롤러가 SkulHeadless로 바뀌고 해골을 줍지 못했을 경우 처리하기 위한 내용 저장
-        onHeadBack += () => { playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC; };
+        onHeadBack += () =>
+        {
+            //현재 플레이어가 Skul이 아니면 리턴
+            if (playerController.player._name != "Skul")
+            {
+                return;
+            }
+            playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+        };
         //SkillA를 썼을 경우 자신의 해골을 날려 SkulHeadless로 런타임애니컨트롤러를 변경하기 위한 초기화
         SkulHeadless = Resources.Load("Animation/PlayerAni/SkulHeadless/SkulHeadless") as RuntimeAnimatorController;
         playerController = gameObject.GetComponentMust<PlayerController>();
@@ -83,7 +91,7 @@ public class Skul : Player
 
     public void SkulSkillB()
     {
-        Debug.Log("스킬B 들어옴?");
+        //스컬헤드위치로 순간이동, 해드리스상태 벗어남
         playerController.player.transform.position = skillAObj.transform.position;
         playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
         if (skillAObj != null)

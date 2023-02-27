@@ -33,10 +33,6 @@ public class UIManager : MonoBehaviour
     public float skillBCoolDown;
     public float maxSkillACool;
     public float maxSkillBCool;
-    public float subSkillACool;
-    public float subSkillBCool;
-    public float maxSubSkillACool;
-    public float maxSubSkillBCool;
 
     //싱글톤 패턴 적용
     private void Awake()

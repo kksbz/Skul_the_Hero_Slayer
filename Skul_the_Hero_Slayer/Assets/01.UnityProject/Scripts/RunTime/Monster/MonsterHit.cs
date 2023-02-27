@@ -12,8 +12,6 @@ public class MonsterHit : IMonsterState
         mController.monster.monsterAni.SetBool("isHit", true);
         //애니메이션 모션 퍼즈상태인 경우 강제로 품
         mController.monster.monsterAni.StopPlayback();
-        //currentHp 초기화
-        mController.currentHp = mController.monster.hp;
     }
     public void StateFixedUpdate()
     {

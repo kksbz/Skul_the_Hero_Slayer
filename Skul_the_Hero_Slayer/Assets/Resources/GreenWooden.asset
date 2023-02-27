@@ -23,3 +23,5 @@ MonoBehaviour:
   attackRange: 15
   meleeAttackRange: 15
   hasAdditionalAttack: 0
+  hpBarPosY: -1
+  hpBarWidth: 1

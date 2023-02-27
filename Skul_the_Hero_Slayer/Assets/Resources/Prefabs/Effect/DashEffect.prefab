@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5602933531641756886}
   - component: {fileID: 7914006496085475213}
   - component: {fileID: 2070733364447666507}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DashEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}

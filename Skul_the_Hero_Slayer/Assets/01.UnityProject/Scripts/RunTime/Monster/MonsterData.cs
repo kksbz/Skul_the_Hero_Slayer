@@ -38,4 +38,10 @@ public class MonsterData : ScriptableObject
     [SerializeField]
     private bool hasAdditionalAttack;
     public bool HasAdditionalAttack { get { return hasAdditionalAttack; } }
+    [SerializeField]
+    private float hpBarPosY;
+    public float HpBarPosY { get { return hpBarPosY; } }
+    [SerializeField]
+    private float hpBarWidth;
+    public float HpBarWidth { get { return hpBarWidth; } }
 }

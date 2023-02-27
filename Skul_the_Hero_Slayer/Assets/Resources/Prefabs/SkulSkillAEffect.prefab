@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5689137812201087505}
   - component: {fileID: 256968165896068587}
   - component: {fileID: -8537371147571372144}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SkulSkillAEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1442604691
-  m_SortingLayer: 8
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: -29428907, guid: 01e264ed61c09294f9a9582bfa654054, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

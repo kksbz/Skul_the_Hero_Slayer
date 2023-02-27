@@ -15,6 +15,7 @@ public class MonsterController : MonoBehaviour
         DEAD
     }; //MonsterState
 
+    private EnemyHealthBar hpBar;
     public Monster monster;
     public MonsterState enumState = MonsterState.IDLE; //몬스터의 현재상태를 체크하기위한 변수
     private StateMachine _stateMachine; //입력받은 상태를 처리하기 위한 StateManchine
@@ -24,6 +25,7 @@ public class MonsterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hpBar = gameObject.GetComponentMust<EnemyHealthBar>();
         currentHp = monster.hp;
         IMonsterState idle = new MonsterIdle();
         IMonsterState move = new MonsterMove();
@@ -65,6 +67,8 @@ public class MonsterController : MonoBehaviour
         }
         if (monster.hp < currentHp)
         {
+            hpBar.canvas.SetActive(true);
+            currentHp = monster.hp;
             if (monster.moveSpeed == 0)
             {
                 return;

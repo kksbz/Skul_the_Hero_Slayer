@@ -14,8 +14,6 @@ public class ShowSkulInfo : MonoBehaviour
     private Image swapCoolDown;
     private Image mainSkillACoolDown;
     private Image mainSkillBCoolDown;
-    private Image subSkillACoolDown;
-    private Image subSkillBCoolDown;
     private Image mainSkul;
     private Image subSkul;
     private Image mainSkillA;
@@ -42,8 +40,6 @@ public class ShowSkulInfo : MonoBehaviour
         swapCoolDown = gameObject.FindChildObj("SwapCoolDown").GetComponentMust<Image>();
         mainSkillACoolDown = gameObject.FindChildObj("MainSkillACool").GetComponentMust<Image>();
         mainSkillBCoolDown = gameObject.FindChildObj("MainSkillBCool").GetComponentMust<Image>();
-        subSkillACoolDown = gameObject.FindChildObj("SubSkillACool").GetComponentMust<Image>();
-        subSkillBCoolDown = gameObject.FindChildObj("SubSkillBCool").GetComponentMust<Image>();
     } //Start
 
     // Update is called once per frame
@@ -76,7 +72,7 @@ public class ShowSkulInfo : MonoBehaviour
         }
         swapCoolDown.fillAmount = UIManager.Instance.swapCoolDown / 6f;
 
-        //메인스킬A 쿨다운
+        //스킬A 쿨다운
         if (mainSkillACoolDown.fillAmount == 1)
         {
             mainSkillACoolDown.gameObject.SetActive(false);
@@ -88,7 +84,7 @@ public class ShowSkulInfo : MonoBehaviour
 
         mainSkillACoolDown.fillAmount = UIManager.Instance.skillACoolDown / UIManager.Instance.maxSkillACool;
 
-        //메인스킬B 쿨다운
+        //스킬B 쿨다운
         if (mainSkillBCoolDown.fillAmount == 1)
         {
             mainSkillBCoolDown.gameObject.SetActive(false);
@@ -98,27 +94,5 @@ public class ShowSkulInfo : MonoBehaviour
             mainSkillBCoolDown.gameObject.SetActive(true);
         }
         mainSkillBCoolDown.fillAmount = UIManager.Instance.skillBCoolDown / UIManager.Instance.maxSkillBCool;
-
-        //서브스킬A 쿨다운
-        if (subSkillACoolDown.fillAmount == 1)
-        {
-            subSkillACoolDown.gameObject.SetActive(false);
-        }
-        else
-        {
-            subSkillACoolDown.gameObject.SetActive(true);
-        }
-        subSkillACoolDown.fillAmount = UIManager.Instance.subSkillACool / UIManager.Instance.maxSubSkillACool;
-
-        //서브스킬B 쿨다운
-        if (subSkillBCoolDown.fillAmount == 1)
-        {
-            subSkillBCoolDown.gameObject.SetActive(false);
-        }
-        else
-        {
-            subSkillBCoolDown.gameObject.SetActive(true);
-        }
-        subSkillBCoolDown.fillAmount = UIManager.Instance.subSkillBCool / UIManager.Instance.maxSubSkillBCool;
     } //ShowCoolDown
 }

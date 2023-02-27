@@ -14,6 +14,8 @@ public class Monster : MonoBehaviour
     [HideInInspector] public float sightRangeY;
     [HideInInspector] public float attackRange;
     [HideInInspector] public float meleeAttackRange;
+    [HideInInspector] public float hpBarPosY;
+    [HideInInspector] public float hpBarWidth;
     [HideInInspector] public bool hasAdditionalAttack;
     [HideInInspector] public Rigidbody2D monsterRb;
     [HideInInspector] public AudioSource monsterAudio;
@@ -31,6 +33,8 @@ public class Monster : MonoBehaviour
         this.sightRangeX         = data.SightRangeX;
         this.sightRangeY         = data.SightRangeY;
         this.attackRange         = data.AttackRange;
+        this.hpBarPosY           = data.HpBarPosY;
+        this.hpBarWidth          = data.HpBarWidth;
         this.meleeAttackRange    = data.MeleeAttackRange;
         this.hasAdditionalAttack = data.HasAdditionalAttack;
         this.monsterRb = gameObject.GetComponentMust<Rigidbody2D>();
