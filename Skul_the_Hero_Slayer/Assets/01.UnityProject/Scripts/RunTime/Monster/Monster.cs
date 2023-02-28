@@ -22,6 +22,10 @@ public class Monster : MonoBehaviour
     [HideInInspector] public Animator monsterAni;
     [HideInInspector] public GroundCheckRay groundCheckRay;
     [HideInInspector] public TagetSearchRay tagetSearchRay;
+    [HideInInspector] public AudioClip deadSound;
+    [HideInInspector] public AudioClip hitSound;
+    [HideInInspector] public AudioClip attackASound;
+    [HideInInspector] public AudioClip attackBSound;
     public void InitMonsterData(MonsterData data)
     {
         this._name               = data.name;
@@ -37,6 +41,10 @@ public class Monster : MonoBehaviour
         this.hpBarWidth          = data.HpBarWidth;
         this.meleeAttackRange    = data.MeleeAttackRange;
         this.hasAdditionalAttack = data.HasAdditionalAttack;
+        this.deadSound           = data.DeadAudio;
+        this.hitSound            = data.HitAudio;
+        this.attackASound        = data.AtkAAudio;
+        this.attackBSound        = data.AtkBAudio;
         this.monsterRb = gameObject.GetComponentMust<Rigidbody2D>();
         this.monsterAudio = gameObject.GetComponentMust<AudioSource>();
         this.monsterAni = gameObject.GetComponentMust<Animator>();

@@ -54,6 +54,8 @@ public class GetEntSkull : MonoBehaviour
             UIManager.Instance.mainSkul = _player.player.skulSprite;
             UIManager.Instance.mainSkillA = _player.player.skillASprite;
             UIManager.Instance.mainSkillB = _player.player.skillBSprite;
+            UIManager.Instance.maxSkillACool = _player.player.skillACool;
+            UIManager.Instance.maxSkillBCool = _player.player.skillBCool;
             _player.SkillACoolDown = _player.player.skillACool;
             _player.SkillBCoolDown = _player.player.skillBCool;
         }

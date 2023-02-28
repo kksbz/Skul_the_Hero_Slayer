@@ -39,10 +39,12 @@ public class BossMonster : MonoBehaviour
         Head = gameObject.FindChildObj("Head");
         leftArm = gameObject.FindChildObj("LeftArm");
         rightArm = gameObject.FindChildObj("RightArm");
+
         bodyAni = body.GetComponentMust<Animator>();
         headAni = Head.GetComponentMust<Animator>();
         leftArmAni = leftArm.GetComponentMust<Animator>();
         rightArmAni = rightArm.GetComponentMust<Animator>();
+
         corpPool = gameObject.FindChildObj("CorpPool").GetComponentMust<CorpPool>();
     }
 

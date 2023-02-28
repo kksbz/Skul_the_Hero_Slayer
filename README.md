@@ -65,3 +65,4 @@
 2023-02-27 / v0.3.4 Work on Ui<br/>
 2023-02-27 / v0.3.5 Work on Ui<br/>
 2023-02-28 / v0.3.6 Stage2 setup, Skul SkillA,B 쿨초기화 추가 및 머리습득 예외처리, Monster HpBar, Minimap setup<br/>
+2023-02-28 / v0.3.7 Work on Sound<br/>

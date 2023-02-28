@@ -27,6 +27,8 @@ public class BigWooden : Monster
     //공격A하는 함수(공격을 애니메이션 이벤트로 처리함)
     public override void AttackA()
     {
+        monsterController.monster.monsterAudio.clip = monsterController.monster.attackASound;
+        monsterController.monster.monsterAudio.Play();
         StartCoroutine(MeleeEffectOnOff());
         Vector2 attackArea = new Vector2(8f, 1.5f);
         //Boxcast로 피격처리
@@ -54,6 +56,8 @@ public class BigWooden : Monster
     {
         GameObject childObj = gameObject.FindChildObj("BigWoodenAttackB");
         BigWoodenAttackB child = childObj.GetComponentMust<BigWoodenAttackB>();
+        monsterController.monster.monsterAudio.clip = monsterController.monster.attackBSound;
+        monsterController.monster.monsterAudio.Play();
         child.ShootBullet();
     } //AttackB
 

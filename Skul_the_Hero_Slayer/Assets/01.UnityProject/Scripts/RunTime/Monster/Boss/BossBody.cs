@@ -5,10 +5,16 @@ using UnityEngine;
 public class BossBody : MonoBehaviour
 {
     private Animator bossBodyAni;
+    private AudioSource bodyAudio;
+    public AudioClip attackSound;
+    public AudioClip groggySound;
+    public AudioClip deadSound;
+    public AudioClip endAttackSound;
     // Start is called before the first frame update
     void Start()
     {
         bossBodyAni = gameObject.GetComponentMust<Animator>();
+        bodyAudio = gameObject.GetComponentMust<AudioSource>();
     } //Start
 
     //1페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
@@ -52,4 +58,27 @@ public class BossBody : MonoBehaviour
         bossBodyAni.SetBool("isP2FistSlam", false);
         bossBodyAni.SetBool("isP2Groggy", false);
     } //Dead
+
+    private void AttackSound()
+    {
+        bodyAudio.clip = attackSound;
+        bodyAudio.Play();
+    }
+
+    private void EndAttackSound()
+    {
+        bodyAudio.clip = endAttackSound;
+        bodyAudio.Play();
+    }
+
+    private void GroggySound()
+    {
+        bodyAudio.clip = groggySound;
+        bodyAudio.Play();
+    }
+    private void DeadSound()
+    {
+        bodyAudio.clip = deadSound;
+        bodyAudio.Play();
+    }
 }

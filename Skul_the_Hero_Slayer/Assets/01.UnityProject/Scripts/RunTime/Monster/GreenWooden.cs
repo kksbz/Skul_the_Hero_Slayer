@@ -26,6 +26,8 @@ public class GreenWooden : Monster
         //탐색레이어가 타겟을 감지했을 때
         if (monsterController.monster.tagetSearchRay.hit != null)
         {
+            monsterController.monster.monsterAudio.clip = monsterController.monster.attackASound;
+            monsterController.monster.monsterAudio.Play();
             //원거리 공격 => 투사체오브젝트를 생성
             GameObject thornAttack = Instantiate(Resources.Load("Prefabs/Monster/GreenWooden_Thorn") as GameObject);
             //투사체의 위치를 타겟위치로 설정

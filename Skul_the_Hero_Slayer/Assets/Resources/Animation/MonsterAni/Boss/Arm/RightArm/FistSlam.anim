@@ -374,6 +374,13 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: EndAttakcSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2
     functionName: Attack
     data: 
@@ -383,6 +390,13 @@ AnimationClip:
     messageOptions: 0
   - time: 3
     functionName: AttackExit
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.0166667
+    functionName: EndAttakcSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

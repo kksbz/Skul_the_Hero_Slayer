@@ -25,3 +25,7 @@ MonoBehaviour:
   hasAdditionalAttack: 0
   hpBarPosY: -1
   hpBarWidth: 1
+  deadAudio: {fileID: 8300000, guid: b267bc37a4365444b9606dde76a7ea88, type: 3}
+  hitAudio: {fileID: 8300000, guid: 0650931a9bab1e64e9f26a3235bac9d7, type: 3}
+  atkAAudio: {fileID: 8300000, guid: cd2945c84a9523748b87dc09bf4c7b9c, type: 3}
+  atkBAudio: {fileID: 0}

@@ -7,12 +7,19 @@ public class BossArm : MonoBehaviour
     private BossMonster bossObj;
     private BoxCollider2D armCollider;
     private Animator armAni;
-
+    private AudioSource armAudio;
+    public AudioClip attackASound;
+    public AudioClip attackBSound;
+    public AudioClip attackCSound;
+    public AudioClip groggySound;
+    public AudioClip deadSound;
+    public AudioClip endAttackSound;
     // Start is called before the first frame update
     void Start()
     {
         bossObj = gameObject.transform.parent.GetComponent<BossMonster>();
         armCollider = gameObject.GetComponentMust<BoxCollider2D>();
+        armAudio = gameObject.GetComponentMust<AudioSource>();
         armAni = gameObject.GetComponentMust<Animator>();
         armCollider.enabled = false;
     } //Start
@@ -20,6 +27,8 @@ public class BossArm : MonoBehaviour
     //Attack 애니메이션 진행 중 공격판정 시작위치 정하는 함수
     public void Attack()
     {
+        armAudio.clip = attackASound;
+        armAudio.Play();
         //BoxCollider2D를 꺼둔상태에서 애니메이션 트리거가 발동하면 BoxCollider2D를 켜서 트리거엔터발동판정
         armCollider.enabled = true;
     } //Attack
@@ -29,6 +38,32 @@ public class BossArm : MonoBehaviour
     {
         armCollider.enabled = false;
     } //AttackExit
+
+    private void AttackBSound()
+    {
+        armAudio.clip = attackBSound;
+        armAudio.Play();
+    }
+    private void AttackCSound()
+    {
+        armAudio.clip = attackCSound;
+        armAudio.Play();
+    }
+    private void EndAttakcSound()
+    {
+        armAudio.clip = endAttackSound;
+        armAudio.Play();
+    }
+    private void GroggySound()
+    {
+        armAudio.clip = groggySound;
+        armAudio.Play();
+    }
+    private void DeadSound()
+    {
+        armAudio.clip = deadSound;
+        armAudio.Play();
+    }
 
     //1페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
     public void P1ExitAttack()

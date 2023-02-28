@@ -25,6 +25,8 @@ public class NomalWooden : Monster
     //공격하는 함수(공격을 애니메이션 이벤트로 처리함)
     public override void AttackA()
     {
+        monsterController.monster.monsterAudio.clip = monsterController.monster.attackASound;
+        monsterController.monster.monsterAudio.Play();
         Vector2 attackArea = new Vector2(0.5f, 1.5f);
         direction = transform.localScale.x;
         attackdirection = new Vector3(direction, 0f).normalized;

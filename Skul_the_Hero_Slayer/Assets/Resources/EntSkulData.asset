@@ -26,3 +26,13 @@ MonoBehaviour:
   groundRayLength: 1
   skillACool: 8
   skillBCool: 10
+  dashAudio: {fileID: 8300000, guid: fc939d79b8ba7df4bae81f548d2c7d5d, type: 3}
+  jumpAudio: {fileID: 8300000, guid: b12c03427026c0c4eb404c7c0b1b0fc1, type: 3}
+  deadAudio: {fileID: 8300000, guid: 20dbcff701c597248af5f0799fc06908, type: 3}
+  hitAudio: {fileID: 8300000, guid: 40bf996d0baaa9a4fac9d8eb5b892b71, type: 3}
+  atkAAudio: {fileID: 8300000, guid: 140cc925785d7cb44af0dd38d5819687, type: 3}
+  atkBAudio: {fileID: 8300000, guid: 1e40cacd7f01eec4191e62e6cf42123f, type: 3}
+  jumpAtkAudio: {fileID: 8300000, guid: c7c59fbcf65706248bef13684e3a2bbb, type: 3}
+  skillAAudio: {fileID: 8300000, guid: c67dcb28039ccb744b421089e122edb9, type: 3}
+  skillBAudio: {fileID: 8300000, guid: 73ea5332be7a1cf4982dceeaa5dfefff, type: 3}
+  switchAudio: {fileID: 8300000, guid: 1259ab80e54c8354db7c644331ed98da, type: 3}

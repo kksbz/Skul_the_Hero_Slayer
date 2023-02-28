@@ -67,12 +67,6 @@ public class PlayerJump : IPlayerState
         {
             pController.player.playerAni.SetBool("isFall", true);
         }
-        // if (pController.isGroundRay.hit.collider != null)
-        // {
-        //     IPlayerState nextState;
-        //     nextState = new PlayerIdle();
-        //     pController.pStateMachine.onChangeState?.Invoke(nextState);
-        // }
     } //PlayerFall
 
     //점프하는 함수
@@ -89,6 +83,8 @@ public class PlayerJump : IPlayerState
             }
             pController.player.playerAni.SetBool("isFall", false);
             pController.player.playerAni.SetBool("isJump", true);
+            pController.player.playerAudio.clip = pController.player.jumpSound;
+            pController.player.playerAudio.Play();
             pController.player.playerRb.velocity = pController.player.transform.up * jumpForce;
             jumpCount += 1;
         }

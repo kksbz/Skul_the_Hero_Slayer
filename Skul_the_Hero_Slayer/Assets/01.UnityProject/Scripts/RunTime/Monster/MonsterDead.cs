@@ -5,11 +5,14 @@ using UnityEngine;
 public class MonsterDead : IMonsterState
 {
     private MonsterController mController;
+    private GameObject deadEffect;
     public void StateEnter(MonsterController _mController)
     {
         this.mController = _mController;
         mController.enumState = MonsterController.MonsterState.DEAD;
-        GameObject deadEffect = GameObject.Instantiate(Resources.Load("Prefabs/Effect/EnemyDead")) as GameObject;
+        mController.monster.monsterAudio.clip = mController.monster.deadSound;
+        mController.monster.monsterAudio.Play();
+        deadEffect = GameObject.Instantiate(Resources.Load("Prefabs/Effect/EnemyDead")) as GameObject;
         deadEffect.transform.position = mController.monster.transform.position;
         deadEffect.SetActive(true);
         mController.monster.gameObject.SetActive(false);

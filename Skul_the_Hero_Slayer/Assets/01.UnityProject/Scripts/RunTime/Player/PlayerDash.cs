@@ -44,6 +44,8 @@ public class PlayerDash : IPlayerState
     //대쉬하는 코루틴
     private IEnumerator Dash()
     {
+        pController.player.playerAudio.clip = pController.player.dashSound;
+        pController.player.playerAudio.Play();
         dashEffect.SetActive(true);
         IPlayerState lastState;
         //대쉬전 상태를 Action에 저장
@@ -75,6 +77,7 @@ public class PlayerDash : IPlayerState
         {
             pController.pStateMachine.onChangeState?.Invoke(lastState);
         }
+        dashEffect.SetActive(false);
         //2단 대쉬
         if (dashCount >= 2)
         {
@@ -82,6 +85,5 @@ public class PlayerDash : IPlayerState
             dashCount = 0;
         }
         pController.canDash = true;
-        dashEffect.SetActive(false);
     } //Dash
 }

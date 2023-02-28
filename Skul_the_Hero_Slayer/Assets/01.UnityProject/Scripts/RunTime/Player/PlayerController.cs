@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
         IPlayerState attack = new PlayerAttack();
         IPlayerState skillA = new PlayerSkillA();
         IPlayerState skillB = new PlayerSkillB();
+        IPlayerState dead = new PlayerDead();
 
         dicState.Add(PlayerState.IDLE, idle);
         dicState.Add(PlayerState.MOVE, move);
@@ -115,6 +116,8 @@ public class PlayerController : MonoBehaviour
         dicState.Add(PlayerState.ATTACK, attack);
         dicState.Add(PlayerState.SKILLA, skillA);
         dicState.Add(PlayerState.SKILLB, skillB);
+        dicState.Add(PlayerState.DEAD, dead);
+
         pStateMachine = new PStateMachine(idle, this);
         UIManager.Instance.playerMaxHp = playerMaxHp;
         UIManager.Instance.mainSkul = player.skulSprite;
@@ -129,6 +132,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerHp <= 0)
+        {
+            pStateMachine.SetState(dicState[PlayerState.DEAD]);
+        }
+
         if ((Input.GetKey(KeyCode.RightArrow)
             || Input.GetKey(KeyCode.LeftArrow))
             && isGroundRay.hit.collider != null
@@ -223,6 +231,8 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+        player.playerAudio.clip = player.switchSound;
+        player.playerAudio.Play();
         //스컬리스트의 활성화 상태를 반전시킴
         for (int i = 0; i < playerSkulList.Count; i++)
         {

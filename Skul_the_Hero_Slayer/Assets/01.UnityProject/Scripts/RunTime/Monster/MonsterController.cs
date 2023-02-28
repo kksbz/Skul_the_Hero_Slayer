@@ -69,13 +69,15 @@ public class MonsterController : MonoBehaviour
         {
             hpBar.canvas.SetActive(true);
             currentHp = monster.hp;
+            monster.monsterAudio.clip = monster.hitSound;
+            monster.monsterAudio.Play();
             if (monster.moveSpeed == 0)
             {
                 return;
             }
             stateMachine.SetState(dicState[MonsterState.HIT]);
         }
-        if (enumState != MonsterState.HIT)
+        if (enumState != MonsterState.HIT && enumState != MonsterState.DEAD)
         {
             //몬스터의 탐색범위에 타겟이 없고 Move상태가 아닐경우
             if (monster.tagetSearchRay.hit == null && enumState != MonsterState.MOVE)

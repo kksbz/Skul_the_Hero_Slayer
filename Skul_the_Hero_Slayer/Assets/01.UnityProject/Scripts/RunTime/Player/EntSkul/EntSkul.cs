@@ -18,16 +18,35 @@ public class EntSkul : Player
 
     public override void AttackA()
     {
-        AttackAandB();
+        /*Do Nothing*/
     } //AttackA
 
     public override void AttackB()
     {
-        AttackAandB();
+        /*Do Nothing*/
     } //AttackB
 
+    private void EntAttackA()
+    {
+        EntAttack();
+        playerAudio.clip = atkASound;
+        playerAudio.Play();
+    } //EntAttackA
+    private void EntAttackB()
+    {
+        EntAttack();
+        playerAudio.clip = atkBSound;
+        playerAudio.Play();
+    } //EntAttackA
+    private void EntJumpAttack()
+    {
+        EntAttack();
+        playerAudio.clip = jumpAtkSound;
+        playerAudio.Play();
+    } //EntJumpAttack
+
     //공격A,B의 히트 판정 처리하는 함수
-    private void AttackAandB()
+    private void EntAttack()
     {
         Vector2 attackArea = new Vector2(2.5f, 1.5f);
         //BoxcastAll로 Hit처리
@@ -58,16 +77,18 @@ public class EntSkul : Player
     } //AttackAandB
     public override void SkillA()
     {
-
+        /*Do Nothing*/
     } //SkillA
     public override void SkillB()
     {
-
+        /*Do Nothing*/
     } //SkillB
 
     //EntSkillA 함수
     public void EntSkillA()
     {
+        playerAudio.clip = skillASound;
+        playerAudio.Play();
         Vector2 direction = new Vector2(transform.localScale.x, 0f).normalized;
         RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, 10f, LayerMask.GetMask(GData.ENEMY_LAYER_MASK));
         int number = 0;
@@ -86,6 +107,8 @@ public class EntSkul : Player
     //EntSkillB 함수
     public void EntSkillB()
     {
+        playerAudio.clip = skillBSound;
+        playerAudio.Play();
         GameObject entSkillB = Instantiate(Resources.Load("Prefabs/EntSkillB") as GameObject);
         float directionX = playerController.player.transform.localScale.x;
         //SkillB 오브젝트의 위치와 방향 설정

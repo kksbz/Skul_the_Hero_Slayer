@@ -18,7 +18,18 @@ public class Player : MonoBehaviour
     [HideInInspector] public Rigidbody2D playerRb;
     [HideInInspector] public AudioSource playerAudio;
     [HideInInspector] public Animator playerAni;
-    [HideInInspector] private CapsuleCollider2D playerCollider;
+    [HideInInspector] public AudioClip dashSound;
+    [HideInInspector] public AudioClip jumpSound;
+    [HideInInspector] public AudioClip deadSound;
+    [HideInInspector] public AudioClip hitSound;
+    [HideInInspector] public AudioClip atkASound;
+    [HideInInspector] public AudioClip atkBSound;
+    [HideInInspector] public AudioClip jumpAtkSound;
+    [HideInInspector] public AudioClip skillASound;
+    [HideInInspector] public AudioClip skillBSound;
+    [HideInInspector] public AudioClip switchSound;
+
+    private CapsuleCollider2D playerCollider;
 
     //플레이어데이터 초기화하는 함수
     public void InitPlayerData(PlayerData data)
@@ -40,6 +51,17 @@ public class Player : MonoBehaviour
         this.playerCollider = gameObject.GetComponentMust<CapsuleCollider2D>();
         this.playerCollider.size = new Vector2(data.ColliderSizeX, data.ColliderSizeY);
         this.skulIndex = data.SkulIndex;
+        //사운드클립
+        this.dashSound = data.DashAudio;
+        this.jumpSound = data.JumpAudio;
+        this.deadSound = data.DeadAudio;
+        this.hitSound = data.HitAudio;
+        this.atkASound = data.AtkAAudio;
+        this.atkBSound = data.AtkBAudio;
+        this.jumpAtkSound = data.JumpAtkAudio;
+        this.skillASound = data.SkillAAudio;
+        this.skillBSound = data.SkillBAudio;
+        this.switchSound = data.SwitchAudio;
     } //InitMonsterData
 
     //플레이어 AttackA

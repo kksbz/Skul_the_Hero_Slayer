@@ -33,13 +33,33 @@ public class Skul : Player
 
     public override void AttackA()
     {
-        AttackAandB();
+        /*Do Nothing*/
     } //AttackA
 
     public override void AttackB()
     {
-        AttackAandB();
+        /*Do Nothing*/
     } //AttackB
+
+    private void SkulAttackA()
+    {
+        AttackAandB();
+        playerAudio.clip = atkASound;
+        playerAudio.Play();
+    } //SkulAttackA
+    private void SkulAttackB()
+    {
+        AttackAandB();
+        playerAudio.clip = atkBSound;
+        playerAudio.Play();
+    } //SkulAttackB
+
+    private void SkulJumpAttack()
+    {
+        AttackAandB();
+        playerAudio.clip = jumpAtkSound;
+        playerAudio.Play();
+    } //SkulJumpAttack
 
     //공격A,B의 히트 판정 처리하는 함수
     private void AttackAandB()
@@ -74,16 +94,18 @@ public class Skul : Player
 
     public override void SkillA()
     {
-
+        /*Do Nothing*/
     } //SkillA
 
     public override void SkillB()
     {
-
+        /*Do Nothing*/
     } //SkillB
 
     public void SkulSkillA()
     {
+        playerAudio.clip = skillASound;
+        playerAudio.Play();
         skillAObj = Instantiate(Resources.Load("Prefabs/SkulSkillAEffect") as GameObject);
         skillAObj.GetComponentMust<SkulSkillA>().Init(this);
         playerAni.runtimeAnimatorController = SkulHeadless;
@@ -91,6 +113,8 @@ public class Skul : Player
 
     public void SkulSkillB()
     {
+        playerAudio.clip = skillBSound;
+        playerAudio.Play();
         //스컬헤드위치로 순간이동, 해드리스상태 벗어남
         playerController.player.transform.position = skillAObj.transform.position;
         playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;

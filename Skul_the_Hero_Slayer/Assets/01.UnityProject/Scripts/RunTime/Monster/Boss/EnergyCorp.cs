@@ -8,6 +8,11 @@ public class EnergyCorp : MonoBehaviour
     private BossMonster bossMonster;
     private CircleCollider2D corpCollider;
     private Animator corpAni;
+    private AudioSource corpAudio;
+    private AudioClip readySound;
+    private AudioClip fireSound;
+    private AudioClip hitP1Sound;
+    private AudioClip hitP2Sound;
     private Vector3 direction;
     private Vector3 targetPos;
     private float speed = 5f;
@@ -15,14 +20,21 @@ public class EnergyCorp : MonoBehaviour
     private int maxDamage;
     private bool isMove = false;
     private bool isHit = false;
+    private bool endHit = false;
+
 
     // Start is called before the first frame update
     void Awake()
     {
+        readySound = Resources.Load("Audios/Boss/EnergyBomb_Ready") as AudioClip;
+        fireSound = Resources.Load("Audios/Boss/EnergyBomb_Fire") as AudioClip;
+        hitP1Sound = Resources.Load("Audios/Boss/HitP1") as AudioClip;
+        hitP2Sound = Resources.Load("Audios/Boss/HitP2") as AudioClip;
         bossObj = GFunc.GetRootObj("Boss");
         bossMonster = bossObj.GetComponentMust<BossMonster>();
         corpAni = gameObject.GetComponentMust<Animator>();
         corpCollider = gameObject.GetComponentMust<CircleCollider2D>();
+        corpAudio = gameObject.GetComponentMust<AudioSource>();
         minDamage = bossMonster.minDamage;
         maxDamage = bossMonster.maxDamage;
     }
@@ -30,6 +42,7 @@ public class EnergyCorp : MonoBehaviour
     //활성화될때 초기화
     private void OnEnable()
     {
+        endHit = false;
         corpCollider.enabled = false;
         speed = 5f;
         isHit = false;
@@ -45,6 +58,8 @@ public class EnergyCorp : MonoBehaviour
         }
         corpAni.SetBool("isHitP1", false);
         corpAni.SetBool("isHitP2", false);
+        corpAudio.clip = readySound;
+        corpAudio.Play();
     } //OnEnable
 
     // Update is called once per frame
@@ -69,18 +84,24 @@ public class EnergyCorp : MonoBehaviour
             isHit = true;
         }
 
-        if (isHit == true)
+        if (isHit == true && endHit == false)
         {
             //1, 2페이즈에 따른 공격타입 교체
             if (bossMonster.isChangePhase == false)
             {
                 corpAni.SetBool("isHitP1", true);
+                corpAudio.clip = hitP1Sound;
+                corpAudio.Play();
                 speed = 2f;
+                endHit = true;
             }
             else
             {
                 corpAni.SetBool("isHitP2", true);
+                corpAudio.clip = hitP2Sound;
+                corpAudio.Play();
                 speed = 0f;
+                endHit = true;
             }
         }
         if (isMove == true)
@@ -102,6 +123,7 @@ public class EnergyCorp : MonoBehaviour
         }
         isMove = true;
         corpCollider.enabled = true;
+        corpAudio.clip = fireSound;
         GetTargetPos();
     } //MoveReady
 

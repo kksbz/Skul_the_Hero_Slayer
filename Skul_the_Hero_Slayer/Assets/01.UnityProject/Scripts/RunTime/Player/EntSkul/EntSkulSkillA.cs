@@ -29,6 +29,7 @@ public class EntSkulSkillA : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        Debug.Log($"스킬A트리거 발동? {collider.name}, {collider.tag}");
         if (collider.tag == GData.ENEMY_LAYER_MASK)
         {
             BossHead boss = collider.gameObject?.GetComponentMust<BossHead>();
