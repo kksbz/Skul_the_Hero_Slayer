@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 public class UIManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class UIManager : MonoBehaviour
     private GameObject loadingObj = default;
     private GameObject stageUiObj = default;
     public GameObject mainUiObj = default;
+    public GameObject resultObj = default;
+    public GameObject MinimapCamera = default;
+    public Sprite daedScreenShot;
     public Sprite mainSkul;
     public Sprite subSkul;
     public Sprite mainSkillA;
@@ -58,6 +62,9 @@ public class UIManager : MonoBehaviour
         mainUiObj = gameObject.FindChildObj(GData.MAIN_UI_OBJ_NAME);
         loadingObj = gameObject.FindChildObj(GData.LOADDING_OBJ_NAME);
         stageUiObj = gameObject.FindChildObj(GData.STAGE_UI_OBJ_NAME);
+        resultObj = gameObject.FindChildObj(GData.RESULT_UI_OBJ_NAME);
+        MinimapCamera = gameObject.FindChildObj("MinimapCamera");
+        daedScreenShot = default;
     } //InitUIManager
 
     //Stage입장시 정보UI 보여주는 함수

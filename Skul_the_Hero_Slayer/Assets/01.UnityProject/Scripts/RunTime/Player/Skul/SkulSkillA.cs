@@ -57,19 +57,22 @@ public class SkulSkillA : MonoBehaviour
         {
             if (tagetObj == GData.ENEMY_LAYER_MASK)
             {
+                int damage = Random.RandomRange(20, 25);
                 BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
                 if (boss != null)
                 {
-                    boss.hp -= Random.RandomRange(20, 25);
+                    boss.hp -= damage;
                     Debug.Log($"스킬A공격 = {boss.hp}/{boss.maxHp}");
                     isHit = true;
+                    GameManager.Instance.totalDamage += damage;
                 }
                 MonsterController target = hit.collider.gameObject?.GetComponentMust<MonsterController>();
                 if (target != null)
                 {
-                    target.monster.hp -= Random.RandomRange(20, 25);
+                    target.monster.hp -= damage;
                     Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
                     isHit = true;
+                    GameManager.Instance.totalDamage += damage;
                 }
                 GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);
                 hitEffect.transform.position = hit.collider.transform.position;

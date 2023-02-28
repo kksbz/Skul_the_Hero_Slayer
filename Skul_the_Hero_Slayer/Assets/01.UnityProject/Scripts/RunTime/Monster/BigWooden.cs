@@ -36,8 +36,13 @@ public class BigWooden : Monster
         if (hit.collider != null)
         {
             PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
-            target.playerHp -= Random.RandomRange(monsterData.MinDamage, monsterData.MaxDamage);
-            Debug.Log($"빅우든 근접공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
+            if (target.isHit == false)
+            {
+                target.playerHp -= Random.RandomRange(monsterData.MinDamage, monsterData.MaxDamage);
+                Debug.Log($"빅우든 근접공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
+                int direction = target.transform.position.x - transform.position.x > 0 ? 1 : -1;
+                target.player.playerRb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
+            }
         }
     } //AttackA
 

@@ -9,11 +9,12 @@ public class BossMonster : MonoBehaviour
     private GameObject leftArm;
     private GameObject rightArm;
     private GameObject groggyEffect;
-    public Animator bodyAni;
-    public Animator headAni;
-    public Animator leftArmAni;
-    public Animator rightArmAni;
+    private Animator bodyAni;
+    private Animator headAni;
+    private Animator leftArmAni;
+    private Animator rightArmAni;
     private CorpPool corpPool;
+    public Collider2D hit;
     private float meleeRange = 3.5f;
     private bool isGroggy = false;
     private bool isAttack = false;
@@ -21,13 +22,13 @@ public class BossMonster : MonoBehaviour
     private float corpAttackCoolDown = 0f;
     private bool isFistSlam = false;
     private float fistSlamCoolDown = 0f;
-    private bool isDead = false;
-    public Collider2D hit;
+    private int phaseCheck = 0;
+    public bool isDead = false;
+    public bool isChangePhase = false;
+    public bool isChangeBossState = false;
     public float distance;
     public int minDamage = 9;
     public int maxDamage = 15;
-    public bool isChangePhase = false;
-    private int phaseCheck = 0;
     public int hp;
     public int maxHp;
 
@@ -72,6 +73,7 @@ public class BossMonster : MonoBehaviour
             else if (isChangePhase == true)
             {
                 isDead = true;
+                isChangeBossState = true;
                 Dead();
             }
         }
@@ -175,6 +177,7 @@ public class BossMonster : MonoBehaviour
             leftArmAni.SetBool("isChangePhase", true);
             hp = maxHp;
             phaseCheck += 1;
+            isChangeBossState = true;
         }
     } //ChangePhase
 

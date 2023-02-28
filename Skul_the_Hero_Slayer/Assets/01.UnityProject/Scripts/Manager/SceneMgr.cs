@@ -55,6 +55,10 @@ public class SceneMgr : MonoBehaviour
         {
             UIManager.Instance.mainUiObj.SetActive(true);
         }
+        if (!UIManager.Instance.MinimapCamera.activeInHierarchy)
+        {
+            UIManager.Instance.MinimapCamera.SetActive(true);
+        }
         UIManager.Instance.ShowStageName(sceneName, subName);
     } //GetLoading
 }

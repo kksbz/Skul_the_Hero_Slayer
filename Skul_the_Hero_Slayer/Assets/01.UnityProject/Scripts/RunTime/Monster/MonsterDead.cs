@@ -16,6 +16,7 @@ public class MonsterDead : IMonsterState
         deadEffect.transform.position = mController.monster.transform.position;
         deadEffect.SetActive(true);
         mController.monster.gameObject.SetActive(false);
+        GameManager.Instance.killCount += 1;
     }
     public void StateFixedUpdate()
     {

@@ -26,7 +26,11 @@ public class PlayerController : MonoBehaviour
     private Dictionary<PlayerState, IPlayerState> dicState = new Dictionary<PlayerState, IPlayerState>(); //각상태를 담을 딕셔너리
     public RuntimeAnimatorController BeforeChangeRuntimeC; //Skul SkillA사용시 머리사라진 모습 런타임애니메이션컨트롤러
     public List<Player> playerSkulList; //플레이어가 사용할 수 있는 Skul의 List
+    private SpriteRenderer playerSprite;
     public bool isGetSkulSkillA = false;
+    public bool isHit = false;
+    private bool isDead = false;
+    private int currentHp;
     private float swapCoolDown = 6f; //스왑스킬 쿨다운
     public float SwapCoolDown
     {
@@ -75,6 +79,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerSkulList = new List<Player>();
+        playerSprite = gameObject.GetComponentMust<SpriteRenderer>();
         Player possibleSkul = default;
 #if !DEBUG_ENABLED
         //기본 스컬의 런타임애니컨트롤러를 저장 => 스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
@@ -95,6 +100,7 @@ public class PlayerController : MonoBehaviour
         BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
         isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
         playerHp = playerMaxHp;
+        currentHp = playerHp;
         skillACoolDown = player.skillACool;
         skillBCoolDown = player.skillBCool;
         UIManager.Instance.maxSkillACool = player.skillACool;
@@ -134,7 +140,18 @@ public class PlayerController : MonoBehaviour
     {
         if (playerHp <= 0)
         {
+            isDead = true;
             pStateMachine.SetState(dicState[PlayerState.DEAD]);
+        }
+        if (isDead == true)
+        {
+            return;
+        }
+        if (playerHp < currentHp && isHit == false)
+        {
+            isHit = true;
+            StartCoroutine(HitPlayer());
+            currentHp = playerHp;
         }
 
         if ((Input.GetKey(KeyCode.RightArrow)
@@ -322,4 +339,24 @@ public class PlayerController : MonoBehaviour
     {
         StartCoroutine(func);
     } //CoroutineDeligate
+
+    private IEnumerator HitPlayer()
+    {
+        Color original = playerSprite.color;
+        player.tag = GData.ENEMY_LAYER_MASK;
+        playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
+        yield return new WaitForSeconds(0.2f);
+        playerSprite.color = new Color(255f, 255f, 255f, 1f);
+        yield return new WaitForSeconds(0.2f);
+        playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
+        yield return new WaitForSeconds(0.2f);
+        playerSprite.color = new Color(255f, 255f, 255f, 1f);
+        yield return new WaitForSeconds(0.2f);
+        playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
+        yield return new WaitForSeconds(0.2f);
+        playerSprite.color = new Color(255f, 255f, 255f, 1f);
+        playerSprite.color = original;
+        player.tag = GData.PLAYER_LAYER_MASK;
+        isHit = false;
+    }
 }

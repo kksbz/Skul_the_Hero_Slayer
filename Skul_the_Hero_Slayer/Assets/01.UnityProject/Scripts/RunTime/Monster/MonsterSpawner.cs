@@ -57,7 +57,7 @@ public class MonsterSpawner : MonoBehaviour
             monster.transform.parent = gameObject.transform;
             monster.transform.position = spawnCoordinate;
             monsterPool.Add(monster);
-            // GameManager.Instance.monsterRemainingNumber += 1;
+            GameManager.Instance.monsterRemainingNumber += 1;
         }
         return monsterPool;
     } //SetupMonsterList

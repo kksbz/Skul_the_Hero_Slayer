@@ -55,18 +55,21 @@ public class EntSkul : Player
         {
             if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
             {
+                int damage = Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
                 BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
                 if (boss != null)
                 {
-                    boss.hp -= Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
+                    boss.hp -= damage;
                     Debug.Log($"{boss.name}={boss.hp}/{boss.maxHp}");
+                    GameManager.Instance.totalDamage += damage;
                 }
 
                 Monster monster = hit.collider.gameObject?.GetComponentMust<Monster>();
                 if (monster != null)
                 {
-                    monster.hp -= Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
+                    monster.hp -= damage;
                     Debug.Log($"{monster._name}={monster.hp}/{monster.maxHp}");
+                    GameManager.Instance.totalDamage += damage;
                 }
                 GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);
                 hitEffect.transform.position = hit.transform.position - new Vector3(0f, 0.5f, 0f);

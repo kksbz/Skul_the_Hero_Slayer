@@ -10,6 +10,7 @@ public class BossBody : MonoBehaviour
     public AudioClip groggySound;
     public AudioClip deadSound;
     public AudioClip endAttackSound;
+    public AudioClip changeSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +80,11 @@ public class BossBody : MonoBehaviour
     private void DeadSound()
     {
         bodyAudio.clip = deadSound;
+        bodyAudio.Play();
+    }
+    private void ChangeSound()
+    {
+        bodyAudio.clip = changeSound;
         bodyAudio.Play();
     }
 }

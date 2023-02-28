@@ -38,6 +38,8 @@ public class GreenWoodenAttackA : MonoBehaviour
         {
             PlayerController target = collider.gameObject?.GetComponentMust<PlayerController>();
             target.playerHp -= Random.RandomRange(minDamage, maxDamage);
+            int direction = target.transform.position.x - transform.position.x > 0 ? 1 : -1;
+            target.player.playerRb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
             Debug.Log($"가시 공격 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
         }
     } //OnTriggerEnter2D

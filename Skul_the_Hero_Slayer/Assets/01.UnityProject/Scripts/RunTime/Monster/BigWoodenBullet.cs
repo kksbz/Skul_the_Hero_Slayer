@@ -76,6 +76,8 @@ public class BigWoodenBullet : MonoBehaviour
         {
             PlayerController target = collider.gameObject?.GetComponentMust<PlayerController>();
             target.playerHp -= Random.RandomRange(minDamage, maxDamage);
+            int direction = target.transform.position.x - transform.position.x > 0 ? 1 : -1;
+            target.player.playerRb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
             bulletAni.SetBool("isHit", true);
             isHitTarget = true;
             Debug.Log($"빅우든 원거리공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");

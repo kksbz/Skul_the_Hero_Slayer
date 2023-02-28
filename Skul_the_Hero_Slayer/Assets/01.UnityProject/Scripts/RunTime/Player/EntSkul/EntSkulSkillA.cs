@@ -34,20 +34,23 @@ public class EntSkulSkillA : MonoBehaviour
         {
             BossHead boss = collider.gameObject?.GetComponentMust<BossHead>();
             //보스몬스터 데미지 판정처리
+            int damage = Random.RandomRange(25, 30);
             if (boss != null)
             {
-                boss.hp -= Random.RandomRange(25, 30);
+                boss.hp -= damage;
                 Debug.Log($"Ent스킬A공격 = {boss.hp}/{boss.maxHp}");
                 isHit = true;
+                GameManager.Instance.totalDamage += damage;
             }
             MonsterController target = collider.gameObject?.GetComponentMust<MonsterController>();
             //몬스터 데미지 판정처리
             if (target != null)
             {
-                target.monster.hp -= Random.RandomRange(25, 30);
+                target.monster.hp -= damage;
                 Debug.Log($"Ent스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
                 isHit = true;
+                GameManager.Instance.totalDamage += damage;
             }
         }
-    } //OnTriggerEnter2D
+    }
 }

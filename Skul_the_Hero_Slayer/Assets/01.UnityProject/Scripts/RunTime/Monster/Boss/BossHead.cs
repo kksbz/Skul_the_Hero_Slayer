@@ -57,6 +57,7 @@ public class BossHead : MonoBehaviour
         gameObject.tag = GData.ENEMY_LAYER_MASK;
         bossHeadAni.SetBool("isChangePhase", false);
         bossHeadAni.SetBool("isP2Idle", true);
+        bossObj.isChangeBossState = false;
     } //ExitChangePhase
 
     public void Dead()

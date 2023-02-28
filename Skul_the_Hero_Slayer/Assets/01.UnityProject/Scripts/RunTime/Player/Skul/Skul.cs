@@ -71,18 +71,21 @@ public class Skul : Player
         {
             if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
             {
+                int damage = Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
                 BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
                 if (boss != null)
                 {
-                    boss.hp -= Random.RandomRange(20, 25);
+                    boss.hp -= damage;
                     Debug.Log($"스킬A공격 = {boss.hp}/{boss.maxHp}");
+                    GameManager.Instance.totalDamage += damage;
                 }
 
                 Monster monster = hit.collider.gameObject.GetComponentMust<Monster>();
                 if (monster != null)
                 {
-                    monster.hp -= Random.Range(playerData.MinDamage, playerData.MaxDamage);
+                    monster.hp -= damage;
                     Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
+                    GameManager.Instance.totalDamage += damage;
                 }
             }
             GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);

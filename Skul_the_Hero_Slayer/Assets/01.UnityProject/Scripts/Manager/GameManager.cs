@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int monsterRemainingNumber = 0; //남은 몬스터 수
+    public int monsterRemainingNumber; //남은 몬스터 수
+    public float totalTime;
+    public float killCount;
+    public int totalDamage;
     private static GameManager instance = null;
     public static GameManager Instance
     {
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            Init();
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -41,4 +45,11 @@ public class GameManager : MonoBehaviour
 
     } //Update
 
+    public void Init()
+    {
+        monsterRemainingNumber = 0;
+        totalTime = Time.time;
+        killCount = 0;
+        totalDamage = 0;
+    } //Init
 }
