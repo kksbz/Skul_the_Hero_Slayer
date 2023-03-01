@@ -617,6 +617,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: OffBodyGround
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2
     functionName: EndAttackSound
     data: 
@@ -626,6 +633,13 @@ AnimationClip:
     messageOptions: 0
   - time: 3
     functionName: AttackSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.5
+    functionName: OnBodyGround
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

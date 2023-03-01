@@ -17,9 +17,9 @@ MonoBehaviour:
   spawnPrefab1_Number: 8
   spawnPrefab2_Number: 5
   spawnPrefab3_Number: 3
-  monsterPrefab1: {fileID: 3912505774269970208, guid: 28b37909a40258149b83f46bde2950a6, type: 3}
-  monsterPrefab2: {fileID: 24063143355730314, guid: 1ff2f8149a4306443ad874c417067459, type: 3}
-  monsterPrefab3: {fileID: 7570240091912888051, guid: 6f9333abac8a82644a6cfc27a41e1327, type: 3}
+  monsterPrefab1: {fileID: 7479883672528917491, guid: 28b37909a40258149b83f46bde2950a6, type: 3}
+  monsterPrefab2: {fileID: 1608320595976238280, guid: 1ff2f8149a4306443ad874c417067459, type: 3}
+  monsterPrefab3: {fileID: 8386389158573447587, guid: 6f9333abac8a82644a6cfc27a41e1327, type: 3}
   spawnCoordinate_Nomal1: {x: 13, y: 1, z: 0}
   spawnCoordinate_Nomal2: {x: 25, y: -12, z: 0}
   spawnCoordinate_Nomal3: {x: 23, y: -12, z: 0}

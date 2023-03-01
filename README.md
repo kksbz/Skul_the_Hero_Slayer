@@ -67,3 +67,4 @@
 2023-02-28 / v0.3.6 Stage2 setup, Skul SkillA,B 쿨초기화 추가 및 머리습득 예외처리, Monster HpBar, Minimap setup<br/>
 2023-02-28 / v0.3.7 Work on Sound<br/>
 2023-03-01 / v0.3.8 Work on ResultUI, GameSound<br/>
+2023-03-02 / v0.3.9 AudioManager, OptionUI, StageBackGround Setup<br/>

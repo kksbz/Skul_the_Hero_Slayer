@@ -56,7 +56,7 @@ TagManager:
   - name: Background1
     uniqueID: 3809968137
     locked: 0
-  - name: NPC
+  - name: BackGround0
     uniqueID: 2886670031
     locked: 0
   - name: Enemy

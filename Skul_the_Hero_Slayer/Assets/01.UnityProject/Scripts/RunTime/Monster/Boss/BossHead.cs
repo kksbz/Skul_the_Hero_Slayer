@@ -9,6 +9,8 @@ public class BossHead : MonoBehaviour
     private GameObject groggyEffect;
     private GameObject slamEffect;
     private AudioSource headAudio;
+    private SpriteRenderer headSprite;
+    private SpriteRenderer jawSprite;
     public AudioClip attackASound;
     public AudioClip attackBSound;
     public AudioClip attackCSound;
@@ -24,12 +26,14 @@ public class BossHead : MonoBehaviour
         bossObj = gameObject.transform.parent.GetComponent<BossMonster>();
         bossHeadAni = gameObject.GetComponentMust<Animator>();
         headAudio = gameObject.GetComponentMust<AudioSource>();
+        headSprite = gameObject.GetComponentMust<SpriteRenderer>();
+        jawSprite = gameObject.FindChildObj("Jaw").gameObject.GetComponentMust<SpriteRenderer>();
         groggyEffect = GFunc.GetRootObj("BossEffect").FindChildObj("GroggyEffect");
         slamEffect = GFunc.GetRootObj("BossEffect").FindChildObj("FistSlamEffect");
     }
 
     //1페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
-    public void P1ExitAttack()
+    private void P1ExitAttack()
     {
         bossHeadAni.SetBool("isAttackA", false);
         bossHeadAni.SetBool("isRightAttack", false);
@@ -40,7 +44,7 @@ public class BossHead : MonoBehaviour
     } //P1ExitAttack
 
     //2페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
-    public void P2ExitAttack()
+    private void P2ExitAttack()
     {
         bossHeadAni.SetBool("isP2RightAttackA", false);
         bossHeadAni.SetBool("isP2LeftAttackA", false);
@@ -52,7 +56,21 @@ public class BossHead : MonoBehaviour
         bossHeadAni.SetBool("isP2Idle", true);
     } //P2ExitAttack
 
-    public void ChangePhase()
+    //Start페이즈 나갈때 애니메이션 체크 설정
+    private void StartPhase()
+    {
+        gameObject.tag = GData.ENEMY_LAYER_MASK;
+        bossHeadAni.SetBool("isStart", false);
+        bossObj.isChangeBossState = false;
+    } //StartPhase
+
+    //Start페이즈 진행중 보스가 맵아래에서 올라온다음 SortingLayer를 변경해 맵보다 먼저 보이게 하는 함수
+    private void ChangeSortingLayer()
+    {
+        headSprite.sortingLayerName = GData.ENEMY_LAYER_MASK;
+        jawSprite.sortingLayerName = GData.ENEMY_LAYER_MASK;
+    } //ChangeSortingOrder
+    private void ChangePhase()
     {
         gameObject.tag = GData.ENEMY_LAYER_MASK;
         bossHeadAni.SetBool("isChangePhase", false);
@@ -60,7 +78,7 @@ public class BossHead : MonoBehaviour
         bossObj.isChangeBossState = false;
     } //ExitChangePhase
 
-    public void Dead()
+    private void Dead()
     {
         bossHeadAni.SetBool("isP2Idle", false);
         bossHeadAni.SetBool("isP2RightAttackA", false);
@@ -73,7 +91,7 @@ public class BossHead : MonoBehaviour
     } //Dead
 
     //Groggy이펙트 활성화하는 함수
-    public void OnOffGroggyEffect()
+    private void OnOffGroggyEffect()
     {
         if (!groggyEffect.activeInHierarchy)
         {
@@ -86,7 +104,7 @@ public class BossHead : MonoBehaviour
     } //OnOffGroggyEffect
 
     //FistSlam이펙트 활성화하는 함수
-    public void OnOffFistSlamEffect()
+    private void OnOffFistSlamEffect()
     {
         slamEffect.SetActive(true);
     } //OnOffFistSlamEffect

@@ -8,6 +8,7 @@ public class BossArm : MonoBehaviour
     private BoxCollider2D armCollider;
     private Animator armAni;
     private AudioSource armAudio;
+    private SpriteRenderer armSprite;
     public AudioClip attackASound;
     public AudioClip attackBSound;
     public AudioClip attackCSound;
@@ -21,11 +22,12 @@ public class BossArm : MonoBehaviour
         armCollider = gameObject.GetComponentMust<BoxCollider2D>();
         armAudio = gameObject.GetComponentMust<AudioSource>();
         armAni = gameObject.GetComponentMust<Animator>();
+        armSprite = gameObject.GetComponentMust<SpriteRenderer>();
         armCollider.enabled = false;
     } //Start
 
     //Attack 애니메이션 진행 중 공격판정 시작위치 정하는 함수
-    public void Attack()
+    private void Attack()
     {
         armAudio.clip = attackASound;
         armAudio.Play();
@@ -34,7 +36,7 @@ public class BossArm : MonoBehaviour
     } //Attack
 
     //Attack 애니메이션 진행 중 공격판정 종료위치 정하는 함수
-    public void AttackExit()
+    private void AttackExit()
     {
         armCollider.enabled = false;
     } //AttackExit
@@ -66,7 +68,7 @@ public class BossArm : MonoBehaviour
     }
 
     //1페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
-    public void P1ExitAttack()
+    private void P1ExitAttack()
     {
         armAni.SetBool("isAttackA", false);
         armAni.SetBool("isAttackB", false);
@@ -78,7 +80,7 @@ public class BossArm : MonoBehaviour
     } //ExitAttack
 
     //2페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
-    public void P2ExitAttack()
+    private void P2ExitAttack()
     {
         armAni.SetBool("isP2AttackA", false);
         armAni.SetBool("isP2AttackB", false);
@@ -91,13 +93,24 @@ public class BossArm : MonoBehaviour
         armCollider.enabled = false;
     } //P2ExitAttack
 
-    public void ChangePhase()
+    //Start페이즈 진행중 보스가 맵아래에서 올라온다음 SortingLayer를 변경해 맵보다 먼저 보이게 하는 함수
+    private void ChangeSortingLayer()
+    {
+        armSprite.sortingLayerName = "EnemyEffect";
+    } //ChangeSortingOrder
+    private void StartPhase()
+    {
+        armAni.SetBool("isStart", false);
+    } //StartPhase
+
+    //Start페이즈 나갈때 애니메이션 체크 설정
+    private void ChangePhase()
     {
         armAni.SetBool("isChangePhase", false);
         armAni.SetBool("isP2Idle", true);
     } //ExitChangePhase
 
-    public void Dead()
+    private void Dead()
     {
         armAni.SetBool("isP2Idle", false);
         armAni.SetBool("isP2AttackA", false);
@@ -121,5 +134,4 @@ public class BossArm : MonoBehaviour
             armCollider.enabled = false;
         }
     } //OnTriggerEnter2D
-
 }

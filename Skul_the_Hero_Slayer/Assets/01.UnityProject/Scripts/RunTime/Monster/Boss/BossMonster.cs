@@ -47,6 +47,7 @@ public class BossMonster : MonoBehaviour
         rightArmAni = rightArm.GetComponentMust<Animator>();
 
         corpPool = gameObject.FindChildObj("CorpPool").GetComponentMust<CorpPool>();
+        StartPhase();
     }
 
     // Update is called once per frame
@@ -79,7 +80,7 @@ public class BossMonster : MonoBehaviour
         }
         corpAttackCoolDown += Time.deltaTime;
         //corp공격 쿨타임
-        if (corpAttackCoolDown >= 20f)
+        if (corpAttackCoolDown >= 60f)
         {
             isCorpAttack = true;
         }
@@ -87,7 +88,7 @@ public class BossMonster : MonoBehaviour
         fistSlamCoolDown += Time.deltaTime;
         // Debug.Log($"크롭쿨{corpAttackCoolDown}");
         // Debug.Log($"슬렘쿨{corpAttackCoolDown}");
-        if (fistSlamCoolDown >= 10f)
+        if (fistSlamCoolDown >= 30f)
         {
             isFistSlam = true;
         }
@@ -118,6 +119,17 @@ public class BossMonster : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, new Vector2(30f, 10f));
     } //OnDrawGizmos
+
+    //Start 상태 실행 함수
+    private void StartPhase()
+    {
+        Head.tag = GData.PLAYER_LAYER_MASK;
+        isChangeBossState = true;
+        bodyAni.SetBool("isStart", true);
+        headAni.SetBool("isStart", true);
+        leftArmAni.SetBool("isStart", true);
+        rightArmAni.SetBool("isStart", true);
+    } //StartPhase
 
     //Dead 상태 실행 함수
     private void Dead()
@@ -363,6 +375,4 @@ public class BossMonster : MonoBehaviour
             rightArmAni.SetBool("isP2FistSlam", true);
         }
     } //FistSlam
-
-
 }

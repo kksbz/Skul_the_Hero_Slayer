@@ -28,7 +28,6 @@ public class Skul : Player
         playerData = Resources.Load("SkulData") as PlayerData;
         InitPlayerData(playerData);
         playerController.player = (Player)(this as Player);
-        Debug.Log("Skul");
     }
 
     public override void AttackA()
@@ -76,7 +75,7 @@ public class Skul : Player
                 if (boss != null)
                 {
                     boss.hp -= damage;
-                    Debug.Log($"스킬A공격 = {boss.hp}/{boss.maxHp}");
+                    // Debug.Log($"스킬A공격 = {boss.hp}/{boss.maxHp}");
                     GameManager.Instance.totalDamage += damage;
                 }
 
@@ -84,7 +83,7 @@ public class Skul : Player
                 if (monster != null)
                 {
                     monster.hp -= damage;
-                    Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
+                    // Debug.Log($"{hit.collider.name}={monster.hp}/{monster.maxHp}");
                     GameManager.Instance.totalDamage += damage;
                 }
             }

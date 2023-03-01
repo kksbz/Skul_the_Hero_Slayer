@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            Init();
+            InitGameManager();
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     } //Update
 
-    public void Init()
+    public void InitGameManager()
     {
         monsterRemainingNumber = 0;
         totalTime = Time.time;

@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     public bool isGetSkulSkillA = false;
     public bool isHit = false;
     private bool isDead = false;
-    private int currentHp;
+    public int currentHp;
     private float swapCoolDown = 6f; //스왑스킬 쿨다운
     public float SwapCoolDown
     {
@@ -78,11 +78,11 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        playerHp = playerMaxHp;
         playerSkulList = new List<Player>();
         playerSprite = gameObject.GetComponentMust<SpriteRenderer>();
         Player possibleSkul = default;
 #if !DEBUG_ENABLED
-        //기본 스컬의 런타임애니컨트롤러를 저장 => 스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == GData.CASTLELOBBY_SCENE_NAME)
         {
             possibleSkul = gameObject.AddComponent<Skul>();
@@ -96,10 +96,9 @@ public class PlayerController : MonoBehaviour
         possibleSkul = gameObject.AddComponent<Skul>();
         playerSkulList.Add(possibleSkul);
 #endif
-
+        //기본 스컬의 런타임애니컨트롤러를 저장 => 스컬스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
         BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
         isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
-        playerHp = playerMaxHp;
         currentHp = playerHp;
         skillACoolDown = player.skillACool;
         skillBCoolDown = player.skillBCool;
@@ -214,26 +213,19 @@ public class PlayerController : MonoBehaviour
             ChangePlayer();
         }
 
-        // if (Input.GetKeyDown(KeyCode.Return))
-        // {
-        //     SaveManager.Instance.SaveData(this);
-        // }
-        // if (Input.GetKeyDown(KeyCode.T))
-        // {
-        //     SaveManager.Instance.LoadData(this);
-        // }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIManager.Instance.optionObj.SetActive(true);
+            Time.timeScale = 0;
+        }
 
-        // if (enumState != PlayerState.JUMP && enumState != PlayerState.ATTACK)
-        // {
-        //     if (player.playerRb.velocity.y < -1)
-        //     {
-        //         player.playerAni.SetBool("isFall", true);
-        //     }
-        //     else
-        //     {
-        //         player.playerAni.SetBool("isFall", false);
-        //     }
-        // }
+        if (enumState != PlayerState.JUMP && enumState != PlayerState.ATTACK)
+        {
+            if (player.playerRb.velocity.y < -1)
+            {
+                pStateMachine.SetState(dicState[PlayerState.JUMP]);
+            }
+        }
 
         UIManager.Instance.playerHp = playerHp;
 

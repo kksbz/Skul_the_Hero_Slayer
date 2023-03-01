@@ -7,6 +7,7 @@ public class PlayerSaveInfo
 {
     public int          playerHp;
     public int          playerMaxHp;
+    public int          playerCurrentHp;
     public List<int>    playerSkul;
     public int          enabledSkul;
     public int          minDamage;
@@ -19,6 +20,7 @@ public class PlayerSaveInfo
         playerSkul      = new List<int>();
         playerHp        = controller.playerHp;
         playerMaxHp     = controller.playerMaxHp;
+        playerCurrentHp = controller.currentHp;
 
         controller.playerSkulList.ForEach(skul=>
         {
@@ -33,7 +35,7 @@ public class PlayerSaveInfo
         maxDamage               = controller.player.maxDamage;
         speed                   = controller.player.moveSpeed;
         groundCheckLength       = controller.player.groundCheckLength;
-    }
+    } //PlayerSaveInfo생성자
 }
 
 public class SaveManager : MonoBehaviour
@@ -73,7 +75,7 @@ public class SaveManager : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-    }
+    } //Awake
 
     public void SaveData(PlayerController playerController)
     {
@@ -81,7 +83,7 @@ public class SaveManager : MonoBehaviour
 
         var jsonObj = JsonUtility.ToJson(playerInfo);
 
-        Debug.Log($"SAVEDATA: {jsonObj}");
+        // Debug.Log($"SaveData: {jsonObj}");
 
         if(!Directory.Exists(dataPath))
         {
@@ -89,19 +91,18 @@ public class SaveManager : MonoBehaviour
         }
 
         var path = dataPath + System.DateTime.Now.ToString("MMddHHmmss") + ".json";
-        Debug.Log(path);
+        // Debug.Log(path);
 
         File.WriteAllText(path, jsonObj);
         dataPathSceneChange = path;
-
-    }
+    } //SaveData
     public void LoadData(PlayerController playerController)
     {
         var saveInfoJson = File.ReadAllText(dataPathSceneChange);
-        Debug.Log($"LOADDATA: {saveInfoJson}");
+        // Debug.Log($"LoadData: {saveInfoJson}");
         var saveInfo = JsonUtility.FromJson<PlayerSaveInfo>(saveInfoJson);
 
-        playerController.playerHp = saveInfo.playerHp;
+        playerController.playerHp = saveInfo.playerCurrentHp;
         playerController.playerMaxHp = saveInfo.playerMaxHp;
 
         saveInfo.playerSkul.ForEach(skul=>
@@ -132,5 +133,10 @@ public class SaveManager : MonoBehaviour
         playerController.player.maxDamage                = saveInfo.maxDamage;
         playerController.player.moveSpeed                = saveInfo.speed;
         playerController.player.groundCheckLength        = saveInfo.groundCheckLength;
-    }
+    } //LoadData
+
+    public void InitPlayerData()
+    {
+
+    } //InitPlayerData;
 }

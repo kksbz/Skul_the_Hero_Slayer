@@ -8,9 +8,10 @@ public class ExitThisScene : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            AudioManager.Instance.bgAudio.Stop();
             PlayerController player = collider.gameObject.GetComponentMust<PlayerController>();
             SaveManager.Instance.SaveData(player);
-            SceneMgr.Instance.LoadAsyncScene(GData.DUNGEONLOBBY_SCENE_NAME, GData.DUNGEONLOBBY_SCENE_SUB_NAME);
+            SceneMgr.Instance.LoadAsyncScene(GData.DUNGEONLOBBY_SCENE_NAME);
         }
     } //OnTriggerEnter2D
 }

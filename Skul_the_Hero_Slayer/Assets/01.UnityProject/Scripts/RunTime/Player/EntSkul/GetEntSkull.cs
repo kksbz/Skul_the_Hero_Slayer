@@ -5,18 +5,30 @@ using UnityEngine;
 public class GetEntSkull : MonoBehaviour
 {
     private GameObject enterKeyIcon; //자식오브젝트 변수
-    private bool isPushKey = false; //플레이어 키입력 받는 조건 변수
     private PlayerController player; //트리거에 감지된 플레이어 담을 변수
+    private SpriteRenderer getEntSkul;
+    private BoxCollider2D objCollider;
+    private bool isPushKey = false; //플레이어 키입력 받는 조건 변수
 
     // Start is called before the first frame update
     void Start()
     {
+        getEntSkul = gameObject.GetComponentMust<SpriteRenderer>();
+        objCollider = gameObject.GetComponentMust<BoxCollider2D>();
+        getEntSkul.enabled = false;
+        objCollider.enabled = false;
         enterKeyIcon = gameObject.FindChildObj("EnterKeyIcon");
     } //Start
 
     // Update is called once per frame
     void Update()
     {
+        //남은 몬스터가 없을 때 이미지와 콜라이더 On
+        if (GameManager.Instance.monsterRemainingNumber <= 0)
+        {
+            getEntSkul.enabled = true;
+            objCollider.enabled = true;
+        }
         if (isPushKey == true)
         {
             //F키 입력시 EntSkul획득 조건 true

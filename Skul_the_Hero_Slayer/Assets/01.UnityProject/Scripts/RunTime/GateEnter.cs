@@ -17,13 +17,14 @@ public class GateEnter : MonoBehaviour
 
     void Update()
     {
-        if (isPushKey == true /*&& GameManager.Instance.monsterRemainingNumber <= 0*/)
+        if (isPushKey == true && GameManager.Instance.monsterRemainingNumber <= 0)
         {
             //스테이지에 남은 몬스터가 없을 때 F키 입력시 다음 씬으로 이동
             if (Input.GetKeyDown(KeyCode.F))
             {
+                AudioManager.Instance.bgAudio.Stop();
                 SaveManager.Instance.SaveData(player);
-                SceneMgr.Instance.LoadAsyncScene(nextStageName, nextStageSubName);
+                SceneMgr.Instance.LoadAsyncScene(nextStageName);
             }
         }
     } //Update

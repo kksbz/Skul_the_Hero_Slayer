@@ -7,8 +7,9 @@ public static partial class GData
     public const string TITLE_SCENE_NAME = "00.TitleScene";
     public const string LOADDING_OBJ_NAME = "Loading";
     public const string MAIN_UI_OBJ_NAME = "MainUI";
-    public const string STAGE_UI_OBJ_NAME = "StageUi";
     public const string RESULT_UI_OBJ_NAME = "ResultUI";
+    public const string SHOWSTAGE_UI_OBJ_NAME = "StageUI";
+    public const string EXIT_UI_OBJ_NAME = "OptionUI";
     public const string GROUND_LAYER_MASK = "Ground";
     public const string PLAYER_LAYER_MASK = "Player";
     public const string ENEMY_LAYER_MASK = "Enemy";
@@ -21,5 +22,5 @@ public static partial class GData
     public const string STAGE_2_SCENE_NAME = "STAGE-2";
     public const string STAGE_2_SCENE_SUB_NAME = "깊은숲 중턱";
     public const string BOSS_SCENE_NAME = "BOSS-STAGE";
-    public const string BOSS_SCENE_SUB_NAME = "깊은숲 정상";
+    public const string BOSS_SCENE_SUB_NAME = "깊은숲 중심부";
 }

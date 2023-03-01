@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class TitleStartKey : MonoBehaviour
 {
+    void Start()
+    {
+        AudioManager.Instance.bgAudio.clip = AudioManager.Instance.titleSound;
+        AudioManager.Instance.bgAudio.Play();
+    }
     // Update is called once per frame
     void Update()
     {
         if (Input.anyKeyDown)
         {
-            SceneMgr.Instance.LoadAsyncScene(GData.CASTLELOBBY_SCENE_NAME, GData.CASTLELOBBY_SCENE_SUB_NAME);
+            AudioManager.Instance.bgAudio.Stop();
+            UIManager.Instance.InitUIManager();
+            GameManager.Instance.InitGameManager();
+            SceneMgr.Instance.LoadAsyncScene(GData.CASTLELOBBY_SCENE_NAME);
         }
     }
 }
