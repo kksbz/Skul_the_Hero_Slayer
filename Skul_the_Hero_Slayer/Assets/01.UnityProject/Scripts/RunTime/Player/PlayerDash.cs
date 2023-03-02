@@ -15,6 +15,7 @@ public class PlayerDash : IPlayerState
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.DASH;
         dashEffect = pController.gameObject.FindChildObj("DashEffect");
+        pController.CoroutineDeligate(Dash());
     } //StateEnter
     public void StateFixedUpdate()
     {
@@ -22,7 +23,7 @@ public class PlayerDash : IPlayerState
     } //StateFixedUpdate
     public void StateUpdate()
     {
-        UseDash();
+        /*Do Nothing*/
     } //StateUpdate
     public void StateExit()
     {
@@ -33,31 +34,14 @@ public class PlayerDash : IPlayerState
         pController.player.playerAni.SetBool("isFallRepict", false);
     } //StateExit
 
-    private void UseDash()
-    {
-        if (Input.GetKeyDown(KeyCode.Z) && pController.canDash == true)
-        {
-            pController.CoroutineDeligate(Dash());
-        }
-    } //UseDash
-
     //대쉬하는 코루틴
     private IEnumerator Dash()
     {
         pController.player.playerAudio.clip = pController.player.dashSound;
         pController.player.playerAudio.Play();
         dashEffect.SetActive(true);
-        IPlayerState lastState;
-        //대쉬전 상태를 Action에 저장
-        if (pController.isGroundRay.hit.collider != null)
-        {
-            lastState = new PlayerIdle();
-        }
-        else
-        {
-            lastState = new PlayerJump();
-        }
-        Debug.Log($"대쉬시작");
+
+        // Debug.Log($"대쉬시작");
         pController.player.tag = GData.ENEMY_LAYER_MASK;
         pController.canDash = false;
         pController.player.playerAni.SetBool("isDash", true);
@@ -72,12 +56,27 @@ public class PlayerDash : IPlayerState
         pController.player.playerRb.gravityScale = originalGravity;
         pController.player.playerAni.SetBool("isDash", false);
 
+        dashEffect.SetActive(false);
+
+        IPlayerState lastState;
+        //대쉬가 끝난 후 다음으로 이어질 상태 체크
+        if (pController.isGroundRay.hit.collider != null)
+        {
+            //땅 위에 있으면 Idle
+            lastState = new PlayerIdle();
+        }
+        else
+        {
+            //공중에 있으면 Jump
+            lastState = new PlayerJump();
+        }
+
         //대쉬가 끝나면 강제로 이전 상태로 전환하는 ActionEvent =>대쉬 상태 탈출
+        //점프로 대쉬를 캔슬할 경우 Action실행을 하지 않기 위해 예외처리
         if (pController.enumState == PlayerController.PlayerState.DASH)
         {
             pController.pStateMachine.onChangeState?.Invoke(lastState);
         }
-        dashEffect.SetActive(false);
         //2단 대쉬
         if (dashCount >= 2)
         {

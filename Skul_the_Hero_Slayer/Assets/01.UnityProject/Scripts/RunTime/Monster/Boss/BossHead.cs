@@ -60,6 +60,7 @@ public class BossHead : MonoBehaviour
     private void StartPhase()
     {
         gameObject.tag = GData.ENEMY_LAYER_MASK;
+        gameObject.layer = 7;
         bossHeadAni.SetBool("isStart", false);
         bossObj.isChangeBossState = false;
     } //StartPhase
@@ -73,6 +74,7 @@ public class BossHead : MonoBehaviour
     private void ChangePhase()
     {
         gameObject.tag = GData.ENEMY_LAYER_MASK;
+        gameObject.layer = 7;
         bossHeadAni.SetBool("isChangePhase", false);
         bossHeadAni.SetBool("isP2Idle", true);
         bossObj.isChangeBossState = false;

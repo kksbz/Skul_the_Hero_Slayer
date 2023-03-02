@@ -9,6 +9,7 @@ public class BossArm : MonoBehaviour
     private Animator armAni;
     private AudioSource armAudio;
     private SpriteRenderer armSprite;
+    private GameObject attackEffect;
     public AudioClip attackASound;
     public AudioClip attackBSound;
     public AudioClip attackCSound;
@@ -23,6 +24,7 @@ public class BossArm : MonoBehaviour
         armAudio = gameObject.GetComponentMust<AudioSource>();
         armAni = gameObject.GetComponentMust<Animator>();
         armSprite = gameObject.GetComponentMust<SpriteRenderer>();
+        attackEffect = GFunc.GetRootObj("BossEffect").FindChildObj("AttackSmoke");
         armCollider.enabled = false;
     } //Start
 
@@ -41,31 +43,51 @@ public class BossArm : MonoBehaviour
         armCollider.enabled = false;
     } //AttackExit
 
+    //LeftAttackEffect 활성화 하는 함수
+    private void OnLeftAttackEffect()
+    {
+        attackEffect.transform.position = transform.position + new Vector3(0.5f, 1f, 0f);
+        attackEffect.SetActive(true);
+    } //OnAttackEffect
+
+    //RightAttackEffect 활성화 하는 함수
+    private void OnRightAttackEffect()
+    {
+        attackEffect.transform.position = transform.position + new Vector3(-0.5f, 1f, 0f);
+        attackEffect.SetActive(true);
+    } //OnAttackEffect
+
+    //AttackEffect 비활성화 하는 함수
+    private void OffAttackEffect()
+    {
+        attackEffect.SetActive(false);
+    } //OffAttackEffect
+
     private void AttackBSound()
     {
         armAudio.clip = attackBSound;
         armAudio.Play();
-    }
+    } //AttackBSound
     private void AttackCSound()
     {
         armAudio.clip = attackCSound;
         armAudio.Play();
-    }
+    } //AttackCSound
     private void EndAttakcSound()
     {
         armAudio.clip = endAttackSound;
         armAudio.Play();
-    }
+    } //EndAttakcSound
     private void GroggySound()
     {
         armAudio.clip = groggySound;
         armAudio.Play();
-    }
+    } //GroggySound
     private void DeadSound()
     {
         armAudio.clip = deadSound;
         armAudio.Play();
-    }
+    } //DeadSound
 
     //1페이즈 각 상태 애니메이션이 종료될때 조건 초기화하는 함수
     private void P1ExitAttack()
@@ -96,7 +118,7 @@ public class BossArm : MonoBehaviour
     //Start페이즈 진행중 보스가 맵아래에서 올라온다음 SortingLayer를 변경해 맵보다 먼저 보이게 하는 함수
     private void ChangeSortingLayer()
     {
-        armSprite.sortingLayerName = "EnemyEffect";
+        armSprite.sortingLayerName = "Enemy";
     } //ChangeSortingOrder
     private void StartPhase()
     {

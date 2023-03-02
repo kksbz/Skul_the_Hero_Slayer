@@ -83,6 +83,17 @@ public class SkulSkillA : MonoBehaviour
                 if (playerController.player._name == "Skul")
                 {
                     playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+                    IPlayerState nextState;
+                    //해골습득시 런타임애니메이션컨트롤러가 변경되므로 상태 초기화
+                    if (playerController.isGroundRay.hit.collider != null)
+                    {
+                        nextState = new PlayerIdle();
+                    }
+                    else
+                    {
+                        nextState = new PlayerJump();
+                    }
+                    playerController.pStateMachine.onChangeState?.Invoke(nextState);
                     //머리 습득시 SkillA 쿨 초기화
                     playerController.isGetSkulSkillA = true;
                 }

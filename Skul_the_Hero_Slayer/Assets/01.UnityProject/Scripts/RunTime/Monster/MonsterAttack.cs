@@ -36,7 +36,10 @@ public class MonsterAttack : IMonsterState
         {
             mController.monster.monsterAni.SetBool("isAttackA", false);
         }
-        mController.monster.monsterAni.SetBool("isAttackA", false);
-        mController.monster.monsterAni.SetBool("isAttackB", false);
+        else
+        {
+            mController.monster.monsterAni.SetBool("isAttackA", false);
+            mController.monster.monsterAni.SetBool("isAttackB", false);
+        }
     } //StateExit
 }

@@ -80,7 +80,7 @@ public class BigWoodenBullet : MonoBehaviour
             target.player.playerRb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
             bulletAni.SetBool("isHit", true);
             isHitTarget = true;
-            Debug.Log($"빅우든 원거리공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
+            // Debug.Log($"빅우든 원거리공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
         }
     } //OnTriggerEnter2D
 }

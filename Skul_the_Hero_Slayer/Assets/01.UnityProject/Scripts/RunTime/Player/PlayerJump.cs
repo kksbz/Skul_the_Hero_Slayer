@@ -23,10 +23,10 @@ public class PlayerJump : IPlayerState
     } //StateEnter
     public void StateFixedUpdate()
     {
-        PlayerFall();
     } //StateFixedUpdate
     public void StateUpdate()
     {
+        PlayerFall();
         JumpEffectOff();
         JumpAndMove();
         Jump();
@@ -41,9 +41,8 @@ public class PlayerJump : IPlayerState
     //JumpState 유지한채 입력 키 방향으로 이동하면서 바라보는 함수
     private void JumpAndMove()
     {
-        //공중에 떠 있으면 시작
         //입력받은 키 방향으로 이동하면서 바라보는 처리
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && pController.isGroundRay.hit.collider == null)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)))
         {
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -65,7 +64,14 @@ public class PlayerJump : IPlayerState
     {
         if (pController.player.playerRb.velocity.y < -1)
         {
+            pController.player.playerAni.SetBool("isJump", false);
             pController.player.playerAni.SetBool("isFall", true);
+        }
+        //플레이어가 땅에 닿으면 Idle상태로 강제전환
+        if (pController.isGroundRay.hit.collider != null)
+        {
+            IPlayerState nextState = new PlayerIdle();
+            pController.pStateMachine.onChangeState?.Invoke(nextState);
         }
     } //PlayerFall
 
@@ -78,7 +84,6 @@ public class PlayerJump : IPlayerState
             {
                 Vector3 playerVelocity = pController.player.playerRb.velocity;
                 pController.player.playerRb.velocity = new Vector3(playerVelocity.x, 0, playerVelocity.z);
-
                 jumpEffect.SetActive(true);
             }
             pController.player.playerAni.SetBool("isFall", false);

@@ -5,7 +5,8 @@ using UnityEngine;
 public class EntSkulSkillA : MonoBehaviour
 {
     private Animator entSkillAni;
-    private bool isHit = false;
+    private int minDamage = 30;
+    private int maxDamage = 35;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,11 +16,6 @@ public class EntSkulSkillA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Hit상태면 콜라이더 비활성화
-        if (isHit == true)
-        {
-            gameObject.GetComponentMust<BoxCollider2D>().enabled = false;
-        }
         //애니메이션이 종료되면 파괴
         if (entSkillAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
@@ -27,30 +23,41 @@ public class EntSkulSkillA : MonoBehaviour
         }
     } //Update
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    //EntSkillA공격 판정 함수
+    private void EntSkillAAttack()
     {
-        Debug.Log($"스킬A트리거 발동? {collider.name}, {collider.tag}");
-        if (collider.tag == GData.ENEMY_LAYER_MASK)
+        Vector2 attackArea = new Vector2(2f, 2.5f);
+        Vector2 direction = new Vector2(transform.localScale.x, 0).normalized;
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position, attackArea, 0f, Vector2.zero, 0f, LayerMask.GetMask(GData.ENEMY_LAYER_MASK));
+        if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
         {
-            BossHead boss = collider.gameObject?.GetComponentMust<BossHead>();
-            //보스몬스터 데미지 판정처리
-            int damage = Random.RandomRange(25, 30);
+            int damage = Random.RandomRange(minDamage, maxDamage);
+            BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
             if (boss != null)
             {
                 boss.hp -= damage;
-                Debug.Log($"Ent스킬A공격 = {boss.hp}/{boss.maxHp}");
-                isHit = true;
+                Debug.Log($"엔트스킬A 공격:{boss.name}={boss.hp}/{boss.maxHp}");
                 GameManager.Instance.totalDamage += damage;
             }
-            MonsterController target = collider.gameObject?.GetComponentMust<MonsterController>();
-            //몬스터 데미지 판정처리
-            if (target != null)
+
+            Monster monster = hit.collider.gameObject?.GetComponentMust<Monster>();
+            if (monster != null)
             {
-                target.monster.hp -= damage;
-                Debug.Log($"Ent스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
-                isHit = true;
+                monster.hp -= damage;
+                Debug.Log($"엔트스킬A 공격:{monster._name}={monster.hp}/{monster.maxHp}");
                 GameManager.Instance.totalDamage += damage;
             }
+            GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);
+            hitEffect.transform.position = hit.transform.position - new Vector3(0f, 0.5f, 0f);
+            hitEffect.transform.localScale = new Vector2(transform.localScale.x,
+            hitEffect.transform.localScale.y);
         }
-    }
+    } //EntSkillAAttack
+
+    //AttackB 공격범위 기즈모
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(transform.position, new Vector2(2f, 2.5f));
+    } //OnDrawGizmos
 }

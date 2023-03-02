@@ -83,6 +83,7 @@ public class PlayerController : MonoBehaviour
         playerSprite = gameObject.GetComponentMust<SpriteRenderer>();
         Player possibleSkul = default;
 #if !DEBUG_ENABLED
+        //현재씬이 마왕성 로비일 경우 플레이어 초기화
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == GData.CASTLELOBBY_SCENE_NAME)
         {
             possibleSkul = gameObject.AddComponent<Skul>();
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            //현재씬이 마왕성 로비가 아닐 경우 세이브데이터 로드
             SaveManager.Instance.LoadData(this);
         }
 #else
@@ -97,7 +99,10 @@ public class PlayerController : MonoBehaviour
         playerSkulList.Add(possibleSkul);
 #endif
         //기본 스컬의 런타임애니컨트롤러를 저장 => 스컬스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
-        BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
+        if (player.playerAni.runtimeAnimatorController.name == "Skul")
+        {
+            BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
+        }
         isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
         currentHp = playerHp;
         skillACoolDown = player.skillACool;
@@ -137,89 +142,109 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StateSelect();
+        pStateMachine.DoUpdate();
+    } //Update
+
+    //플레이어의 State를 정하는 함수
+    private void StateSelect()
+    {
+        //플레이어 Hp가 <= 0이면 Dead
         if (playerHp <= 0)
         {
             isDead = true;
             pStateMachine.SetState(dicState[PlayerState.DEAD]);
         }
+        //플레이어가 죽은 상태면 리턴
         if (isDead == true)
         {
             return;
         }
+        //플레이어가 피격당하면 피격처리
         if (playerHp < currentHp && isHit == false)
         {
             isHit = true;
             StartCoroutine(HitPlayer());
             currentHp = playerHp;
         }
-
+        //Move상태 조건 체크
         if ((Input.GetKey(KeyCode.RightArrow)
             || Input.GetKey(KeyCode.LeftArrow))
             && isGroundRay.hit.collider != null
-            && enumState != PlayerState.JUMP
-            && enumState != PlayerState.DASH
-            && enumState != PlayerState.ATTACK
-            && enumState != PlayerState.SKILLA
-            && enumState != PlayerState.SKILLB)
+            && enumState == PlayerState.IDLE)
         {
             pStateMachine.SetState(dicState[PlayerState.MOVE]);
         }
 
+        //Idle상태 조건 체크
         if (isGroundRay.hit.collider != null
-        && Input.anyKeyDown == false
-        && enumState != PlayerState.MOVE
-        /*&& enumState != PlayerState.JUMP*/
+        && Input.GetKey(KeyCode.RightArrow) == false
+        && Input.GetKey(KeyCode.LeftArrow) == false
+        && enumState != PlayerState.IDLE
         && enumState != PlayerState.DASH
-        && enumState != PlayerState.ATTACK
-        && enumState != PlayerState.SKILLA
-        && enumState != PlayerState.SKILLB)
+        && enumState != PlayerState.JUMP
+        && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
         {
             pStateMachine.SetState(dicState[PlayerState.IDLE]);
         }
 
+        //점프 시작
         if (Input.GetKeyDown(KeyCode.C) && !Input.GetKey(KeyCode.DownArrow))
         {
             pStateMachine.SetState(dicState[PlayerState.JUMP]);
         }
 
+        //대쉬 시작
         if (Input.GetKeyDown(KeyCode.Z) && canDash == true)
         {
             pStateMachine.SetState(dicState[PlayerState.DASH]);
         }
+
+        //공격 시작
         if (Input.GetKeyDown(KeyCode.X))
         {
             pStateMachine.SetState(dicState[PlayerState.ATTACK]);
         }
-        if (Input.GetKeyDown(KeyCode.A) && skillACoolDown == player.skillACool)
+
+        //스킬A 사용
+        if (Input.GetKeyDown(KeyCode.A)
+        && skillACoolDown == player.skillACool
+        && enumState != PlayerState.SKILLA)
         {
             pStateMachine.SetState(dicState[PlayerState.SKILLA]);
-            if (enumState == PlayerState.SKILLA)
-            {
-                StartCoroutine(Co_SkillACoolDown());
-            }
+            StartCoroutine(Co_SkillACoolDown());
         }
 
-        if (Input.GetKeyDown(KeyCode.S) && skillBCoolDown == player.skillBCool)
+        //스킬B 사용
+        if (Input.GetKeyDown(KeyCode.S)
+        && skillBCoolDown == player.skillBCool
+        && enumState != PlayerState.SKILLB)
         {
-            pStateMachine.SetState(dicState[PlayerState.SKILLB]);
-            if (enumState == PlayerState.SKILLB)
+            if (player.playerAni.runtimeAnimatorController.name == "Skul")
             {
-                StartCoroutine(Co_SkillBCoolDown());
+                // Debug.Log($"스컬상태에선 B스킬사용못함 헤드리스만 B스킬가능
+                // {player.playerAni.runtimeAnimatorController.name}");
+                return;
             }
+            pStateMachine.SetState(dicState[PlayerState.SKILLB]);
+            StartCoroutine(Co_SkillBCoolDown());
         }
 
+        //스왑스킬 사용
         if (Input.GetKeyDown(KeyCode.Space) && swapCoolDown == 6f)
         {
             ChangePlayer();
         }
 
+        //옵션창 열기
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             UIManager.Instance.optionObj.SetActive(true);
             Time.timeScale = 0;
         }
 
-        if (enumState != PlayerState.JUMP && enumState != PlayerState.ATTACK)
+        //Idle 또는 Move 상태일 때 Velocity.y값이 -1보다 작으면 낙하시작
+        if (enumState == PlayerState.IDLE || enumState == PlayerState.MOVE)
         {
             if (player.playerRb.velocity.y < -1)
             {
@@ -228,9 +253,7 @@ public class PlayerController : MonoBehaviour
         }
 
         UIManager.Instance.playerHp = playerHp;
-
-        pStateMachine.DoUpdate();
-    } //Update
+    } //StateSelect
 
     //플레이어 스컬교체하는 함수
     private void ChangePlayer()
@@ -263,10 +286,11 @@ public class PlayerController : MonoBehaviour
             }
             playerSkulList[i].enabled = !playerSkulList[i].enabled;
         }
+        pStateMachine.SetState(dicState[PlayerState.IDLE]);
         StartCoroutine(Co_SwapCoolDown());
     } //ChangePlayer
 
-    //캐릭터 Swap쿨다운 적용 코루틴 함수
+    //캐릭터 Swap쿨다운 코루틴 함수
     private IEnumerator Co_SwapCoolDown()
     {
         //스왑쿨다운 6초 설정
@@ -280,6 +304,7 @@ public class PlayerController : MonoBehaviour
         SwapCoolDown = 6f;
     } //SwapCoolDown
 
+    //스킬A 쿨다운 코루틴함수
     private IEnumerator Co_SkillACoolDown()
     {
         float skillACool = player.skillACool;
@@ -307,6 +332,7 @@ public class PlayerController : MonoBehaviour
         skillACoolDown = player.skillACool;
     } //Co_SkillACoolDown
 
+    //스킬B 쿨다운 코루틴함수
     private IEnumerator Co_SkillBCoolDown()
     {
         float skillBCool = player.skillBCool;
@@ -332,8 +358,11 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(func);
     } //CoroutineDeligate
 
+    //몬스터에게 피격당할 시 실행하는 코루틴함수
     private IEnumerator HitPlayer()
     {
+        //스프라이트 컬러의 알파값을 바꿔 깜빡거리게 구현
+        //플레이어의 테그명을 바꿔 무적 구현
         Color original = playerSprite.color;
         player.tag = GData.ENEMY_LAYER_MASK;
         playerSprite.color = new Color(255f, 255f, 255f, 0.3f);

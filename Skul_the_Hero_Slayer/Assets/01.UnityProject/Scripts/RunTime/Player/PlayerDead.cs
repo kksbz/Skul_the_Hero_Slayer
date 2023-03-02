@@ -42,7 +42,7 @@ public class PlayerDead : IPlayerState
         //플레이어의 포지션을 월드포지션에서 스크린포지션으로 변환
         var pos = pController.player.transform.position;
         var playerPos = Camera.main.WorldToScreenPoint(new Vector3(pos.x, pos.y, 0));
-        Debug.LogError($"x : {playerPos.x}, y : {playerPos.y}");
+        // Debug.LogError($"x : {playerPos.x}, y : {playerPos.y}");
         //Rect를 만들어서 readpixel 파라메터의 소스로 쓰기 위해 공간 지정
         area = new Rect(playerPos.x - 300f, playerPos.y - 300f, playerPos.x + 300f, playerPos.y + 300f);
         screenTex.ReadPixels(area, 0, 0);
@@ -52,6 +52,6 @@ public class PlayerDead : IPlayerState
         UIManager.Instance.resultObj.SetActive(true);
         Time.timeScale = 1f;
         pController.gameObject.SetActive(false);
-        
+
     }
 }

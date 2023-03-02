@@ -119,7 +119,10 @@ public class Skul : Player
         playerAudio.Play();
         //스컬헤드위치로 순간이동, 해드리스상태 벗어남
         playerController.player.transform.position = skillAObj.transform.position;
-        playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+        if (playerController.player._name == "Skul" && playerController.BeforeChangeRuntimeC.name == "Skul")
+        {
+            playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+        }
         if (skillAObj != null)
         {
             Destroy(skillAObj);

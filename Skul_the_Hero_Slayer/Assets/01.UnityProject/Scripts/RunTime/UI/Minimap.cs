@@ -18,6 +18,7 @@ public class Minimap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //씬이 바뀌면 플레이어를 다시 찾음
         if (thisSceneName != SceneMgr.Instance.GetThisSceneName())
         {
             tagetPos = GFunc.GetRootObj("Player");

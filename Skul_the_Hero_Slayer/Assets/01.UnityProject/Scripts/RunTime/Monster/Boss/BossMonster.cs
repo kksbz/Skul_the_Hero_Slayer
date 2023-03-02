@@ -34,7 +34,7 @@ public class BossMonster : MonoBehaviour
 
     void Awake()
     {
-        maxHp = 30;
+        maxHp = 500;
         hp = maxHp;
         body = gameObject.FindChildObj("Body");
         Head = gameObject.FindChildObj("Head");
@@ -88,7 +88,7 @@ public class BossMonster : MonoBehaviour
         fistSlamCoolDown += Time.deltaTime;
         // Debug.Log($"크롭쿨{corpAttackCoolDown}");
         // Debug.Log($"슬렘쿨{corpAttackCoolDown}");
-        if (fistSlamCoolDown >= 30f)
+        if (fistSlamCoolDown >= 40f)
         {
             isFistSlam = true;
         }
@@ -124,6 +124,7 @@ public class BossMonster : MonoBehaviour
     private void StartPhase()
     {
         Head.tag = GData.PLAYER_LAYER_MASK;
+        Head.layer = 9;
         isChangeBossState = true;
         bodyAni.SetBool("isStart", true);
         headAni.SetBool("isStart", true);
@@ -183,6 +184,7 @@ public class BossMonster : MonoBehaviour
         if (isChangePhase == true && phaseCheck == 0)
         {
             Head.tag = GData.PLAYER_LAYER_MASK;
+            Head.layer = 9;
             bodyAni.SetBool("isChangePhase", true);
             headAni.SetBool("isChangePhase", true);
             rightArmAni.SetBool("isChangePhase", true);

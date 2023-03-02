@@ -39,7 +39,7 @@ public class BigWooden : Monster
             if (target.isHit == false)
             {
                 target.playerHp -= Random.RandomRange(monsterData.MinDamage, monsterData.MaxDamage);
-                Debug.Log($"빅우든 근접공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
+                // Debug.Log($"빅우든 근접공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
                 int direction = target.transform.position.x - transform.position.x > 0 ? 1 : -1;
                 target.player.playerRb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
             }
@@ -82,18 +82,22 @@ public class BigWooden : Monster
         {
             StartCoroutine(AttackADelay());
         }
-        else
+        else if (bigWoodenAni.GetCurrentAnimatorStateInfo(0).IsName("AttackB"))
         {
             StartCoroutine(AttackBDelay());
         }
     } //ExitAttack
 
     //타겟과의 거리로 공격타입을 변경하는 함수
-    private void ChageAttackType()
+    private void ChangeAttackType()
     {
         Vector3 targetPos = monsterController.monster.tagetSearchRay.hit.transform.position;
         float distance = Vector2.Distance(targetPos, monsterController.monster.transform.position);
         //타겟과 자신의 거리가 근접공격거리 보다 작거나같으면 AttackA, 크면 AttackB 실행
+        if (monsterController.enumState != MonsterController.MonsterState.ATTACK)
+        {
+            return;
+        }
         if (distance <= monsterController.monster.meleeAttackRange)
         {
             bigWoodenAni.SetBool("isAttackA", true);
@@ -118,7 +122,7 @@ public class BigWooden : Monster
         {
             yield break;
         }
-        ChageAttackType();
+        ChangeAttackType();
     } //AttackDelay
 
     //AttackB 공격딜레이 정하는 코루틴 함수
@@ -134,6 +138,6 @@ public class BigWooden : Monster
         {
             yield break;
         }
-        ChageAttackType();
+        ChangeAttackType();
     } //AttackBDelay
 }

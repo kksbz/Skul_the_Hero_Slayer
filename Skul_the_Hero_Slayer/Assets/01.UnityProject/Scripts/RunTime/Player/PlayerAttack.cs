@@ -5,10 +5,13 @@ using UnityEngine;
 public class PlayerAttack : IPlayerState
 {
     private PlayerController pController;
+    private Vector3 direction; //이동할 방향 변수
+    private Vector3 localScale; //방향전환 변수
     public void StateEnter(PlayerController _pController)
     {
         this.pController = _pController;
         pController.enumState = PlayerController.PlayerState.ATTACK;
+        localScale = pController.player.transform.localScale;
         if (pController.isGroundRay.hit.collider != null)
         {
             //땅에 있으면 기본공격
@@ -38,6 +41,7 @@ public class PlayerAttack : IPlayerState
 
     private void ComboAttack()
     {
+        //애니메이션 길이가 0.7 ~ 1 사이에 x키입력시 공격B로 연계
         if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f
         && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
         {
@@ -47,13 +51,36 @@ public class PlayerAttack : IPlayerState
                 pController.player.playerAni.SetBool("isAttackB", true);
             }
         }
+
+        //공중공격 중에는 이동가능
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("JumpAttack"))
+        {
+            if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && pController.isGroundRay.hit.collider == null)
+            {
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    localScale = new Vector3(1, localScale.y, localScale.z);
+                    direction = Vector3.right;
+                }
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    localScale = new Vector3(-1, localScale.y, localScale.z);
+                    direction = Vector3.left;
+                }
+                pController.player.transform.localScale = localScale;
+                pController.player.transform.Translate(direction * pController.player.moveSpeed * Time.deltaTime);
+            }
+        }
     } //ComboAttack
 
     //공중공격을 한 경우 다음 행동 정하는 함수
     private void ExitAttack()
     {
-        //공격 애니메이션이 끝나면 들어감
-        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        //공격 애니메이션이 끝나면 공격상태 탈출
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
+        && (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("AttackA")
+        || pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("AttackB")
+        || pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("JumpAttack")))
         {
             IPlayerState nextState;
             //플레이어가 땅인 경우 Idle, 공중인 경우 Jump 상태로 전환
@@ -65,7 +92,7 @@ public class PlayerAttack : IPlayerState
             {
                 nextState = new PlayerJump();
             }
-            Debug.Log($"공격 후 들어갈 다음 상태{nextState}");
+            // Debug.Log($"공격 후 들어갈 다음 상태{nextState}");
             pController.pStateMachine.onChangeState?.Invoke(nextState);
         }
     } //UseJumpAttack

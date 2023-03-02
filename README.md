@@ -68,3 +68,4 @@
 2023-02-28 / v0.3.7 Work on Sound<br/>
 2023-03-01 / v0.3.8 Work on ResultUI, GameSound<br/>
 2023-03-02 / v0.3.9 AudioManager, OptionUI, StageBackGround Setup<br/>
+2023-03-02 / v0.4.0 Bug fix<br/>

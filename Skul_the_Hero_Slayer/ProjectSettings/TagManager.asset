@@ -11,7 +11,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - MiniMap
+  - 
   - Water
   - UI
   - Ground
@@ -19,7 +19,7 @@ TagManager:
   - EnemyEffect
   - Player
   - PlayerEffect
-  - 
+  - MiniMap
   - 
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: BackGround0
     uniqueID: 2886670031
+    locked: 0
+  - name: Object
+    uniqueID: 1089365033
     locked: 0
   - name: Enemy
     uniqueID: 402929841
