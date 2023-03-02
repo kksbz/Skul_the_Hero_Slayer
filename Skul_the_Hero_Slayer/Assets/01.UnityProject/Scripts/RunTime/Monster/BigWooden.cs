@@ -38,10 +38,11 @@ public class BigWooden : Monster
             PlayerController target = hit.collider.gameObject.GetComponentMust<PlayerController>();
             if (target.isHit == false)
             {
-                target.playerHp -= Random.RandomRange(monsterData.MinDamage, monsterData.MaxDamage);
+                target.playerHp -= Random.Range(monsterData.MinDamage, monsterData.MaxDamage + 1);
                 // Debug.Log($"빅우든 근접공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
                 int direction = target.transform.position.x - transform.position.x > 0 ? 1 : -1;
-                target.player.playerRb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
+                //타겟을 direction방향으로 밀어냄
+                target.player.playerRb.AddForce(new Vector2(direction, 2f), ForceMode2D.Impulse);
             }
         }
     } //AttackA
@@ -66,12 +67,12 @@ public class BigWooden : Monster
         child.ShootBullet();
     } //AttackB
 
-    //AttackA 범위 기즈모
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireCube(transform.position + (Vector3.down * 1f), new Vector2(8f, 1.5f));
-    } //OnDrawGizmos
+    // //AttackA 범위 기즈모
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.blue;
+    //     Gizmos.DrawWireCube(transform.position + (Vector3.down * 1f), new Vector2(8f, 1.5f));
+    // } //OnDrawGizmos
 
 
     //공격애니메이션이 종료되면 코루틴 실행

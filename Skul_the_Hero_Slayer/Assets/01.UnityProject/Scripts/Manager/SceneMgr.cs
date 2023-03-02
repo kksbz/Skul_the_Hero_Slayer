@@ -59,12 +59,10 @@ public class SceneMgr : MonoBehaviour
         if (GetThisSceneName() != GData.TITLE_SCENE_NAME)
         {
             UIManager.Instance.mainUiObj.SetActive(true);
-            UIManager.Instance.MinimapCamera.SetActive(true);
         }
         else
         {
             UIManager.Instance.mainUiObj.SetActive(false);
-            UIManager.Instance.MinimapCamera.SetActive(false);
         }
         UIManager.Instance.ShowLoading(false);
     } //GetLoading

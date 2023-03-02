@@ -10,5 +10,6 @@ public class Stage1 : MonoBehaviour
         AudioManager.Instance.bgAudio.clip = AudioManager.Instance.stageSound;
         AudioManager.Instance.bgAudio.Play();
         UIManager.Instance.ShowStageName(GData.STAGE_1_SCENE_NAME, GData.STAGE_1_SCENE_SUB_NAME);
+        UIManager.Instance.minimap.SetActive(true);
     }
 }

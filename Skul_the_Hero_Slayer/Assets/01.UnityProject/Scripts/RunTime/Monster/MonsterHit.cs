@@ -9,9 +9,9 @@ public class MonsterHit : IMonsterState
     {
         this.mController = _mController;
         mController.enumState = MonsterController.MonsterState.HIT;
-        mController.monster.monsterAni.SetBool("isHit", true);
         //애니메이션 모션 퍼즈상태인 경우 강제로 품
         mController.monster.monsterAni.StopPlayback();
+        mController.monster.monsterAni.SetBool("isHit", true);
     }
     public void StateFixedUpdate()
     {

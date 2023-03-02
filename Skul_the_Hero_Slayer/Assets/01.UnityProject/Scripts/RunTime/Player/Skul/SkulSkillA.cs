@@ -57,12 +57,12 @@ public class SkulSkillA : MonoBehaviour
         {
             if (tagetObj == GData.ENEMY_LAYER_MASK)
             {
-                int damage = Random.RandomRange(20, 25);
+                int damage = Random.Range(30, 35 + 1);
                 BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
                 if (boss != null)
                 {
                     boss.hp -= damage;
-                    Debug.Log($"스킬A공격 = {boss.hp}/{boss.maxHp}");
+                    // Debug.Log($"스킬A공격 = {boss.hp}/{boss.maxHp}");
                     isHit = true;
                     GameManager.Instance.totalDamage += damage;
                 }
@@ -70,7 +70,7 @@ public class SkulSkillA : MonoBehaviour
                 if (target != null)
                 {
                     target.monster.hp -= damage;
-                    Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
+                    // Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
                     isHit = true;
                     GameManager.Instance.totalDamage += damage;
                 }

@@ -138,7 +138,7 @@ public class EnergyCorp : MonoBehaviour
         if (collider.tag == GData.PLAYER_LAYER_MASK)
         {
             PlayerController target = collider.gameObject?.GetComponentMust<PlayerController>();
-            target.playerHp -= Random.RandomRange(minDamage, maxDamage);
+            target.playerHp -= Random.Range(minDamage, maxDamage + 1);
             int direction = target.transform.position.x - transform.position.x > 0 ? 1 : -1;
             target.player.playerRb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
             Debug.Log($"보스 에너지볼 공격! 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");

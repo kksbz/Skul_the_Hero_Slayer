@@ -41,9 +41,9 @@ public class PlayerAttack : IPlayerState
 
     private void ComboAttack()
     {
-        //애니메이션 길이가 0.7 ~ 1 사이에 x키입력시 공격B로 연계
-        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.7f
-        && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime < 1f)
+        //애니메이션 길이가 0.5 ~ 1 사이에 x키입력시 공격B로 연계
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f
+        && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1f)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {

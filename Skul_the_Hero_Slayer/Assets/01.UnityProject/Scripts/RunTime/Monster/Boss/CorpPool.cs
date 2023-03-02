@@ -6,7 +6,6 @@ public class CorpPool : MonoBehaviour
 {
     private List<GameObject> corpPool;
     private BossMonster parentObj;
-    private float timeCheck = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,8 +58,8 @@ public class CorpPool : MonoBehaviour
                 corp.transform.position = new Vector3(offsetX, 5f, 0f);
                 corp.SetActive(true);
                 offsetX += 5f;
-                yield return new WaitForSeconds(0.3f);
+                yield return new WaitForSeconds(0.5f);
             }
         }
-    }
+    } //ShootCorp2Phase
 }

@@ -20,6 +20,7 @@ public class BossStageBg : MonoBehaviour
         skySprite = gameObject.FindChildObj("Sky").GetComponentMust<SpriteRenderer>();
         bgSprite = gameObject.FindChildObj("BgImage").GetComponentMust<SpriteRenderer>();
         UIManager.Instance.ShowStageName(GData.BOSS_SCENE_NAME, GData.BOSS_SCENE_SUB_NAME);
+        UIManager.Instance.minimap.SetActive(false);
     } //Start
 
     // Update is called once per frame

@@ -23,7 +23,8 @@ public class UIManager : MonoBehaviour
     public GameObject resultObj = default;
     public GameObject showStageObj = default;
     public GameObject optionObj = default;
-    public GameObject MinimapCamera = default;
+    public GameObject minimap = default;
+    public GameObject minimapCamera = default;
     public Sprite daedScreenShot;
     public Sprite mainSkul;
     public Sprite subSkul;
@@ -65,7 +66,8 @@ public class UIManager : MonoBehaviour
         resultObj = gameObject.FindChildObj(GData.RESULT_UI_OBJ_NAME);
         optionObj = gameObject.FindChildObj(GData.EXIT_UI_OBJ_NAME);
         showStageObj = mainUiObj.FindChildObj(GData.SHOWSTAGE_UI_OBJ_NAME);
-        MinimapCamera = gameObject.FindChildObj("MinimapCamera");
+        minimap = mainUiObj.FindChildObj(GData.MINIMAP_OBJ_NAME);
+        minimapCamera = gameObject.FindChildObj("MinimapCamera");
         daedScreenShot = default;
         mainSkul = default;
         subSkul = default;

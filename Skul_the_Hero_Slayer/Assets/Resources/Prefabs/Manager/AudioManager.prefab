@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgAudio: {fileID: 0}
   titleSound: {fileID: 8300000, guid: 1dd87bd6cde602b4082c33f71ec8d147, type: 3}
-  castleSound: {fileID: 8300000, guid: 1dd87bd6cde602b4082c33f71ec8d147, type: 3}
+  castleSound: {fileID: 8300000, guid: 7e4f184cb5d9932489ed9d6dfaa23171, type: 3}
   stageSound: {fileID: 8300000, guid: 5de091decd550f44f9382d7e049f7e43, type: 3}
   bossBgSound: {fileID: 8300000, guid: 41a18e51f5ff73049b719a196edce636, type: 3}
 --- !u!82 &5846999583726283142

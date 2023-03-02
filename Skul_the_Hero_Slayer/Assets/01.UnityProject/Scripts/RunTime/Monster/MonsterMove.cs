@@ -12,7 +12,7 @@ public class MonsterMove : IMonsterState
     {
         mController = _mController;
         mController.enumState = MonsterController.MonsterState.MOVE;
-        Debug.Log($"{mController.monster.name}이동시작");
+        // Debug.Log($"{mController.monster.name}이동시작");
         mController.monster.monsterAni.SetBool("isWalk", true);
         exitState = false;
         localScale = mController.monster.transform.localScale;
@@ -117,7 +117,7 @@ public class MonsterMove : IMonsterState
             {
                 yield break;
             }
-            offsetX = Random.RandomRange(-1, 2);
+            offsetX = Random.Range(-1, 1 + 1);
             yield return new WaitForSeconds(3f);
         }
     } //randomPosX

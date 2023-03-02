@@ -9,7 +9,7 @@ public class TagetSearch : IMonsterState
     public void StateEnter(MonsterController _mController)
     {
         this.mController = _mController;
-        Debug.Log($"{mController.monster.name}서치타겟 시작");
+        // Debug.Log($"{mController.monster.name}서치타겟 시작");
         mController.enumState = MonsterController.MonsterState.SEARCH;
         mController.monster.monsterAni.SetBool("isWalk", true);
     }

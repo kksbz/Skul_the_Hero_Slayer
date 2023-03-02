@@ -10,5 +10,6 @@ public class CastleLobby : MonoBehaviour
         AudioManager.Instance.bgAudio.clip = AudioManager.Instance.castleSound;
         AudioManager.Instance.bgAudio.Play();
         UIManager.Instance.ShowStageName(GData.CASTLELOBBY_SCENE_NAME, GData.CASTLELOBBY_SCENE_SUB_NAME);
+        UIManager.Instance.minimap.SetActive(false);
     }
 }

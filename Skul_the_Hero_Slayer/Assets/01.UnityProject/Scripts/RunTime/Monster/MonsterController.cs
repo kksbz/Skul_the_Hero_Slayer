@@ -65,12 +65,14 @@ public class MonsterController : MonoBehaviour
         {
             stateMachine.SetState(dicState[MonsterState.DEAD]);
         }
+        //몬스터 피격상태 체크
         if (monster.hp < currentHp)
         {
             hpBar.canvas.SetActive(true);
             currentHp = monster.hp;
             monster.monsterAudio.clip = monster.hitSound;
             monster.monsterAudio.Play();
+            //고정형 몬스터는 Hit상태 가기전에 리턴
             if (monster.moveSpeed == 0)
             {
                 return;

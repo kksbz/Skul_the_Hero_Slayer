@@ -49,6 +49,7 @@ public class ShowSkulInfo : MonoBehaviour
         ShowSkulImage();
     } //Update
 
+    //MainUI에서 보여질 스컬아이콘과 스킬아이콘
     private void ShowSkulImage()
     {
         mainSkul.sprite = UIManager.Instance.mainSkul;

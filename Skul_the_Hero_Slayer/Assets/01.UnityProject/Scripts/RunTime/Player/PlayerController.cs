@@ -99,10 +99,9 @@ public class PlayerController : MonoBehaviour
         playerSkulList.Add(possibleSkul);
 #endif
         //기본 스컬의 런타임애니컨트롤러를 저장 => 스컬스킬A,B사용시 런타임애니컨트롤러를 변경하는 로직
-        if (player.playerAni.runtimeAnimatorController.name == "Skul")
-        {
-            BeforeChangeRuntimeC = player.playerAni.runtimeAnimatorController;
-        }
+        BeforeChangeRuntimeC = Resources.Load("Animation/PlayerAni/Skul") as RuntimeAnimatorController;
+        // Debug.Log($"스컬기본런타임 {BeforeChangeRuntimeC.name}");
+
         isGroundRay = gameObject.GetComponentMust<PlayerGroundCheck>();
         currentHp = playerHp;
         skillACoolDown = player.skillACool;
@@ -270,6 +269,7 @@ public class PlayerController : MonoBehaviour
         {
             if (playerSkulList[i].enabled == false)
             {
+                //UI에 보여질 이미지와 스킬쿨 저장
                 UIManager.Instance.mainSkul = playerSkulList[i].skulSprite;
                 UIManager.Instance.mainSkillA = playerSkulList[i].skillASprite;
                 UIManager.Instance.mainSkillB = playerSkulList[i].skillBSprite;
@@ -280,6 +280,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                //UI에 보여질 서브이미지 저장
                 UIManager.Instance.subSkul = playerSkulList[i].skulSprite;
                 UIManager.Instance.subSkillA = playerSkulList[i].skillASprite;
                 UIManager.Instance.subSkillB = playerSkulList[i].skillBSprite;
@@ -362,7 +363,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator HitPlayer()
     {
         //스프라이트 컬러의 알파값을 바꿔 깜빡거리게 구현
-        //플레이어의 테그명을 바꿔 무적 구현
+        //플레이어의 테그명을 바꿔 무적상태 구현
         Color original = playerSprite.color;
         player.tag = GData.ENEMY_LAYER_MASK;
         playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
@@ -379,5 +380,5 @@ public class PlayerController : MonoBehaviour
         playerSprite.color = original;
         player.tag = GData.PLAYER_LAYER_MASK;
         isHit = false;
-    }
+    } //HitPlayer
 }

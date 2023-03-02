@@ -69,3 +69,4 @@
 2023-03-01 / v0.3.8 Work on ResultUI, GameSound<br/>
 2023-03-02 / v0.3.9 AudioManager, OptionUI, StageBackGround Setup<br/>
 2023-03-02 / v0.4.0 Bug fix<br/>
+2023-03-02 / v0.4.1 Player State 전환 조건 변경<br/>

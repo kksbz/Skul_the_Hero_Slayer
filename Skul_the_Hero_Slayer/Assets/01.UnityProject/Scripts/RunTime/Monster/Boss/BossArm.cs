@@ -149,10 +149,10 @@ public class BossArm : MonoBehaviour
         if (collider.tag == GData.PLAYER_LAYER_MASK)
         {
             PlayerController target = collider.gameObject?.GetComponentMust<PlayerController>();
-            target.playerHp -= Random.RandomRange(bossObj.minDamage, bossObj.maxDamage);
+            target.playerHp -= Random.Range(bossObj.minDamage, bossObj.maxDamage + 1);
             int direction = target.transform.position.x - transform.position.x > 0 ? 1 : -1;
             target.player.playerRb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
-            Debug.Log($"보스 공격A 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
+            // Debug.Log($"보스 공격A 플레이어 hp = {target.playerHp}/{target.playerMaxHp}");
             armCollider.enabled = false;
         }
     } //OnTriggerEnter2D

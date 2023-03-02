@@ -9,12 +9,20 @@ public class MonsterExistence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        monsterExistence = gameObject.GetComponentMust<TMP_Text>();
+        monsterExistence = gameObject.FindChildObj("MonsterExistence").GetComponentMust<TMP_Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        monsterExistence.text = $"몬스터:{GameManager.Instance.monsterRemainingNumber}";
+        if (GameManager.Instance.monsterRemainingNumber <= 0)
+        {
+            monsterExistence.gameObject.SetActive(false);
+        }
+        else
+        {
+            monsterExistence.gameObject.SetActive(true);
+            monsterExistence.text = $"몬스터:{GameManager.Instance.monsterRemainingNumber}";
+        }
     }
 }

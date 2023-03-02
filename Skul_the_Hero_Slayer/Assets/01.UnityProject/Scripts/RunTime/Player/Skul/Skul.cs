@@ -63,14 +63,14 @@ public class Skul : Player
     //공격A,B의 히트 판정 처리하는 함수
     private void AttackAandB()
     {
-        Vector2 attackArea = new Vector2(1.5f, 1.5f);
+        Vector2 attackArea = new Vector2(2f, 1.5f);
         //BoxcastAll로 Hit처리
         RaycastHit2D[] hits = Physics2D.BoxCastAll(transform.position, attackArea, 0f, Vector2.zero, 0f, LayerMask.GetMask(GData.ENEMY_LAYER_MASK));
         foreach (var hit in hits)
         {
             if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
             {
-                int damage = Random.RandomRange(playerData.MinDamage, playerData.MaxDamage);
+                int damage = Random.Range(playerData.MinDamage, playerData.MaxDamage + 1);
                 BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
                 if (boss != null)
                 {
@@ -119,10 +119,7 @@ public class Skul : Player
         playerAudio.Play();
         //스컬헤드위치로 순간이동, 해드리스상태 벗어남
         playerController.player.transform.position = skillAObj.transform.position;
-        if (playerController.player._name == "Skul" && playerController.BeforeChangeRuntimeC.name == "Skul")
-        {
-            playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
-        }
+        playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
         if (skillAObj != null)
         {
             Destroy(skillAObj);

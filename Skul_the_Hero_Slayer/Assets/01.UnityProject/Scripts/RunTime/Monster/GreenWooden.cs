@@ -87,7 +87,7 @@ public class GreenWooden : Monster
         greenWoodenAni.SetBool("isIdle", false);
         if (monsterController.enumState != MonsterController.MonsterState.ATTACK)
         {
-            Debug.Log($"2초후 상태{monsterController.enumState}");
+            // Debug.Log($"2초후 상태{monsterController.enumState}");
             yield break;
         }
         lookTarget();

@@ -31,12 +31,12 @@ public class EntSkulSkillA : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(transform.position, attackArea, 0f, Vector2.zero, 0f, LayerMask.GetMask(GData.ENEMY_LAYER_MASK));
         if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
         {
-            int damage = Random.RandomRange(minDamage, maxDamage);
+            int damage = Random.Range(minDamage, maxDamage + 1);
             BossHead boss = hit.collider.gameObject?.GetComponentMust<BossHead>();
             if (boss != null)
             {
                 boss.hp -= damage;
-                Debug.Log($"엔트스킬A 공격:{boss.name}={boss.hp}/{boss.maxHp}");
+                // Debug.Log($"엔트스킬A 공격:{boss.name}={boss.hp}/{boss.maxHp}");
                 GameManager.Instance.totalDamage += damage;
             }
 
@@ -44,7 +44,7 @@ public class EntSkulSkillA : MonoBehaviour
             if (monster != null)
             {
                 monster.hp -= damage;
-                Debug.Log($"엔트스킬A 공격:{monster._name}={monster.hp}/{monster.maxHp}");
+                // Debug.Log($"엔트스킬A 공격:{monster._name}={monster.hp}/{monster.maxHp}");
                 GameManager.Instance.totalDamage += damage;
             }
             GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);
@@ -54,10 +54,10 @@ public class EntSkulSkillA : MonoBehaviour
         }
     } //EntSkillAAttack
 
-    //AttackB 공격범위 기즈모
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, new Vector2(2f, 2.5f));
-    } //OnDrawGizmos
+    // //AttackB 공격범위 기즈모
+    // void OnDrawGizmos()
+    // {
+    //     Gizmos.color = Color.yellow;
+    //     Gizmos.DrawWireCube(transform.position, new Vector2(2f, 2.5f));
+    // } //OnDrawGizmos
 }

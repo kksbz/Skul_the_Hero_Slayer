@@ -27,7 +27,7 @@ public class PlayerJump : IPlayerState
     public void StateUpdate()
     {
         PlayerFall();
-        JumpEffectOff();
+        // JumpEffectOff();
         JumpAndMove();
         Jump();
     } //StateUpdate

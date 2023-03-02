@@ -9,6 +9,7 @@ public static partial class GData
     public const string MAIN_UI_OBJ_NAME = "MainUI";
     public const string RESULT_UI_OBJ_NAME = "ResultUI";
     public const string SHOWSTAGE_UI_OBJ_NAME = "StageUI";
+    public const string MINIMAP_OBJ_NAME = "Minimap_Frame";
     public const string EXIT_UI_OBJ_NAME = "OptionUI";
     public const string GROUND_LAYER_MASK = "Ground";
     public const string PLAYER_LAYER_MASK = "Player";

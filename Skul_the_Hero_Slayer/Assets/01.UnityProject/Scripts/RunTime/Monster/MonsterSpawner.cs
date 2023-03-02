@@ -37,19 +37,19 @@ public class MonsterSpawner : MonoBehaviour
             if (i < stageData.SpawnPrefab1_Number)
             {
                 monsterPrefab = stageData.MonsterPrefab1;
-                int dinateNumber = Random.RandomRange(0, spawnCoordinateNomal.Count);
+                int dinateNumber = Random.Range(0, spawnCoordinateNomal.Count);
                 spawnCoordinate = spawnCoordinateNomal[dinateNumber];
             }
             else if (stageData.SpawnPrefab1_Number <= i && i < stageData.SpawnPrefab1_Number + stageData.SpawnPrefab2_Number)
             {
                 monsterPrefab = stageData.MonsterPrefab2;
-                int dinateNumber = Random.RandomRange(0, spawnCoordinateRange.Count);
+                int dinateNumber = Random.Range(0, spawnCoordinateRange.Count);
                 spawnCoordinate = spawnCoordinateRange[dinateNumber];
             }
             else if (stageData.SpawnPrefab1_Number + stageData.SpawnPrefab2_Number <= i)
             {
                 monsterPrefab = stageData.MonsterPrefab3;
-                int dinateNumber = Random.RandomRange(0, spawnCoordinateTurret.Count);
+                int dinateNumber = Random.Range(0, spawnCoordinateTurret.Count);
                 spawnCoordinate = spawnCoordinateTurret[dinateNumber];
                 spawnCoordinateTurret.Remove(spawnCoordinate);
             }

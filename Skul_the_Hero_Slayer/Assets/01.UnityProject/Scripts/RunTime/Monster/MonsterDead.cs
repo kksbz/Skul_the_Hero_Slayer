@@ -12,10 +12,12 @@ public class MonsterDead : IMonsterState
         mController.enumState = MonsterController.MonsterState.DEAD;
         mController.monster.monsterAudio.clip = mController.monster.deadSound;
         mController.monster.monsterAudio.Play();
+        //사망이펙트 활성화
         deadEffect = GameObject.Instantiate(Resources.Load("Prefabs/Effect/EnemyDead")) as GameObject;
         deadEffect.transform.position = mController.monster.transform.position;
         deadEffect.SetActive(true);
         mController.monster.gameObject.SetActive(false);
+        //UI에 표시될 몬스터의 수와 킬카운트 체크
         GameManager.Instance.monsterRemainingNumber -= 1;
         GameManager.Instance.killCount += 1;
     }

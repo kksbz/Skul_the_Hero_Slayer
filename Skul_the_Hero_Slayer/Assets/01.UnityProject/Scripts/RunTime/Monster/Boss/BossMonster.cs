@@ -321,9 +321,7 @@ public class BossMonster : MonoBehaviour
         isGroggy = true;
         isAttack = true;
         StartCoroutine(ShootCorp());
-        Debug.Log($"crop 들옴?{corpAttackCoolDown}");
         corpAttackCoolDown = 0f;
-        Debug.Log($"crop 쿨다운{corpAttackCoolDown}");
         if (isChangePhase == false)
         {
             //1페이즈인 경우 실행
@@ -355,9 +353,7 @@ public class BossMonster : MonoBehaviour
     {
         isFistSlam = false;
         isAttack = true;
-        Debug.Log($"Slam들옴? {fistSlamCoolDown}");
         fistSlamCoolDown = 0f;
-        Debug.Log($"Slam 쿨다운 {fistSlamCoolDown}");
 
         if (isChangePhase == false)
         {
