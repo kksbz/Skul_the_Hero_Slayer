@@ -9,11 +9,7 @@ public class CameraManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        Screen.SetResolution(setWidth, setHeight, false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        //해상도 설정
+        Screen.SetResolution(setWidth, setHeight, true);
     }
 }

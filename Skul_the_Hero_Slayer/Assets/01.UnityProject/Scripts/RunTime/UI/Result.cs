@@ -24,7 +24,6 @@ public class Result : MonoBehaviour
         timeText.text = $"{minute}분{second}초";
         killCountText.text = $"{GameManager.Instance.killCount}";
         damageText.text = $"{GameManager.Instance.totalDamage}";
-        Scene scene = SceneManager.GetActiveScene();
         showDead.sprite = UIManager.Instance.daedScreenShot;
     } //ShowResult
 

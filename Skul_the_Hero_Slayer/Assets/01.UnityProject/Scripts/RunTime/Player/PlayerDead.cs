@@ -52,6 +52,5 @@ public class PlayerDead : IPlayerState
         UIManager.Instance.resultObj.SetActive(true);
         Time.timeScale = 1f;
         pController.gameObject.SetActive(false);
-
     }
 }

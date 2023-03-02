@@ -15,15 +15,27 @@ SpriteAtlas:
       compressionQuality: 50
       maxTextureSize: 2048
       textureCompression: 0
-      filterMode: 1
+      filterMode: 0
       generateMipMaps: 0
       readable: 0
       crunchedCompression: 0
       sRGB: 1
-    platformSettings: []
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
     packingSettings:
       serializedVersion: 2
-      padding: 4
+      padding: 8
       blockOffset: 1
       allowAlphaSplitting: 0
       enableRotation: 0
@@ -285,6 +297,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ead497852fe715348808592cf4d6f0c8, type: 3}
   - {fileID: 21300000, guid: 3a18e78534ee4724d942fdcd8332e186, type: 3}
   - {fileID: 21300000, guid: 7ea8a495047991b4e825e297d196e39c, type: 3}
+  - {fileID: 21300000, guid: acd4d5a50e4c9144cb9cb68917c3c51f, type: 3}
   - {fileID: 21300000, guid: c00d0ab57dda6264e87f7aa620965ade, type: 3}
   - {fileID: 21300000, guid: 5d7123c52f38c3143ae179e1e1bb8d34, type: 3}
   - {fileID: 21300000, guid: e5d173c53ac4d1d459b0b0d8de6b714e, type: 3}
@@ -577,6 +590,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e6d5be4ad66a80a4780c56a9ffbeae5b, type: 3}
   - {fileID: 21300000, guid: 2f2b205a58c9c254f99532fc58329847, type: 3}
   - {fileID: 21300000, guid: 077a295aad3b56748b924dfe750989f5, type: 3}
+  - {fileID: 21300000, guid: d31dce6aefd606a4eae16a7e805e24e8, type: 3}
   - {fileID: 21300000, guid: cc9db17ae60cfbc42ba7e02746db3f5c, type: 3}
   - {fileID: 21300000, guid: 454cfc7a3b20e6b4294b23a62eea3ede, type: 3}
   - {fileID: 21300000, guid: 0a559a8a3ae54654ab868448637da9da, type: 3}
@@ -1174,6 +1188,7 @@ SpriteAtlas:
   - 0_Tile01_6
   - Idle_Human_Castle2_4
   - Idle_0 #2272936
+  - 1
   - ElderEntP2_EnergyCorps_ChargingTrail_10
   - DashSmoke_Public_Small_9
   - 1_Tile01_34
@@ -1466,6 +1481,7 @@ SpriteAtlas:
   - 1-3_Pillar02
   - 1-2_Tile01_15
   - 1_Tile01_22
+  - SkulIcon
   - 0_Tile01_11
   - Rock04
   - Rebone

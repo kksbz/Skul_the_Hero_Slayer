@@ -5,36 +5,34 @@ using System.IO;
 [System.Serializable]
 public class PlayerSaveInfo
 {
-    public int          playerHp;
-    public int          playerMaxHp;
-    public int          playerCurrentHp;
-    public List<int>    playerSkul;
-    public int          enabledSkul;
-    public int          minDamage;
-    public int          maxDamage;
-    public float        speed;
-    public float        groundCheckLength;
+    public int playerHp;
+    public int playerMaxHp;
+    public int playerCurrentHp;
+    public List<int> playerSkul;
+    public int enabledSkul;
+    public int minDamage;
+    public int maxDamage;
+    public float speed;
+    public float groundCheckLength;
 
     public PlayerSaveInfo(PlayerController controller)
     {
-        playerSkul      = new List<int>();
-        playerHp        = controller.playerHp;
-        playerMaxHp     = controller.playerMaxHp;
+        playerSkul = new List<int>();
+        playerHp = controller.playerHp;
+        playerMaxHp = controller.playerMaxHp;
         playerCurrentHp = controller.currentHp;
-
-        controller.playerSkulList.ForEach(skul=>
+        controller.playerSkulList.ForEach(skul =>
         {
             playerSkul.Add(skul.skulIndex);
-            if(skul.enabled)
+            if (skul.enabled)
             {
                 enabledSkul = skul.skulIndex;
-            }            
+            }
         });
-
-        minDamage               = controller.player.minDamage;
-        maxDamage               = controller.player.maxDamage;
-        speed                   = controller.player.moveSpeed;
-        groundCheckLength       = controller.player.groundCheckLength;
+        minDamage = controller.player.minDamage;
+        maxDamage = controller.player.maxDamage;
+        speed = controller.player.moveSpeed;
+        groundCheckLength = controller.player.groundCheckLength;
     } //PlayerSaveInfo생성자
 }
 
@@ -44,8 +42,8 @@ public class SaveManager : MonoBehaviour
 
     string dataPathSceneChange = default;
 
-    private static  SaveManager instance = null;
-    public static   SaveManager Instance
+    private static SaveManager instance = null;
+    public static SaveManager Instance
     {
         get
         {
@@ -77,37 +75,33 @@ public class SaveManager : MonoBehaviour
         }
     } //Awake
 
+    //플레이어 데이터 저장하는 함수
     public void SaveData(PlayerController playerController)
     {
         PlayerSaveInfo playerInfo = new PlayerSaveInfo(playerController);
-
         var jsonObj = JsonUtility.ToJson(playerInfo);
-
         // Debug.Log($"SaveData: {jsonObj}");
-
-        if(!Directory.Exists(dataPath))
+        if (!Directory.Exists(dataPath))
         {
-        	Directory.CreateDirectory(dataPath);
+            Directory.CreateDirectory(dataPath);
         }
-
         var path = dataPath + System.DateTime.Now.ToString("MMddHHmmss") + ".json";
         // Debug.Log(path);
-
         File.WriteAllText(path, jsonObj);
         dataPathSceneChange = path;
     } //SaveData
+
+    //저장된 데이터 불러오는 함수
     public void LoadData(PlayerController playerController)
     {
         var saveInfoJson = File.ReadAllText(dataPathSceneChange);
         // Debug.Log($"LoadData: {saveInfoJson}");
         var saveInfo = JsonUtility.FromJson<PlayerSaveInfo>(saveInfoJson);
-
         playerController.playerHp = saveInfo.playerCurrentHp;
         playerController.playerMaxHp = saveInfo.playerMaxHp;
-
-        saveInfo.playerSkul.ForEach(skul=>
+        saveInfo.playerSkul.ForEach(skul =>
         {
-            if(skul == 0)
+            if (skul == 0)
             {
                 var comp = playerController.gameObject.AddComponent<Skul>();
                 comp.enabled = false;
@@ -119,24 +113,17 @@ public class SaveManager : MonoBehaviour
                 comp.enabled = false;
                 playerController.playerSkulList.Add(comp);
             }
-        }); 
-    
-        playerController.playerSkulList.ForEach(skul=>
+        });
+        playerController.playerSkulList.ForEach(skul =>
         {
-            if(skul.skulIndex == saveInfo.enabledSkul)
+            if (skul.skulIndex == saveInfo.enabledSkul)
             {
                 skul.enabled = true;
             }
         });
-        
-        playerController.player.minDamage                = saveInfo.minDamage;
-        playerController.player.maxDamage                = saveInfo.maxDamage;
-        playerController.player.moveSpeed                = saveInfo.speed;
-        playerController.player.groundCheckLength        = saveInfo.groundCheckLength;
+        playerController.player.minDamage = saveInfo.minDamage;
+        playerController.player.maxDamage = saveInfo.maxDamage;
+        playerController.player.moveSpeed = saveInfo.speed;
+        playerController.player.groundCheckLength = saveInfo.groundCheckLength;
     } //LoadData
-
-    public void InitPlayerData()
-    {
-
-    } //InitPlayerData;
 }
