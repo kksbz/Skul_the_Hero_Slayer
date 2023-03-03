@@ -65,6 +65,8 @@ public class SkulSkillA : MonoBehaviour
                     // Debug.Log($"스킬A공격 = {boss.hp}/{boss.maxHp}");
                     isHit = true;
                     GameManager.Instance.totalDamage += damage;
+                    float direction = hit.collider.transform.position.x - transform.position.x > 0 ? -1.5f : 1.5f;
+                    skillA_Rb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
                 }
                 MonsterController target = hit.collider.gameObject?.GetComponentMust<MonsterController>();
                 if (target != null)
@@ -73,6 +75,8 @@ public class SkulSkillA : MonoBehaviour
                     // Debug.Log($"스킬A공격 = {target.monster.hp}/{target.monster.maxHp}");
                     isHit = true;
                     GameManager.Instance.totalDamage += damage;
+                    float direction = hit.collider.transform.position.x - transform.position.x > 0 ? -1.5f : 1.5f;
+                    skillA_Rb.AddForce(new Vector2(direction, 3f), ForceMode2D.Impulse);
                 }
                 GameObject hitEffect = Instantiate(Resources.Load("Prefabs/Effect/HitEffect") as GameObject);
                 hitEffect.transform.position = hit.collider.transform.position;

@@ -80,7 +80,7 @@ public class BossMonster : MonoBehaviour
         }
         corpAttackCoolDown += Time.deltaTime;
         //corp공격 쿨타임
-        if (corpAttackCoolDown >= 60f)
+        if (corpAttackCoolDown >= 50f)
         {
             isCorpAttack = true;
         }
@@ -88,7 +88,7 @@ public class BossMonster : MonoBehaviour
         fistSlamCoolDown += Time.deltaTime;
         // Debug.Log($"크롭쿨{corpAttackCoolDown}");
         // Debug.Log($"슬렘쿨{corpAttackCoolDown}");
-        if (fistSlamCoolDown >= 40f)
+        if (fistSlamCoolDown >= 35f)
         {
             isFistSlam = true;
         }

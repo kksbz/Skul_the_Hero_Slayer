@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //공격 시작
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && enumState != PlayerState.ATTACK)
         {
             pStateMachine.SetState(dicState[PlayerState.ATTACK]);
         }

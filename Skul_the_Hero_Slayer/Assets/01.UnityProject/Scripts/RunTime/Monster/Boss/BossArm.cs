@@ -118,7 +118,7 @@ public class BossArm : MonoBehaviour
     //Start페이즈 진행중 보스가 맵아래에서 올라온다음 SortingLayer를 변경해 맵보다 먼저 보이게 하는 함수
     private void ChangeSortingLayer()
     {
-        armSprite.sortingLayerName = "Enemy";
+        armSprite.sortingLayerName = "EnemyEffect";
     } //ChangeSortingOrder
     private void StartPhase()
     {

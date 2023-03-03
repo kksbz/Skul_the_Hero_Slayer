@@ -101,10 +101,12 @@ public class BigWooden : Monster
         }
         if (distance <= monsterController.monster.meleeAttackRange)
         {
+            bigWoodenAni.SetBool("isAttackB", false);
             bigWoodenAni.SetBool("isAttackA", true);
         }
         else if (distance > monsterController.monster.meleeAttackRange)
         {
+            bigWoodenAni.SetBool("isAttackA", false);
             bigWoodenAni.SetBool("isAttackB", true);
         }
     } //ChageAttackType
