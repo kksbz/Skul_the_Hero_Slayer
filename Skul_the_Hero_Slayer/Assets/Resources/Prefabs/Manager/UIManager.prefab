@@ -2256,12 +2256,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3260326595239526095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3260326595380391574}
-  m_RootOrder: 4
+  m_Father: {fileID: 3260326595949382859}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &3260326595239526093
 Camera:
@@ -2620,7 +2620,6 @@ Transform:
   - {fileID: 3260326594470996531}
   - {fileID: 3260326596145228813}
   - {fileID: 8520245456605356068}
-  - {fileID: 3260326595239526092}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2641,7 +2640,6 @@ MonoBehaviour:
   showStageObj: {fileID: 0}
   optionObj: {fileID: 0}
   minimap: {fileID: 0}
-  minimapCamera: {fileID: 0}
   daedScreenShot: {fileID: 0}
   mainSkul: {fileID: 0}
   subSkul: {fileID: 0}
@@ -3523,6 +3521,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3260326596200744444}
+  - {fileID: 3260326595239526092}
   m_Father: {fileID: 3260326594470996531}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

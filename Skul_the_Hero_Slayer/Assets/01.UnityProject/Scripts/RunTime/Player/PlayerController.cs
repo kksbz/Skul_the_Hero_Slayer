@@ -14,11 +14,6 @@ public class PlayerController : MonoBehaviour
         SKILLB,
         DEAD
     }; //PlayerState
-    public Player player; //컨트롤러에 가져올 플레이어
-    public int playerHp;
-    public int playerMaxHp = 100;
-    public bool isGround = true; //땅 체크
-    public bool canDash = true; //대쉬 사용가능 체크
     public PlayerGroundCheck isGroundRay; //땅 체크 레이어
     public PlayerState enumState = PlayerState.IDLE; //기본상태 Idle
     private PStateMachine _pStateMachine; //상태처리 머신
@@ -27,11 +22,17 @@ public class PlayerController : MonoBehaviour
     public RuntimeAnimatorController BeforeChangeRuntimeC; //Skul SkillA사용시 머리사라진 모습 런타임애니메이션컨트롤러
     public List<Player> playerSkulList; //플레이어가 사용할 수 있는 Skul의 List
     private SpriteRenderer playerSprite;
+    public Player player; //컨트롤러에 가져올 플레이어블 스컬 데이터
+    public int playerHp;
+    public int playerMaxHp = 100;
+    public int currentHp;
+    public bool canDash = true; //대쉬 사용가능 체크
     public bool isGetSkulSkillA = false;
     public bool isHit = false;
     private bool isDead = false;
-    public int currentHp;
-    private float swapCoolDown = 6f; //스왑스킬 쿨다운
+
+    //스왑스킬 쿨다운
+    private float swapCoolDown = 6f;
     public float SwapCoolDown
     {
         get
@@ -148,41 +149,41 @@ public class PlayerController : MonoBehaviour
     //플레이어의 State를 정하는 함수
     private void StateSelect()
     {
-        //플레이어 Hp가 <= 0이면 Dead
-        if (playerHp <= 0)
-        {
-            isDead = true;
-            pStateMachine.SetState(dicState[PlayerState.DEAD]);
-        }
         //플레이어가 죽은 상태면 리턴
         if (isDead == true)
         {
             return;
         }
+
+        //플레이어 Hp가 <= 0이면 Dead
+        if (playerHp <= 0)
+        {
+            isDead = true;
+            currentHp = playerHp;
+            pStateMachine.SetState(dicState[PlayerState.DEAD]);
+        }
+
         //플레이어가 피격당하면 피격처리
         if (playerHp < currentHp && isHit == false)
         {
-            isHit = true;
             StartCoroutine(HitPlayer());
             currentHp = playerHp;
         }
+
         //Move상태 조건 체크
-        if ((Input.GetKey(KeyCode.RightArrow)
-            || Input.GetKey(KeyCode.LeftArrow))
-            && isGroundRay.hit.collider != null
-            && enumState == PlayerState.IDLE)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow))
+        && isGroundRay.hit.collider != null
+        && enumState != PlayerState.DASH
+        && (enumState == PlayerState.IDLE || (enumState != PlayerState.MOVE && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)))
         {
             pStateMachine.SetState(dicState[PlayerState.MOVE]);
         }
 
         //Idle상태 조건 체크
         if (isGroundRay.hit.collider != null
-        && Input.GetKey(KeyCode.RightArrow) == false
-        && Input.GetKey(KeyCode.LeftArrow) == false
-        && enumState != PlayerState.IDLE
+        && (Input.GetKey(KeyCode.RightArrow) == false && Input.GetKey(KeyCode.LeftArrow) == false)
         && enumState != PlayerState.DASH
-        && enumState != PlayerState.JUMP
-        && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
+        && (enumState == PlayerState.MOVE || (enumState != PlayerState.IDLE && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)))
         {
             pStateMachine.SetState(dicState[PlayerState.IDLE]);
         }
@@ -200,7 +201,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //공격 시작
-        if (Input.GetKeyDown(KeyCode.X) && enumState != PlayerState.ATTACK)
+        if (Input.GetKeyDown(KeyCode.X) && enumState != PlayerState.DASH)
         {
             pStateMachine.SetState(dicState[PlayerState.ATTACK]);
         }
@@ -208,7 +209,7 @@ public class PlayerController : MonoBehaviour
         //스킬A 사용
         if (Input.GetKeyDown(KeyCode.A)
         && skillACoolDown == player.skillACool
-        && enumState != PlayerState.SKILLA)
+        && enumState != PlayerState.DASH)
         {
             pStateMachine.SetState(dicState[PlayerState.SKILLA]);
             StartCoroutine(Co_SkillACoolDown());
@@ -217,7 +218,7 @@ public class PlayerController : MonoBehaviour
         //스킬B 사용
         if (Input.GetKeyDown(KeyCode.S)
         && skillBCoolDown == player.skillBCool
-        && enumState != PlayerState.SKILLB)
+        && enumState != PlayerState.DASH)
         {
             if (player.playerAni.runtimeAnimatorController.name == "Skul")
             {
@@ -230,7 +231,9 @@ public class PlayerController : MonoBehaviour
         }
 
         //스왑스킬 사용
-        if (Input.GetKeyDown(KeyCode.Space) && swapCoolDown == 6f)
+        if (Input.GetKeyDown(KeyCode.Space)
+        && swapCoolDown == 6f
+        && enumState != PlayerState.DASH)
         {
             ChangePlayer();
         }
@@ -242,13 +245,12 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        //Idle 또는 Move 상태일 때 Velocity.y값이 -1보다 작으면 낙하시작
-        if (enumState == PlayerState.IDLE || enumState == PlayerState.MOVE)
+        //Jump상태가 아닐때 Velocity.y값이 -1보다 작으면 낙하시작
+        if (player.playerRb.velocity.y < -1
+        && ((enumState == PlayerState.IDLE || enumState == PlayerState.MOVE)
+        || (enumState != PlayerState.JUMP && player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)))
         {
-            if (player.playerRb.velocity.y < -1)
-            {
-                pStateMachine.SetState(dicState[PlayerState.JUMP]);
-            }
+            pStateMachine.SetState(dicState[PlayerState.JUMP]);
         }
 
         UIManager.Instance.playerHp = playerHp;
@@ -362,10 +364,10 @@ public class PlayerController : MonoBehaviour
     //몬스터에게 피격당할 시 실행하는 코루틴함수
     private IEnumerator HitPlayer()
     {
+        //플레이어의 Hit상태를 bool값으로 체크해 무적상태 구현
+        isHit = true;
         //스프라이트 컬러의 알파값을 바꿔 깜빡거리게 구현
-        //플레이어의 테그명을 바꿔 무적상태 구현
         Color original = playerSprite.color;
-        player.tag = GData.ENEMY_LAYER_MASK;
         playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
         yield return new WaitForSeconds(0.2f);
         playerSprite.color = new Color(255f, 255f, 255f, 1f);
@@ -378,7 +380,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         playerSprite.color = new Color(255f, 255f, 255f, 1f);
         playerSprite.color = original;
-        player.tag = GData.PLAYER_LAYER_MASK;
         isHit = false;
     } //HitPlayer
 }

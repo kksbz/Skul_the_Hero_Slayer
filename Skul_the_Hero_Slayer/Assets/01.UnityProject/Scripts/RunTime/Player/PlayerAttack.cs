@@ -30,7 +30,7 @@ public class PlayerAttack : IPlayerState
     public void StateUpdate()
     {
         ComboAttack();
-        ExitAttack();
+        ExitJumpAttack();
     } //StateUpdate
     public void StateExit()
     {
@@ -41,9 +41,10 @@ public class PlayerAttack : IPlayerState
 
     private void ComboAttack()
     {
-        //애니메이션 길이가 0.5 ~ 1 사이에 x키입력시 공격B로 연계
-        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f
-        && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1f)
+        //공격A 애니메이션 길이가 0.5 ~ 1 사이에 x키입력시 공격B로 연계
+        if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("AttackA")
+        && (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.5f
+        && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1f))
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
@@ -73,14 +74,12 @@ public class PlayerAttack : IPlayerState
         }
     } //ComboAttack
 
-    //공중공격을 한 경우 다음 행동 정하는 함수
-    private void ExitAttack()
+    //점프공격을 한 경우 다음 행동 정하는 함수
+    private void ExitJumpAttack()
     {
-        //공격 애니메이션이 끝나면 공격상태 탈출
+        //점프공격 애니메이션이 끝나면 공격상태 탈출
         if (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f
-        && (pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("AttackA")
-        || pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("AttackB")
-        || pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("JumpAttack")))
+        && pController.player.playerAni.GetCurrentAnimatorStateInfo(0).IsName("JumpAttack"))
         {
             IPlayerState nextState;
             //플레이어가 땅인 경우 Idle, 공중인 경우 Jump 상태로 전환

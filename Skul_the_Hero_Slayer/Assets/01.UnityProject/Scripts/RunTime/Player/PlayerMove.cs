@@ -13,20 +13,19 @@ public class PlayerMove : IPlayerState
         pController.enumState = PlayerController.PlayerState.MOVE;
         pController.player.playerAni.SetBool("isWalk", true);
         localScale = pController.player.transform.localScale;
-    }
+    } //StateEnter
     public void StateFixedUpdate()
     {
         /*Do Nothing*/
-    }
+    } //StateFixedUpdate
     public void StateUpdate()
     {
-        ExitMove();
         MoveAndDirection();
-    }
+    } //StateUpdate
     public void StateExit()
     {
         pController.player.playerAni.SetBool("isWalk", false);
-    }
+    } //StateExit
 
     //입력하는 키 방향으로 이동 및 방향 바꾸는 함수
     private void MoveAndDirection()
@@ -47,14 +46,4 @@ public class PlayerMove : IPlayerState
             pController.player.transform.Translate(direction * pController.player.moveSpeed * Time.deltaTime);
         }
     } //MoveAndDirection
-
-    private void ExitMove()
-    {
-        if (Input.anyKey == false)
-        {
-            IPlayerState nextState;
-            nextState = new PlayerIdle();
-            pController.pStateMachine.onChangeState?.Invoke(nextState);
-        }
-    } //ExitMove
 }

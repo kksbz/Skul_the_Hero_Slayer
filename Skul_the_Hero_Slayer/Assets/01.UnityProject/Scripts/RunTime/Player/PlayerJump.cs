@@ -27,7 +27,6 @@ public class PlayerJump : IPlayerState
     public void StateUpdate()
     {
         PlayerFall();
-        // JumpEffectOff();
         JumpAndMove();
         Jump();
     } //StateUpdate
@@ -67,12 +66,6 @@ public class PlayerJump : IPlayerState
             pController.player.playerAni.SetBool("isJump", false);
             pController.player.playerAni.SetBool("isFall", true);
         }
-        //플레이어가 땅에 닿으면 Idle상태로 강제전환
-        if (pController.isGroundRay.hit.collider != null)
-        {
-            IPlayerState nextState = new PlayerIdle();
-            pController.pStateMachine.onChangeState?.Invoke(nextState);
-        }
     } //PlayerFall
 
     //점프하는 함수
@@ -94,13 +87,4 @@ public class PlayerJump : IPlayerState
             jumpCount += 1;
         }
     } //Jump
-
-    //점프이펙트 비활성화 하는 함수
-    private void JumpEffectOff()
-    {
-        if (jumpEffect.GetComponentMust<Animator>().GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f)
-        {
-            jumpEffect.SetActive(false);
-        }
-    } //JumpEffectOff
 }

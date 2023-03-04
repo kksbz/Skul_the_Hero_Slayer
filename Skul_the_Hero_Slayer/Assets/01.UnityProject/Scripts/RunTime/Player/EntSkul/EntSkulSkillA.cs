@@ -28,7 +28,7 @@ public class EntSkulSkillA : MonoBehaviour
     {
         Vector2 attackArea = new Vector2(2f, 2.5f);
         Vector2 direction = new Vector2(transform.localScale.x, 0).normalized;
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position - new Vector3(0f, -1f, 0f), attackArea, 0f, Vector2.up, 4f, LayerMask.GetMask(GData.ENEMY_LAYER_MASK));
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position - new Vector3(0f, -1f, 0f), attackArea, 0f, Vector2.up, 3f, LayerMask.GetMask(GData.ENEMY_LAYER_MASK));
         if (hit.collider.tag == GData.ENEMY_LAYER_MASK)
         {
             int damage = Random.Range(minDamage, maxDamage + 1);

@@ -21,8 +21,8 @@ MonoBehaviour:
   monsterPrefab2: {fileID: 1608320595976238280, guid: 1ff2f8149a4306443ad874c417067459, type: 3}
   monsterPrefab3: {fileID: 8386389158573447587, guid: 6f9333abac8a82644a6cfc27a41e1327, type: 3}
   spawnCoordinate_Nomal1: {x: 13, y: 1, z: 0}
-  spawnCoordinate_Nomal2: {x: 25, y: -12, z: 0}
-  spawnCoordinate_Nomal3: {x: 23, y: -12, z: 0}
+  spawnCoordinate_Nomal2: {x: 25, y: -11.5, z: 0}
+  spawnCoordinate_Nomal3: {x: 23, y: -11.5, z: 0}
   spawnCoordinate_Nomal4: {x: 0, y: -9, z: 0}
   spawnCoordinate_Range1: {x: 12, y: 1, z: 0}
   spawnCoordinate_Range2: {x: 25, y: -5, z: 0}

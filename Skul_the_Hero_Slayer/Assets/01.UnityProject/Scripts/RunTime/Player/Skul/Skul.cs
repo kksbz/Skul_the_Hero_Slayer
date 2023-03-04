@@ -30,22 +30,13 @@ public class Skul : Player
         playerController.player = (Player)(this as Player);
     }
 
-    public override void AttackA()
-    {
-        /*Do Nothing*/
-    } //AttackA
-
-    public override void AttackB()
-    {
-        /*Do Nothing*/
-    } //AttackB
-
     private void SkulAttackA()
     {
         AttackAandB();
         playerAudio.clip = atkASound;
         playerAudio.Play();
     } //SkulAttackA
+
     private void SkulAttackB()
     {
         AttackAandB();
@@ -94,16 +85,6 @@ public class Skul : Player
         }
     } //AttackAandB
 
-    public override void SkillA()
-    {
-        /*Do Nothing*/
-    } //SkillA
-
-    public override void SkillB()
-    {
-        /*Do Nothing*/
-    } //SkillB
-
     public void SkulSkillA()
     {
         playerAudio.clip = skillASound;
@@ -111,15 +92,24 @@ public class Skul : Player
         skillAObj = Instantiate(Resources.Load("Prefabs/SkulSkillAEffect") as GameObject);
         skillAObj.GetComponentMust<SkulSkillA>().Init(this);
         playerAni.runtimeAnimatorController = SkulHeadless;
+        //입력받고있던 애니메이션 bool값이 변경된 헤드리스 런타임컨트롤러로 이관되지않아 강제로 상태를 초기화시켜
+        //헤드리스 런타임컨트롤러가 유저입력을 받을 수 있게 처리함
+        IPlayerState nextState = new PlayerIdle();
+        playerController.pStateMachine.onChangeState.Invoke(nextState);
     } //SkulSkillA
 
     public void SkulSkillB()
     {
         playerAudio.clip = skillBSound;
         playerAudio.Play();
-        //스컬헤드위치로 순간이동, 해드리스상태 벗어남
+        //스컬헤드위치로 순간이동, 헤드리스상태 벗어남
         playerController.player.transform.position = skillAObj.transform.position;
         playerController.player.playerAni.runtimeAnimatorController = playerController.BeforeChangeRuntimeC;
+        //입력받고있던 애니메이션 bool값이 변경된 스컬 런타임컨트롤러로 이관되지않아 강제로 상태를 초기화시켜
+        //스컬 런타임컨트롤러가 유저입력을 받을 수 있게 처리함
+        IPlayerState nextState = new PlayerIdle();
+        playerController.pStateMachine.onChangeState.Invoke(nextState);
+        //스컬헤드가 존재하면 파괴
         if (skillAObj != null)
         {
             Destroy(skillAObj);

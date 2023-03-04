@@ -72,3 +72,4 @@
 2023-03-02 / v0.4.1 Player State 전환 조건 변경<br/>
 2023-03-03 / v0.4.2 Bug fix<br/>
 2023-03-03 / v0.4.3 Player SkillA 적 히트시 튕기기 구현<br/>
+2023-03-04 / v0.4.4 Player State 전환 조건 변경, Bug fix<br/>

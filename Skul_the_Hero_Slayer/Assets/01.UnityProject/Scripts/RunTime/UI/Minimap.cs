@@ -5,28 +5,17 @@ using UnityEngine;
 public class Minimap : MonoBehaviour
 {
     private Camera miniMapCamera;
-    private GameObject tagetPos;
+    private GameObject targetPos;
     private string thisSceneName;
-    // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         miniMapCamera = gameObject.GetComponentMust<Camera>();
-        tagetPos = GFunc.GetRootObj("Player");
-        thisSceneName = SceneMgr.Instance.GetThisSceneName();
+        targetPos = GFunc.GetRootObj(GData.PLAYER_LAYER_MASK);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //씬이 바뀌면 플레이어를 다시 찾음
-        if (thisSceneName != SceneMgr.Instance.GetThisSceneName())
-        {
-            tagetPos = GFunc.GetRootObj("Player");
-            thisSceneName = SceneMgr.Instance.GetThisSceneName();
-        }
-        if (SceneMgr.Instance.GetThisSceneName() != GData.TITLE_SCENE_NAME)
-        {
-            miniMapCamera.transform.position = new Vector3(tagetPos.transform.position.x, tagetPos.transform.position.y, miniMapCamera.transform.position.z);
-        }
+        miniMapCamera.transform.position = new Vector3(targetPos.transform.position.x, targetPos.transform.position.y, -13f);
     }
 }

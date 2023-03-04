@@ -37,12 +37,12 @@ public class PlayerDash : IPlayerState
     //대쉬하는 코루틴
     private IEnumerator Dash()
     {
+        //플레이어의 Hit상태를 bool값으로 체크해 무적상태 구현
+        pController.isHit = true;
         pController.player.playerAudio.clip = pController.player.dashSound;
         pController.player.playerAudio.Play();
         dashEffect.SetActive(true);
-
         // Debug.Log($"대쉬시작");
-        pController.player.tag = GData.ENEMY_LAYER_MASK;
         pController.canDash = false;
         pController.player.playerAni.SetBool("isDash", true);
         dashCount += 1;
@@ -52,10 +52,9 @@ public class PlayerDash : IPlayerState
         pController.player.playerRb.velocity = new Vector2(pController.player.transform.localScale.x * dashForce, 0f);
         yield return new WaitForSeconds(dashTime);
         //대쉬가 끝나면 Gravity 원래 값으로 되돌림
-        pController.player.tag = GData.PLAYER_LAYER_MASK;
         pController.player.playerRb.gravityScale = originalGravity;
         pController.player.playerAni.SetBool("isDash", false);
-
+        pController.isHit = false;
         dashEffect.SetActive(false);
 
         IPlayerState lastState;

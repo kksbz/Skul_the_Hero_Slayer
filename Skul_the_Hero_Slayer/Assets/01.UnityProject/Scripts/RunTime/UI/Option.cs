@@ -28,7 +28,7 @@ public class Option : MonoBehaviour
         {
             if (AudioManager.Instance.bgAudio.isPlaying == true)
             {
-                AudioManager.Instance.bgAudio.Stop();
+                AudioManager.Instance.bgAudio.Pause();
             }
             else
             {

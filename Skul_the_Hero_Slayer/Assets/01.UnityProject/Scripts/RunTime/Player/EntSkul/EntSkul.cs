@@ -15,29 +15,21 @@ public class EntSkul : Player
         InitPlayerData(playerData);
         playerController.player = (Player)(this as Player);
     }
-
-    public override void AttackA()
-    {
-        /*Do Nothing*/
-    } //AttackA
-
-    public override void AttackB()
-    {
-        /*Do Nothing*/
-    } //AttackB
-
+    
     private void EntAttackA()
     {
         EntAttack();
         playerAudio.clip = atkASound;
         playerAudio.Play();
     } //EntAttackA
+
     private void EntAttackB()
     {
         EntAttack();
         playerAudio.clip = atkBSound;
         playerAudio.Play();
     } //EntAttackA
+
     private void EntJumpAttack()
     {
         EntAttack();
@@ -78,14 +70,6 @@ public class EntSkul : Player
             }
         }
     } //AttackAandB
-    public override void SkillA()
-    {
-        /*Do Nothing*/
-    } //SkillA
-    public override void SkillB()
-    {
-        /*Do Nothing*/
-    } //SkillB
 
     //EntSkillA 함수
     public void EntSkillA()

@@ -63,28 +63,4 @@ public class Player : MonoBehaviour
         this.skillBSound = data.SkillBAudio;
         this.switchSound = data.SwitchAudio;
     } //InitMonsterData
-
-    //플레이어 AttackA
-    public virtual void AttackA()
-    {
-        /*Do Nothing*/
-    } //AttackA
-
-    //플레이어 AttackB
-    public virtual void AttackB()
-    {
-        /*Do Nothing*/
-    } //AttackB
-
-    //플레이어 SkillA
-    public virtual void SkillA()
-    {
-        /*Do Nothing*/
-    } //AttackA
-
-    //플레이어 SkillB
-    public virtual void SkillB()
-    {
-        /*Do Nothing*/
-    } //AttackB
 }
