@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         Player possibleSkul = default;
 #if !DEBUG_ENABLED
         //현재씬이 마왕성 로비일 경우 플레이어 초기화
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == GData.CASTLELOBBY_SCENE_NAME)
+        if (SceneMgr.Instance.GetThisSceneName() == GData.CASTLELOBBY_SCENE_NAME)
         {
             possibleSkul = gameObject.AddComponent<Skul>();
             playerSkulList.Add(possibleSkul);
