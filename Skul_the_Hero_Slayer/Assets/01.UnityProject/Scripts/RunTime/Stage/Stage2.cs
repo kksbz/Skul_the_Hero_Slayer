@@ -8,7 +8,10 @@ public class Stage2 : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.bgAudio.clip = AudioManager.Instance.stageSound;
-        AudioManager.Instance.bgAudio.Play();
+        if (AudioManager.Instance.isPlayAudio == true)
+        {
+            AudioManager.Instance.bgAudio.Play();
+        }
         UIManager.Instance.ShowStageName(GData.STAGE_2_SCENE_NAME, GData.STAGE_2_SCENE_SUB_NAME);
         UIManager.Instance.minimap.SetActive(true);
     }

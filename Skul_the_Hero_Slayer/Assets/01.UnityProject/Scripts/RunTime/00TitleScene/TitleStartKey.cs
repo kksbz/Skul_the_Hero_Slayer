@@ -7,7 +7,10 @@ public class TitleStartKey : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.bgAudio.clip = AudioManager.Instance.titleSound;
-        AudioManager.Instance.bgAudio.Play();
+        if (AudioManager.Instance.isPlayAudio == true)
+        {
+            AudioManager.Instance.bgAudio.Play();
+        }
     }
     // Update is called once per frame
     void Update()

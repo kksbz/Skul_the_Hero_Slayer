@@ -69,7 +69,7 @@ public class BossHead : MonoBehaviour
     private void ChangeSortingLayer()
     {
         headSprite.sortingLayerName = GData.ENEMY_LAYER_MASK;
-        jawSprite.sortingLayerName = GData.ENEMY_LAYER_MASK;
+        jawSprite.sortingLayerName = "EnemyParts";
     } //ChangeSortingOrder
     private void ChangePhase()
     {

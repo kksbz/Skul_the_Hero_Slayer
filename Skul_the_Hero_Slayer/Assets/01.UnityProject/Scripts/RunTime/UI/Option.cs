@@ -28,10 +28,12 @@ public class Option : MonoBehaviour
         {
             if (AudioManager.Instance.bgAudio.isPlaying == true)
             {
+                AudioManager.Instance.isPlayAudio = false;
                 AudioManager.Instance.bgAudio.Pause();
             }
             else
             {
+                AudioManager.Instance.isPlayAudio = true;
                 AudioManager.Instance.bgAudio.Play();
             }
         });

@@ -8,7 +8,10 @@ public class CastleLobby : MonoBehaviour
     void Start()
     {
         AudioManager.Instance.bgAudio.clip = AudioManager.Instance.castleSound;
-        AudioManager.Instance.bgAudio.Play();
+        if (AudioManager.Instance.isPlayAudio == true)
+        {
+            AudioManager.Instance.bgAudio.Play();
+        }
         UIManager.Instance.ShowStageName(GData.CASTLELOBBY_SCENE_NAME, GData.CASTLELOBBY_SCENE_SUB_NAME);
         UIManager.Instance.minimap.SetActive(false);
     }

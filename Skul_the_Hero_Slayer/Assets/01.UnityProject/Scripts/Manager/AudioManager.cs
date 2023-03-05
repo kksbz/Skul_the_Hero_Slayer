@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip castleSound;
     public AudioClip stageSound;
     public AudioClip bossBgSound;
+    public bool isPlayAudio;
     private static AudioManager instance = null;
     public static AudioManager Instance
     {
@@ -39,10 +40,11 @@ public class AudioManager : MonoBehaviour
             }
         }
     } //Awake
-    
+
     public void InitAudioManager()
     {
         bgAudio = gameObject.GetComponentMust<AudioSource>();
+        isPlayAudio = true;
     } //InitAudioManager
 
 }

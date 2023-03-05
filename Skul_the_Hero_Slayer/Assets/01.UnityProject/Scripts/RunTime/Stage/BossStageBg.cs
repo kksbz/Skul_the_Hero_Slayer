@@ -37,7 +37,10 @@ public class BossStageBg : MonoBehaviour
             if (AudioManager.Instance.bgAudio.clip.name == AudioManager.Instance.bossBgSound.name)
             {
                 AudioManager.Instance.bgAudio.clip = AudioManager.Instance.stageSound;
-                AudioManager.Instance.bgAudio.Play();
+                if (AudioManager.Instance.isPlayAudio == true)
+                {
+                    AudioManager.Instance.bgAudio.Play();
+                }
             }
             skySprite.sprite = bossDeadSky;
             bgSprite.sprite = bossDeadBg;
@@ -50,7 +53,10 @@ public class BossStageBg : MonoBehaviour
             //BgSound가 실행중이지 않으면 실행
             if (!AudioManager.Instance.bgAudio.isPlaying)
             {
-                AudioManager.Instance.bgAudio.Play();
+                if (AudioManager.Instance.isPlayAudio == true)
+                {
+                    AudioManager.Instance.bgAudio.Play();
+                }
             }
             //1페이즈 배경
             if (boss.isChangePhase == false)

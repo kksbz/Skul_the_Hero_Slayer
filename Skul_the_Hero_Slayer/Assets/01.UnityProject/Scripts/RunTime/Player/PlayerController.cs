@@ -159,7 +159,7 @@ public class PlayerController : MonoBehaviour
         if (playerHp <= 0)
         {
             isDead = true;
-            currentHp = playerHp;
+            playerHp = 0;
             pStateMachine.SetState(dicState[PlayerState.DEAD]);
         }
 
