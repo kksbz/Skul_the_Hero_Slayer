@@ -15,6 +15,7 @@ public class PStateMachine : MonoBehaviour
     //생성자 초기화시 기본상태세팅
     public PStateMachine(IPlayerState defaultState, PlayerController _pController)
     {
+        //초기화시 Action에 SetState함수 저장
         onChangeState += SetState;
         currentState = defaultState;
         // Debug.Log(currentState);

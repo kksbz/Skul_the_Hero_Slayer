@@ -71,6 +71,7 @@ public class MonsterMove : IMonsterState
             //offsetX값이 0보다 작으면 왼쪽, 0보다 크면 오른쪽
             if (offsetX < 0)
             {
+                //raycast방향도 같이 전환
                 mController.monster.groundCheckRay._isRight = false;
                 localScale = new Vector3(-1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
@@ -81,7 +82,6 @@ public class MonsterMove : IMonsterState
                 localScale = new Vector3(1, localScale.y, localScale.z);
                 mController.monster.transform.localScale = localScale;
             }
-            //raycast방향도 같이 전환
         }
     } //ChangLookDirection
 
