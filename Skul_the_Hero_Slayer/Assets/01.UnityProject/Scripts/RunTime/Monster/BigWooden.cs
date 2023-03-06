@@ -133,9 +133,9 @@ public class BigWooden : Monster
     {
         bigWoodenAni.SetBool("isAttackB", false);
         bigWoodenAni.SetBool("isIdle", true);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(5f);
         bigWoodenAni.SetBool("isIdle", false);
-        //4초후 현재 상태가 공격이 아니라면 코루틴 종료
+        //5초후 현재 상태가 공격이 아니라면 코루틴 종료
         //=> 코루틴들어오고 상태가 변했을 경우 밑에 공격모션을 취소하기 위한 예외처리
         if (monsterController.enumState != MonsterController.MonsterState.ATTACK)
         {

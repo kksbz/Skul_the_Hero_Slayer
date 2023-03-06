@@ -6,16 +6,24 @@ public class GateEnter : MonoBehaviour
 {
     private GameObject enterKeyIcon; //자식오브젝트 변수
     private PlayerController player;
+    private BoxCollider2D objCollider;
     public string nextStageName; //이동할 Scene 변수
     private bool isPushKey; //플레이어 키입력 받는 조건 변수
     // Start is called before the first frame update
     void Start()
     {
         enterKeyIcon = gameObject.FindChildObj("EnterKeyIcon");
+        objCollider = gameObject.GetComponentMust<BoxCollider2D>();
+        objCollider.enabled = false;
     } //Start
 
     void Update()
     {
+        //남은 몬스터가 없을 때 이미지와 콜라이더 On
+        if (GameManager.Instance.monsterRemainingNumber <= 0)
+        {
+            objCollider.enabled = true;
+        }
         if (isPushKey == true && GameManager.Instance.monsterRemainingNumber <= 0)
         {
             //스테이지에 남은 몬스터가 없을 때 F키 입력시 다음 씬으로 이동
