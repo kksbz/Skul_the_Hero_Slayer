@@ -41,7 +41,7 @@ public class BossArm : MonoBehaviour
     //Attack 애니메이션 진행 중 공격판정 종료위치 정하는 함수
     private void AttackExit()
     {
-        armSprite.sortingLayerName = "Enemy";
+        armSprite.sortingLayerName = "EnemyParts";
         armCollider.enabled = false;
     } //AttackExit
 

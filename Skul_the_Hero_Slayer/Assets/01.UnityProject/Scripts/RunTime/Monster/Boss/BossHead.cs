@@ -68,8 +68,8 @@ public class BossHead : MonoBehaviour
     //Start페이즈 진행중 보스가 맵아래에서 올라온다음 SortingLayer를 변경해 맵보다 먼저 보이게 하는 함수
     private void ChangeSortingLayer()
     {
-        headSprite.sortingLayerName = GData.ENEMY_LAYER_MASK;
-        jawSprite.sortingLayerName = "EnemyParts";
+        headSprite.sortingLayerName = "Object";
+        jawSprite.sortingLayerName = GData.ENEMY_LAYER_MASK;
     } //ChangeSortingOrder
     private void ChangePhase()
     {
