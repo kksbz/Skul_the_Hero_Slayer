@@ -28,8 +28,8 @@ public class PlayerController : MonoBehaviour
     public int currentHp;
     public bool canDash = true; //대쉬 사용가능 체크
     public bool isGetSkulSkillA = false;
-    public bool isHit = false;
-    private bool isDead = false;
+    public bool isHit = false; //피격 체크
+    private bool isDead = false; //사망 체크
 
     //스왑스킬 쿨다운
     private float swapCoolDown = 6f;

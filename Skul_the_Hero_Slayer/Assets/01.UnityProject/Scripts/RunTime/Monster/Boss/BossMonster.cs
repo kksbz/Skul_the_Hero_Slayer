@@ -8,7 +8,6 @@ public class BossMonster : MonoBehaviour
     private GameObject Head;
     private GameObject leftArm;
     private GameObject rightArm;
-    private GameObject groggyEffect;
     private Animator bodyAni;
     private Animator headAni;
     private Animator leftArmAni;
@@ -22,6 +21,7 @@ public class BossMonster : MonoBehaviour
     private float corpAttackCoolDown = 0f;
     private bool isFistSlam = false;
     private float fistSlamCoolDown = 0f;
+    private AudioSource bossAudio;
     private int phaseCheck = 0;
     public bool isDead = false;
     public bool isChangePhase = false;
@@ -31,11 +31,13 @@ public class BossMonster : MonoBehaviour
     public int maxDamage = 15;
     public int hp;
     public int maxHp;
+    private int currentHp;
 
     void Awake()
     {
         maxHp = 500;
         hp = maxHp;
+        currentHp = hp;
         body = gameObject.FindChildObj("Body");
         Head = gameObject.FindChildObj("Head");
         leftArm = gameObject.FindChildObj("LeftArm");
@@ -45,6 +47,7 @@ public class BossMonster : MonoBehaviour
         headAni = Head.GetComponentMust<Animator>();
         leftArmAni = leftArm.GetComponentMust<Animator>();
         rightArmAni = rightArm.GetComponentMust<Animator>();
+        bossAudio = gameObject.GetComponentMust<AudioSource>();
 
         corpPool = gameObject.FindChildObj("CorpPool").GetComponentMust<CorpPool>();
         StartPhase();
@@ -78,6 +81,13 @@ public class BossMonster : MonoBehaviour
                 Dead();
             }
         }
+
+        if (hp < currentHp)
+        {
+            bossAudio.Play();
+            currentHp = hp;
+        }
+
         corpAttackCoolDown += Time.deltaTime;
         //corp공격 쿨타임
         if (corpAttackCoolDown >= 50f)
@@ -88,7 +98,7 @@ public class BossMonster : MonoBehaviour
         fistSlamCoolDown += Time.deltaTime;
         // Debug.Log($"크롭쿨{corpAttackCoolDown}");
         // Debug.Log($"슬렘쿨{corpAttackCoolDown}");
-        if (fistSlamCoolDown >= 35f)
+        if (fistSlamCoolDown >= 40f)
         {
             isFistSlam = true;
         }
@@ -190,6 +200,7 @@ public class BossMonster : MonoBehaviour
             rightArmAni.SetBool("isChangePhase", true);
             leftArmAni.SetBool("isChangePhase", true);
             hp = maxHp;
+            currentHp = hp;
             phaseCheck += 1;
             isChangeBossState = true;
         }

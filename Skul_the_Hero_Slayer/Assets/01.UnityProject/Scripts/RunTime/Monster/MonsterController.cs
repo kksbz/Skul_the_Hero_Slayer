@@ -16,11 +16,11 @@ public class MonsterController : MonoBehaviour
     }; //MonsterState
 
     private EnemyHealthBar hpBar;
+    private StateMachine _stateMachine; //입력받은 상태를 처리하기 위한 StateManchine
+    private Dictionary<MonsterState, IMonsterState> dicState = new Dictionary<MonsterState, IMonsterState>(); //각 상태를 갖고 있을 딕셔너리
     public Monster monster;
     public MonsterState enumState = MonsterState.IDLE; //몬스터의 현재상태를 체크하기위한 변수
-    private StateMachine _stateMachine; //입력받은 상태를 처리하기 위한 StateManchine
     public StateMachine stateMachine { get; private set; }
-    private Dictionary<MonsterState, IMonsterState> dicState = new Dictionary<MonsterState, IMonsterState>(); //각 상태를 갖고 있을 딕셔너리
     public int currentHp; //현재 Hp의 정보를 담을 변수
     // Start is called before the first frame update
     void Start()

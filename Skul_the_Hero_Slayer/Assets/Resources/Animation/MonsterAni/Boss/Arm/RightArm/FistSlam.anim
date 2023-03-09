@@ -389,14 +389,14 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 3
-    functionName: AttackExit
+    functionName: EndAttakcSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3.0166667
-    functionName: EndAttakcSound
+  - time: 3
+    functionName: AttackExit
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

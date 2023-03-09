@@ -62,6 +62,7 @@ public class SceneMgr : MonoBehaviour
         if (GetThisSceneName() != GData.TITLE_SCENE_NAME)
         {
             UIManager.Instance.mainUiObj.SetActive(true);
+            UIManager.Instance.swapCoolDown = 6f;
             UIManager.Instance.skillACoolDown = UIManager.Instance.maxSkillACool;
             UIManager.Instance.skillBCoolDown = UIManager.Instance.maxSkillBCool;
         }

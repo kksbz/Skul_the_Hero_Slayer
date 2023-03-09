@@ -395,7 +395,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3.0166667
+  - time: 3
     functionName: EndAttakcSound
     data: 
     objectReferenceParameter: {fileID: 0}

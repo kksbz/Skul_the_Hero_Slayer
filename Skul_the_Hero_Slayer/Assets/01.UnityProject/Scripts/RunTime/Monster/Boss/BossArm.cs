@@ -41,16 +41,9 @@ public class BossArm : MonoBehaviour
     //Attack 애니메이션 진행 중 공격판정 종료위치 정하는 함수
     private void AttackExit()
     {
-        StartCoroutine(ExitAttackSortingLayer());
+        armSprite.sortingLayerName = "Enemy";
         armCollider.enabled = false;
     } //AttackExit
-
-    //Attack이 끝났을 경우 0.3초 후 Arm파츠의 솔팅레이어를 변경하는 코루틴함수
-    private IEnumerator ExitAttackSortingLayer()
-    {
-        yield return new WaitForSeconds(0.3f);
-        armSprite.sortingLayerName = "Enemy";
-    } //ExitAttackSortingLayer
 
     //LeftAttackEffect 활성화 하는 함수
     private void OnLeftAttackEffect()
