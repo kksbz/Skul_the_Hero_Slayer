@@ -31,6 +31,7 @@ public class BossArm : MonoBehaviour
     //Attack 애니메이션 진행 중 공격판정 시작위치 정하는 함수
     private void Attack()
     {
+        armSprite.sortingLayerName = "EnemyEffect";
         armAudio.clip = attackASound;
         armAudio.Play();
         //BoxCollider2D를 꺼둔상태에서 애니메이션 트리거가 발동하면 BoxCollider2D를 켜서 트리거엔터발동판정
@@ -40,8 +41,16 @@ public class BossArm : MonoBehaviour
     //Attack 애니메이션 진행 중 공격판정 종료위치 정하는 함수
     private void AttackExit()
     {
+        StartCoroutine(ExitAttackSortingLayer());
         armCollider.enabled = false;
     } //AttackExit
+
+    //Attack이 끝났을 경우 0.3초 후 Arm파츠의 솔팅레이어를 변경하는 코루틴함수
+    private IEnumerator ExitAttackSortingLayer()
+    {
+        yield return new WaitForSeconds(0.3f);
+        armSprite.sortingLayerName = "Enemy";
+    } //ExitAttackSortingLayer
 
     //LeftAttackEffect 활성화 하는 함수
     private void OnLeftAttackEffect()
@@ -118,7 +127,7 @@ public class BossArm : MonoBehaviour
     //Start페이즈 진행중 보스가 맵아래에서 올라온다음 SortingLayer를 변경해 맵보다 먼저 보이게 하는 함수
     private void ChangeSortingLayer()
     {
-        armSprite.sortingLayerName = "EnemyEffect";
+        armSprite.sortingLayerName = "Enemy";
     } //ChangeSortingOrder
     private void StartPhase()
     {

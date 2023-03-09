@@ -158,14 +158,16 @@ public class PlayerController : MonoBehaviour
         //플레이어 Hp가 <= 0이면 Dead
         if (playerHp <= 0)
         {
+            //플레이어의 Hit상태를 bool값으로 체크해 무적상태 구현
             isDead = true;
             playerHp = 0;
             pStateMachine.SetState(dicState[PlayerState.DEAD]);
         }
 
         //플레이어가 피격당하면 피격처리
-        if (playerHp < currentHp && isHit == false)
+        if (playerHp < currentHp && isHit == false && isDead == false)
         {
+            isHit = true;
             StartCoroutine(HitPlayer());
             currentHp = playerHp;
         }
@@ -275,10 +277,12 @@ public class PlayerController : MonoBehaviour
                 UIManager.Instance.mainSkul = playerSkulList[i].skulSprite;
                 UIManager.Instance.mainSkillA = playerSkulList[i].skillASprite;
                 UIManager.Instance.mainSkillB = playerSkulList[i].skillBSprite;
-                UIManager.Instance.maxSkillACool = playerSkulList[i].skillACool;
-                UIManager.Instance.maxSkillBCool = playerSkulList[i].skillBCool;
                 skillACoolDown = playerSkulList[i].skillACool;
                 skillBCoolDown = playerSkulList[i].skillBCool;
+                UIManager.Instance.skillACoolDown = skillACoolDown;
+                UIManager.Instance.skillBCoolDown = skillBCoolDown;
+                UIManager.Instance.maxSkillACool = playerSkulList[i].skillACool;
+                UIManager.Instance.maxSkillBCool = playerSkulList[i].skillBCool;
             }
             else
             {
@@ -364,8 +368,6 @@ public class PlayerController : MonoBehaviour
     //몬스터에게 피격당할 시 실행하는 코루틴함수
     private IEnumerator HitPlayer()
     {
-        //플레이어의 Hit상태를 bool값으로 체크해 무적상태 구현
-        isHit = true;
         //스프라이트 컬러의 알파값을 바꿔 깜빡거리게 구현
         Color original = playerSprite.color;
         playerSprite.color = new Color(255f, 255f, 255f, 0.3f);
